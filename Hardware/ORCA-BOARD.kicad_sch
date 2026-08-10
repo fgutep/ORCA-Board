@@ -5,6 +5,212 @@
 	(uuid "3925f241-e926-4f70-884f-69ec72b5e7de")
 	(paper "A4")
 	(lib_symbols
+		(symbol "Connector:Screw_Terminal_01x02"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Screw_Terminal_01x02"
+				(at 0 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "screw terminal"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "TerminalBlock*:*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Screw_Terminal_01x02_1_1"
+				(rectangle
+					(start -1.27 1.27)
+					(end 1.27 -3.81)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.5334 0.3302) (xy 0.3302 -0.508)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.5334 -2.2098) (xy 0.3302 -3.048)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.3556 0.508) (xy 0.508 -0.3302)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.3556 -2.032) (xy 0.508 -2.8702)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0 0)
+					(radius 0.635)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0 -2.54)
+					(radius 0.635)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Connector:USB_C_Receptacle_USB2.0_16P"
 			(pin_names
 				(offset 1.016)
@@ -4026,6 +4232,18 @@
 		(uuid "b3573469-bd9c-41f6-ad1f-7a167f60ff84")
 	)
 	(rectangle
+		(start 203.2 22.86)
+		(end 258.445 119.38)
+		(stroke
+			(width 0)
+			(type dash)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "bc95af98-d735-404b-a21f-38149020400e")
+	)
+	(rectangle
 		(start 106.68 157.48)
 		(end 174.625 193.04)
 		(stroke
@@ -4036,6 +4254,16 @@
 			(type none)
 		)
 		(uuid "f865f493-f8e6-4b42-a775-3c161877c7cb")
+	)
+	(text "I2C MuX\n"
+		(exclude_from_sim no)
+		(at 211.709 25.908 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+		)
+		(uuid "451e9ddd-e201-4198-9609-c5dfc149945f")
 	)
 	(text "USB-IN + EDC\n"
 		(exclude_from_sim no)
@@ -4117,7 +4345,7 @@
 		)
 		(uuid "73846628-014f-4209-95e9-0571c3229c4c")
 	)
-	(text_box "TODO:\n- Conectar Drivers\n- Conectar MuX Servos (PWM)\n- Conectar IMU \n- Conectar Tranceptor CAN\n(sn65hvd230)\n- Salida UART\n- Salida GPIO General"
+	(text_box "TODO:\n- Conectar Drivers\n- Conectar MuX Servos (PWM)\n- Conectar IMU (BMO055)\n- Conectar Tranceptor CAN\n(sn65hvd230)\n- Salida UART\n- Salida GPIO General"
 		(exclude_from_sim no)
 		(at 17.145 93.345 0)
 		(size 33.655 24.0522)
@@ -4356,6 +4584,16 @@
 			(type default)
 		)
 		(uuid "004c4704-dfca-454a-9030-a064a6dedf30")
+	)
+	(wire
+		(pts
+			(xy 215.9 35.56) (xy 217.17 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "00f385a0-c8ea-4ae2-af4f-150f8a3607ea")
 	)
 	(wire
 		(pts
@@ -5109,6 +5347,16 @@
 	)
 	(wire
 		(pts
+			(xy 237.49 38.1) (xy 234.95 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "987ff4cd-255e-4f12-b0ca-974067ae8048")
+	)
+	(wire
+		(pts
 			(xy 52.07 135.89) (xy 90.17 135.89)
 		)
 		(stroke
@@ -5196,6 +5444,16 @@
 			(type default)
 		)
 		(uuid "ae1f33a3-4fc3-4404-96c2-4b83effd5b8a")
+	)
+	(wire
+		(pts
+			(xy 237.49 35.56) (xy 234.95 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b08a4a8c-5b94-4014-9b0d-baf75ebf3680")
 	)
 	(wire
 		(pts
@@ -5306,6 +5564,16 @@
 			(type default)
 		)
 		(uuid "d3d0eadb-ee4d-4988-8613-50aa182261e9")
+	)
+	(wire
+		(pts
+			(xy 215.9 38.1) (xy 217.17 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d3d29935-4ed3-40eb-8539-75d7cc35519d")
 	)
 	(wire
 		(pts
@@ -5449,6 +5717,16 @@
 	)
 	(wire
 		(pts
+			(xy 217.17 43.18) (xy 215.9 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f73796ee-f8ce-4124-b1f2-f216fbf4fe4b")
+	)
+	(wire
+		(pts
 			(xy 78.74 190.5) (xy 78.74 189.23)
 		)
 		(stroke
@@ -5587,6 +5865,16 @@
 		)
 		(uuid "5a25ca78-b2f3-41b8-b8e6-7d550fab1333")
 	)
+	(label "DRV1_IN2"
+		(at 215.9 38.1 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "60c1ad6b-6816-4afe-a97a-570c52006e12")
+	)
 	(label "I2C_SCL_CH2"
 		(at 184.15 62.23 0)
 		(effects
@@ -5616,6 +5904,16 @@
 			(justify left bottom)
 		)
 		(uuid "7f7c12f1-46e2-45c0-9341-c3f93bd75c45")
+	)
+	(label "DRV1_PMode"
+		(at 215.9 43.18 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "859eb5c1-635d-41ed-8ac0-5b5407a1f211")
 	)
 	(label "I2C_SDA_CH1"
 		(at 184.15 54.61 0)
@@ -5647,6 +5945,16 @@
 		)
 		(uuid "96498ccb-acc4-4ce5-8f31-62cd845a42e6")
 	)
+	(label "DRV1_IN1"
+		(at 67.31 104.14 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "9910085d-01ed-41a2-ac33-872a7c333cf6")
+	)
 	(label "OB_I2C_SCL"
 		(at 102.87 60.96 0)
 		(effects
@@ -5676,6 +5984,16 @@
 			(justify right bottom)
 		)
 		(uuid "b8d456aa-b08f-4746-ab46-88a1ce1c605d")
+	)
+	(label "DRV1_PMode"
+		(at 67.31 99.06 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "bcb263af-9ed9-45fc-bff7-5b68cb6b1c1d")
 	)
 	(label "I2C_SCL_CH3"
 		(at 184.15 67.31 0)
@@ -5726,6 +6044,26 @@
 			(justify left bottom)
 		)
 		(uuid "d730c229-a433-4a10-8bdb-8365c91068ae")
+	)
+	(label "DRV1_IN1"
+		(at 215.9 35.56 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "e14ef817-2639-4504-901f-3d3d15bf133c")
+	)
+	(label "DRV1_IN2"
+		(at 67.31 101.6 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "e5a9fa94-dc1a-49b2-8864-0e6feb0849ae")
 	)
 	(label "I2C_SDA_CH4"
 		(at 184.15 69.85 0)
@@ -5833,9 +6171,91 @@
 			(uuid "42748662-0854-459a-a21a-efec68a936fd")
 		)
 		(instances
-			(project "ORCAVO"
+			(project "ORCA-BOARD"
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de"
 					(reference "U1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Screw_Terminal_01x02")
+		(at 242.57 35.56 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "054faadb-2796-464f-beab-dd67c2800dec")
+		(property "Reference" "J3"
+			(at 245.11 35.5599 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Screw_Terminal_01x02"
+			(at 245.11 38.0999 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 242.57 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 242.57 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 242.57 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "fa5573a6-6b4e-4366-baa9-239d42b02acc")
+		)
+		(pin "2"
+			(uuid "caf94b15-b693-4e6e-ace7-d66265e01045")
+		)
+		(instances
+			(project "ORCA-BOARD"
+				(path "/3925f241-e926-4f70-884f-69ec72b5e7de"
+					(reference "J3")
 					(unit 1)
 				)
 			)
@@ -5915,7 +6335,7 @@
 			(uuid "c552be1a-6629-4da3-8f6b-dc673e62a341")
 		)
 		(instances
-			(project "ORCAVO"
+			(project "ORCA-BOARD"
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de"
 					(reference "R7")
 					(unit 1)
@@ -6008,7 +6428,7 @@
 			(uuid "71f690fe-a1ef-4c51-9a1e-014e06415dbc")
 		)
 		(instances
-			(project "ORCAVO"
+			(project "ORCA-BOARD"
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de"
 					(reference "D1")
 					(unit 1)
@@ -6086,7 +6506,7 @@
 			(uuid "2127d3d8-89bf-40e2-a59f-6b50d349d0b1")
 		)
 		(instances
-			(project "ORCAVO"
+			(project "ORCA-BOARD"
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de"
 					(reference "#PWR014")
 					(unit 1)
@@ -6168,7 +6588,7 @@
 			(uuid "d8fbd563-c93a-4974-912b-9b2ea5ebd6e8")
 		)
 		(instances
-			(project "ORCAVO"
+			(project "ORCA-BOARD"
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de"
 					(reference "C1")
 					(unit 1)
@@ -6246,7 +6666,7 @@
 			(uuid "1bcd933b-823d-4124-b9ff-7617ecb5d593")
 		)
 		(instances
-			(project "ORCAVO"
+			(project "ORCA-BOARD"
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de"
 					(reference "#PWR015")
 					(unit 1)
@@ -6325,7 +6745,7 @@
 			(uuid "0574a6c7-23a6-4781-a81e-2caba8192129")
 		)
 		(instances
-			(project "ORCAVO"
+			(project "ORCA-BOARD"
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de"
 					(reference "#PWR012")
 					(unit 1)
@@ -6403,7 +6823,7 @@
 			(uuid "f9743c7c-e55a-4bef-a388-731bde6ec8be")
 		)
 		(instances
-			(project "ORCAVO"
+			(project "ORCA-BOARD"
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de"
 					(reference "#PWR010")
 					(unit 1)
@@ -6481,7 +6901,7 @@
 			(uuid "8b3157de-d2bd-434a-be58-ee5877feeaff")
 		)
 		(instances
-			(project "ORCAVO"
+			(project "ORCA-BOARD"
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de"
 					(reference "#PWR017")
 					(unit 1)
@@ -6563,7 +6983,7 @@
 			(uuid "8d35b288-d771-415d-abe7-c45b91621bdb")
 		)
 		(instances
-			(project "ORCAVO"
+			(project "ORCA-BOARD"
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de"
 					(reference "C4")
 					(unit 1)
@@ -6642,7 +7062,7 @@
 			(uuid "516604f5-96a0-4297-9744-883cece58c59")
 		)
 		(instances
-			(project "ORCAVO"
+			(project "ORCA-BOARD"
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de"
 					(reference "#PWR02")
 					(unit 1)
@@ -6724,7 +7144,7 @@
 			(uuid "edb5daff-b9f3-41b9-a59f-a48aa0245332")
 		)
 		(instances
-			(project "ORCAVO"
+			(project "ORCA-BOARD"
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de"
 					(reference "R1")
 					(unit 1)
@@ -6803,7 +7223,7 @@
 			(uuid "6bed1f50-9441-472e-8c92-b550fcdcafc3")
 		)
 		(instances
-			(project "ORCAVO"
+			(project "ORCA-BOARD"
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de"
 					(reference "R6")
 					(unit 1)
@@ -6881,7 +7301,7 @@
 			(uuid "c3a2d1de-58ec-4c83-b942-2807a6a03119")
 		)
 		(instances
-			(project "ORCAVO"
+			(project "ORCA-BOARD"
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de"
 					(reference "#PWR011")
 					(unit 1)
@@ -6963,7 +7383,7 @@
 			(uuid "fb9aa3b6-fde4-42ea-a6b0-bb6abb9219a4")
 		)
 		(instances
-			(project "ORCAVO"
+			(project "ORCA-BOARD"
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de"
 					(reference "R2")
 					(unit 1)
@@ -7041,7 +7461,7 @@
 			(uuid "1f647f75-16d0-4753-9a76-561f0756b2d4")
 		)
 		(instances
-			(project "ORCAVO"
+			(project "ORCA-BOARD"
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de"
 					(reference "#PWR016")
 					(unit 1)
@@ -7119,7 +7539,7 @@
 			(uuid "26cdcd87-4360-45c1-8b5d-8ea8eb5d4648")
 		)
 		(instances
-			(project "ORCAVO"
+			(project "ORCA-BOARD"
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de"
 					(reference "#PWR013")
 					(unit 1)
@@ -7197,7 +7617,7 @@
 			(uuid "c94cd50e-3acd-4e84-8b38-e323f204466b")
 		)
 		(instances
-			(project "ORCAVO"
+			(project "ORCA-BOARD"
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de"
 					(reference "#PWR07")
 					(unit 1)
@@ -7275,7 +7695,7 @@
 			(uuid "2ca1e84e-0be6-49e1-babb-8a25711165cb")
 		)
 		(instances
-			(project "ORCAVO"
+			(project "ORCA-BOARD"
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de"
 					(reference "#PWR03")
 					(unit 1)
@@ -7353,7 +7773,7 @@
 			(uuid "bf7d2ade-8804-49c6-9e65-eecc30a3d9dc")
 		)
 		(instances
-			(project "ORCAVO"
+			(project "ORCA-BOARD"
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de"
 					(reference "#PWR08")
 					(unit 1)
@@ -7501,7 +7921,7 @@
 			(uuid "d62355c2-901d-4ed8-9b0e-ea15f78b139d")
 		)
 		(instances
-			(project "ORCAVO"
+			(project "ORCA-BOARD"
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de"
 					(reference "U4")
 					(unit 1)
@@ -7580,7 +8000,7 @@
 			(uuid "4847524a-62e8-4c46-99e8-071e5b0eceda")
 		)
 		(instances
-			(project "ORCAVO"
+			(project "ORCA-BOARD"
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de"
 					(reference "#PWR09")
 					(unit 1)
@@ -7659,7 +8079,7 @@
 			(uuid "f173c70f-4b10-4043-a08a-c605f139499c")
 		)
 		(instances
-			(project "ORCAVO"
+			(project "ORCA-BOARD"
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de"
 					(reference "R5")
 					(unit 1)
@@ -7740,7 +8160,7 @@
 			(uuid "513b4d8f-eb1f-4409-9066-2cdbef0191c0")
 		)
 		(instances
-			(project "ORCAVO"
+			(project "ORCA-BOARD"
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de"
 					(reference "C5")
 					(unit 1)
@@ -7819,7 +8239,7 @@
 			(uuid "c723fd3a-eecd-4ae0-bc52-bf055e5933d0")
 		)
 		(instances
-			(project "ORCAVO"
+			(project "ORCA-BOARD"
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de"
 					(reference "R4")
 					(unit 1)
@@ -7897,7 +8317,7 @@
 			(uuid "491ffa26-fd15-4975-aab1-383dea9044d0")
 		)
 		(instances
-			(project "ORCAVO"
+			(project "ORCA-BOARD"
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de"
 					(reference "#PWR06")
 					(unit 1)
@@ -7979,7 +8399,7 @@
 			(uuid "b7577983-bf91-427b-b3ba-0db81c24f356")
 		)
 		(instances
-			(project "ORCAVO"
+			(project "ORCA-BOARD"
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de"
 					(reference "R8")
 					(unit 1)
@@ -8057,7 +8477,7 @@
 			(uuid "6fe69e1c-f7e6-4c55-9b3d-40e3aecc119c")
 		)
 		(instances
-			(project "ORCAVO"
+			(project "ORCA-BOARD"
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de"
 					(reference "#PWR01")
 					(unit 1)
@@ -8139,7 +8559,7 @@
 			(uuid "c09f7a1b-866b-4630-ab2d-64d965558eca")
 		)
 		(instances
-			(project "ORCAVO"
+			(project "ORCA-BOARD"
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de"
 					(reference "C3")
 					(unit 1)
@@ -8225,7 +8645,7 @@
 			(uuid "8f5b8f5c-2de3-4f8c-8542-96dbe4f6bb79")
 		)
 		(instances
-			(project "ORCAVO"
+			(project "ORCA-BOARD"
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de"
 					(reference "SW1")
 					(unit 1)
@@ -8311,7 +8731,7 @@
 			(uuid "288b0f4c-e1b5-4fef-a06e-774178c05f74")
 		)
 		(instances
-			(project "ORCAVO"
+			(project "ORCA-BOARD"
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de"
 					(reference "SW2")
 					(unit 1)
@@ -8436,7 +8856,7 @@
 			(uuid "2228cdca-5c3d-4332-8748-1bfa0d6570a2")
 		)
 		(instances
-			(project "ORCAVO"
+			(project "ORCA-BOARD"
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de"
 					(reference "J1")
 					(unit 1)
@@ -8635,7 +9055,7 @@
 			(uuid "d11e9ce6-d29f-44a9-9a8c-6d6efde2faad")
 		)
 		(instances
-			(project "ORCAVO"
+			(project "ORCA-BOARD"
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de"
 					(reference "U2")
 					(unit 1)
@@ -8718,7 +9138,7 @@
 			(uuid "95cf244b-2aa6-4317-9261-a6f7759616ff")
 		)
 		(instances
-			(project "ORCAVO"
+			(project "ORCA-BOARD"
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de"
 					(reference "U3")
 					(unit 1)
@@ -8800,7 +9220,7 @@
 			(uuid "e380addc-1e45-4470-8a47-75143791df4a")
 		)
 		(instances
-			(project "ORCAVO"
+			(project "ORCA-BOARD"
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de"
 					(reference "C2")
 					(unit 1)
@@ -8882,7 +9302,7 @@
 			(uuid "355ad659-3fee-4ea4-89a4-380330bf6535")
 		)
 		(instances
-			(project "ORCAVO"
+			(project "ORCA-BOARD"
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de"
 					(reference "R3")
 					(unit 1)
@@ -8963,7 +9383,7 @@
 			(uuid "dbaa8017-3f02-4365-b056-96305db2267f")
 		)
 		(instances
-			(project "ORCAVO"
+			(project "ORCA-BOARD"
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de"
 					(reference "C6")
 					(unit 1)
@@ -9041,7 +9461,7 @@
 			(uuid "d8f70d10-69c5-4b28-8a7f-1b81a0669605")
 		)
 		(instances
-			(project "ORCAVO"
+			(project "ORCA-BOARD"
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de"
 					(reference "#PWR04")
 					(unit 1)
@@ -9119,10 +9539,116 @@
 			(uuid "e25ef69d-8571-4f2a-b128-15ca232b9929")
 		)
 		(instances
-			(project "ORCAVO"
+			(project "ORCA-BOARD"
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de"
 					(reference "#PWR05")
 					(unit 1)
+				)
+			)
+		)
+	)
+	(sheet
+		(at 217.17 33.02)
+		(size 17.78 29.21)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "6cc63822-3ea3-44ca-adf1-f22062a815da")
+		(property "Sheetname" "Driver"
+			(at 217.17 32.3084 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Driver.kicad_sch"
+			(at 217.17 62.8146 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "IN1" input
+			(at 217.17 35.56 180)
+			(uuid "0517311c-98e8-4d8e-ba50-1e9c77247aae")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "IN2" input
+			(at 217.17 38.1 180)
+			(uuid "81ad2813-a61b-44dc-8a81-be0b2138949c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "nSleep" input
+			(at 217.17 43.18 180)
+			(uuid "eb61bfc1-054f-4189-a804-67c9a12d7484")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "OUT1" output
+			(at 234.95 35.56 0)
+			(uuid "449d148c-a4c7-4617-98ce-91c1990bbc07")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "OUT2" output
+			(at 234.95 38.1 0)
+			(uuid "ad67e932-4401-4770-b0fb-cce07a4d020e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "nFault" output
+			(at 234.95 40.64 0)
+			(uuid "6d3a85fb-08fa-4001-94d9-35cd0c99fe2a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "ORCA-BOARD"
+				(path "/3925f241-e926-4f70-884f-69ec72b5e7de"
+					(page "2")
 				)
 			)
 		)

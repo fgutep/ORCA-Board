@@ -488,7 +488,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "ORCAVO.kicad_pro",
+    "filename": "ORCA-BOARD.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -644,18 +644,22 @@
     "subpart_id_separator": 0,
     "top_level_sheets": [
       {
-        "filename": "ORCAVO.kicad_sch",
-        "name": "Root",
+        "filename": "ORCA-BOARD.kicad_sch",
+        "name": "ORCA-BOARD",
         "uuid": "3925f241-e926-4f70-884f-69ec72b5e7de"
       }
     ],
-    "used_designators": "J1,SW1-2,R1-8,#PWR1-17,D1,C1-6,U1-4",
+    "used_designators": "U1-5,C1-10,D1,#PWR1-27,R1-11,SW1-2,J1-3",
     "variants": []
   },
   "sheets": [
     [
       "3925f241-e926-4f70-884f-69ec72b5e7de",
-      "Root"
+      "ORCA-BOARD"
+    ],
+    [
+      "6cc63822-3ea3-44ca-adf1-f22062a815da",
+      "Driver"
     ]
   ],
   "text_variables": {},
