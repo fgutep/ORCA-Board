@@ -1,0 +1,184 @@
+{
+  "steps": [
+    {
+      "action": "route_planes",
+      "assignments": [
+        {
+          "nets": [
+            "GND"
+          ],
+          "layer": "In1.Cu"
+        }
+      ],
+      "params": {
+        "add_gnd_vias": false,
+        "stitch_vias": false
+      }
+    },
+    {
+      "action": "route",
+      "nets": [
+        "/SW1",
+        "/SW2",
+        "Net-(Q2-S-Pad1)"
+      ],
+      "params": {
+        "track_width": 4.0,
+        "via_size": 0.6,
+        "via_drill": 0.3,
+        "layer_costs": [
+          1.0,
+          10.0,
+          3.0,
+          2.0
+        ]
+      }
+    },
+    {
+      "action": "route",
+      "nets": [
+        "VBUS",
+        "/VOUT",
+        "/VOUT_PRE"
+      ],
+      "params": {
+        "track_width": 4.0,
+        "via_size": 0.6,
+        "via_drill": 0.3,
+        "layer_costs": [
+          1.0,
+          10.0,
+          1.5,
+          1.5
+        ]
+      }
+    },
+    {
+      "action": "route",
+      "nets": [
+        "/BOOT1",
+        "/BOOT2",
+        "/HDRV1",
+        "/HDRV2",
+        "/LDRV1",
+        "/LDRV2"
+      ],
+      "params": {
+        "track_width": 0.5,
+        "via_size": 0.5,
+        "via_drill": 0.3,
+        "layer_costs": [
+          1.0,
+          10.0,
+          3.0,
+          3.0
+        ]
+      }
+    },
+    {
+      "action": "route",
+      "nets": [
+        "/VCC",
+        "Net-(U1-VIN)",
+        "Net-(D1-PadC)"
+      ],
+      "params": {
+        "track_width": 0.5,
+        "via_size": 0.5,
+        "via_drill": 0.3,
+        "layer_costs": [
+          1.0,
+          10.0,
+          1.5,
+          1.5
+        ]
+      }
+    },
+    {
+      "action": "route",
+      "nets": [
+        "GNDA"
+      ],
+      "params": {
+        "track_width": 0.4,
+        "via_size": 0.5,
+        "via_drill": 0.3,
+        "layer_costs": [
+          1.0,
+          10.0,
+          1.5,
+          1.5
+        ]
+      }
+    },
+    {
+      "action": "route",
+      "nets": [
+        "/FB",
+        "/COMP",
+        "/SS",
+        "/SLOPE",
+        "/RT",
+        "/DITH",
+        "/MODE",
+        "/EN"
+      ],
+      "params": {
+        "track_width": 0.25,
+        "via_size": 0.5,
+        "via_drill": 0.3,
+        "layer_costs": [
+          1.0,
+          10.0,
+          1.5,
+          1.5
+        ]
+      }
+    },
+    {
+      "action": "route",
+      "nets": [
+        "*"
+      ],
+      "params": {
+        "track_width": 0.2,
+        "via_size": 0.6,
+        "via_drill": 0.3,
+        "power_nets": [
+          "VBUS",
+          "/VOUT",
+          "/VOUT_PRE",
+          "/SW1",
+          "/SW2",
+          "Net-(Q2-S-Pad1)",
+          "GND",
+          "GNDA",
+          "/HDRV*",
+          "/LDRV*",
+          "/BOOT*",
+          "/VCC"
+        ],
+        "power_nets_widths": [
+          4.0,
+          4.0,
+          4.0,
+          4.0,
+          4.0,
+          4.0,
+          1.0,
+          0.4,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "layer_costs": [
+          1.0,
+          3.0,
+          1.5,
+          1.0
+        ]
+      }
+    }
+  ]
+}
