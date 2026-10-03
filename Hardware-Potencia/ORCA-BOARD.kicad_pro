@@ -39,9 +39,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 0.8,
-          "height": 1.27,
-          "width": 1.27
+          "drill": 0.0,
+          "height": 1.3,
+          "width": 1.55
         },
         "silk_line_width": 0.1,
         "silk_text_italic": false,
@@ -60,7 +60,7 @@
           "hatch_smoothing_level": 0,
           "hatch_smoothing_value": 0.1,
           "hatch_thickness": 1.0,
-          "min_clearance": 0.5,
+          "min_clearance": 0.8,
           "min_island_area": 10.0,
           "min_thickness": 0.25,
           "pad_connection": 1,
@@ -69,7 +69,13 @@
           "thermal_relief_spoke_width": 0.5
         }
       },
-      "diff_pair_dimensions": [],
+      "diff_pair_dimensions": [
+        {
+          "gap": 0.0,
+          "via_gap": 0.0,
+          "width": 0.0
+        }
+      ],
       "drc_exclusions": [],
       "meta": {
         "version": 2
@@ -140,11 +146,11 @@
       },
       "rules": {
         "max_error": 0.005,
-        "min_clearance": 0.0,
+        "min_clearance": 0.2,
         "min_connection": 0.0,
         "min_copper_edge_clearance": 0.5,
         "min_groove_width": 0.0,
-        "min_hole_clearance": 0.25,
+        "min_hole_clearance": 0.2,
         "min_hole_to_hole": 0.25,
         "min_microvia_diameter": 0.2,
         "min_microvia_drill": 0.1,
@@ -153,9 +159,9 @@
         "min_text_height": 0.8,
         "min_text_thickness": 0.08,
         "min_through_hole_diameter": 0.3,
-        "min_track_width": 0.2,
-        "min_via_annular_width": 0.1,
-        "min_via_diameter": 0.5,
+        "min_track_width": 0.1998,
+        "min_via_annular_width": 0.05,
+        "min_via_diameter": 0.4,
         "solder_mask_to_copper_clearance": 0.0,
         "use_height_for_length_calcs": true
       },
@@ -203,7 +209,12 @@
           "td_width_to_size_filter_ratio": 0.9
         }
       ],
-      "track_widths": [],
+      "track_widths": [
+        0.0,
+        0.2,
+        0.3,
+        2.0
+      ],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
           "corner_radius_percentage": 80,
@@ -230,7 +241,16 @@
           "spacing": 0.6
         }
       },
-      "via_dimensions": [],
+      "via_dimensions": [
+        {
+          "diameter": 0.0,
+          "drill": 0.0
+        },
+        {
+          "diameter": 0.4,
+          "drill": 0.3
+        }
+      ],
       "zones_allow_external_fillets": false
     },
     "ipc2581": {
@@ -240,7 +260,7 @@
       "internal_id": "",
       "mfg": "",
       "mpn": "",
-      "sch_revision": ""
+      "sch_revision": "V.1.0.0"
     },
     "layer_pairs": [],
     "layer_presets": [],
@@ -451,7 +471,7 @@
       "four_way_junction": "ignore",
       "ground_pin_not_ground": "warning",
       "hier_label_mismatch": "error",
-      "isolated_pin_label": "warning",
+      "isolated_pin_label": "error",
       "label_dangling": "error",
       "label_multiple_wires": "warning",
       "lib_symbol_issues": "warning",
@@ -464,10 +484,10 @@
       "net_not_bus_member": "warning",
       "no_connect_connected": "warning",
       "no_connect_dangling": "warning",
-      "pin_not_connected": "error",
-      "pin_not_driven": "error",
-      "pin_to_pin": "warning",
-      "power_pin_not_driven": "error",
+      "pin_not_connected": "warning",
+      "pin_not_driven": "warning",
+      "pin_to_pin": "error",
+      "power_pin_not_driven": "warning",
       "same_local_global_label": "warning",
       "similar_label_and_power": "warning",
       "similar_labels": "warning",
@@ -481,6 +501,12 @@
       "unit_value_mismatch": "error",
       "unresolved_variable": "error",
       "wire_dangling": "error"
+    }
+  },
+  "kicad_routing_tools": {
+    "protected_nets": {
+      "/ISNS+": "diff-pair",
+      "/ISNS-": "diff-pair"
     }
   },
   "libraries": {
@@ -498,7 +524,7 @@
         "clearance": 0.2,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.2,
+        "diff_pair_width": 0.1998,
         "line_style": 0,
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
@@ -506,11 +532,66 @@
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "priority": 2147483647,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.1998,
+        "tuning_profile": "",
+        "via_diameter": 0.8,
+        "via_drill": 0.6,
+        "wire_width": 6
+      },
+      {
+        "clearance": 0.15,
+        "name": "ANALOG",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 0,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.15,
+        "tuning_profile": "",
+        "via_diameter": 0.4,
+        "via_drill": 0.3
+      },
+      {
+        "clearance": 0.25,
+        "name": "GATE",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 2,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.3,
+        "tuning_profile": "",
+        "via_diameter": 0.4,
+        "via_drill": 0.3
+      },
+      {
+        "clearance": 0.3,
+        "name": "POWER_HI",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 4,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 2.0,
+        "tuning_profile": "",
+        "via_diameter": 0.4,
+        "via_drill": 0.3
+      },
+      {
+        "clearance": 0.2,
+        "name": "SENSE",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 1,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.2,
         "tuning_profile": "",
-        "via_diameter": 0.6,
-        "via_drill": 0.3,
-        "wire_width": 6
+        "via_diameter": 0.4,
+        "via_drill": 0.3
+      },
+      {
+        "clearance": 0.3,
+        "name": "SWITCH",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 3,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 2.2,
+        "tuning_profile": "",
+        "via_diameter": 0.4,
+        "via_drill": 0.3
       }
     ],
     "meta": {
@@ -518,15 +599,127 @@
     },
     "net_colors": null,
     "netclass_assignments": null,
-    "netclass_patterns": []
+    "netclass_patterns": [
+      {
+        "netclass": "POWER_HI",
+        "pattern": "VBUS"
+      },
+      {
+        "netclass": "POWER_HI",
+        "pattern": "/VOUT"
+      },
+      {
+        "netclass": "POWER_HI",
+        "pattern": "GND"
+      },
+      {
+        "netclass": "SWITCH",
+        "pattern": "/SW1"
+      },
+      {
+        "netclass": "SWITCH",
+        "pattern": "/SW2"
+      },
+      {
+        "netclass": "GATE",
+        "pattern": "/HDRV1"
+      },
+      {
+        "netclass": "GATE",
+        "pattern": "/HDRV2"
+      },
+      {
+        "netclass": "GATE",
+        "pattern": "/LDRV1"
+      },
+      {
+        "netclass": "GATE",
+        "pattern": "/LDRV2"
+      },
+      {
+        "netclass": "POWER_HI",
+        "pattern": "/VOUT_PRE"
+      },
+      {
+        "netclass": "GATE",
+        "pattern": "/VCC"
+      },
+      {
+        "netclass": "SENSE",
+        "pattern": "/CS_P"
+      },
+      {
+        "netclass": "SENSE",
+        "pattern": "/CS_N"
+      },
+      {
+        "netclass": "SENSE",
+        "pattern": "/ISNS+"
+      },
+      {
+        "netclass": "SENSE",
+        "pattern": "/ISNS-"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "/FB"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "GNDA"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "/COMP"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "/SS"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "/SLOPE"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "/RT"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "/MODE"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "/DITH"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "/EN"
+      },
+      {
+        "netclass": "POWER_HI",
+        "pattern": "Net-(Q2-S-Pad1)"
+      },
+      {
+        "netclass": "GATE",
+        "pattern": "/BOOT1"
+      },
+      {
+        "netclass": "GATE",
+        "pattern": "/BOOT2"
+      }
+    ]
   },
   "pcbnew": {
     "last_paths": {
+      "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "",
+      "plot": "Gerbers-Pot/",
+      "pos_files": "",
       "specctra_dsn": "",
       "step": "",
+      "svg": "",
       "vrml": ""
     },
     "page_layout_descr_file": ""
@@ -571,22 +764,22 @@
           "show": true
         },
         {
-          "group_by": true,
+          "group_by": false,
           "label": "DNP",
           "name": "${DNP}",
-          "show": true
+          "show": false
         },
         {
-          "group_by": true,
+          "group_by": false,
           "label": "Exclude from BOM",
           "name": "${EXCLUDE_FROM_BOM}",
-          "show": true
+          "show": false
         },
         {
-          "group_by": true,
+          "group_by": false,
           "label": "Exclude from Board",
           "name": "${EXCLUDE_FROM_BOARD}",
-          "show": true
+          "show": false
         },
         {
           "group_by": true,
@@ -599,12 +792,114 @@
           "label": "Datasheet",
           "name": "Datasheet",
           "show": true
+        },
+        {
+          "group_by": false,
+          "label": "Check_prices",
+          "name": "Check_prices",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "MANUFACTURER",
+          "name": "MANUFACTURER",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "MAXIMUM_PACKAGE_HEIGHT",
+          "name": "MAXIMUM_PACKAGE_HEIGHT",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "MF",
+          "name": "MF",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "MP",
+          "name": "MP",
+          "show": true
+        },
+        {
+          "group_by": false,
+          "label": "PARTREV",
+          "name": "PARTREV",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Package",
+          "name": "Package",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Price",
+          "name": "Price",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Purchase-URL",
+          "name": "Purchase-URL",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "STANDARD",
+          "name": "STANDARD",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Sim.Device",
+          "name": "Sim.Device",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Sim.Pins",
+          "name": "Sim.Pins",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Sim.Type",
+          "name": "Sim.Type",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "SnapEDA_Link",
+          "name": "SnapEDA_Link",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Availability",
+          "name": "Availability",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Description",
+          "name": "Description",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "#",
+          "name": "${ITEM_NUMBER}",
+          "show": true
         }
       ],
       "filter_string": "",
       "group_symbols": true,
       "include_excluded_from_bom": true,
-      "name": "Default Editing",
+      "name": "",
       "sort_asc": true,
       "sort_field": "Reference"
     },
@@ -649,17 +944,13 @@
         "uuid": "3925f241-e926-4f70-884f-69ec72b5e7de"
       }
     ],
-    "used_designators": "U1-5,C1-10,D1,#PWR1-27,R1-11,SW1-2,J1-3",
+    "used_designators": "D1-3,NT1",
     "variants": []
   },
   "sheets": [
     [
       "3925f241-e926-4f70-884f-69ec72b5e7de",
       "ORCA-BOARD"
-    ],
-    [
-      "6cc63822-3ea3-44ca-adf1-f22062a815da",
-      "Driver"
     ]
   ],
   "text_variables": {},
