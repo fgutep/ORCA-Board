@@ -58,3 +58,10 @@ Gerbers-*.zip
 # Datasheets: viven en Datasheets/ (compartida con el resto del equipo),
 # no sueltos en Hardware-Potencia/
 Hardware-Potencia/*.pdf
+
+# Simulacion: exports crudos de LTspice (~20 GB) y salidas binarias pesadas
+# que superan el limite de 100 MB de GitHub. Se regeneran desde los .asc.
+simulacion/exports/
+simulacion/**/*.raw
+simulacion/**/*.7z
+simulacion/**/*.db

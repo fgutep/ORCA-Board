@@ -1,0 +1,37 @@
+LTspice 26.0.2 for Windows
+Circuit: C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\LTSpice\Buckboost.net
+Start Time: Mon Aug 24 12:32:55 2026
+Options:plotwinsize=0
+C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\LTSpice\LM5175_TRANS.lib(1208): Note: The caret character means exponentiation in this context. If you wish to silence this warning, use the "**" operator instead or add ".OPTIONS NO_CARET_WARNING" to your netlist.
+E_ABMGATE  YINT 0 VALUE {{IF(V(A) > {VTHRESH}  ^
+                                               ^
+C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\LTSpice\LM5175_TRANS.lib(1208): Note: The caret character means exponentiation in this context. If you wish to silence this warning, use the "**" operator instead or add ".OPTIONS NO_CARET_WARNING" to your netlist.
+E_ABMGATE  YINT 0 VALUE {{IF(V(A) > {VTHRESH}  ^
+                                               ^
+C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\LTSpice\LM5175_TRANS.lib(1185): Note: The caret character means exponentiation in this context. If you wish to silence this warning, use the "**" operator instead or add ".OPTIONS NO_CARET_WARNING" to your netlist.
+E_ABMGATE  YINT 0 VALUE {{IF(V(A) > {VTHRESH}  ^
+                                               ^
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = trap
+WARNING: Node n014 is floating.
+
+d_d111: Emission coefficient, N=0.01, too small, this might lead to numerical problems.
+d_d1: Emission coefficient, N=0.001, too small, this might lead to numerical problems.
+d_d3: Emission coefficient, N=0.01, too small, this might lead to numerical problems.
+Direct Newton iteration failed to find operating point.
+Starting Gmin stepping
+Gmin stepping succeeded in finding the operating point.
+
+Warning: Simulation tolerance relaxed to achieve convergence from 2.7865296970135737e-06 to 2.7865296970145736e-06 seconds.
+Total elapsed time: 170.249 seconds.
+
+Files loaded:
+C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\LTSpice\Buckboost.net
+C:\Users\Lenovo\AppData\Local\LTspice\lib\cmp\standard.dio
+C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\LTSpice\LM5175_TRANS.lib
+C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\LTSpice\PSMN3R2-40YLD.lib
+
+vfb_final: V(fb) =0.840899288654 at 0.0005
