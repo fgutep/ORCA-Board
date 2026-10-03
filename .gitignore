@@ -55,5 +55,5 @@ com.github.*.zip
 # Gerbers comprimidos: se versiona la carpeta Gerbers-Pot/, no el zip
 Gerbers-*.zip
 
-# Datasheets: viven en datasheets/ en la raiz del proyecto
-Hardware/lm5175.pdf
+# Datasheets: viven en Hardware-Potencia/datasheets/, no sueltos en Hardware-Potencia/
+Hardware-Potencia/*.pdf
