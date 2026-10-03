@@ -55,5 +55,6 @@ com.github.*.zip
 # Gerbers comprimidos: se versiona la carpeta Gerbers-Pot/, no el zip
 Gerbers-*.zip
 
-# Datasheets: viven en Hardware-Potencia/datasheets/, no sueltos en Hardware-Potencia/
+# Datasheets: viven en Datasheets/ (compartida con el resto del equipo),
+# no sueltos en Hardware-Potencia/
 Hardware-Potencia/*.pdf
