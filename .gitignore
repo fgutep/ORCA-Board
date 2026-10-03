@@ -41,3 +41,19 @@ fp-info-cache
 
 # Local project settings
 *.kicad_prl
+
+# --- Anadido en la reorganizacion del 25-sep-2026 ---
+# Historial local de VS Code (variante no cubierta por .history)
+.history_trim/
+
+# Snapshots de trabajo (superados por el control de versiones)
+Hardware - copia/
+
+# Instaladores de plugins de terceros
+com.github.*.zip
+
+# Gerbers comprimidos: se versiona la carpeta Gerbers-Pot/, no el zip
+Gerbers-*.zip
+
+# Datasheets: viven en datasheets/ en la raiz del proyecto
+Hardware/lm5175.pdf

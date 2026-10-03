@@ -1,0 +1,191 @@
+(footprint "R_2512_Kelvin_TLRP"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "2512 current-sense resistor, Kelvin land pattern for 2-terminal parts (TE TLRP3A30WR005FTE). Each terminal = power pad (outer) + sense pad (inner edge), same pad number. VERIFY against TE datasheet 1773449-4 before fabrication.")
+	(tags "resistor kelvin current sense 2512 TLRP")
+	(property "Reference" "REF**"
+		(at 0 -2.6 0)
+		(layer "F.SilkS")
+
+		(uuid "0a186d34-6c12-4534-a187-41b3fb5c4e85")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "R_2512_Kelvin_TLRP"
+		(at 0 2.6 0)
+		(layer "F.Fab")
+
+		(uuid "ee7edd6e-7a24-4208-a7d7-910774b0c4b4")
+		(effects
+			(font
+				(size 1.0 1.0)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "ac9d821b-f74b-4516-877e-0cdb125da71e")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "Resistor, Kelvin split pads"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "c610cac7-0678-4e85-be9b-f22c761a20e2")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers yes)
+	(fp_line
+		(start -1.6865 -1.6)
+		(end 1.6865 -1.6)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "ee3e04a8-60a2-489c-a286-94c21d8ed2dc")
+	)
+	(fp_line
+		(start -1.6865 1.6)
+		(end 1.6865 1.6)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "2e20bdba-6af7-4152-9556-c3a034352a57")
+	)
+	(fp_line
+		(start 4.25 -2)
+		(end 4.25 2)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "80450839-ca19-419b-a403-c31bc0721df4")
+	)
+	(fp_line
+		(start -4.25 -2)
+		(end 4.25 -2)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "d878246c-1d5a-45a9-87f6-493c8cf71661")
+	)
+	(fp_line
+		(start 4.25 2)
+		(end -4.25 2)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "92111537-db73-44c8-a2e5-e22d4be80583")
+	)
+	(fp_line
+		(start -4.25 2)
+		(end -4.25 -2)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "94907099-c32b-4088-8f79-29c879a6bd05")
+	)
+	(fp_line
+		(start 3.2 -1.6)
+		(end 3.2 1.6)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "a96d0d0d-3387-49e8-869d-80d52617bac3")
+	)
+	(fp_line
+		(start -3.2 -1.6)
+		(end 3.2 -1.6)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "4fdeb253-571b-45ba-9c7a-6c30aea49b9d")
+	)
+	(fp_line
+		(start 3.2 1.6)
+		(end -3.2 1.6)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "a38898ce-540e-49a8-84f8-fea51e9a0191")
+	)
+	(fp_line
+		(start -3.2 1.6)
+		(end -3.2 -1.6)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "032c18d2-d2f3-44f0-a72a-a0e27fe2f1a5")
+	)
+	(pad "1" smd rect
+		(at -3.375 0)
+		(size 1.25 3.5)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(pintype "passive")
+		(solder_mask_margin 0.102)
+		(uuid "e2a5be7c-f271-4e8e-89e0-e1ee8ad8a692")
+	)
+	(pad "1" smd rect
+		(at -2.25 0)
+		(size 0.5 3.5)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(pintype "passive")
+		(solder_mask_margin 0.102)
+		(uuid "54bde2a6-2f42-4486-bdd7-ea814608ada5")
+	)
+	(pad "2" smd rect
+		(at 3.375 0)
+		(size 1.25 3.5)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(pintype "passive")
+		(solder_mask_margin 0.102)
+		(uuid "f017dd57-e22c-4b6f-a440-95d96a7e4c29")
+	)
+	(pad "2" smd rect
+		(at 2.25 0)
+		(size 0.5 3.5)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(pintype "passive")
+		(solder_mask_margin 0.102)
+		(uuid "e1cd7a70-8f1c-474a-ac34-18622dac1d1a")
+	)
+	(embedded_fonts no)
+)
