@@ -4,6 +4,15 @@
 	(generator_version "10.0")
 	(uuid "87b6be6d-66f3-4f1b-8a08-c70097fa63dc")
 	(paper "A4")
+	(title_block
+		(title "ORCA BOARD")
+		(date "2026-08-27")
+		(rev "V.1.0.0")
+		(company "L.A.A, J.F.A, F.G")
+		(comment 1 "Felipe Gutiérrez Apráez")
+		(comment 2 "Juan Felipe Ángulo")
+		(comment 3 "Luis Ángel Aristizabal")
+	)
 	(lib_symbols
 		(symbol "DRV8874PWPR:DRV8874PWPR"
 			(pin_names
@@ -1147,6 +1156,16 @@
 			(embedded_fonts no)
 		)
 	)
+	(text "Drivers-1\n"
+		(exclude_from_sim no)
+		(at 58.166 23.114 0)
+		(effects
+			(font
+				(size 12.7 12.7)
+			)
+		)
+		(uuid "5a4e563a-efa8-490a-84ad-2fd37c250cf9")
+	)
 	(junction
 		(at 101.6 87.63)
 		(diameter 0)
@@ -1182,6 +1201,16 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ea11377c-2a10-404f-a61f-a4425e2ac036")
+	)
+	(wire
+		(pts
+			(xy 161.29 63.5) (xy 158.75 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "08c4aba8-0e4f-4e11-964e-a837a9be463d")
 	)
 	(wire
 		(pts
@@ -1225,7 +1254,7 @@
 	)
 	(wire
 		(pts
-			(xy 100.33 95.25) (xy 116.84 95.25)
+			(xy 113.03 95.25) (xy 116.84 95.25)
 		)
 		(stroke
 			(width 0)
@@ -1302,6 +1331,16 @@
 			(type default)
 		)
 		(uuid "896f6071-c7bd-4c41-ae42-98e0b0b97cca")
+	)
+	(wire
+		(pts
+			(xy 148.59 63.5) (xy 151.13 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "89e1203b-add6-43d1-84f9-02e11cd81ee5")
 	)
 	(wire
 		(pts
@@ -1443,8 +1482,18 @@
 		)
 		(uuid "e420fbe2-fb47-4655-801b-57176f1197b8")
 	)
+	(wire
+		(pts
+			(xy 161.29 62.23) (xy 161.29 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fc3de9bb-4cee-4fb5-a233-dc8c054a79f9")
+	)
 	(label "CPH"
-		(at 151.13 63.5 90)
+		(at 148.59 63.5 90)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1454,7 +1503,7 @@
 		(uuid "0278c4fd-0fb5-4d0d-980f-9a6cb077d738")
 	)
 	(label "CPL"
-		(at 158.75 63.5 90)
+		(at 161.29 62.23 90)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1560,7 +1609,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "127ae264-c493-402d-80b3-4daed6b4cf96")
+		(uuid "07fad2f5-4275-41f9-b2bf-ad6de7bc8f89")
 		(property "Reference" "#PWR021"
 			(at 201.93 74.93 0)
 			(hide yes)
@@ -1572,7 +1621,7 @@
 				)
 			)
 		)
-		(property "Value" "VM"
+		(property "Value" "VMout"
 			(at 201.93 66.04 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1616,10 +1665,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "821ed34c-0459-4082-b40d-1e5c3d16e498")
+			(uuid "efa53e15-46bb-488e-8588-a45623e162a2")
 		)
 		(instances
 			(project "ORCA-BOARD"
+				(path "/3925f241-e926-4f70-884f-69ec72b5e7de/46317d74-6bcf-42e9-bf6a-dc4975661f21"
+					(reference "#PWR036")
+					(unit 1)
+				)
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de/6cc63822-3ea3-44ca-adf1-f22062a815da"
 					(reference "#PWR021")
 					(unit 1)
@@ -1791,55 +1844,59 @@
 			)
 		)
 		(pin "7"
-			(uuid "affec9d9-7454-4ecb-9cc5-fe389f2f24a5")
+			(uuid "f192bd33-0582-4a52-b4df-89829128baeb")
 		)
 		(pin "3"
-			(uuid "bad58d82-6104-4d25-8ad1-e70eb8acc45a")
+			(uuid "2aa2bb09-5764-4c9c-9f2d-38caaa990595")
 		)
 		(pin "1"
-			(uuid "a7500377-874f-4fad-bd28-cf6b0d4bad8c")
+			(uuid "bcad3c86-8a72-403c-9e78-be18cf943787")
 		)
 		(pin "2"
-			(uuid "738f2acc-f7a2-4895-a83a-a85a71c76a67")
+			(uuid "b69da11e-e885-418a-9155-ab0e2b93db44")
 		)
 		(pin "8"
-			(uuid "6aacf208-9b5c-42f8-9803-7e78864415f9")
+			(uuid "8b933490-4e0f-4319-99d6-5a56973695cb")
 		)
 		(pin "5"
-			(uuid "8609fa42-90e6-4016-8076-c4dc4eb7874d")
+			(uuid "4142c958-c56a-4f57-9bee-7ed3c624431b")
 		)
 		(pin "6"
-			(uuid "6a6be925-2b5b-4abc-a047-31d02efbebc4")
+			(uuid "f655ba9e-5786-474b-aabd-050a30456e38")
 		)
 		(pin "4"
-			(uuid "5b657ec2-ed3e-4fb6-83a0-c558e59ef6b9")
+			(uuid "fbaa9d5b-b268-4c1b-97a9-20bb0dff4371")
 		)
 		(pin "16"
-			(uuid "c2b95671-0dc4-4f80-82da-755db2bcbc4f")
+			(uuid "7618ea61-6262-43a7-b80d-eba422ed749a")
 		)
 		(pin "13"
-			(uuid "4cf9f652-6296-437b-9924-80b072d353e1")
+			(uuid "7f06c3d0-c5cf-4f39-bd67-af48491eda6a")
 		)
 		(pin "14"
-			(uuid "74f5c3a4-9bb1-44d3-b83e-4053a94a18a2")
+			(uuid "3a6371ea-0408-4975-b04c-64d9f33093da")
 		)
 		(pin "11"
-			(uuid "544d92ff-410e-40b7-afd7-afa2cb1e0e4b")
+			(uuid "5c05d716-966c-45b5-80fc-671dceb007e1")
 		)
 		(pin "15"
-			(uuid "b8845e99-8d92-4855-8397-e20fc72da796")
+			(uuid "50fb4b33-2e46-49be-8bc7-3bd455ba5502")
 		)
 		(pin "9"
-			(uuid "382b9666-3c15-41d3-8137-6a378517c45a")
+			(uuid "e0ac7060-1195-40dd-a586-1b55a50e106a")
 		)
 		(pin "10"
-			(uuid "bc108531-44c6-458b-ab5a-3e8eb1b2dfff")
+			(uuid "cb20b8b0-279c-415b-807b-6114db04d51f")
 		)
 		(pin "12"
-			(uuid "47357a83-d645-4bbd-b33c-38ce0c977c2f")
+			(uuid "18175a9b-a502-445a-99c1-2e5e3d027fcf")
 		)
 		(instances
 			(project "ORCA-BOARD"
+				(path "/3925f241-e926-4f70-884f-69ec72b5e7de/46317d74-6bcf-42e9-bf6a-dc4975661f21"
+					(reference "U6")
+					(unit 1)
+				)
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de/6cc63822-3ea3-44ca-adf1-f22062a815da"
 					(reference "U5")
 					(unit 1)
@@ -1870,14 +1927,15 @@
 				)
 			)
 		)
-		(property "Value" "VM"
-			(at 170.18 68.58 0)
+		(property "Value" "VMout"
+			(at 172.72 72.3899 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -1914,10 +1972,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "9b93fa87-6894-401a-a001-0273e351e341")
+			(uuid "889fbdc0-d6fa-4a8f-ba1a-359bf5ae2882")
 		)
 		(instances
 			(project "ORCA-BOARD"
+				(path "/3925f241-e926-4f70-884f-69ec72b5e7de/46317d74-6bcf-42e9-bf6a-dc4975661f21"
+					(reference "#PWR034")
+					(unit 1)
+				)
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de/6cc63822-3ea3-44ca-adf1-f22062a815da"
 					(reference "#PWR020")
 					(unit 1)
@@ -1993,10 +2055,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "1d555e7b-09ec-403e-bccd-39dfbad06054")
+			(uuid "b868f853-0b3c-4efe-a1e8-76cc751d87ed")
 		)
 		(instances
 			(project "ORCA-BOARD"
+				(path "/3925f241-e926-4f70-884f-69ec72b5e7de/46317d74-6bcf-42e9-bf6a-dc4975661f21"
+					(reference "#PWR032")
+					(unit 1)
+				)
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de/6cc63822-3ea3-44ca-adf1-f22062a815da"
 					(reference "#PWR025")
 					(unit 1)
@@ -2071,10 +2137,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "49e0f117-7be5-4890-a481-4b7b6e2ce5a2")
+			(uuid "37a17c90-47ec-4980-b281-7e6b8f5cd3bb")
 		)
 		(instances
 			(project "ORCA-BOARD"
+				(path "/3925f241-e926-4f70-884f-69ec72b5e7de/46317d74-6bcf-42e9-bf6a-dc4975661f21"
+					(reference "#PWR037")
+					(unit 1)
+				)
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de/6cc63822-3ea3-44ca-adf1-f22062a815da"
 					(reference "#PWR026")
 					(unit 1)
@@ -2149,10 +2219,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "076a8186-56e7-4442-8e8c-07a543a6144f")
+			(uuid "a3cb812b-69e1-4e21-b8ce-e7368a96fa37")
 		)
 		(instances
 			(project "ORCA-BOARD"
+				(path "/3925f241-e926-4f70-884f-69ec72b5e7de/46317d74-6bcf-42e9-bf6a-dc4975661f21"
+					(reference "#PWR033")
+					(unit 1)
+				)
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de/6cc63822-3ea3-44ca-adf1-f22062a815da"
 					(reference "#PWR019")
 					(unit 1)
@@ -2225,13 +2299,17 @@
 			)
 		)
 		(pin "1"
-			(uuid "7993bd13-970d-4a78-b4a3-3780dc32a2c9")
+			(uuid "a83299b3-4628-4672-bb81-89f47de06259")
 		)
 		(pin "2"
-			(uuid "dcbce7fb-ef25-496c-94ec-5969e4fb0a77")
+			(uuid "f4b1ae78-efcd-49e7-aa95-21b0abc56e42")
 		)
 		(instances
 			(project "ORCA-BOARD"
+				(path "/3925f241-e926-4f70-884f-69ec72b5e7de/46317d74-6bcf-42e9-bf6a-dc4975661f21"
+					(reference "R12")
+					(unit 1)
+				)
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de/6cc63822-3ea3-44ca-adf1-f22062a815da"
 					(reference "R10")
 					(unit 1)
@@ -2241,7 +2319,7 @@
 	)
 	(symbol
 		(lib_id "power:+3V3")
-		(at 100.33 95.25 0)
+		(at 113.03 95.25 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2249,10 +2327,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "69f53c22-afd9-46da-808f-792f0d2103bb")
 		(property "Reference" "#PWR023"
-			(at 100.33 99.06 0)
+			(at 116.84 95.25 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2263,7 +2340,7 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 100.33 90.17 0)
+			(at 113.03 97.028 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2273,7 +2350,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 100.33 95.25 0)
+			(at 113.03 95.25 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2284,7 +2361,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 100.33 95.25 0)
+			(at 113.03 95.25 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2295,7 +2372,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 100.33 95.25 0)
+			(at 113.03 95.25 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2306,10 +2383,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "fa213cb6-548f-4181-9b2c-71611f0abb21")
+			(uuid "e6ef0208-f19b-43a6-8a8f-58b9da479e46")
 		)
 		(instances
 			(project "ORCA-BOARD"
+				(path "/3925f241-e926-4f70-884f-69ec72b5e7de/46317d74-6bcf-42e9-bf6a-dc4975661f21"
+					(reference "#PWR029")
+					(unit 1)
+				)
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de/6cc63822-3ea3-44ca-adf1-f22062a815da"
 					(reference "#PWR023")
 					(unit 1)
@@ -2383,13 +2464,17 @@
 			)
 		)
 		(pin "1"
-			(uuid "5e421ccd-df95-45fb-a85a-2b05d7e33890")
+			(uuid "074b7890-1ca7-4566-aec8-23c21da94ac2")
 		)
 		(pin "2"
-			(uuid "10b83253-acd7-4bd5-8700-2f9567f8c83a")
+			(uuid "da62c7e1-45a8-4f2e-a268-df0a288ae609")
 		)
 		(instances
 			(project "ORCA-BOARD"
+				(path "/3925f241-e926-4f70-884f-69ec72b5e7de/46317d74-6bcf-42e9-bf6a-dc4975661f21"
+					(reference "C11")
+					(unit 1)
+				)
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de/6cc63822-3ea3-44ca-adf1-f22062a815da"
 					(reference "C7")
 					(unit 1)
@@ -2463,13 +2548,17 @@
 			)
 		)
 		(pin "1"
-			(uuid "a0b28c91-b5a3-4d64-b93f-b4df74beba56")
+			(uuid "a8b5de2b-9243-473d-9497-e5bfcfa110ce")
 		)
 		(pin "2"
-			(uuid "874cc337-01f4-4302-b476-eb1e93f87fba")
+			(uuid "e8b9ddb5-a1c5-4f77-9e17-60d4a63f3abc")
 		)
 		(instances
 			(project "ORCA-BOARD"
+				(path "/3925f241-e926-4f70-884f-69ec72b5e7de/46317d74-6bcf-42e9-bf6a-dc4975661f21"
+					(reference "C10")
+					(unit 1)
+				)
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de/6cc63822-3ea3-44ca-adf1-f22062a815da"
 					(reference "C8")
 					(unit 1)
@@ -2545,13 +2634,17 @@
 			)
 		)
 		(pin "1"
-			(uuid "ed18b436-699a-4ebf-a7ce-40e4a021b221")
+			(uuid "21d0e604-ae0d-43b5-851f-1299c6c78a68")
 		)
 		(pin "2"
-			(uuid "835974e6-2503-44ee-96aa-129ffce9967d")
+			(uuid "ccd2cee8-f369-4be4-a94b-857411b0bab5")
 		)
 		(instances
 			(project "ORCA-BOARD"
+				(path "/3925f241-e926-4f70-884f-69ec72b5e7de/46317d74-6bcf-42e9-bf6a-dc4975661f21"
+					(reference "C12")
+					(unit 1)
+				)
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de/6cc63822-3ea3-44ca-adf1-f22062a815da"
 					(reference "C9")
 					(unit 1)
@@ -2624,13 +2717,17 @@
 			)
 		)
 		(pin "1"
-			(uuid "c1e6eb8a-e782-456e-b60b-a880a4ca4270")
+			(uuid "e5b641f1-f59f-49b1-aaf1-8c248c1a5c57")
 		)
 		(pin "2"
-			(uuid "d0de8cf5-0bcf-489b-a727-533301854138")
+			(uuid "8d4845f8-8f38-4d3e-897e-307bfce6c812")
 		)
 		(instances
 			(project "ORCA-BOARD"
+				(path "/3925f241-e926-4f70-884f-69ec72b5e7de/46317d74-6bcf-42e9-bf6a-dc4975661f21"
+					(reference "R13")
+					(unit 1)
+				)
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de/6cc63822-3ea3-44ca-adf1-f22062a815da"
 					(reference "R11")
 					(unit 1)
@@ -2705,10 +2802,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "a4c7a196-35b1-4252-8b6b-26f205cbcdbb")
+			(uuid "5ad69462-3e77-4180-b729-dd96833402eb")
 		)
 		(instances
 			(project "ORCA-BOARD"
+				(path "/3925f241-e926-4f70-884f-69ec72b5e7de/46317d74-6bcf-42e9-bf6a-dc4975661f21"
+					(reference "#PWR028")
+					(unit 1)
+				)
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de/6cc63822-3ea3-44ca-adf1-f22062a815da"
 					(reference "#PWR024")
 					(unit 1)
@@ -2783,10 +2884,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "2a108b21-00ea-4783-8155-64bad575b0e5")
+			(uuid "46ca9b2e-d3d9-48f8-9d23-f245a147edf5")
 		)
 		(instances
 			(project "ORCA-BOARD"
+				(path "/3925f241-e926-4f70-884f-69ec72b5e7de/46317d74-6bcf-42e9-bf6a-dc4975661f21"
+					(reference "#PWR035")
+					(unit 1)
+				)
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de/6cc63822-3ea3-44ca-adf1-f22062a815da"
 					(reference "#PWR022")
 					(unit 1)
@@ -2862,10 +2967,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "2c985ed5-26d8-41d8-b478-669228653b7f")
+			(uuid "fc553d55-6c8a-447e-b3e9-689bd57026bf")
 		)
 		(instances
 			(project "ORCA-BOARD"
+				(path "/3925f241-e926-4f70-884f-69ec72b5e7de/46317d74-6bcf-42e9-bf6a-dc4975661f21"
+					(reference "#PWR031")
+					(unit 1)
+				)
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de/6cc63822-3ea3-44ca-adf1-f22062a815da"
 					(reference "#PWR018")
 					(unit 1)
@@ -2894,7 +3003,7 @@
 				)
 			)
 		)
-		(property "Value" "3.92k"
+		(property "Value" "2.4k"
 			(at 171.45 84.836 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2938,13 +3047,17 @@
 			)
 		)
 		(pin "1"
-			(uuid "74bb5bdf-84c0-448f-a85c-4875b911102b")
+			(uuid "4eb6f303-c7a5-4e66-8cbd-bb16f2a18341")
 		)
 		(pin "2"
-			(uuid "818af04c-46ee-4e56-871e-4a77e8e64cbf")
+			(uuid "c7daf785-251a-45fe-86cf-3b22acad05fa")
 		)
 		(instances
 			(project "ORCA-BOARD"
+				(path "/3925f241-e926-4f70-884f-69ec72b5e7de/46317d74-6bcf-42e9-bf6a-dc4975661f21"
+					(reference "R14")
+					(unit 1)
+				)
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de/6cc63822-3ea3-44ca-adf1-f22062a815da"
 					(reference "R9")
 					(unit 1)
@@ -3019,10 +3132,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "6d9b572c-d0da-48b2-8140-e3b35ef56813")
+			(uuid "cdc6b771-5fc7-4281-93cd-3f35148031b0")
 		)
 		(instances
 			(project "ORCA-BOARD"
+				(path "/3925f241-e926-4f70-884f-69ec72b5e7de/46317d74-6bcf-42e9-bf6a-dc4975661f21"
+					(reference "#PWR030")
+					(unit 1)
+				)
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de/6cc63822-3ea3-44ca-adf1-f22062a815da"
 					(reference "#PWR027")
 					(unit 1)
@@ -3042,7 +3159,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "fb460928-8077-4bb2-99c9-fb92f05a0194")
-		(property "Reference" "C10_Bulk"
+		(property "Reference" "C10_Bulk2"
 			(at 213.36 80.0099 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3098,15 +3215,19 @@
 			)
 		)
 		(pin "1"
-			(uuid "265a01c9-d3fb-4d1c-99bd-6892683be34c")
+			(uuid "2a992ea1-a3e7-497b-914e-3aec67df5c21")
 		)
 		(pin "2"
-			(uuid "c160f03a-42c2-4d37-8013-f0e9ec20f58f")
+			(uuid "5603cefa-9e29-4f7e-8e3f-9fefb47c5838")
 		)
 		(instances
 			(project "ORCA-BOARD"
+				(path "/3925f241-e926-4f70-884f-69ec72b5e7de/46317d74-6bcf-42e9-bf6a-dc4975661f21"
+					(reference "C10_Bulk1")
+					(unit 1)
+				)
 				(path "/3925f241-e926-4f70-884f-69ec72b5e7de/6cc63822-3ea3-44ca-adf1-f22062a815da"
-					(reference "C10_Bulk")
+					(reference "C10_Bulk2")
 					(unit 1)
 				)
 			)

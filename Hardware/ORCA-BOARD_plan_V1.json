@@ -1,0 +1,149 @@
+{
+  "steps": [
+    {
+      "action": "route_planes",
+      "assignments": [
+        {
+          "nets": [
+            "GND"
+          ],
+          "layer": "In1.Cu"
+        },
+        {
+          "nets": [
+            "GND"
+          ],
+          "layer": "In2.Cu"
+        },
+        {
+          "nets": [
+            "GND"
+          ],
+          "layer": "B.Cu"
+        }
+      ],
+      "params": {}
+    },
+    {
+      "action": "route_diff",
+      "pairs": [
+        "/USB"
+      ],
+      "params": {
+        "diff_pair_width": 0.1,
+        "diff_pair_gap": 0.1,
+        "impedance": 90,
+        "clearance": 0.1,
+        "rip_existing_nets": [
+          "/USB_P",
+          "/USB_N"
+        ]
+      }
+    },
+    {
+      "action": "route",
+      "nets": [
+        "*"
+      ],
+      "params": {
+        "track_width": 0.127,
+        "via_size": 0.6,
+        "via_drill": 0.3,
+        "power_nets": [
+          "GND",
+          "+3V3",
+          "VM",
+          "/5V",
+          "/5VUSB",
+          "/5V_SERVOS",
+          "VBUS",
+          "Net-(U10-VCC)"
+        ],
+        "power_nets_widths": [
+          0.3,
+          0.3,
+          0.5,
+          0.3,
+          0.3,
+          0.4,
+          0.3,
+          0.25
+        ],
+        "layer_costs": [
+          1.0,
+          3.0,
+          3.0,
+          1.0
+        ],
+        "max_ripup": 5
+      }
+    },
+    {
+      "action": "route_planes",
+      "assignments": [
+        {
+          "nets": [
+            "GND"
+          ],
+          "layer": "In1.Cu"
+        },
+        {
+          "nets": [
+            "GND"
+          ],
+          "layer": "In2.Cu"
+        },
+        {
+          "nets": [
+            "GND"
+          ],
+          "layer": "B.Cu"
+        }
+      ],
+      "params": {
+        "add_gnd_vias": true,
+        "gnd_via_distance": 5.0,
+        "gnd_via_net": "GND",
+        "stitch_vias": true
+      }
+    },
+    {
+      "action": "route",
+      "nets": [
+        "*"
+      ],
+      "params": {
+        "track_width": 0.127,
+        "via_size": 0.6,
+        "via_drill": 0.3,
+        "power_nets": [
+          "GND",
+          "+3V3",
+          "VM",
+          "/5V",
+          "/5VUSB",
+          "/5V_SERVOS",
+          "VBUS",
+          "Net-(U10-VCC)"
+        ],
+        "power_nets_widths": [
+          0.3,
+          0.3,
+          0.5,
+          0.3,
+          0.3,
+          0.4,
+          0.3,
+          0.25
+        ],
+        "layer_costs": [
+          1.0,
+          3.0,
+          3.0,
+          1.0
+        ],
+        "max_ripup": 5
+      }
+    }
+  ]
+}

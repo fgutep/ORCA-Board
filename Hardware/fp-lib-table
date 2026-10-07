@@ -1,0 +1,5 @@
+(fp_lib_table
+	(version 7)
+	(lib (name "BNO055_Adafruit") (type "KiCad") (uri "${KIPRJMOD}/AdaFruit_BNO055/BNO055_Adafruit.pretty") (options "") (descr ""))
+	(lib (name "Switch_4_pins") (type "KiCad") (uri "${KIPRJMOD}/Custom_Footprints/Switch_4_pins.pretty") (options "") (descr ""))
+)
