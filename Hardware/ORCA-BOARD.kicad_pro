@@ -613,7 +613,7 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "",
+      "plot": "Quote_fab/",
       "pos_files": "",
       "specctra_dsn": "",
       "step": "",
