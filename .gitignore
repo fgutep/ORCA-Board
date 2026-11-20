@@ -32,6 +32,8 @@ fp-info-cache
 # Exported BOM files
 *.xml
 *.csv
+# ...salvo los datos de los ensayos de motores (CSV del banco)
+!Hardware/physical_debug/ensayos_motores/**/*.csv
 
 # Archived Backups (KiCad 6.0)
 **/*-backups/*.zip

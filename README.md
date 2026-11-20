@@ -70,7 +70,8 @@ Convertidor **buck-boost LM5175** para el riel de motores: entrada de 6 a 25.2 V
 | Parte | Estado |
 |---|---|
 | **Placa de control, Rev A** | ✅ Fabricada y operativa. Autoprueba: **8 pruebas aprobadas, 0 fallas** |
-| Placa de potencia (LM5175) | 🔧 Fabricada, en bring-up ([registro](Hardware-Potencia/physical_debug/README.md)) |
+| Placa de potencia (LM5175) | 🔧 Fabricada, en bring-up ([registro](Hardware-Potencia/physical_debug/README.md)). Ya alimentó los motores a 12 V con la entrada barrida de 8 a 24 V |
+| Drivers de motor (DRV8874) | ✅ Probados con N20 y Faulhaber a 12 V en el banco de motores ([ensayo](Hardware/physical_debug/11_ensayo_motores_N20_Faulhaber.md)). Temperatura de pistas pendiente |
 | BNO085 | ⏸️ Aún no montado en la placa fabricada |
 | micro-ROS sobre la placa | ⏳ Siguiente paso |
 
