@@ -117,7 +117,7 @@ Estado de los hallazgos tras la prueba:
 |---|---|
 | P1 | 🟡 La placa funcionó hasta 22 V, pero el voltaje nominal de Cin1, Chf1, C15, C9, C12, C8, C10 y los bulk **sigue sin confirmarse**. Confirmar antes de 6S (25.2 V) |
 | P2 | 🟡 Abierto: no probar en caliente con baterías de 4S o más sin bulk en J19 |
-| P3, P4 | Abierto: pendiente de la prueba de motores con carga |
+| P3, P4 | 🟡 Abierto. Primer ensayo con carga ([11](11_ensayo_motores_N20_Faulhaber.md), 20-nov): M2 hasta 1.37 A sostenidos durante 2 s y 4.25 A de pico (10 ms) con los dos canales, sin fallas. **Falta medir temperatura** con `soak` |
 | P5 | Abierto: pendiente de la prueba de servos con carga |
 | P6, P7, P8 | Abierto |
 
