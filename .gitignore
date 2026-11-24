@@ -32,6 +32,8 @@ fp-info-cache
 # Exported BOM files
 *.xml
 *.csv
+# ...excepto los datos crudos de las pruebas de carga
+!Hardware-Potencia/pruebas_carga/logs/*.csv
 
 # Archived Backups (KiCad 6.0)
 **/*-backups/*.zip
@@ -65,3 +67,7 @@ simulacion/exports/
 simulacion/**/*.raw
 simulacion/**/*.7z
 simulacion/**/*.db
+
+# Python
+__pycache__/
+*.pyc
