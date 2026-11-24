@@ -60,7 +60,7 @@
           "hatch_smoothing_level": 0,
           "hatch_smoothing_value": 0.1,
           "hatch_thickness": 1.0,
-          "min_clearance": 0.8,
+          "min_clearance": 0.7,
           "min_island_area": 10.0,
           "min_thickness": 0.25,
           "pad_connection": 1,
@@ -534,26 +534,15 @@
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.1998,
         "tuning_profile": "",
-        "via_diameter": 0.8,
-        "via_drill": 0.6,
-        "wire_width": 6
-      },
-      {
-        "clearance": 0.15,
-        "name": "ANALOG",
-        "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "priority": 0,
-        "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.15,
-        "tuning_profile": "",
         "via_diameter": 0.4,
-        "via_drill": 0.3
+        "via_drill": 0.3,
+        "wire_width": 6
       },
       {
         "clearance": 0.25,
         "name": "GATE",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "priority": 2,
+        "priority": 0,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.3,
         "tuning_profile": "",
@@ -564,31 +553,9 @@
         "clearance": 0.3,
         "name": "POWER_HI",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "priority": 4,
-        "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 2.0,
-        "tuning_profile": "",
-        "via_diameter": 0.4,
-        "via_drill": 0.3
-      },
-      {
-        "clearance": 0.2,
-        "name": "SENSE",
-        "pcb_color": "rgba(0, 0, 0, 0.000)",
         "priority": 1,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.2,
-        "tuning_profile": "",
-        "via_diameter": 0.4,
-        "via_drill": 0.3
-      },
-      {
-        "clearance": 0.3,
-        "name": "SWITCH",
-        "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "priority": 3,
-        "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 2.2,
+        "track_width": 2.0,
         "tuning_profile": "",
         "via_diameter": 0.4,
         "via_drill": 0.3
@@ -613,11 +580,11 @@
         "pattern": "GND"
       },
       {
-        "netclass": "SWITCH",
+        "netclass": "POWER_HI",
         "pattern": "/SW1"
       },
       {
-        "netclass": "SWITCH",
+        "netclass": "POWER_HI",
         "pattern": "/SW2"
       },
       {
@@ -645,23 +612,23 @@
         "pattern": "/VCC"
       },
       {
-        "netclass": "SENSE",
+        "netclass": "Default",
         "pattern": "/CS_P"
       },
       {
-        "netclass": "SENSE",
+        "netclass": "Default",
         "pattern": "/CS_N"
       },
       {
-        "netclass": "SENSE",
+        "netclass": "Default",
         "pattern": "/ISNS+"
       },
       {
-        "netclass": "SENSE",
+        "netclass": "Default",
         "pattern": "/ISNS-"
       },
       {
-        "netclass": "ANALOG",
+        "netclass": "Default",
         "pattern": "/FB"
       },
       {
@@ -669,31 +636,31 @@
         "pattern": "GNDA"
       },
       {
-        "netclass": "ANALOG",
+        "netclass": "Default",
         "pattern": "/COMP"
       },
       {
-        "netclass": "ANALOG",
+        "netclass": "Default",
         "pattern": "/SS"
       },
       {
-        "netclass": "ANALOG",
+        "netclass": "Default",
         "pattern": "/SLOPE"
       },
       {
-        "netclass": "ANALOG",
+        "netclass": "Default",
         "pattern": "/RT"
       },
       {
-        "netclass": "ANALOG",
+        "netclass": "Default",
         "pattern": "/MODE"
       },
       {
-        "netclass": "ANALOG",
+        "netclass": "Default",
         "pattern": "/DITH"
       },
       {
-        "netclass": "ANALOG",
+        "netclass": "Default",
         "pattern": "/EN"
       },
       {
