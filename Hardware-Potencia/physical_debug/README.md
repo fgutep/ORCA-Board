@@ -17,6 +17,12 @@ Registro del bring-up físico de la PCB de potencia (buck-boost LM5175PWPR, sali
 | Causa raíz | LM5175 con la etapa high-side 2 (BOOT2/SW2) dañada internamente | LM5175 con el pin EN dañado: hunde ≈ 90 µA con energía ([04](04_falla_placa2_y_mejoras.md)) |
 | Reclamo a JLCPCB | ⏳ Abierto el 10-nov-2026, plazo de 2–3 días para enviar evidencia ([03](03_reclamo_jlcpcb.md)) | — |
 
+## Uso como fuente de VM (20 de noviembre de 2026)
+
+Según el equipo, la placa de potencia alimentó VM (J20) de la placa de control a **12 V** durante el primer ensayo de motores, mientras su entrada se barría en vivo de **8 a 24 V**. Carga: hasta ~1.4 A sostenidos (2 s) y picos de 4.25 A (media de 10 ms) con dos motores Faulhaber. Detalle de la carga en [Hardware/physical_debug/11](../../Hardware/physical_debug/11_ensayo_motores_N20_Faulhaber.md).
+
+*Pendiente:* qué placa se usó (1 o 2) y el registro del barrido de entrada (tensión de salida, temperaturas). No se marca ninguna etapa del protocolo como cumplida hasta tener esos datos.
+
 ## Documentos
 
 | Archivo | Contenido |

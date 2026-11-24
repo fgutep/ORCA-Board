@@ -32,8 +32,9 @@ fp-info-cache
 # Exported BOM files
 *.xml
 *.csv
-# ...excepto los datos crudos de las pruebas de carga
+# ...salvo los datos crudos de los ensayos (pruebas de carga y banco de motores)
 !Hardware-Potencia/pruebas_carga/logs/*.csv
+!Hardware/physical_debug/ensayos_motores/**/*.csv
 
 # Archived Backups (KiCad 6.0)
 **/*-backups/*.zip
