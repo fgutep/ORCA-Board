@@ -178,7 +178,7 @@ ORCA-Board/
 La carpeta [`simulacion/`](simulacion/) contiene el modelo LTspice del LM5175 y el barrido de **4 esquinas** (corrida del 29-ago) con escalón de carga de 2 A a 8.4 A a los 24 ms, contrastado con los límites de diseño de 8 A continuos y 15 A de pico en el inductor.
 
 <p align="center">
-  <img src="simulacion/resultados/c2_4esquinas_resumen.png" alt="Tensión de salida, corriente del inductor y corriente de entrada en las 4 esquinas" width="80%">
+  <img src="simulacion/resultados/c2_4esquinas_vout.png" alt="Tensión de salida en las 4 esquinas, con escalón de carga a los 24 ms" width="80%">
 </p>
 
 | VIN | VOUT esperado | VOUT simulado | Desviación | I_L pico | Pin | Pout | Eficiencia |
@@ -192,7 +192,7 @@ Las cuatro esquinas regulan dentro de ±0.01 % y mantienen el pico del inductor 
 
 > **Nota sobre el barrido de 16 esquinas (28-ago).** Fue una corrida preliminar y se descartó como referencia: los cuatro casos de VIN = 6 V no arrancan (VOUT final de −1.55 V) y en los demás el pico del inductor llega a 34–37 A, por encima del límite de 15 A. Ese export tampoco registra la corriente de entrada, así que no permite calcular Pin ni eficiencia. Sus resultados siguen en [`simulacion/resultados/c1_16esquinas_resumen.csv`](simulacion/resultados/c1_16esquinas_resumen.csv) y su gráfica en [`c1_16esquinas_resumen.png`](simulacion/resultados/c1_16esquinas_resumen.png) solo como registro. La referencia vigente es la de 4 esquinas.
 
-Para regenerar la gráfica y el resumen hay que tener el export de LTspice (`simulacion/exports/c2_4esquinas_2026-08-29.txt`, unos 9 GB, no se sube al repo):
+Para regenerar la gráfica y el resumen hay que tener el export de LTspice (`simulacion/exports/c2_4esquinas_2026-08-29.txt`, unos 9 GB):
 
 ```bash
 pip install pandas matplotlib numpy
