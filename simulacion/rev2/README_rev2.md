@@ -17,6 +17,8 @@ Validación en LTspice 26.0.2 de los agregados de la Rev. 2 (ver `PCB_Potencia_S
 | `S5_escalon/` | Escalón de carga 1↔4 A |
 | `RESULTADOS_Sim_Rev2.md` | Resultado final |
 
+La corrida de referencia de la Rev. 1 (barrido de 4 esquinas, `../resultados/c2_4esquinas_resumen.*`) está documentada en el `README.md` de la raíz; el barrido de 16 esquinas quedó como corrida preliminar descartada.
+
 Cada carpeta de banco: `.cir` (fuente), `.log` (con `.meas`), `resumen.md` (tabla pasa/falla del banco), `csv/` (formas de onda de casos al límite o fallidos). `.raw` y `.db` son regenerables.
 
 ## Reglas comunes de los bancos

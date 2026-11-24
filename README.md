@@ -56,6 +56,17 @@ El sistema se divide en **dos PCB de 4 capas** diseñadas en KiCad.
 
 Convertidor **buck-boost LM5175** para el riel de motores: entrada de 6 a 25.2 V, salida ajustable de 6.8 a 25 V y hasta 8 A.
 
+| Función | Componente |
+|---|---|
+| Controlador | U1: LM5175PWPR, controlador buck-boost de 4 interruptores |
+| Interruptores de potencia | Q1–Q4: MOSFET de canal N de 40 V en LFPAK56 (PSMN3R2-40YLD) |
+| Inductor | L1: Pulse PA4344, 4.7 µH |
+| Sensado de corriente | R12: shunt Kelvin de 5 mΩ (2512) |
+| Condensadores de potencia | Entrada: C2, 100 µF · Salida: C19 y C20, 220 µF · Cerámicos de 10 µF: C4, C14 y C15 |
+| Ajuste de VOUT | Divisor de realimentación (R13 49.9 kΩ, R14 1.65 kΩ) y trimmer RV1 |
+| Diodos | D1–D3: Schottky B5819W (bootstrap) |
+| Conectores | J1 y J2: XT60 (entrada de batería y salida al riel de motores) |
+
 ### Mapa de pines (control Rev A)
 
 | Bus / señal | Pines |
@@ -157,17 +168,35 @@ ORCA-Board/
 
 ## Simulación de la etapa de potencia
 
-La carpeta [`simulacion/`](simulacion/) contiene el modelo LTspice del LM5175 y el barrido de **16 esquinas** (VIN de 6, 12, 22.2 y 25.2 V por VOUT de 7.2, 12, 18 y 25 V) con escalón de carga, contrastado con los límites de diseño de 8 A continuos y 15 A de pico en el inductor.
+<table>
+  <tr>
+    <td align="center" width="50%"><img src="docs/img/layout-potencia-top.png" alt="Layout PCB de la placa de potencia, cara superior"><br><sub><b>Layout PCB</b> · placa de potencia, cara superior</sub></td>
+    <td align="center" width="50%"><img src="docs/img/layout-potencia-bottom.png" alt="Layout PCB de la placa de potencia, cara inferior"><br><sub><b>Layout PCB</b> · placa de potencia, cara inferior</sub></td>
+  </tr>
+</table>
+
+La carpeta [`simulacion/`](simulacion/) contiene el modelo LTspice del LM5175 y el barrido de **4 esquinas** (corrida del 29-ago) con escalón de carga de 2 A a 8.4 A a los 24 ms, contrastado con los límites de diseño de 8 A continuos y 15 A de pico en el inductor.
 
 <p align="center">
-  <img src="simulacion/resultados/c1_16esquinas_resumen.png" alt="Tensión de salida y corriente del inductor en las 16 esquinas" width="80%">
+  <img src="simulacion/resultados/c2_4esquinas_resumen.png" alt="Tensión de salida, corriente del inductor y corriente de entrada en las 4 esquinas" width="80%">
 </p>
 
-Para regenerar las gráficas:
+| VIN | VOUT esperado | VOUT simulado | Desviación | I_L pico | Pin | Pout | Eficiencia |
+|---|---|---|---|---|---|---|---|
+| 6 V | 7.2 V | 7.199 V | −0.01 % | 13.0 A | 69.4 W | 60.5 W | 87.2 % |
+| 12 V | 12 V | 11.999 V | −0.01 % | 11.2 A | 109.0 W | 100.8 W | 92.4 % |
+| 22.2 V | 25 V | 24.997 V | −0.01 % | 14.3 A | 219.4 W | 210.0 W | 95.7 % |
+| 25.2 V | 7.2 V | 7.199 V | −0.01 % | 10.8 A | 69.2 W | 60.5 W | 87.4 % |
+
+Las cuatro esquinas regulan dentro de ±0.01 % y mantienen el pico del inductor bajo 15 A (el menor margen es 0.7 A, en 22.2 → 25 V). VOUT simulado, Pin, Pout y eficiencia se miden en la ventana de 27 a 28 ms, con el escalón de carga aplicado. Datos completos en [`simulacion/resultados/c2_4esquinas_resumen.csv`](simulacion/resultados/c2_4esquinas_resumen.csv).
+
+> **Nota sobre el barrido de 16 esquinas (28-ago).** Fue una corrida preliminar y se descartó como referencia: los cuatro casos de VIN = 6 V no arrancan (VOUT final de −1.55 V) y en los demás el pico del inductor llega a 34–37 A, por encima del límite de 15 A. Ese export tampoco registra la corriente de entrada, así que no permite calcular Pin ni eficiencia. Sus resultados siguen en [`simulacion/resultados/c1_16esquinas_resumen.csv`](simulacion/resultados/c1_16esquinas_resumen.csv) y su gráfica en [`c1_16esquinas_resumen.png`](simulacion/resultados/c1_16esquinas_resumen.png) solo como registro. La referencia vigente es la de 4 esquinas.
+
+Para regenerar la gráfica y el resumen hay que tener el export de LTspice (`simulacion/exports/c2_4esquinas_2026-08-29.txt`, unos 9 GB, no se sube al repo):
 
 ```bash
-pip install PyLTSpice pandas matplotlib numpy
-python simulacion/scripts/analizar_c1_16esquinas.py ruta/al/archivo.raw
+pip install pandas matplotlib numpy
+python simulacion/scripts/plot_c2_4esquinas.py
 ```
 
 ## Documentación

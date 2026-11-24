@@ -34,6 +34,9 @@ fp-info-cache
 *.csv
 # ...salvo los datos crudos de los ensayos (pruebas de carga y banco de motores)
 !Hardware-Potencia/pruebas_carga/logs/*.csv
+# ...y los resúmenes de las simulaciones de la etapa de potencia
+!simulacion/resultados/c1_16esquinas_resumen.csv
+!simulacion/resultados/c2_4esquinas_resumen.csv
 !Hardware/physical_debug/ensayos_motores/**/*.csv
 
 # Archived Backups (KiCad 6.0)
