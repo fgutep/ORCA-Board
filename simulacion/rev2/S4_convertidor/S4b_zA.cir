@@ -1,0 +1,131 @@
+S4b convertidor + Q5 + R_bat + L_cable + bleeder + PGOOD, Q6 abierto, 12V->12V 8A en VOUT (CSS=12n)
+* Base: S4a.cir (LM5175 + Q1-Q4 BUK9Y3R5-40E + L + caps). Agregados Rev2: entrada Q5 + salida Q6/Q7 + bleeder. ISNS (N010 N010) igual que S4a.
+XU1 N002 N004 VIN N005 N006 N008 SLOPE SS COMP 0 FB VOUT N010 N010 CSG CS PGOOD SW2 HDRV2 N007 LDRV2 0 VCC VOUT LDRV1 N009 HDRV1 SW1 NC_02 LM5175_TRANS SS_1=0
+R1 N008 0 71.5k
+C1 SLOPE 0 270p
+C2 SS 0 {CSS}
+R2 COMP N011 2.43k
+C3 COMP 0 470p
+C4 N011 0 27n
+C5 N006 0 39n
+R3 0 FB {RFB_BOT}
+R4 FB VOUT {RFB_TOP}
+C6 0 VCC 1u
+R5 VIN N002 200k
+R6 N002 0 66.5k
+* Q1-Q4 = BUK9Y3R5-40E (DRAIN GATE SOURCE)
+XU2 VIN HDRV1 SW1 BUK9Y3R5-40E
+XU3 SW2 LDRV2 N001 BUK9Y3R5-40E
+XU4 VOUT HDRV2 SW2 BUK9Y3R5-40E
+XU5 SW1 LDRV1 N001 BUK9Y3R5-40E
+L1 SW1 SW2 4.7u Ipk=35 Rser=4.8m
+C7 VIN 0 100u Rser=30m
+R8 N001 0 5m
+R9 N001 CS 100
+R10 0 CSG 100
+C9 CS CSG 100p
+D1 VIN N003 1N5819
+R11 N004 N003 10
+C10 N004 0 0.1u
+D2 VCC N009 1N5819
+C11 N009 SW1 0.1u
+D3 VCC N007 1N5819
+C12 N007 SW2 0.1u
+R12 N005 0 93.1k
+C8 VOUT 0 440u Rser=12m
+C13 VOUT 0 10u Rser=3m
+C14 VOUT 0 10u Rser=3m
+C15 VOUT 0 100n Rser=10m
+C16 VIN 0 10u Rser=3m
+C17 VIN 0 100n Rser=10m
+RPG VCC PGOOD 100k
+* carga resistiva en VOUT (S4b: 8 A como S4a; S4c-e: 1G, la carga va en VEXT detras de Q6)
+R7 VOUT 0 {R7_val}
+* bleeder 1.5k en VOUT
+Rbleed VOUT 0 1.5k
+* ---------------- entrada de proteccion: bateria -> R_bat -> L_cable -> F1 -> Q5 -> VIN ----------------
+* rampa de bateria 20 us (README: 200 us). Con Q5 en el camino, rampas >= 100 us dejan la gate de Q5 'pegada' a VIN (V_GS ~ -0.1 V, Q5 apagado por su diodo de cuerpo, Vin ~ 11.1 V) y con 200 us el solver se atasca a 0.2227 ms; con 5 y 20 us Q5 enciende. Las 8 A salen de VIN a traves de Q5.
+V1 NBAT 0 PWL(0 0 20u {VIN_dc})
+Rbat NBAT NB1 20m
+Lcab NB1 NB2 0.5u
+Rf1 NB2 NB3 1.92m
+Vid5 NB3 DQ5 0
+XQ5 DQ5 G5 VIN SiRS4401DP
+Rg5 G5 0 47k
+DZ5 G5 VIN BZ12L1P
+* ---------------- salida: Q6 (P-ch, source en VOUT) + Q7 (gate = PGOOD) ----------------
+XQ7 PGD PGOOD 0 2N7002K
+XQ6 VDR G6 VOUT SiRS4401DP
+Vid VDR VEXT 0
+Rgs G6 VOUT 100k
+DZ6 G6 VOUT BZ12L1P
+Rg6 G6 SW1A {RG}
+S1 SW1A PGD CTL 0 SWM
+* remedio Q6: C_gd 100 nF 0805 en serie con 1N4148W, reposicion Rrst 330k a source, R_G 22k
+Cgd6 VDR M 100n
+Dgd M G6 D1N4148W
+Rrst M VOUT 330k
+Vctl CTL 0 PWL(0 0 {TCLOSE} 0 {TCLOSE+1n} 1 {TOPEN} 1 {TOPEN+1n} 0)
+Cl VEXT CL1 {CL}
+Rcl CL1 0 10m
+Rload VEXT 0 {RLOADX}
+* ---------------- filtros de medida ----------------
+* mediana de 3 muestras a 25 ns (ventana ~50 ns) sobre V(vout): rechaza picos numericos < 25 ns
+Bvm vmed 0 V=max(min(V(vout),delay(V(vout),25n)),min(max(V(vout),delay(V(vout),25n)),delay(V(vout),50n)))
+* valle de I(L1): minimo deslizante de 7 us (28 tomas a 0.25 us); resolucion ~ 0.25 us x di/dt (estimacion: <~0.3 A)
+Bvyl vyl 0 V=min(min(min(min(min(min(min(min(min(min(min(min(min(min(min(min(min(min(min(min(min(min(min(min(min(min(min(I(L1),delay(I(L1),0.25u)),delay(I(L1),0.5u)),delay(I(L1),0.75u)),delay(I(L1),1u)),delay(I(L1),1.25u)),delay(I(L1),1.5u)),delay(I(L1),1.75u)),delay(I(L1),2u)),delay(I(L1),2.25u)),delay(I(L1),2.5u)),delay(I(L1),2.75u)),delay(I(L1),3u)),delay(I(L1),3.25u)),delay(I(L1),3.5u)),delay(I(L1),3.75u)),delay(I(L1),4u)),delay(I(L1),4.25u)),delay(I(L1),4.5u)),delay(I(L1),4.75u)),delay(I(L1),5u)),delay(I(L1),5.25u)),delay(I(L1),5.5u)),delay(I(L1),5.75u)),delay(I(L1),6u)),delay(I(L1),6.25u)),delay(I(L1),6.5u)),delay(I(L1),6.75u))
+* ---------------- modelos ----------------
+.lib C:\Users\Lenovo\AppData\Local\LTspice\lib\cmp\standard.dio
+* BZX84C12L de standard.dio con Cjo=1p (desviacion documentada; la libreria trae 150p)
+.model BZ12L1P D(Is=.6n Rs=.5 Cjo=1p nbv=5 bv=12 Ibv=1m Vpk=12 mfg=OnSemi type=Zener)
+* DZ5 (Q5): idem con Cjo=0; con Cjo=1p el arranque no converge (tolerancia relajada a ~0.142 ms) en esta topologia con el LM5175
+.model BZ12L0 D(Is=.6n Rs=.5 Cjo=0 nbv=5 bv=12 Ibv=1m Vpk=12 mfg=OnSemi type=Zener)
+.model D1N4148W D(Is=2.52n Rs=.568 N=1.752 Cjo=4p M=.4 tt=20n Iave=200m Vpk=75 mfg=OnSemi type=silicon)
+.model SWM SW(Ron=1m Roff=1G Vt=0.5 Vh=0)
+.include ..\LM5175_TRANS_xorfix.lib
+.include ..\modelos\BUK9Y3R5-40E.lib
+.include ..\modelos\SiRS4401DP_PS.TXT
+.include "..\modelos\2n7002k_ps Rev B.lib"
+.ic V(ss)=0 V(comp)=0 V(vout)=0
+.param CSS=12n
+.param VIN_dc=12
+.param VOUT_target=12
+.param RFB_TOP=49.9k
+.param RFB_BOT={RFB_TOP/(VOUT_target/0.8-1)}
+.param R7_val=1.5
+.param RLOADX=1G
+.param CL=1p
+.param RG=22k
+.param TCLOSE=1
+.param TOPEN=2
+.param TEND=0.003
+.tran 0 {TEND} 0 100n
+.options solver=alt method=modtrap
+.save V(vout) V(vext) V(fb) V(ss) V(comp) V(pgood) V(vcc) I(L1) V(vin) I(Vid5) I(Vid) V(g6) V(g5) V(dq5) V(vmed) V(vyl)
+* ---- S4b: regimen (misma ventana que S4a) ----
+.meas TRAN il_max MAX I(L1)
+.meas TRAN il_avg AVG I(L1) FROM 2.4m TO 2.6m
+.meas TRAN il_pk MAX I(L1) FROM 2.4m TO 2.6m
+.meas TRAN il_vy MIN I(L1) FROM 2.4m TO 2.6m
+.meas TRAN vout_reg AVG V(vout) FROM 2.4m TO 2.6m
+.meas TRAN fb_reg AVG V(fb) FROM 2.4m TO 2.6m
+.meas TRAN vout_pp PP V(vout) FROM 2.4m TO 2.6m
+.meas TRAN vout_ppm PP V(vmed) FROM 2.4m TO 2.6m
+.meas TRAN vcc_reg AVG V(vcc) FROM 2.4m TO 2.6m
+.meas TRAN vin_reg AVG V(vin) FROM 2.4m TO 2.6m
+.meas TRAN ibat_avg AVG I(Vid5) FROM 2.4m TO 2.6m
+.meas TRAN il_avg_b AVG I(L1) FROM 2.6m TO 2.8m
+.meas TRAN vout_reg_b AVG V(vout) FROM 2.6m TO 2.8m
+.meas TRAN fb_reg_b AVG V(fb) FROM 2.6m TO 2.8m
+.meas TRAN il_avg_c AVG I(L1) FROM 2.8m TO 3.0m
+.meas TRAN vout_reg_c AVG V(vout) FROM 2.8m TO 3.0m
+.meas TRAN fb_reg_c AVG V(fb) FROM 2.8m TO 3.0m
+.meas TRAN vyl_max_reg MAX V(vyl) FROM 2.4m TO 2.6m
+.meas TRAN t_pgood WHEN V(pgood)=3.5 RISE=1
+.meas TRAN t_vout11 WHEN V(vout)=11 RISE=1
+.meas TRAN vss_end FIND V(ss) AT 3.0m
+.meas TRAN vcomp_end FIND V(comp) AT 3.0m
+.meas TRAN vgs5_reg AVG V(g5)-V(vin) FROM 2.4m TO 2.6m
+.meas TRAN vds5_reg AVG V(dq5)-V(vin) FROM 2.4m TO 2.6m
+
+.end

@@ -1,0 +1,50 @@
+S2b remedio A: snubber RC serie (R_sn, C_sn) de VBUS a GND, peor esquina (R_bat 10 mohm, L_cable 1 uH, 25.2 V)
+.include ../../modelos\SiRS4401DP_PS.TXT
+* Modelos de standard.dio de LTspice. NO son el MM3Z12VT1G ni el LED real.
+* QTLP690C: copia literal. BZX84C12L: copia literal SALVO Cjo=1p (en standard.dio: Cjo=150p); con 150p LTspice no converge
+* en la conduccion del diodo de Q5 (aporta 1.6 % de Cgs=9 nF, despreciable).
+.model BZX84C12L D(Is=.6n Rs=.5 Cjo=1p nbv=5 bv=12 Ibv=1m Vpk=12 mfg=OnSemi type=Zener)
+.model QTLP690C D(Is=1e-22 Rs=6 N=1.5 Cjo=50p Xti=100 Iave=160m Vpk=5 mfg=Fairchild type=LED)
+.model SWH SW(Ron=100u Roff=1G Vt=0.5 Vh=0.1)
+.options solver=alt method=modtrap
+.param VB=25.2 RB=10m LC=1u ESRP=31m RSN=0.05 CSN=220u
+VBAT n0 0 {VB}
+Rbat n0 n1 {RB}
+Lcab n1 n2 {LC}
+* interruptor de conexion (cierra en 1 ms)
+Sc n2 n3a ctl 0 SWH
+Vctl ctl 0 PULSE(0 1 1m 1n 1n 1 2)
+* F1 = 1.92 mohm en frio (Littelfuse 0456025.ER); Vid mide la corriente de F1/Q5
+Rf1 n3a n3 1.92m
+Vid n3 dq 0
+XQ5 dq g vbus SiRS4401DP
+Rg g 0 47k
+DZ g vbus BZX84C12L
+* C_IN: 100u polimero (ESR 31m KEMET A759KS107M1V E031) + 10u (3m) + 100n (10m)
+Cp vbus p1 100u
+Rp p1 0 {ESRP}
+Cc vbus c1 10u
+Rc c1 0 3m
+Cn vbus n1b 100n
+Rn n1b 0 10m
+* snubber RC de VBUS a GND (remedio)
+Csn vbus sn1 {CSN}
+Rsn sn1 0 {RSN}
+DL vbus la QTLP690C
+Rl la 0 4.7k
+.ic V(vbus)=0
+.save V(vbus) V(g) V(dq) I(Vid) I(Csn)
+.tran 0 6m 0 0.25u
+* --- mediciones: V(VBUS) < 32 V; I2t < 11.25 A2s (25 % de 45); |V_GS| <= 15 V ---
+.meas tran vbus_pk max v(vbus) from=1m
+.meas tran ipk max abs(i(Vid)) from=1m
+.meas tran i2t integ i(Vid)*i(Vid) from=1m to=6m
+.meas tran vgs_min min v(g)-v(vbus) from=1m
+.meas tran vgs_max max v(g)-v(vbus) from=1m
+.meas tran vds_fwd max v(dq)-v(vbus) from=1m
+.meas tran vds_rev max v(vbus)-v(dq) from=1m
+.meas tran vbus_end avg v(vbus) from=5m to=6m
+.meas tran isn_pk max abs(i(Csn)) from=1m
+.meas tran isn_i2t integ i(Csn)*i(Csn) from=1m to=6m
+.meas tran vbus_pre find v(vbus) at=0.99m
+.end

@@ -1,0 +1,68 @@
+LTspice 26.0.2 for Windows
+Circuit: C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\S2_hotplug\S2_evidencia_Cjo150p.cir
+Start Time: Mon Nov 16 07:04:38 2026
+Options:solver=alt method=modtrap
+
+.step lc=5e-07
+solver = Alternate
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = modified trap
+Instance "xq5:m1": Length shorter than recommended for a level 3 MOSFET.
+Instance "xq5:m2": Length shorter than recommended for a level 3 MOSFET.
+Direct Newton iteration succeeded in finding operating point.
+
+.step lc=1e-06
+Direct Newton iteration succeeded in finding operating point.
+Total elapsed time: 0.903 seconds.
+
+Files loaded:
+C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\S2_hotplug\S2_evidencia_Cjo150p.cir
+C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\modelos\SiRS4401DP_PS.TXT
+
+
+Measurement: vbus_pk
+  step	MAX(v(vbus) )	FROM	TO
+     1	16.8027954102	0.001	0.006
+     2	18.2227859497	0.001	0.006
+
+Measurement: ipk
+  step	MAX(abs(i(Vid)) )	FROM	TO
+     1	119.714164734	0.001	0.006
+     2	93.5068435669	0.001	0.006
+
+Measurement: i2t
+  step	INTEG(i(Vid)*i(Vid) )	FROM	TO
+     1	0.16925652535	0.001	0.006
+     2	0.148852609238	0.001	0.006
+
+Measurement: vgs_min
+  step	MIN(v(g)-v(vbus) )	FROM	TO
+     1	-11.512597084	0.001	0.006
+     2	-11.5125918388	0.001	0.006
+
+Measurement: vgs_max
+  step	MAX(v(g)-v(vbus) )	FROM	TO
+     1	0.267903804779	0.001	0.006
+     2	0.258909225464	0.001	0.006
+
+Measurement: vds_fwd
+  step	MAX(v(dq)-v(vbus) )	FROM	TO
+     1	0.849148750305	0.001	0.006
+     2	0.826448440552	0.001	0.006
+
+Measurement: vds_rev
+  step	MAX(v(vbus)-v(dq) )	FROM	TO
+     1	14.7840595245	0.001	0.006
+     2	18.899499774	0.001	0.006
+
+Measurement: vbus_end
+  step	AVG(v(vbus) )	FROM	TO
+     1	12.5999660492	0.005	0.006
+     2	12.5999660492	0.005	0.006
+
+Measurement: vbus_pre
+  step	v(vbus) 	at
+     1	1.12625433287e-07	0.00099
+     2	1.12625433287e-07	0.00099

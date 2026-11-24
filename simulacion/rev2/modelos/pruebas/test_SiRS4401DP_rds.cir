@@ -1,0 +1,12 @@
+* SiRS4401DP Rds(on) test (referencia): Id=12A, Vgs=-4.5/-6/-10V, T=27C
+.include "c:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\modelos\SiRS4401DP_PS.TXT"
+Vs s 0 12
+Vg g 0 {12-vgs}
+X1 d g s SiRS4401DP
+I1 d 0 12
+.param vgs=4.5
+.step param vgs list 4.5 6 10
+.tran 0 10u 0 1u
+.meas TRAN rds_mohm find (V(s)-V(d))/12*1000 at 9u
+.meas TRAN vgs_chk find V(s)-V(g) at 9u
+.end

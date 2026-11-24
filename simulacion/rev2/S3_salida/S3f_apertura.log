@@ -1,0 +1,509 @@
+LTspice 26.0.2 for Windows
+Circuit: C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\S3_salida\S3f_apertura.cir
+Start Time: Mon Nov 16 06:12:46 2026
+Options:solver=alt method=modtrap
+
+.step vn=12 ll=5e-07 rst=10000
+solver = Alternate
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = modified trap
+Instance "xq7:M1": Length shorter than recommended for a level 3 MOSFET.
+Instance "xq6:m1": Length shorter than recommended for a level 3 MOSFET.
+Instance "xq6:m2": Length shorter than recommended for a level 3 MOSFET.
+Direct Newton iteration failed to find operating point.
+Starting Gmin stepping
+Gmin stepping succeeded in finding the operating point.
+
+
+.step vn=25 ll=5e-07 rst=10000
+Direct Newton iteration failed to find operating point.
+Starting Gmin stepping
+Gmin stepping succeeded in finding the operating point.
+
+
+.step vn=12 ll=0.001 rst=10000
+Direct Newton iteration failed to find operating point.
+Starting Gmin stepping
+Gmin stepping succeeded in finding the operating point.
+
+
+.step vn=25 ll=0.001 rst=10000
+Direct Newton iteration failed to find operating point.
+Starting Gmin stepping
+Gmin stepping succeeded in finding the operating point.
+
+
+.step vn=12 ll=5e-07 rst=47000
+Direct Newton iteration failed to find operating point.
+Starting Gmin stepping
+Gmin stepping succeeded in finding the operating point.
+
+
+.step vn=25 ll=5e-07 rst=47000
+Direct Newton iteration failed to find operating point.
+Starting Gmin stepping
+Gmin stepping succeeded in finding the operating point.
+
+
+.step vn=12 ll=0.001 rst=47000
+Direct Newton iteration failed to find operating point.
+Starting Gmin stepping
+Gmin stepping succeeded in finding the operating point.
+
+
+.step vn=25 ll=0.001 rst=47000
+Direct Newton iteration failed to find operating point.
+Starting Gmin stepping
+Gmin stepping succeeded in finding the operating point.
+
+
+.step vn=12 ll=5e-07 rst=100000
+Direct Newton iteration failed to find operating point.
+Starting Gmin stepping
+Gmin stepping succeeded in finding the operating point.
+
+
+.step vn=25 ll=5e-07 rst=100000
+Direct Newton iteration failed to find operating point.
+Starting Gmin stepping
+Gmin stepping succeeded in finding the operating point.
+
+
+.step vn=12 ll=0.001 rst=100000
+Direct Newton iteration failed to find operating point.
+Starting Gmin stepping
+Gmin stepping succeeded in finding the operating point.
+
+
+.step vn=25 ll=0.001 rst=100000
+Direct Newton iteration failed to find operating point.
+Starting Gmin stepping
+Gmin stepping succeeded in finding the operating point.
+
+
+.step vn=12 ll=5e-07 rst=220000
+Direct Newton iteration failed to find operating point.
+Starting Gmin stepping
+Gmin stepping succeeded in finding the operating point.
+
+
+.step vn=25 ll=5e-07 rst=220000
+Direct Newton iteration failed to find operating point.
+Starting Gmin stepping
+Gmin stepping succeeded in finding the operating point.
+
+
+.step vn=12 ll=0.001 rst=220000
+Direct Newton iteration failed to find operating point.
+Starting Gmin stepping
+Gmin stepping succeeded in finding the operating point.
+
+
+.step vn=25 ll=0.001 rst=220000
+Direct Newton iteration failed to find operating point.
+Starting Gmin stepping
+Gmin stepping succeeded in finding the operating point.
+
+
+.step vn=12 ll=5e-07 rst=470000
+Direct Newton iteration failed to find operating point.
+Starting Gmin stepping
+Gmin stepping succeeded in finding the operating point.
+
+
+.step vn=25 ll=5e-07 rst=470000
+Direct Newton iteration failed to find operating point.
+Starting Gmin stepping
+Gmin stepping succeeded in finding the operating point.
+
+
+.step vn=12 ll=0.001 rst=470000
+Direct Newton iteration failed to find operating point.
+Starting Gmin stepping
+Gmin stepping succeeded in finding the operating point.
+
+
+.step vn=25 ll=0.001 rst=470000
+Direct Newton iteration failed to find operating point.
+Starting Gmin stepping
+Gmin stepping succeeded in finding the operating point.
+
+Total elapsed time: 84.695 seconds.
+
+Files loaded:
+C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\S3_salida\S3f_apertura.cir
+C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\S3_salida\S3f_common.inc
+C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\modelos\SiRS4401DP_PS.TXT
+C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\modelos\2n7002k_ps Rev B.lib
+C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\S3_salida\soa_S3.inc
+
+
+Measurement: vdsmax
+  step	MAX(V(vint)-V(vdr) )	FROM	TO
+     1	11.9999790027	0.002	0.1
+     2	24.9999560616	0.002	0.1
+     3	21.8507623672	0.002	0.1
+     4	30.7217431068	0.002	0.1
+     5	11.9999790015	0.002	0.1
+     6	24.9999560568	0.002	0.1
+     7	21.8139791489	0.002	0.1
+     8	30.7182440758	0.002	0.1
+     9	11.9999789768	0.002	0.1
+    10	24.9999559443	0.002	0.1
+    11	21.813243866	0.002	0.1
+    12	30.7173733711	0.002	0.1
+    13	11.9999770553	0.002	0.1
+    14	24.999948384	0.002	0.1
+    15	21.8125219345	0.002	0.1
+    16	30.7166652679	0.002	0.1
+    17	11.9999699619	0.002	0.1
+    18	24.9999223864	0.002	0.1
+    19	21.812166214	0.002	0.1
+    20	30.7162246704	0.002	0.1
+
+Measurement: vextmin
+  step	MIN(V(vext) )	FROM	TO
+     1	1.64638720435e-08	0.002	0.1
+     2	6.9412564585e-08	0.002	0.1
+     3	-9.80094337463	0.002	0.1
+     4	-5.68763971329	0.002	0.1
+     5	1.76586070211e-08	0.002	0.1
+     6	7.41948440464e-08	0.002	0.1
+     7	-9.76433849335	0.002	0.1
+     8	-5.68415975571	0.002	0.1
+     9	4.23962660534e-08	0.002	0.1
+    10	1.86693370097e-07	0.002	0.1
+    11	-9.76361083984	0.002	0.1
+    12	-5.6832947731	0.002	0.1
+    13	1.96383007278e-06	0.002	0.1
+    14	7.747024938e-06	0.002	0.1
+    15	-9.7628993988	0.002	0.1
+    16	-5.68259620667	0.002	0.1
+    17	9.05726028577e-06	0.002	0.1
+    18	3.37445562764e-05	0.002	0.1
+    19	-9.76253700256	0.002	0.1
+    20	-5.68215370178	0.002	0.1
+
+Measurement: vintmax
+  step	MAX(V(vint) )	FROM	TO
+     1	12.0535163879	0.002	0.1
+     2	25.0339355469	0.002	0.1
+     3	12.0499820709	0.002	0.1
+     4	25.0350189209	0.002	0.1
+     5	12.0535030365	0.002	0.1
+     6	25.0339183807	0.002	0.1
+     7	12.0497951508	0.002	0.1
+     8	25.034992218	0.002	0.1
+     9	12.0535001755	0.002	0.1
+    10	25.0339126587	0.002	0.1
+    11	12.0497913361	0.002	0.1
+    12	25.0349845886	0.002	0.1
+    13	12.0534973145	0.002	0.1
+    14	25.0339069366	0.002	0.1
+    15	12.049788475	0.002	0.1
+    16	25.0349807739	0.002	0.1
+    17	12.0534954071	0.002	0.1
+    18	25.0339050293	0.002	0.1
+    19	12.0497865677	0.002	0.1
+    20	25.0349788666	0.002	0.1
+
+Measurement: ovs
+  step	(vintmax-VN)/VN*100
+     1	0.445969899495
+     2	0.1357421875
+     3	0.41651725769
+     4	0.140075683594
+     5	0.445858637492
+     6	0.135673522949
+     7	0.41495958964
+     8	0.13996887207
+     9	0.445834795634
+    10	0.135650634766
+    11	0.414927800496
+    12	0.139938354492
+    13	0.445810953776
+    14	0.135627746582
+    15	0.414903958639
+    16	0.139923095703
+    17	0.445795059204
+    18	0.135620117188
+    19	0.414888064067
+    20	0.139915466309
+
+Measurement: i0
+  step	AVG(I(Vid) )	FROM	TO
+     1	7.9726228714	0.0015	0.002
+     2	7.99263525009	0.0015	0.002
+     3	7.9726228714	0.0015	0.002
+     4	7.99263525009	0.0015	0.002
+     5	7.97648811341	0.0015	0.002
+     6	7.99295711518	0.0015	0.002
+     7	7.97648811341	0.0015	0.002
+     8	7.99295711518	0.0015	0.002
+     9	7.97680711746	0.0015	0.002
+    10	7.99295949936	0.0015	0.002
+    11	7.97680711746	0.0015	0.002
+    12	7.99295949936	0.0015	0.002
+    13	7.97694921494	0.0015	0.002
+    14	7.99296045304	0.0015	0.002
+    15	7.97694921494	0.0015	0.002
+    16	7.99296045304	0.0015	0.002
+    17	7.97701072693	0.0015	0.002
+    18	7.99296045304	0.0015	0.002
+    19	7.97701072693	0.0015	0.002
+    20	7.99296045304	0.0015	0.002
+
+Measurement: tgs
+  step	V(g6)-V(vint)=-2.5 
+     1	0.00410756387038
+     2	0.0052965930947
+     3	0.00442957434265
+     4	0.00550304709065
+     5	0.00756163598369
+     6	0.00953813927158
+     7	0.00787553227998
+     8	0.00974291818484
+     9	0.00810993631855
+    10	0.00954812300546
+    11	0.00842384234627
+    12	0.00975292398585
+    13	0.00840862100612
+    14	0.00955092206517
+    15	0.00872253652485
+    16	0.00975572892792
+    17	0.00855042611382
+    18	0.00955200468867
+    19	0.00886434641387
+    20	0.00975681925988
+
+Measurement: toff10
+  step	I(Vid)=0.8 
+     1	0.00433724011084
+     2	0.00569437921357
+     3	0.00473435272937
+     4	0.00593947880989
+     5	0.00779132029826
+     6	0.00993602435668
+     7	0.0081815127329
+     8	0.0101795719779
+     9	0.00833961962803
+    10	0.00994604638567
+    11	0.00872982450092
+    12	0.0101896052343
+    13	0.00863830859474
+    14	0.00994887896367
+    15	0.00902852072911
+    16	0.0101924437666
+    17	0.00878012058773
+    18	0.00994997670301
+    19	0.00917033704336
+    20	0.0101935444031
+
+Measurement: toff90
+  step	I(Vid)=7.2 
+     1	0.00308097708775
+     2	0.00457410094006
+     3	0.00359118608193
+     4	0.00483118440083
+     5	0.00643196812453
+     6	0.00880524830773
+     7	0.00694922231244
+     8	0.00906101065431
+     9	0.00698020270204
+    10	0.00881520000096
+    11	0.00749746630087
+    12	0.00907096891036
+    13	0.00727880501295
+    14	0.00881794463782
+    15	0.00779607862557
+    16	0.00907372266487
+    17	0.00742055536808
+    18	0.00881898312251
+    19	0.00793783583382
+    20	0.0090747671877
+
+Measurement: ppk
+  step	MAX((V(vint)-V(vdr))*I(Vid) )	FROM	TO
+     1	24.1740570633	0.002	0.1
+     2	50.1307533033	0.002	0.1
+     3	59.2990542786	0.002	0.1
+     4	79.3712716732	0.002	0.1
+     5	24.1741557193	0.002	0.1
+     6	50.1307158193	0.002	0.1
+     7	58.8871875842	0.002	0.1
+     8	79.3275248758	0.002	0.1
+     9	24.1741640791	0.002	0.1
+    10	50.1306995597	0.002	0.1
+    11	58.8862215432	0.002	0.1
+    12	79.3253179279	0.002	0.1
+    13	24.1741634807	0.002	0.1
+    14	50.1306926039	0.002	0.1
+    15	58.8849062331	0.002	0.1
+    16	79.3231512326	0.002	0.1
+    17	24.1741607103	0.002	0.1
+    18	50.1306866063	0.002	0.1
+    19	58.8839181875	0.002	0.1
+    20	79.3217559277	0.002	0.1
+
+Measurement: eq6
+  step	INTEG((V(vint)-V(vdr))*I(Vid) )	FROM	TO
+     1	0.0235997743161	0.002	0.1
+     2	0.0523224622285	0.002	0.1
+     3	0.0548808897798	0.002	0.1
+     4	0.0845917327582	0.002	0.1
+     5	0.0264778425412	0.002	0.1
+     6	0.0554090772106	0.002	0.1
+     7	0.057380810007	0.002	0.1
+     8	0.0876150579521	0.002	0.1
+     9	0.026545642356	0.002	0.1
+    10	0.0554261519044	0.002	0.1
+    11	0.0574495877899	0.002	0.1
+    12	0.08763399797	0.002	0.1
+    13	0.02658354085	0.002	0.1
+    14	0.0554390965761	0.002	0.1
+    15	0.0574879400467	0.002	0.1
+    16	0.0876479147455	0.002	0.1
+    17	0.0265993172073	0.002	0.1
+    18	0.0554363128171	0.002	0.1
+    19	0.0575039271852	0.002	0.1
+    20	0.0876455943939	0.002	0.1
+
+Measurement: mxu100u
+  step	MAX(V(u100u) )	FROM	TO
+     1	0.0624439679086	0.002	0.1
+     2	0.0638602823019	0.002	0.1
+     3	0.0645503178239	0.002	0.1
+     4	0.0647701621056	0.002	0.1
+     5	0.0625349581242	0.002	0.1
+     6	0.0639251321554	0.002	0.1
+     7	0.0644465759397	0.002	0.1
+     8	0.0647326931357	0.002	0.1
+     9	0.0625489279628	0.002	0.1
+    10	0.064071893692	0.002	0.1
+    11	0.0644606351852	0.002	0.1
+    12	0.0646988749504	0.002	0.1
+    13	0.0624774992466	0.002	0.1
+    14	0.0640030652285	0.002	0.1
+    15	0.064388141036	0.002	0.1
+    16	0.0648112148046	0.002	0.1
+    17	0.0624768137932	0.002	0.1
+    18	0.0639967173338	0.002	0.1
+    19	0.0643873885274	0.002	0.1
+    20	0.064804777503	0.002	0.1
+
+Measurement: mxu1m
+  step	MAX(V(u1m) )	FROM	TO
+     1	0.0624439679086	0.002	0.1
+     2	0.193299382925	0.002	0.1
+     3	0.232452332973	0.002	0.1
+     4	0.663882613182	0.002	0.1
+     5	0.0625349581242	0.002	0.1
+     6	0.193298697472	0.002	0.1
+     7	0.230397865176	0.002	0.1
+     8	0.663293540478	0.002	0.1
+     9	0.0625489279628	0.002	0.1
+    10	0.19329854846	0.002	0.1
+    11	0.2303776443	0.002	0.1
+    12	0.663188874722	0.002	0.1
+    13	0.0624774992466	0.002	0.1
+    14	0.193298608065	0.002	0.1
+    15	0.23035942018	0.002	0.1
+    16	0.663108170033	0.002	0.1
+    17	0.0624768137932	0.002	0.1
+    18	0.193298459053	0.002	0.1
+    19	0.230346620083	0.002	0.1
+    20	0.663060188293	0.002	0.1
+
+Measurement: mxu10m
+  step	MAX(V(u10m) )	FROM	TO
+     1	0.158269256353	0.002	0.1
+     2	0.802559435368	0.002	0.1
+     3	0.971154332161	0.002	0.1
+     4	1.87555193901	0.002	0.1
+     5	0.158268809319	0.002	0.1
+     6	0.802558839321	0.002	0.1
+     7	0.963196754456	0.002	0.1
+     8	1.87431573868	0.002	0.1
+     9	0.158268809319	0.002	0.1
+    10	0.802558302879	0.002	0.1
+    11	0.963133454323	0.002	0.1
+    12	1.87414741516	0.002	0.1
+    13	0.158268272877	0.002	0.1
+    14	0.802557885647	0.002	0.1
+    15	0.963073730469	0.002	0.1
+    16	1.8740105629	0.002	0.1
+    17	0.158268034458	0.002	0.1
+    18	0.802557706833	0.002	0.1
+    19	0.963031411171	0.002	0.1
+    20	1.8739284277	0.002	0.1
+
+Measurement: mxu40m
+  step	MAX(V(u40m) )	FROM	TO
+     1	0.629433512688	0.002	0.1
+     2	1.6635787487	0.002	0.1
+     3	2.00125360489	0.002	0.1
+     4	3.07779550552	0.002	0.1
+     5	0.629434525967	0.002	0.1
+     6	1.66357719898	0.002	0.1
+     7	1.98674798012	0.002	0.1
+     8	3.07596731186	0.002	0.1
+     9	0.629435241222	0.002	0.1
+    10	1.66357672215	0.002	0.1
+    11	1.98668575287	0.002	0.1
+    12	3.07576537132	0.002	0.1
+    13	0.629434943199	0.002	0.1
+    14	1.66357636452	0.002	0.1
+    15	1.98661530018	0.002	0.1
+    16	3.0755982399	0.002	0.1
+    17	0.629434466362	0.002	0.1
+    18	1.66357600689	0.002	0.1
+    19	1.98656833172	0.002	0.1
+    20	3.0754942894	0.002	0.1
+
+Measurement: mxudc
+  step	MAX(V(udc) )	FROM	TO
+     1	0.79548561573	0.002	0.1
+     2	2.22284126282	0.002	0.1
+     3	2.67507529259	0.002	0.1
+     4	4.15511083603	0.002	0.1
+     5	0.795485317707	0.002	0.1
+     6	2.22283864021	0.002	0.1
+     7	2.65564799309	0.002	0.1
+     8	4.15269184113	0.002	0.1
+     9	0.795485258102	0.002	0.1
+    10	2.22283768654	0.002	0.1
+    11	2.65556287766	0.002	0.1
+    12	4.15244197845	0.002	0.1
+    13	0.795483469963	0.002	0.1
+    14	2.22283554077	0.002	0.1
+    15	2.65546751022	0.002	0.1
+    16	4.15223121643	0.002	0.1
+    17	0.795484006405	0.002	0.1
+    18	2.22283577919	0.002	0.1
+    19	2.65540385246	0.002	0.1
+    20	4.15210103989	0.002	0.1
+
+Measurement: vmtopen
+  step	MAX(V(m)-V(vint) )	FROM	TO
+     1	0	0.002	0.1
+     2	-1.90734863281e-06	0.002	0.1
+     3	0	0.002	0.1
+     4	-1.90734863281e-06	0.002	0.1
+     5	-2.86102294922e-06	0.002	0.1
+     6	-7.62939453125e-06	0.002	0.1
+     7	-2.86102294922e-06	0.002	0.1
+     8	-7.62939453125e-06	0.002	0.1
+     9	-0.00160980224609	0.002	0.1
+    10	-0.00349617004395	0.002	0.1
+    11	-0.00157356262207	0.002	0.1
+    12	-0.00347137451172	0.002	0.1
+    13	-0.284691810608	0.002	0.1
+    14	-0.539163589478	0.002	0.1
+    15	-0.282230377197	0.002	0.1
+    16	-0.537647247314	0.002	0.1
+    17	-2.82816314697	0.002	0.1
+    18	-5.05874252319	0.002	0.1
+    19	-2.81769752502	0.002	0.1
+    20	-5.05249595642	0.002	0.1

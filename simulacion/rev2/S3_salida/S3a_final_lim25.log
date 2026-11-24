@@ -1,0 +1,207 @@
+LTspice 26.0.2 for Windows
+Circuit: C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\S3_salida\S3a_final_lim25.cir
+Start Time: Mon Nov 16 02:13:29 2026
+Options:solver=alt method=modtrap
+
+.step vn=24.99 cl=0.00015
+solver = Alternate
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = modified trap
+Instance "xq7:M1": Length shorter than recommended for a level 3 MOSFET.
+Instance "xq6:m1": Length shorter than recommended for a level 3 MOSFET.
+Instance "xq6:m2": Length shorter than recommended for a level 3 MOSFET.
+Direct Newton iteration succeeded in finding operating point.
+
+.step vn=25 cl=0.00015
+Direct Newton iteration succeeded in finding operating point.
+
+.step vn=24.99 cl=0.00022
+Direct Newton iteration succeeded in finding operating point.
+
+.step vn=25 cl=0.00022
+Direct Newton iteration succeeded in finding operating point.
+
+.step vn=24.99 cl=0.00033
+Direct Newton iteration succeeded in finding operating point.
+
+.step vn=25 cl=0.00033
+Direct Newton iteration succeeded in finding operating point.
+Total elapsed time: 40.437 seconds.
+
+Files loaded:
+C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\S3_salida\S3a_final_lim25.cir
+C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\S3_salida\common_S3.inc
+C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\modelos\SiRS4401DP_PS.TXT
+C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\modelos\2n7002k_ps Rev B.lib
+C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\S3_salida\soa_S3.inc
+
+
+Measurement: ipk
+  step	MAX(I(Vid) )	FROM	TO
+     1	9.16517353058	0.001	0.1
+     2	9.16572570801	0.001	0.1
+     3	9.73473548889	0.001	0.1
+     4	9.73558235168	0.001	0.1
+     5	10.629570961	0.001	0.1
+     6	10.6308479309	0.001	0.1
+
+Measurement: ilim
+  step	MAX(I(Vsns) )	FROM	TO
+     1	9.19711971283	0.001	0.1
+     2	9.19769763947	0.001	0.1
+     3	9.76764774323	0.001	0.1
+     4	9.76857089996	0.001	0.1
+     5	10.6617908478	0.001	0.1
+     6	10.6630163193	0.001	0.1
+
+Measurement: vmin
+  step	MIN(V(vint) )	FROM	TO
+     1	24.9146728516	0.001	0.1
+     2	24.9246387482	0.001	0.1
+     3	24.8853225708	0.001	0.1
+     4	24.895275116	0.001	0.1
+     5	24.843667984	0.001	0.1
+     6	24.8535995483	0.001	0.1
+
+Measurement: drop
+  step	(VN-vmin)/VN*100
+     1	0.301429165416
+     2	0.301445007324
+     3	0.418877267704
+     4	0.418899536133
+     5	0.58556228888
+     6	0.585601806641
+
+Measurement: fbmin
+  step	MIN(V(fb) )	FROM	TO
+     1	0.797588706017	0.001	0.1
+     2	0.797588586807	0.001	0.1
+     3	0.796649158001	0.001	0.1
+     4	0.796648979187	0.001	0.1
+     5	0.795315742493	0.001	0.1
+     6	0.795315444469	0.001	0.1
+Measurement "pgf1" FAIL'ed
+Measurement "pgf2" FAIL'ed
+Measurement "pgf3" FAIL'ed
+Measurement "pgf4" FAIL'ed
+Measurement "pgf5" FAIL'ed
+
+Measurement: gon1
+  step	V(g6)-V(vint)=-2.5 
+     1	0.00208101427511
+     2	0.00208079189535
+     3	0.00189711986041
+     4	0.00189684335409
+     5	0.00162369884837
+     6	0.00162316945855
+Measurement "goff1" FAIL'ed
+Measurement "gon2" FAIL'ed
+Measurement "goff2" FAIL'ed
+Measurement "gon3" FAIL'ed
+Measurement "goff3" FAIL'ed
+Measurement "gon4" FAIL'ed
+Measurement "goff4" FAIL'ed
+Measurement "gon5" FAIL'ed
+Measurement "goff5" FAIL'ed
+Measurement "gon6" FAIL'ed
+
+Measurement: tfull
+  step	V(vint)-V(vdr)=0.5 
+     1	0.00380534335744
+     2	0.00380508518279
+     3	0.00380769463984
+     4	0.00380743597897
+     5	0.00381115998337
+     6	0.00381090116188
+
+Measurement: ppk
+  step	MAX((V(vint)-V(vdr))*I(Vid) )	FROM	TO
+     1	69.943934247	0.001	0.1
+     2	69.9819829686	0.001	0.1
+     3	80.4471991832	0.001	0.1
+     4	80.4951762377	0.001	0.1
+     5	98.4808907396	0.001	0.1
+     6	98.5471468793	0.001	0.1
+
+Measurement: eq6
+  step	INTEG((V(vint)-V(vdr))*I(Vid) )	FROM	TO
+     1	0.142364717143	0.001	0.1
+     2	0.142430895438	0.001	0.1
+     3	0.16408684445	0.001	0.1
+     4	0.164170427364	0.001	0.1
+     5	0.19816659076	0.001	0.1
+     6	0.198277464608	0.001	0.1
+
+Measurement: teq
+  step	eq6/ppk
+     1	0.00203541191492
+     2	0.00203525092311
+     3	0.00203968374432
+     4	0.00203950640321
+     5	0.00201223393972
+     6	0.00201200614008
+
+Measurement: mxu100u
+  step	MAX(V(u100u) )	FROM	TO
+     1	0.0728326663375	0.001	0.1
+     2	0.0723716542125	0.001	0.1
+     3	0.077267460525	0.001	0.1
+     4	0.0775892734528	0.001	0.1
+     5	0.0842608958483	0.001	0.1
+     6	0.0842087119818	0.001	0.1
+
+Measurement: mxu1m
+  step	MAX(V(u1m) )	FROM	TO
+     1	0.423117607832	0.001	0.1
+     2	0.423868596554	0.001	0.1
+     3	0.585182249546	0.001	0.1
+     4	0.586241304874	0.001	0.1
+     5	0.84475249052	0.001	0.1
+     6	0.846299111843	0.001	0.1
+
+Measurement: mxu10m
+  step	MAX(V(u10m) )	FROM	TO
+     1	1.37285172939	0.001	0.1
+     2	1.37438642979	0.001	0.1
+     3	1.79473114014	0.001	0.1
+     4	1.79701268673	0.001	0.1
+     5	2.58974218369	0.001	0.1
+     6	2.59311079979	0.001	0.1
+
+Measurement: mxu40m
+  step	MAX(V(u40m) )	FROM	TO
+     1	2.47841787338	0.001	0.1
+     2	2.48022651672	0.001	0.1
+     3	2.93280959129	0.001	0.1
+     4	2.93514490128	0.001	0.1
+     5	4.19118022919	0.001	0.1
+     6	4.19582939148	0.001	0.1
+
+Measurement: mxudc
+  step	MAX(V(udc) )	FROM	TO
+     1	3.31975388527	0.001	0.1
+     2	3.32219958305	0.001	0.1
+     3	3.97901034355	0.001	0.1
+     4	3.98266077042	0.001	0.1
+     5	5.6136007309	0.001	0.1
+     6	5.61959075928	0.001	0.1
+
+Measurement: vfin
+  step	AVG(V(vint) )	FROM	TO
+     1	24.9740428925	0.09	0.1
+     2	24.9840431213	0.09	0.1
+     3	24.9740428925	0.09	0.1
+     4	24.9840431213	0.09	0.1
+     5	24.9740428925	0.09	0.1
+     6	24.9840431213	0.09	0.1
+
+Measurement: vgsfin
+  step	AVG(V(g6)-V(vint) )	FROM	TO
+     1	-11.9038972855	0.09	0.1
+     2	-11.9040193558	0.09	0.1
+     3	-11.9038972855	0.09	0.1
+     4	-11.9040193558	0.09	0.1
+     5	-11.9038972855	0.09	0.1
+     6	-11.9040193558	0.09	0.1

@@ -1,0 +1,234 @@
+* S5 escalon de carga 1->4 A (t1=3.5 ms) y 4->1 A (t2=5.0 ms), 12V->12V, valores as-built (base S4a.cir). CSS=12n para iterar (real 120n)
+XU1 N002 N004 VIN N005 N006 N008 SLOPE SS COMP 0 FB VOUT N010 N010 CSG CS PGOOD SW2 HDRV2 N007 LDRV2 0 VCC VOUT LDRV1 N009 HDRV1 SW1 NC_02 LM5175_TRANS SS_1=0
+R1 N008 0 71.5k
+C1 SLOPE 0 270p
+C2 SS 0 {CSS}
+R2 COMP N011 2.43k
+C3 COMP 0 470p
+C4 N011 0 27n
+C5 N006 0 39n
+R3 0 FB {RFB_BOT}
+R4 FB VOUT {RFB_TOP}
+C6 0 VCC 1u
+V1 VIN 0 PWL(0 0 200u {VIN_dc})
+R5 VIN N002 200k
+R6 N002 0 66.5k
+* Q1-Q4 = BUK9Y3R5-40E (DRAIN GATE SOURCE)
+XU2 VIN HDRV1 SW1 BUK9Y3R5-40E
+XU3 SW2 LDRV2 N001 BUK9Y3R5-40E
+XU4 VOUT HDRV2 SW2 BUK9Y3R5-40E
+XU5 SW1 LDRV1 N001 BUK9Y3R5-40E
+L1 SW1 SW2 4.7u Ipk=35 Rser=4.8m
+* C7: polimero 100u Rser=30m, NO RESPALDADO (pendiente datasheet)
+C7 VIN 0 100u Rser=30m
+* Carga: R7 12 ohm fija (=1 A a 12 V) + fuente de corriente PWL I1 (+3 A entre T1 y T2, flancos de 1 us) => 1 A -> 4 A -> 1 A
+R7 VOUT 0 {R7_val}
+I1 VOUT 0 PWL(0 0 {T1} 0 {T1+EDGE} 3 {T2} 3 {T2+EDGE} 0)
+* C8: 2x220u polimero, ESR combinada 12m (igual que S4a: 440u / Rser=12m, sin .step)
+C8 VOUT 0 440u Rser=12m
+R8 N001 0 5m
+R9 N001 CS 100
+R10 0 CSG 100
+C9 CS CSG 100p
+* D1-D3 = B5819W (Schottky 40V 1A) -> 1N5819 de standard.dio
+D1 VIN N003 1N5819
+R11 N004 N003 10
+C10 N004 0 0.1u
+D2 VCC N009 1N5819
+C11 N009 SW1 0.1u
+D3 VCC N007 1N5819
+C12 N007 SW2 0.1u
+R12 N005 0 93.1k
+C13 VOUT 0 10u Rser=3m
+C14 VOUT 0 10u Rser=3m
+C15 VOUT 0 100n Rser=10m
+C16 VIN 0 10u Rser=3m
+C17 VIN 0 100n Rser=10m
+* PGOOD: pull-up 100k a VCC (solo observacion)
+RPG VCC PGOOD 100k
+* Sondas de medida (buffer ideal E1, no cargan VOUT): VF50 = RC 50 ns (NO es una mediana); VSL = RC 10 us (bandas de asentamiento y conteo de oscilaciones)
+E1 PB 0 VOUT 0 1
+RP1 PB VF50 50
+CP1 VF50 0 1n
+RP2 PB VSL 1k
+CP2 VSL 0 10n
+.lib C:\Users\Lenovo\AppData\Local\LTspice\lib\cmp\standard.dio
+.include ..\LM5175_TRANS_xorfix.lib
+.include ..\modelos\BUK9Y3R5-40E.lib
+.ic V(ss)=0 V(comp)=0 V(vout)=0
+.param CSS=12n
+.param VIN_dc=12
+.param VOUT_target=12
+.param RFB_TOP=49.9k
+.param RFB_BOT={RFB_TOP/(VOUT_target/0.8-1)}
+.param R7_val=12
+.param T1=3.5m
+.param T2=5.0m
+.param EDGE=1u
+.tran 0 6.5m 0 100n
+.options solver=alt method=modtrap
+.save V(vout) V(vf50) V(vsl) V(fb) V(ss) V(comp) V(pgood) V(vcc) V(vin) I(L1) I(R7) I(I1)
+.meas TRAN il_max MAX I(L1)
+* ---- evento 1: 1->4 A en 3.5m ----
+.meas TRAN vpre1a AVG V(vout) FROM 3.1m TO 3.3m
+.meas TRAN vpre1 AVG V(vout) FROM 3.3m TO 3.5m
+.meas TRAN vpre1_drift PARAM (vpre1-vpre1a)*1000
+.meas TRAN vmaxpre1_f MAX V(vf50) FROM 3.3m TO 3.5m
+.meas TRAN vminpre1_f MIN V(vf50) FROM 3.3m TO 3.5m
+.meas TRAN vmaxpre1_r MAX V(vout) FROM 3.3m TO 3.5m
+.meas TRAN vminpre1_r MIN V(vout) FROM 3.3m TO 3.5m
+.meas TRAN ilavg_pre1 AVG I(L1) FROM 3.3m TO 3.5m
+.meas TRAN ilmin_pre1 MIN I(L1) FROM 3.3m TO 3.5m
+.meas TRAN ilmax_pre1 MAX I(L1) FROM 3.3m TO 3.5m
+.meas TRAN iload_pre1 AVG I(R7)+I(I1) FROM 3.3m TO 3.5m
+.meas TRAN vmin1_f MIN V(vf50) FROM 3.5m TO 5.0m
+.meas TRAN vmax1_f MAX V(vf50) FROM 3.5m TO 5.0m
+.meas TRAN vmin1_r MIN V(vout) FROM 3.5m TO 5.0m
+.meas TRAN vmax1_r MAX V(vout) FROM 3.5m TO 5.0m
+.meas TRAN dnu1 PARAM (vpre1-vmin1_f)/vpre1*100
+.meas TRAN dov1 PARAM (vmax1_f-vpre1)/vpre1*100
+.meas TRAN dnu1_r PARAM (vpre1-vmin1_r)/vpre1*100
+.meas TRAN dov1_r PARAM (vmax1_r-vpre1)/vpre1*100
+.meas TRAN il_pk_ev1 MAX I(L1) FROM 3.5m TO 5.0m
+.meas TRAN il_vy_ev1 MIN I(L1) FROM 3.5m TO 5.0m
+.meas TRAN vend1 AVG V(vout) FROM 4.8m TO 5.0m
+.meas TRAN vend1_sl AVG V(vsl) FROM 4.8m TO 5.0m
+.meas TRAN vend1_shift PARAM (vend1-vpre1)/vpre1*100
+.meas TRAN iload_end1 AVG I(R7)+I(I1) FROM 4.8m TO 5.0m
+.meas TRAN ilavg_end1 AVG I(L1) FROM 4.8m TO 5.0m
+.meas TRAN ilmin_end1 MIN I(L1) FROM 4.8m TO 5.0m
+.meas TRAN ilmax_end1 MAX I(L1) FROM 4.8m TO 5.0m
+.meas TRAN x1_b20hi_1 WHEN V(vsl)=vpre1*1.0200 CROSS=1 TD=3.5m
+.meas TRAN x1_b20hi_2 WHEN V(vsl)=vpre1*1.0200 CROSS=2 TD=3.5m
+.meas TRAN x1_b20hi_3 WHEN V(vsl)=vpre1*1.0200 CROSS=3 TD=3.5m
+.meas TRAN x1_b20hi_4 WHEN V(vsl)=vpre1*1.0200 CROSS=4 TD=3.5m
+.meas TRAN x1_b20hi_5 WHEN V(vsl)=vpre1*1.0200 CROSS=5 TD=3.5m
+.meas TRAN x1_b20hi_6 WHEN V(vsl)=vpre1*1.0200 CROSS=6 TD=3.5m
+.meas TRAN x1_b20hi_7 WHEN V(vsl)=vpre1*1.0200 CROSS=7 TD=3.5m
+.meas TRAN x1_b20hi_8 WHEN V(vsl)=vpre1*1.0200 CROSS=8 TD=3.5m
+.meas TRAN x1_b20lo_1 WHEN V(vsl)=vpre1*0.9800 CROSS=1 TD=3.5m
+.meas TRAN x1_b20lo_2 WHEN V(vsl)=vpre1*0.9800 CROSS=2 TD=3.5m
+.meas TRAN x1_b20lo_3 WHEN V(vsl)=vpre1*0.9800 CROSS=3 TD=3.5m
+.meas TRAN x1_b20lo_4 WHEN V(vsl)=vpre1*0.9800 CROSS=4 TD=3.5m
+.meas TRAN x1_b20lo_5 WHEN V(vsl)=vpre1*0.9800 CROSS=5 TD=3.5m
+.meas TRAN x1_b20lo_6 WHEN V(vsl)=vpre1*0.9800 CROSS=6 TD=3.5m
+.meas TRAN x1_b20lo_7 WHEN V(vsl)=vpre1*0.9800 CROSS=7 TD=3.5m
+.meas TRAN x1_b20lo_8 WHEN V(vsl)=vpre1*0.9800 CROSS=8 TD=3.5m
+.meas TRAN x1_b10hi_1 WHEN V(vsl)=vpre1*1.0100 CROSS=1 TD=3.5m
+.meas TRAN x1_b10hi_2 WHEN V(vsl)=vpre1*1.0100 CROSS=2 TD=3.5m
+.meas TRAN x1_b10hi_3 WHEN V(vsl)=vpre1*1.0100 CROSS=3 TD=3.5m
+.meas TRAN x1_b10hi_4 WHEN V(vsl)=vpre1*1.0100 CROSS=4 TD=3.5m
+.meas TRAN x1_b10hi_5 WHEN V(vsl)=vpre1*1.0100 CROSS=5 TD=3.5m
+.meas TRAN x1_b10hi_6 WHEN V(vsl)=vpre1*1.0100 CROSS=6 TD=3.5m
+.meas TRAN x1_b10hi_7 WHEN V(vsl)=vpre1*1.0100 CROSS=7 TD=3.5m
+.meas TRAN x1_b10hi_8 WHEN V(vsl)=vpre1*1.0100 CROSS=8 TD=3.5m
+.meas TRAN x1_b10lo_1 WHEN V(vsl)=vpre1*0.9900 CROSS=1 TD=3.5m
+.meas TRAN x1_b10lo_2 WHEN V(vsl)=vpre1*0.9900 CROSS=2 TD=3.5m
+.meas TRAN x1_b10lo_3 WHEN V(vsl)=vpre1*0.9900 CROSS=3 TD=3.5m
+.meas TRAN x1_b10lo_4 WHEN V(vsl)=vpre1*0.9900 CROSS=4 TD=3.5m
+.meas TRAN x1_b10lo_5 WHEN V(vsl)=vpre1*0.9900 CROSS=5 TD=3.5m
+.meas TRAN x1_b10lo_6 WHEN V(vsl)=vpre1*0.9900 CROSS=6 TD=3.5m
+.meas TRAN x1_b10lo_7 WHEN V(vsl)=vpre1*0.9900 CROSS=7 TD=3.5m
+.meas TRAN x1_b10lo_8 WHEN V(vsl)=vpre1*0.9900 CROSS=8 TD=3.5m
+.meas TRAN x1_b05hi_1 WHEN V(vsl)=vpre1*1.0050 CROSS=1 TD=3.5m
+.meas TRAN x1_b05hi_2 WHEN V(vsl)=vpre1*1.0050 CROSS=2 TD=3.5m
+.meas TRAN x1_b05hi_3 WHEN V(vsl)=vpre1*1.0050 CROSS=3 TD=3.5m
+.meas TRAN x1_b05hi_4 WHEN V(vsl)=vpre1*1.0050 CROSS=4 TD=3.5m
+.meas TRAN x1_b05hi_5 WHEN V(vsl)=vpre1*1.0050 CROSS=5 TD=3.5m
+.meas TRAN x1_b05hi_6 WHEN V(vsl)=vpre1*1.0050 CROSS=6 TD=3.5m
+.meas TRAN x1_b05hi_7 WHEN V(vsl)=vpre1*1.0050 CROSS=7 TD=3.5m
+.meas TRAN x1_b05hi_8 WHEN V(vsl)=vpre1*1.0050 CROSS=8 TD=3.5m
+.meas TRAN x1_b05lo_1 WHEN V(vsl)=vpre1*0.9950 CROSS=1 TD=3.5m
+.meas TRAN x1_b05lo_2 WHEN V(vsl)=vpre1*0.9950 CROSS=2 TD=3.5m
+.meas TRAN x1_b05lo_3 WHEN V(vsl)=vpre1*0.9950 CROSS=3 TD=3.5m
+.meas TRAN x1_b05lo_4 WHEN V(vsl)=vpre1*0.9950 CROSS=4 TD=3.5m
+.meas TRAN x1_b05lo_5 WHEN V(vsl)=vpre1*0.9950 CROSS=5 TD=3.5m
+.meas TRAN x1_b05lo_6 WHEN V(vsl)=vpre1*0.9950 CROSS=6 TD=3.5m
+.meas TRAN x1_b05lo_7 WHEN V(vsl)=vpre1*0.9950 CROSS=7 TD=3.5m
+.meas TRAN x1_b05lo_8 WHEN V(vsl)=vpre1*0.9950 CROSS=8 TD=3.5m
+* ---- evento 2: 4->1 A en 5.0m ----
+.meas TRAN vpre2a AVG V(vout) FROM 4.6m TO 4.8m
+.meas TRAN vpre2 AVG V(vout) FROM 4.8m TO 5.0m
+.meas TRAN vpre2_drift PARAM (vpre2-vpre2a)*1000
+.meas TRAN vmaxpre2_f MAX V(vf50) FROM 4.8m TO 5.0m
+.meas TRAN vminpre2_f MIN V(vf50) FROM 4.8m TO 5.0m
+.meas TRAN vmaxpre2_r MAX V(vout) FROM 4.8m TO 5.0m
+.meas TRAN vminpre2_r MIN V(vout) FROM 4.8m TO 5.0m
+.meas TRAN ilavg_pre2 AVG I(L1) FROM 4.8m TO 5.0m
+.meas TRAN ilmin_pre2 MIN I(L1) FROM 4.8m TO 5.0m
+.meas TRAN ilmax_pre2 MAX I(L1) FROM 4.8m TO 5.0m
+.meas TRAN iload_pre2 AVG I(R7)+I(I1) FROM 4.8m TO 5.0m
+.meas TRAN vmin2_f MIN V(vf50) FROM 5.0m TO 6.5m
+.meas TRAN vmax2_f MAX V(vf50) FROM 5.0m TO 6.5m
+.meas TRAN vmin2_r MIN V(vout) FROM 5.0m TO 6.5m
+.meas TRAN vmax2_r MAX V(vout) FROM 5.0m TO 6.5m
+.meas TRAN dnu2 PARAM (vpre2-vmin2_f)/vpre2*100
+.meas TRAN dov2 PARAM (vmax2_f-vpre2)/vpre2*100
+.meas TRAN dnu2_r PARAM (vpre2-vmin2_r)/vpre2*100
+.meas TRAN dov2_r PARAM (vmax2_r-vpre2)/vpre2*100
+.meas TRAN il_pk_ev2 MAX I(L1) FROM 5.0m TO 6.5m
+.meas TRAN il_vy_ev2 MIN I(L1) FROM 5.0m TO 6.5m
+.meas TRAN vend2 AVG V(vout) FROM 6.3m TO 6.5m
+.meas TRAN vend2_sl AVG V(vsl) FROM 6.3m TO 6.5m
+.meas TRAN vend2_shift PARAM (vend2-vpre2)/vpre2*100
+.meas TRAN iload_end2 AVG I(R7)+I(I1) FROM 6.3m TO 6.5m
+.meas TRAN ilavg_end2 AVG I(L1) FROM 6.3m TO 6.5m
+.meas TRAN ilmin_end2 MIN I(L1) FROM 6.3m TO 6.5m
+.meas TRAN ilmax_end2 MAX I(L1) FROM 6.3m TO 6.5m
+.meas TRAN x2_b20hi_1 WHEN V(vsl)=vpre2*1.0200 CROSS=1 TD=5.0m
+.meas TRAN x2_b20hi_2 WHEN V(vsl)=vpre2*1.0200 CROSS=2 TD=5.0m
+.meas TRAN x2_b20hi_3 WHEN V(vsl)=vpre2*1.0200 CROSS=3 TD=5.0m
+.meas TRAN x2_b20hi_4 WHEN V(vsl)=vpre2*1.0200 CROSS=4 TD=5.0m
+.meas TRAN x2_b20hi_5 WHEN V(vsl)=vpre2*1.0200 CROSS=5 TD=5.0m
+.meas TRAN x2_b20hi_6 WHEN V(vsl)=vpre2*1.0200 CROSS=6 TD=5.0m
+.meas TRAN x2_b20hi_7 WHEN V(vsl)=vpre2*1.0200 CROSS=7 TD=5.0m
+.meas TRAN x2_b20hi_8 WHEN V(vsl)=vpre2*1.0200 CROSS=8 TD=5.0m
+.meas TRAN x2_b20hi_last WHEN V(vsl)=vpre2*1.0200 CROSS=LAST TD=5.0m
+.meas TRAN x2_b20lo_1 WHEN V(vsl)=vpre2*0.9800 CROSS=1 TD=5.0m
+.meas TRAN x2_b20lo_2 WHEN V(vsl)=vpre2*0.9800 CROSS=2 TD=5.0m
+.meas TRAN x2_b20lo_3 WHEN V(vsl)=vpre2*0.9800 CROSS=3 TD=5.0m
+.meas TRAN x2_b20lo_4 WHEN V(vsl)=vpre2*0.9800 CROSS=4 TD=5.0m
+.meas TRAN x2_b20lo_5 WHEN V(vsl)=vpre2*0.9800 CROSS=5 TD=5.0m
+.meas TRAN x2_b20lo_6 WHEN V(vsl)=vpre2*0.9800 CROSS=6 TD=5.0m
+.meas TRAN x2_b20lo_7 WHEN V(vsl)=vpre2*0.9800 CROSS=7 TD=5.0m
+.meas TRAN x2_b20lo_8 WHEN V(vsl)=vpre2*0.9800 CROSS=8 TD=5.0m
+.meas TRAN x2_b20lo_last WHEN V(vsl)=vpre2*0.9800 CROSS=LAST TD=5.0m
+.meas TRAN x2_b10hi_1 WHEN V(vsl)=vpre2*1.0100 CROSS=1 TD=5.0m
+.meas TRAN x2_b10hi_2 WHEN V(vsl)=vpre2*1.0100 CROSS=2 TD=5.0m
+.meas TRAN x2_b10hi_3 WHEN V(vsl)=vpre2*1.0100 CROSS=3 TD=5.0m
+.meas TRAN x2_b10hi_4 WHEN V(vsl)=vpre2*1.0100 CROSS=4 TD=5.0m
+.meas TRAN x2_b10hi_5 WHEN V(vsl)=vpre2*1.0100 CROSS=5 TD=5.0m
+.meas TRAN x2_b10hi_6 WHEN V(vsl)=vpre2*1.0100 CROSS=6 TD=5.0m
+.meas TRAN x2_b10hi_7 WHEN V(vsl)=vpre2*1.0100 CROSS=7 TD=5.0m
+.meas TRAN x2_b10hi_8 WHEN V(vsl)=vpre2*1.0100 CROSS=8 TD=5.0m
+.meas TRAN x2_b10hi_last WHEN V(vsl)=vpre2*1.0100 CROSS=LAST TD=5.0m
+.meas TRAN x2_b10lo_1 WHEN V(vsl)=vpre2*0.9900 CROSS=1 TD=5.0m
+.meas TRAN x2_b10lo_2 WHEN V(vsl)=vpre2*0.9900 CROSS=2 TD=5.0m
+.meas TRAN x2_b10lo_3 WHEN V(vsl)=vpre2*0.9900 CROSS=3 TD=5.0m
+.meas TRAN x2_b10lo_4 WHEN V(vsl)=vpre2*0.9900 CROSS=4 TD=5.0m
+.meas TRAN x2_b10lo_5 WHEN V(vsl)=vpre2*0.9900 CROSS=5 TD=5.0m
+.meas TRAN x2_b10lo_6 WHEN V(vsl)=vpre2*0.9900 CROSS=6 TD=5.0m
+.meas TRAN x2_b10lo_7 WHEN V(vsl)=vpre2*0.9900 CROSS=7 TD=5.0m
+.meas TRAN x2_b10lo_8 WHEN V(vsl)=vpre2*0.9900 CROSS=8 TD=5.0m
+.meas TRAN x2_b10lo_last WHEN V(vsl)=vpre2*0.9900 CROSS=LAST TD=5.0m
+.meas TRAN x2_b05hi_1 WHEN V(vsl)=vpre2*1.0050 CROSS=1 TD=5.0m
+.meas TRAN x2_b05hi_2 WHEN V(vsl)=vpre2*1.0050 CROSS=2 TD=5.0m
+.meas TRAN x2_b05hi_3 WHEN V(vsl)=vpre2*1.0050 CROSS=3 TD=5.0m
+.meas TRAN x2_b05hi_4 WHEN V(vsl)=vpre2*1.0050 CROSS=4 TD=5.0m
+.meas TRAN x2_b05hi_5 WHEN V(vsl)=vpre2*1.0050 CROSS=5 TD=5.0m
+.meas TRAN x2_b05hi_6 WHEN V(vsl)=vpre2*1.0050 CROSS=6 TD=5.0m
+.meas TRAN x2_b05hi_7 WHEN V(vsl)=vpre2*1.0050 CROSS=7 TD=5.0m
+.meas TRAN x2_b05hi_8 WHEN V(vsl)=vpre2*1.0050 CROSS=8 TD=5.0m
+.meas TRAN x2_b05hi_last WHEN V(vsl)=vpre2*1.0050 CROSS=LAST TD=5.0m
+.meas TRAN x2_b05lo_1 WHEN V(vsl)=vpre2*0.9950 CROSS=1 TD=5.0m
+.meas TRAN x2_b05lo_2 WHEN V(vsl)=vpre2*0.9950 CROSS=2 TD=5.0m
+.meas TRAN x2_b05lo_3 WHEN V(vsl)=vpre2*0.9950 CROSS=3 TD=5.0m
+.meas TRAN x2_b05lo_4 WHEN V(vsl)=vpre2*0.9950 CROSS=4 TD=5.0m
+.meas TRAN x2_b05lo_5 WHEN V(vsl)=vpre2*0.9950 CROSS=5 TD=5.0m
+.meas TRAN x2_b05lo_6 WHEN V(vsl)=vpre2*0.9950 CROSS=6 TD=5.0m
+.meas TRAN x2_b05lo_7 WHEN V(vsl)=vpre2*0.9950 CROSS=7 TD=5.0m
+.meas TRAN x2_b05lo_8 WHEN V(vsl)=vpre2*0.9950 CROSS=8 TD=5.0m
+.meas TRAN x2_b05lo_last WHEN V(vsl)=vpre2*0.9950 CROSS=LAST TD=5.0m
+.meas TRAN vss_end FIND V(ss) AT 6.4m
+.meas TRAN pgood_end FIND V(pgood) AT 3.4m
+.end

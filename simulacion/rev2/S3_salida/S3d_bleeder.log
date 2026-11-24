@@ -1,0 +1,71 @@
+LTspice 26.0.2 for Windows
+Circuit: C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\S3_salida\S3d_bleeder.cir
+Start Time: Mon Nov 16 02:17:43 2026
+Options:solver=alt method=modtrap
+
+.step vn=12
+solver = Alternate
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = modified trap
+Instance "xq7:M1": Length shorter than recommended for a level 3 MOSFET.
+Instance "xq6:m1": Length shorter than recommended for a level 3 MOSFET.
+Instance "xq6:m2": Length shorter than recommended for a level 3 MOSFET.
+Direct Newton iteration succeeded in finding operating point.
+
+.step vn=25
+Direct Newton iteration succeeded in finding operating point.
+Total elapsed time: 0.307 seconds.
+
+Files loaded:
+C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\S3_salida\S3d_bleeder.cir
+C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\S3_salida\common_S3.inc
+C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\modelos\SiRS4401DP_PS.TXT
+C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\modelos\2n7002k_ps Rev B.lib
+
+
+Measurement: vreg
+  step	AVG(V(vint) )	FROM	TO
+     1	11.9999790192	0.002	0.009
+     2	24.999956131	0.002	0.009
+
+Measurement: pbl
+  step	AVG(V(vint)*I(Rbleed) )	FROM	TO
+     1	0.0959996690753	0.002	0.009
+     2	0.41666521219	0.002	0.009
+
+Measurement: ptot
+  step	AVG(V(vint)*I(Vsns) )	FROM	TO
+     1	0.124880348851	0.002	0.009
+     2	0.552221443061	0.002	0.009
+
+Measurement: pl2
+  step	AVG(V(vint)*I(Rl2) )	FROM	TO
+     1	0.0261871599014	0.002	0.009
+     2	0.123431398473	0.002	0.009
+
+Measurement: t5
+  step	t5	FROM	TO
+     1	0.574523595207	0.0100005	0.584524095207
+     2	1.0652558549	0.0100005	1.0752563549
+
+Measurement: t2
+  step	t2	FROM	TO
+     1	1.18965207329	0.0100005	1.19965257329
+     2	1.67976622446	0.0100005	1.68976672446
+
+Measurement: t1
+  step	t1	FROM	TO
+     1	1.65498267943	0.0100005	1.66498317943
+     2	2.14463282998	0.0100005	2.15463332998
+
+Measurement: tpgl
+  step	tpgl	FROM	TO
+     1	0.0501139569637	0.0100005	0.0601144569637
+     2	0.049144964876	0.0100005	0.059145464876
+
+Measurement: vint_end
+  step	V(vint) 	at
+     1	0.00697674416006	5
+     2	0.0144056091085	5

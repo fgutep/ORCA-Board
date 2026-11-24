@@ -1,0 +1,80 @@
+LTspice 26.0.2 for Windows
+Circuit: C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\S2_hotplug\S2c_capextra.cir
+Start Time: Mon Nov 16 08:03:57 2026
+Options:solver=alt method=modtrap
+
+.step nx=1
+solver = Alternate
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = modified trap
+Instance "xq5:m1": Length shorter than recommended for a level 3 MOSFET.
+Instance "xq5:m2": Length shorter than recommended for a level 3 MOSFET.
+Direct Newton iteration succeeded in finding operating point.
+
+.step nx=2
+Direct Newton iteration succeeded in finding operating point.
+
+.step nx=4
+Direct Newton iteration succeeded in finding operating point.
+Total elapsed time: 1.287 seconds.
+
+Files loaded:
+C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\S2_hotplug\S2c_capextra.cir
+C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\modelos\SiRS4401DP_PS.TXT
+
+
+Measurement: vbus_pk
+  step	MAX(v(vbus) )	FROM	TO
+     1	37.002407074	0.001	0.006
+     2	36.7144126892	0.001	0.006
+     3	35.9912567139	0.001	0.006
+
+Measurement: ipk
+  step	MAX(abs(i(Vid)) )	FROM	TO
+     1	256.577941895	0.001	0.006
+     2	309.760101318	0.001	0.006
+     3	389.346038818	0.001	0.006
+
+Measurement: i2t
+  step	INTEG(i(Vid)*i(Vid) )	FROM	TO
+     1	1.79409086577	0.001	0.006
+     2	3.20871101282	0.001	0.006
+     3	6.47752248347	0.001	0.006
+
+Measurement: vgs_min
+  step	MIN(v(g)-v(vbus) )	FROM	TO
+     1	-11.8374900818	0.001	0.006
+     2	-11.8374910355	0.001	0.006
+     3	-11.8374919891	0.001	0.006
+
+Measurement: vgs_max
+  step	MAX(v(g)-v(vbus) )	FROM	TO
+     1	-0.494385719299	0.001	0.006
+     2	-0.477231025696	0.001	0.006
+     3	-0.45188999176	0.001	0.006
+
+Measurement: vds_fwd
+  step	MAX(v(dq)-v(vbus) )	FROM	TO
+     1	0.952405929565	0.001	0.006
+     2	0.989444732666	0.001	0.006
+     3	1.04336929321	0.001	0.006
+
+Measurement: vds_rev
+  step	MAX(v(vbus)-v(dq) )	FROM	TO
+     1	2.37628364563	0.001	0.006
+     2	2.08430480957	0.001	0.006
+     3	1.6869354248	0.001	0.006
+
+Measurement: vbus_end
+  step	AVG(v(vbus) )	FROM	TO
+     1	25.1999225616	0.005	0.006
+     2	25.1999225616	0.005	0.006
+     3	25.1999225616	0.005	0.006
+
+Measurement: vbus_pre
+  step	v(vbus) 	at
+     1	1.00000011921	0.00099
+     2	1.00000011921	0.00099
+     3	1	0.00099

@@ -1,0 +1,58 @@
+LTspice 26.0.2 for Windows
+Circuit: C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\S1_polaridad\S1b_inversa.cir
+Start Time: Mon Nov 16 14:21:15 2026
+Options:solver=alt method=modtrap
+
+.step temp=25°
+solver = Alternate
+Maximum thread count: 16
+tnom = 27
+temp = 25
+method = modified trap
+Instance "xq5:m1": Length shorter than recommended for a level 3 MOSFET.
+Instance "xq5:m2": Length shorter than recommended for a level 3 MOSFET.
+Direct Newton iteration succeeded in finding operating point.
+
+.step temp=100°
+Direct Newton iteration succeeded in finding operating point.
+Total elapsed time: 2.043 seconds.
+
+Files loaded:
+C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\S1_polaridad\S1b_inversa.cir
+C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\modelos\SiRS4401DP_PS.TXT
+
+
+Measurement: vbus_abs
+  step	MAX(abs(v(vbus)) )	FROM	TO
+     1	5.75441746749e-05	0.001	0.005
+     2	0.000531925237738	0.001	0.005
+
+Measurement: vbus_end
+  step	AVG(v(vbus) )	FROM	TO
+     1	-1.91748151296e-06	0.004	0.005
+     2	-0.000530037463619	0.004	0.005
+
+Measurement: ileak
+  step	AVG(i(Vid) )	FROM	TO
+     1	-2.87579168158e-09	0.004	0.005
+     2	-4.25641357332e-07	0.004	0.005
+
+Measurement: leak_ma
+  step	abs(ileak)*1000
+     1	2.87579168158e-06
+     2	0.000425641357332
+
+Measurement: ipk_inrush
+  step	MAX(abs(i(Vid)))	FROM	TO
+     1	0.00309999915771	0	0.005
+     2	0.00303402170539	0	0.005
+
+Measurement: vds_rev
+  step	MAX(v(vbus)-v(dq))	FROM	TO
+     1	25.2049115263	0	0.005
+     2	25.2039344426	0	0.005
+
+Measurement: vgs_pk
+  step	MAX(abs(v(g)-v(vbus)))	FROM	TO
+     1	1.6568173729	0	0.005
+     2	1.59268148438	0	0.005

@@ -1,0 +1,24 @@
+S3c niveles en regimen: 8 A, VN 6.8/12/25 V, 25 y 100 C
+.include common_S3.inc
+.options solver=alt method=modtrap
+.param TCLOSE=1m TLOAD=20m TEND=80m TSRCOFF=1e3 CGD=1f RG=10k RQ7=1m CQ7=1p
+.step param VN list 6.8 12 25
+.step temp list 25 100
+* carga de 8 A: fuente de corriente (rampa 10 us) que se aplica en TLOAD, ya con Q6 cerrado
+Iload vext 0 PWL(0 0 {TLOAD} 0 {TLOAD+10u} 8)
+Vctl ctl 0 PULSE(0 1 {TCLOSE} 1n 1n 1 2)
+.tran 0 {TEND} 0 2u
+.meas tran vgs6 avg V(g6)-V(vint) from=70m to=80m
+.meas tran vgs7 avg V(gq7) from=70m to=80m
+.meas tran vds6 avg V(vint)-V(vdr) from=70m to=80m
+.meas tran id6 avg I(Vid) from=70m to=80m
+.meas tran p6 avg (V(vint)-V(vdr))*I(Vid) from=70m to=80m
+.meas tran rds6 param vds6/id6*1000
+.meas tran vint avg V(vint) from=70m to=80m
+.meas tran pz avg (V(vint)-V(g6))*(-I(DZ6)) from=70m to=80m
+.meas tran pl2 avg I(Rl2)*I(Rl2)*4.7k from=70m to=80m
+.meas tran pl3 avg I(Rl3)*I(Rl3)*4.7k from=70m to=80m
+.meas tran il2 avg I(Rl2) from=70m to=80m
+.meas tran ig6 avg I(Rg6) from=70m to=80m
+.meas tran pgood avg V(pgood) from=70m to=80m
+.end

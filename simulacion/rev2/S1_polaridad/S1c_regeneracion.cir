@@ -1,0 +1,41 @@
+S1c proteccion de polaridad Q5 - regeneracion: 5 A desde VBUS hacia la bateria
+.include ..\modelos\SiRS4401DP_PS.TXT
+* Modelos de standard.dio de LTspice. Zener BZX84C12L con Cjo=1p, igual que S2 (DESVIACION: la libreria trae 150p; en S2 con 150p no converge en la rampa de 25.2 V). QTLP690C literal. NO son el MM3Z12VT1G ni el LED real.
+.model BZX84C12L D(Is=.6n Rs=.5 Cjo=1p nbv=5 bv=12 Ibv=1m Vpk=12 mfg=OnSemi type=Zener)
+.model QTLP690C D(Is=1e-22 Rs=6 N=1.5 Cjo=50p Xti=100 Iave=160m Vpk=5 mfg=Fairchild type=LED)
+.options solver=alt method=modtrap
+.param VB=12 RBAT=20m LCAB=0.5u TR=5u
+.step param VB list 6 12 25.2
+* TR = tiempo de subida de la corriente regenerada (5 us = 1 A/us, 100 us = 0.05 A/us)
+.step param TR list 5u 100u
+* bateria ideal, R_bat = resistencia interna; n1 = terminal XT60 (V(BAT) de la placa)
+VBAT n0 0 {VB}
+Rbat n0 n1 {RBAT}
+Lcab n1 n2 {LCAB}
+Rf1 n2 n3 1.92m
+Vid n3 dq 0
+XQ5 dq g vbus SiRS4401DP
+Rg g 0 47k
+DZ g vbus BZX84C12L
+Cp vbus p1 100u
+Rp p1 0 31m
+Cc vbus c1 10u
+Rc c1 0 3m
+Cn vbus n1b 100n
+Rn n1b 0 10m
+DL vbus la QTLP690C
+Rl la 0 4.7k
+* fuente de corriente: inyecta 5 A en VBUS (fluyen hacia la bateria) desde 1 ms
+Ireg 0 vbus PWL(0 0 1m 0 {1m+TR} 5 10m 5)
+.save V(g) V(vbus) V(dq) V(n1) V(n0) I(Vid)
+.tran 0 10m 0 1u
+* --- mediciones (Q5 conduce; sobretension V(VBUS)-V(BAT) < 0.2 V) ---
+.meas tran idreg avg i(Vid) from=6m to=9m
+.meas tran vgs avg v(g)-v(vbus) from=6m to=9m
+.meas tran vds avg v(dq)-v(vbus) from=6m to=9m
+.meas tran dv_term avg v(vbus)-v(n1) from=6m to=9m
+.meas tran dv_emf avg v(vbus)-v(n0) from=6m to=9m
+.meas tran dv_term_pk max v(vbus)-v(n1) from=1m to=10m
+.meas tran p_q5 avg (v(dq)-v(vbus))*i(Vid) from=6m to=9m
+.meas tran vbus_pk max v(vbus)
+.end

@@ -1,0 +1,48 @@
+S3a FINAL: cierre de SW1 con remedio elegido (C gd 100n + RG 22k, COMBINACION rotulada R1+R2); sensibilidad BWK 1 / 3 / 1/3
+.include common_S3.inc
+.include soa_S3.inc
+.options solver=alt method=modtrap
+.param CL=470u TCLOSE=1m TEND=100m RLOAD={VN/8}  TSRCOFF=1e3 CGD=100n RG=22k RQ7=1m CQ7=1p
+.step param VN list 7.2 12 25
+.step param CL list 100u 470u 1000u
+.step param BWK list 1 3 0.33333
+* carga: C_carga (ESR 10 m, supuesto) + R que toma 8 A al nominal, descargada en t=0 (peor caso)
+Cl vext cl1 {CL}
+Rcl cl1 0 {ESRL}
+Rload vext 0 {RLOAD}
+Vctl ctl 0 PULSE(0 1 {TCLOSE} 1n 1n 1 2)
+.tran 0 {TEND} 0 1u
+* --- mediciones (t0 = TCLOSE) ---
+.meas tran ipk max I(Vid) from={TCLOSE}
+.meas tran ilim max I(Vsns) from={TCLOSE}
+.meas tran vmin min V(vint) from={TCLOSE}
+.meas tran drop param (VN-vmin)/VN*100
+.meas tran fbmin min V(fb) from={TCLOSE}
+.meas tran pgf1 when V(pgood)=3.7 fall=1
+.meas tran pgf2 when V(pgood)=3.7 fall=2
+.meas tran pgf3 when V(pgood)=3.7 fall=3
+.meas tran pgf4 when V(pgood)=3.7 fall=4
+.meas tran pgf5 when V(pgood)=3.7 fall=5
+.meas tran gon1 when V(g6)-V(vint)=-2.5 fall=1
+.meas tran goff1 when V(g6)-V(vint)=-2.5 rise=1
+.meas tran gon2 when V(g6)-V(vint)=-2.5 fall=2
+.meas tran goff2 when V(g6)-V(vint)=-2.5 rise=2
+.meas tran gon3 when V(g6)-V(vint)=-2.5 fall=3
+.meas tran goff3 when V(g6)-V(vint)=-2.5 rise=3
+.meas tran gon4 when V(g6)-V(vint)=-2.5 fall=4
+.meas tran goff4 when V(g6)-V(vint)=-2.5 rise=4
+.meas tran gon5 when V(g6)-V(vint)=-2.5 fall=5
+.meas tran goff5 when V(g6)-V(vint)=-2.5 rise=5
+.meas tran gon6 when V(g6)-V(vint)=-2.5 fall=6
+.meas tran tfull when V(vint)-V(vdr)=0.5 fall=1 td={TCLOSE}
+.meas tran ppk max (V(vint)-V(vdr))*I(Vid) from={TCLOSE}
+.meas tran eq6 integ (V(vint)-V(vdr))*I(Vid) from={TCLOSE}
+.meas tran teq param eq6/ppk
+.meas tran mxu100u max V(u100u) from={TCLOSE}
+.meas tran mxu1m max V(u1m) from={TCLOSE}
+.meas tran mxu10m max V(u10m) from={TCLOSE}
+.meas tran mxu40m max V(u40m) from={TCLOSE}
+.meas tran mxudc max V(udc) from={TCLOSE}
+.meas tran vfin avg V(vint) from={TEND}-10m to={TEND}
+.meas tran vgsfin avg V(g6)-V(vint) from={TEND}-10m to={TEND}
+.end

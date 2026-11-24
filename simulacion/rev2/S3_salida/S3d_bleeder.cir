@@ -1,0 +1,18 @@
+S3d bleeder 1.5k: se quita la fuente con Q6 abierto (SW1 abierto), VN 12 y 25 V
+.include common_S3.inc
+.options solver=alt method=modtrap
+.param TEND=5 TSRCOFF=10m CGD=1f RG=10k RQ7=1m CQ7=1p
+.step param VN list 12 25
+Rload vext 0 1G
+Vctl ctl 0 0
+.tran 0 {TEND} 0 1m
+.meas tran vreg avg V(vint) from=2m to=9m
+.meas tran pbl avg V(vint)*I(Rbleed) from=2m to=9m
+.meas tran ptot avg V(vint)*I(Vsns) from=2m to=9m
+.meas tran pl2 avg V(vint)*I(Rl2) from=2m to=9m
+.meas tran t5 trig V(csrc)=0.5 fall=1 targ V(vint)=5 fall=1
+.meas tran t2 trig V(csrc)=0.5 fall=1 targ V(vint)=2 fall=1
+.meas tran t1 trig V(csrc)=0.5 fall=1 targ V(vint)=1 fall=1
+.meas tran tpgl trig V(csrc)=0.5 fall=1 targ V(pgood)=3.7 fall=1
+.meas tran vint_end find V(vint) at=5
+.end

@@ -1,0 +1,7 @@
+{"cell": {"NX": "1"}, "done": false, "secs": 40.1, "relaxed": 978, "meas": {}}
+{"cell": {"NX": "2"}, "done": false, "secs": 40.1, "relaxed": 1365, "meas": {}}
+{"cell": {"NX": "4"}, "done": false, "secs": 40.1, "relaxed": 1363, "meas": {}}
+{"cell": {"RSN": "0.05", "CSN": "47u"}, "done": false, "secs": 40.0, "relaxed": 0, "meas": {}}
+{"cell": {"RSN": "0.05", "CSN": "100u"}, "done": false, "secs": 40.1, "relaxed": 763, "meas": {}}
+{"cell": {"RSN": "0.05", "CSN": "220u"}, "done": false, "secs": 40.1, "relaxed": 894, "meas": {}}
+{"cell": {"RSN": "0.05", "CSN": "470u"}, "done": false, "secs": 40.0, "relaxed": 1439, "meas": {}}

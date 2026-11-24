@@ -1,0 +1,75 @@
+LTspice 26.0.2 for Windows
+Circuit: C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\S3_salida\S3e_descarga_CIN.cir
+Start Time: Mon Nov 16 02:17:45 2026
+Options:solver=alt method=modtrap
+
+.step vb=12
+solver = Alternate
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = modified trap
+Direct Newton iteration succeeded in finding operating point.
+
+.step vb=25.2
+Direct Newton iteration succeeded in finding operating point.
+Total elapsed time: 0.148 seconds.
+
+Files loaded:
+C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\S3_salida\S3e_descarga_CIN.cir
+
+
+Measurement: v0
+  step	V(vbus) 	at
+     1	11.9999980927	0.0009
+     2	25.1999950409	0.0009
+
+Measurement: t10
+  step	t10	FROM	TO
+     1	0.110092721033	0.00100049999999	0.111093221033
+     2	0.530325104639	0.00100049999999	0.531325604639
+
+Measurement: t5
+  step	t5	FROM	TO
+     1	0.57682688725	0.00100049999999	0.57782738725
+     2	0.997061794348	0.00100049999999	0.998062294348
+
+Measurement: t3
+  step	t3	FROM	TO
+     1	1.03613544861	0.00100049999999	1.03713594861
+     2	1.45638416381	0.00100049999999	1.45738466381
+
+Measurement: t2
+  step	t2	FROM	TO
+     1	1.66693053703	0.00100049999999	1.66793103703
+     2	2.08723779137	0.00100049999999	2.08823829137
+
+Measurement: t1
+  step	t1	FROM	TO
+     1	14.8477490579	0.00100049999999	14.8487495579
+     2	15.3016816867	0.00100049999999	15.3026821867
+
+Measurement: t05
+  step	t05	FROM	TO
+     1	35.2747466655	0.00100049999999	35.2757471655
+     2	35.8334995608	0.00100049999999	35.8345000608
+
+Measurement: tled10u
+  step	tled10u	FROM	TO
+     1	2.84223835964	0.00100049999999	2.84323885964
+     2	3.26302378953	0.00100049999999	3.26402428953
+
+Measurement: vled10u
+  step	V(vbus) 	at
+     1	1.56573091847	2.84323885964
+     2	1.56573153708	3.26402428953
+
+Measurement: tled1m
+  step	tled1m	FROM	TO
+     1	0.398213753226	0.00100049999999	0.399214253226
+     2	0.818445307851	0.00100049999999	0.819445807851
+
+Measurement: vend
+  step	V(vbus) 	at
+     1	0.0131466714665	150
+     2	0.0167865399271	150

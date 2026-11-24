@@ -1,0 +1,68 @@
+LTspice 26.0.2 for Windows
+Circuit: C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\S2_hotplug\ev150\S2a_hotplug_12V_30m_c150.cir
+Start Time: Mon Nov 16 07:04:59 2026
+Options:solver=alt method=modtrap
+
+.step lc=5e-07
+solver = Alternate
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = modified trap
+Instance "xq5:m1": Length shorter than recommended for a level 3 MOSFET.
+Instance "xq5:m2": Length shorter than recommended for a level 3 MOSFET.
+Direct Newton iteration succeeded in finding operating point.
+
+.step lc=1e-06
+Direct Newton iteration succeeded in finding operating point.
+Total elapsed time: 1.005 seconds.
+
+Files loaded:
+C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\S2_hotplug\ev150\S2a_hotplug_12V_30m_c150.cir
+C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\modelos\SiRS4401DP_PS.TXT
+
+
+Measurement: vbus_pk
+  step	MAX(v(vbus) )	FROM	TO
+     1	14.631029129	0.001	0.006
+     2	16.2736492157	0.001	0.006
+
+Measurement: ipk
+  step	MAX(abs(i(Vid)) )	FROM	TO
+     1	102.196517944	0.001	0.006
+     2	82.6374511719	0.001	0.006
+
+Measurement: i2t
+  step	INTEG(i(Vid)*i(Vid) )	FROM	TO
+     1	0.124712953279	0.001	0.006
+     2	0.114761513496	0.001	0.006
+
+Measurement: vgs_min
+  step	MIN(v(g)-v(vbus) )	FROM	TO
+     1	-11.5125485659	0.001	0.006
+     2	-11.5125851631	0.001	0.006
+
+Measurement: vgs_max
+  step	MAX(v(g)-v(vbus) )	FROM	TO
+     1	0.265502214432	0.001	0.006
+     2	0.257709741592	0.001	0.006
+
+Measurement: vds_fwd
+  step	MAX(v(dq)-v(vbus) )	FROM	TO
+     1	0.834151268005	0.001	0.006
+     2	0.816445350647	0.001	0.006
+
+Measurement: vds_rev
+  step	MAX(v(vbus)-v(dq) )	FROM	TO
+     1	7.54110431671	0.001	0.006
+     2	12.8744382858	0.001	0.006
+
+Measurement: vbus_end
+  step	AVG(v(vbus) )	FROM	TO
+     1	12.5999193191	0.005	0.006
+     2	12.5999193191	0.005	0.006
+
+Measurement: vbus_pre
+  step	v(vbus) 	at
+     1	1.12625390655e-07	0.00099
+     2	1.12625390655e-07	0.00099

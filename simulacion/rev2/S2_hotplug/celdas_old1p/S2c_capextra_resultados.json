@@ -1,0 +1,29 @@
+[
+ {
+  "cell": {
+   "NX": "1"
+  },
+  "done": true,
+  "secs": 3.9,
+  "relaxed": 0,
+  "meas": {}
+ },
+ {
+  "cell": {
+   "NX": "2"
+  },
+  "done": false,
+  "secs": 60.1,
+  "relaxed": 1390,
+  "meas": {}
+ },
+ {
+  "cell": {
+   "NX": "4"
+  },
+  "done": false,
+  "secs": 60.0,
+  "relaxed": 2969,
+  "meas": {}
+ }
+]

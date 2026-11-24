@@ -1,0 +1,33 @@
+S3e descarga de C_IN (100u+10u+100n) por LED1+4.7k y divisor EN 200k+66.5k tras desconectar la bateria (sin LM5175 ni carga: peor caso lento)
+.model QTLP690C D(Is=1e-22 Rs=6 N=1.5 Cjo=50p Xti=100 Iave=160m Vpk=5 mfg=Fairchild type=LED)
+.model SWM SW(Ron=1m Roff=1G Vt=0.5 Vh=0)
+.options solver=alt method=modtrap
+.param VB=12 TOFF=1m TEND=150
+.step param VB list 12 25.2
+Vbat n0 0 {VB}
+Sbat n0 vbus ctl 0 SWM
+Vctl ctl 0 PULSE(1 0 {TOFF} 1u 1u 1e6 2e6)
+* C_IN: 100u polimero ESR 31m + 10u (3m) + 100n (10m)   (mismos valores que S1)
+Cp vbus p1 100u
+Rp p1 0 31m
+Cc vbus c1 10u
+Rc c1 0 3m
+Cn vbus n1 100n
+Rn n1 0 10m
+DL1 vbus la QTLP690C
+Rl1 la 0 4.7k
+Ren1 vbus en 200k
+Ren2 en 0 66.5k
+.tran 0 {TEND} 0 20m
+.meas tran v0 find V(vbus) at={TOFF}-0.1m
+.meas tran t10 trig V(ctl)=0.5 fall=1 targ V(vbus)=10 fall=1
+.meas tran t5 trig V(ctl)=0.5 fall=1 targ V(vbus)=5 fall=1
+.meas tran t3 trig V(ctl)=0.5 fall=1 targ V(vbus)=3 fall=1
+.meas tran t2 trig V(ctl)=0.5 fall=1 targ V(vbus)=2 fall=1
+.meas tran t1 trig V(ctl)=0.5 fall=1 targ V(vbus)=1 fall=1
+.meas tran t05 trig V(ctl)=0.5 fall=1 targ V(vbus)=0.5 fall=1
+.meas tran tled10u trig V(ctl)=0.5 fall=1 targ I(Rl1)=10u fall=1
+.meas tran vled10u find V(vbus) when I(Rl1)=10u fall=1
+.meas tran tled1m trig V(ctl)=0.5 fall=1 targ I(Rl1)=1m fall=1
+.meas tran vend find V(vbus) at={TEND}
+.end

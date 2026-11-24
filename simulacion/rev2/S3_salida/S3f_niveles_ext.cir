@@ -1,0 +1,17 @@
+S3f S3c ext: Rrst 220k/330k/470k/1M (limite de V_GS a 6.8 V), RG 22k, C gd 100n + D
+.include S3f_common.inc
+.options solver=alt method=modtrap
+.param TCLOSE=1m TLOAD=20m TEND=80m TSRCOFF=1e3 CGD=100n RG=22k RQ7=1m CQ7=1p RSTG=1G RDON=1 RPRE=1G
+.step param VN list 6.8 25
+.step temp list 25 100
+.step param RST list 220k 330k 470k 1Meg
+Iload vext 0 PWL(0 0 {TLOAD} 0 {TLOAD+10u} 8)
+Vctl ctl 0 PULSE(0 1 {TCLOSE} 1n 1n 1 2)
+.tran 0 {TEND} 0 2u
+.meas tran vgs6 avg V(g6)-V(vint) from=70m to=80m
+.meas tran vds6 avg V(vint)-V(vdr) from=70m to=80m
+.meas tran id6 avg I(Vid) from=70m to=80m
+.meas tran p6 avg (V(vint)-V(vdr))*I(Vid) from=70m to=80m
+.meas tran vint avg V(vint) from=70m to=80m
+.meas tran vm avg V(m)-V(vint) from=70m to=80m
+.end

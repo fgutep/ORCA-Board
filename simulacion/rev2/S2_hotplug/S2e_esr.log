@@ -1,0 +1,188 @@
+LTspice 26.0.2 for Windows
+Circuit: C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\S2_hotplug\S2e_esr.cir
+Start Time: Mon Nov 16 07:21:49 2026
+Options:solver=alt method=modtrap
+
+.step esrp=0.015 rb=0.01 lc=5e-07
+solver = Alternate
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = modified trap
+Instance "xq5:m1": Length shorter than recommended for a level 3 MOSFET.
+Instance "xq5:m2": Length shorter than recommended for a level 3 MOSFET.
+Direct Newton iteration succeeded in finding operating point.
+
+.step esrp=0.031 rb=0.01 lc=5e-07
+Direct Newton iteration succeeded in finding operating point.
+
+.step esrp=0.06 rb=0.01 lc=5e-07
+Direct Newton iteration succeeded in finding operating point.
+
+.step esrp=0.015 rb=0.02 lc=5e-07
+Direct Newton iteration succeeded in finding operating point.
+
+.step esrp=0.031 rb=0.02 lc=5e-07
+Direct Newton iteration succeeded in finding operating point.
+
+.step esrp=0.06 rb=0.02 lc=5e-07
+Direct Newton iteration succeeded in finding operating point.
+
+.step esrp=0.015 rb=0.01 lc=1e-06
+Direct Newton iteration succeeded in finding operating point.
+
+.step esrp=0.031 rb=0.01 lc=1e-06
+Direct Newton iteration succeeded in finding operating point.
+
+.step esrp=0.06 rb=0.01 lc=1e-06
+Direct Newton iteration succeeded in finding operating point.
+
+.step esrp=0.015 rb=0.02 lc=1e-06
+Direct Newton iteration succeeded in finding operating point.
+
+.step esrp=0.031 rb=0.02 lc=1e-06
+Direct Newton iteration succeeded in finding operating point.
+
+.step esrp=0.06 rb=0.02 lc=1e-06
+Direct Newton iteration succeeded in finding operating point.
+Total elapsed time: 20.143 seconds.
+
+Files loaded:
+C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\S2_hotplug\S2e_esr.cir
+C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\modelos\SiRS4401DP_PS.TXT
+
+
+Measurement: vbus_pk
+  step	MAX(v(vbus) )	FROM	TO
+     1	37.8294563293	0.001	0.006
+     2	34.6682052612	0.001	0.006
+     3	31.0956478119	0.001	0.006
+     4	34.832950592	0.001	0.006
+     5	32.2070922852	0.001	0.006
+     6	29.1962471008	0.001	0.006
+     7	40.4104347229	0.001	0.006
+     8	37.5868530273	0.001	0.006
+     9	34.0156211853	0.001	0.006
+    10	37.8903961182	0.001	0.006
+    11	35.4329681396	0.001	0.006
+    12	32.2972373962	0.001	0.006
+
+Measurement: ipk
+  step	MAX(abs(i(Vid)) )	FROM	TO
+     1	276.589996338	0.001	0.006
+     2	247.012771606	0.001	0.006
+     3	207.720550537	0.001	0.006
+     4	252.860214233	0.001	0.006
+     5	227.618164062	0.001	0.006
+     6	193.492996216	0.001	0.006
+     7	210.39515686	0.001	0.006
+     8	192.884536743	0.001	0.006
+     9	167.829269409	0.001	0.006
+    10	196.536453247	0.001	0.006
+    11	181.024810791	0.001	0.006
+    12	158.587234497	0.001	0.006
+
+Measurement: i2t
+  step	INTEG(i(Vid)*i(Vid) )	FROM	TO
+     1	0.949337967786	0.001	0.006
+     2	0.736577618146	0.001	0.006
+     3	0.507199157857	0.001	0.006
+     4	0.779674878025	0.001	0.006
+     5	0.620732095124	0.001	0.006
+     6	0.444596519487	0.001	0.006
+     7	0.829217348931	0.001	0.006
+     8	0.665130625717	0.001	0.006
+     9	0.47825210715	0.001	0.006
+    10	0.699423680213	0.001	0.006
+    11	0.573417231729	0.001	0.006
+    12	0.424539762355	0.001	0.006
+
+Measurement: vgs_min
+  step	MIN(v(g)-v(vbus) )	FROM	TO
+     1	-11.8374900818	0.001	0.006
+     2	-11.8374900818	0.001	0.006
+     3	-11.8374900818	0.001	0.006
+     4	-11.8374891281	0.001	0.006
+     5	-11.8374891281	0.001	0.006
+     6	-11.8374881744	0.001	0.006
+     7	-11.8374900818	0.001	0.006
+     8	-11.8374900818	0.001	0.006
+     9	-11.8374900818	0.001	0.006
+    10	-11.8374881744	0.001	0.006
+    11	-11.8374891281	0.001	0.006
+    12	-11.8374891281	0.001	0.006
+
+Measurement: vgs_max
+  step	MAX(v(g)-v(vbus) )	FROM	TO
+     1	0.289555072784	0.001	0.006
+     2	0.282293319702	0.001	0.006
+     3	0.272880554199	0.001	0.006
+     4	0.287095069885	0.001	0.006
+     5	0.280316352844	0.001	0.006
+     6	0.271289825439	0.001	0.006
+     7	0.272587299347	0.001	0.006
+     8	0.268235206604	0.001	0.006
+     9	0.26279592514	0.001	0.006
+    10	0.271493911743	0.001	0.006
+    11	0.267335414886	0.001	0.006
+    12	0.262067317963	0.001	0.006
+
+Measurement: vds_fwd
+  step	MAX(v(dq)-v(vbus) )	FROM	TO
+     1	0.966625213623	0.001	0.006
+     2	0.945781707764	0.001	0.006
+     3	0.917346954346	0.001	0.006
+     4	0.94993019104	0.001	0.006
+     5	0.931819915771	0.001	0.006
+     6	0.906936645508	0.001	0.006
+     7	0.919343948364	0.001	0.006
+     8	0.906312942505	0.001	0.006
+     9	0.887407302856	0.001	0.006
+    10	0.909143447876	0.001	0.006
+    11	0.897439956665	0.001	0.006
+    12	0.880321502686	0.001	0.006
+
+Measurement: vds_rev
+  step	MAX(v(vbus)-v(dq) )	FROM	TO
+     1	27.214389801	0.001	0.006
+     2	25.622344017	0.001	0.006
+     3	15.3198928833	0.001	0.006
+     4	25.6760549545	0.001	0.006
+     5	22.7830095291	0.001	0.006
+     6	9.78393554688	0.001	0.006
+     7	26.4105653763	0.001	0.006
+     8	25.675570488	0.001	0.006
+     9	23.5630130768	0.001	0.006
+    10	25.913983345	0.001	0.006
+    11	24.9011478424	0.001	0.006
+    12	20.7579250336	0.001	0.006
+
+Measurement: vbus_end
+  step	AVG(v(vbus) )	FROM	TO
+     1	25.1999225616	0.005	0.006
+     2	25.1999225616	0.005	0.006
+     3	25.1999225616	0.005	0.006
+     4	25.1998691559	0.005	0.006
+     5	25.1998691559	0.005	0.006
+     6	25.1998691559	0.005	0.006
+     7	25.1999225616	0.005	0.006
+     8	25.1999225616	0.005	0.006
+     9	25.1999225616	0.005	0.006
+    10	25.1998691559	0.005	0.006
+    11	25.1998691559	0.005	0.006
+    12	25.1998691559	0.005	0.006
+
+Measurement: vbus_pre
+  step	v(vbus) 	at
+     1	2.25842726484e-07	0.00099
+     2	2.26173738511e-07	0.00099
+     3	2.26773702171e-07	0.00099
+     4	2.25842726484e-07	0.00099
+     5	2.26173738511e-07	0.00099
+     6	2.26773706586e-07	0.00099
+     7	2.25842726484e-07	0.00099
+     8	2.26173738511e-07	0.00099
+     9	2.26773702171e-07	0.00099
+    10	2.25842726484e-07	0.00099
+    11	2.26173738511e-07	0.00099
+    12	2.26773706586e-07	0.00099

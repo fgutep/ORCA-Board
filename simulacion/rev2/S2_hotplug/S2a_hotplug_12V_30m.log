@@ -1,0 +1,68 @@
+LTspice 26.0.2 for Windows
+Circuit: C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\S2_hotplug\S2a_hotplug_12V_30m.cir
+Start Time: Mon Nov 16 07:10:43 2026
+Options:solver=alt method=modtrap
+
+.step lc=5e-07
+solver = Alternate
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = modified trap
+Instance "xq5:m1": Length shorter than recommended for a level 3 MOSFET.
+Instance "xq5:m2": Length shorter than recommended for a level 3 MOSFET.
+Direct Newton iteration succeeded in finding operating point.
+
+.step lc=1e-06
+Direct Newton iteration succeeded in finding operating point.
+Total elapsed time: 1.010 seconds.
+
+Files loaded:
+C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\S2_hotplug\S2a_hotplug_12V_30m.cir
+C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\modelos\SiRS4401DP_PS.TXT
+
+
+Measurement: vbus_pk
+  step	MAX(v(vbus) )	FROM	TO
+     1	14.6309928894	0.001	0.006
+     2	16.2736148834	0.001	0.006
+
+Measurement: ipk
+  step	MAX(abs(i(Vid)) )	FROM	TO
+     1	102.196044922	0.001	0.006
+     2	82.6353683472	0.001	0.006
+
+Measurement: i2t
+  step	INTEG(i(Vid)*i(Vid) )	FROM	TO
+     1	0.12471300532	0.001	0.006
+     2	0.114761975956	0.001	0.006
+
+Measurement: vgs_min
+  step	MIN(v(g)-v(vbus) )	FROM	TO
+     1	-11.5125646591	0.001	0.006
+     2	-11.5126037598	0.001	0.006
+
+Measurement: vgs_max
+  step	MAX(v(g)-v(vbus) )	FROM	TO
+     1	0.266634464264	0.001	0.006
+     2	0.258802652359	0.001	0.006
+
+Measurement: vds_fwd
+  step	MAX(v(dq)-v(vbus) )	FROM	TO
+     1	0.834154129028	0.001	0.006
+     2	0.816442489624	0.001	0.006
+
+Measurement: vds_rev
+  step	MAX(v(vbus)-v(dq) )	FROM	TO
+     1	7.43445920944	0.001	0.006
+     2	12.8591170311	0.001	0.006
+
+Measurement: vbus_end
+  step	AVG(v(vbus) )	FROM	TO
+     1	12.5999193191	0.005	0.006
+     2	12.5999193191	0.005	0.006
+
+Measurement: vbus_pre
+  step	v(vbus) 	at
+     1	1.12625421284e-07	0.00099
+     2	1.12625421284e-07	0.00099

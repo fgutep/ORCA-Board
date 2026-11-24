@@ -1,0 +1,71 @@
+LTspice 26.0.2 for Windows
+Circuit: c:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\S4_convertidor\S4cd_con.cir
+Start Time: Mon Nov 16 18:20:34 2026
+Options:solver=alt method=modtrap
+solver = Alternate
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = modified trap
+WARNING: Node n010 is floating.
+
+Instance "xq5:m1": Length shorter than recommended for a level 3 MOSFET.
+Instance "xq5:m2": Length shorter than recommended for a level 3 MOSFET.
+Instance "xq7:M1": Length shorter than recommended for a level 3 MOSFET.
+Instance "xq6:m1": Length shorter than recommended for a level 3 MOSFET.
+Instance "xq6:m2": Length shorter than recommended for a level 3 MOSFET.
+d_d3: Emission coefficient, N=0.01, too small, this might lead to numerical problems.
+d_d111: Emission coefficient, N=0.01, too small, this might lead to numerical problems.
+d_d1: Emission coefficient, N=0.001, too small, this might lead to numerical problems.
+Direct Newton iteration succeeded in finding operating point.
+Total elapsed time: 17851.512 seconds.
+
+Files loaded:
+c:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\S4_convertidor\S4cd_con.cir
+C:\Users\Lenovo\AppData\Local\LTspice\lib\cmp\standard.dio
+c:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\LM5175_TRANS_xorfix.lib
+c:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\modelos\BUK9Y3R5-40E.lib
+c:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\modelos\SiRS4401DP_PS.TXT
+c:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\modelos\2n7002k_ps Rev B.lib
+
+vpre_c: AVG(V(vout) )=12.0476615195 FROM 0.0029 TO 0.003
+vppm_pre_c: PP(V(vmed) )=0.0830516815186 FROM 0.0029 TO 0.003
+vmin_c: MIN(V(vmed) )=10.1816806793 FROM 0.003 TO 0.0085
+drop_c: (vpre_c-vmin_c)/vpre_c*100=15.4883239137
+vmin_c_raw: MIN(V(vout) )=10.1777381897 FROM 0.003 TO 0.0085
+vpost_c: AVG(V(vout) )=11.9986646684 FROM 0.0083 TO 0.0085
+ilpk_c: MAX(I(L1) )=26.5910682678 FROM 0.003 TO 0.0085
+ilavg_pre_c: AVG(I(L1) )=1.41140160942 FROM 0.0029 TO 0.003
+vyl_pre_c: MAX(V(vyl) )=1.2437376976 FROM 0.0027 TO 0.003
+vyl_max_c: MAX(V(vyl) )=23.6724739075 FROM 0.003 TO 0.0085
+vyl_max_c_post: MAX(V(vyl) )=23.6724739075 FROM 0.00301 TO 0.0085
+ipk_q6: MAX(I(Vid) )=39.6864280701 FROM 0.003 TO 0.0085
+t_q6on: V(vout)-V(vext)=0.5  AT 0.00400827348725
+pgf_c1: V(pgood)=3.5  AT 0.00310683681892
+pgf_c2: V(pgood)=3.5  AT 0.00318578267678
+pgmin_c: MIN(V(pgood) )=0.00746767036617 FROM 0.003 TO 0.0085
+gon_c1: V(g6)-V(vout)=-2.5  AT 0.00308636086503
+goff_c1: V(g6)-V(vout)=-2.5  AT 0.0143427327738
+gon_c2: V(g6)-V(vout)=-2.5  AT 0.0143427339477
+ssmin_c: MIN(V(ss) )=1.24352705479 FROM 0.003 TO 0.0085
+ss_pre_c: V(ss) =1.24352705479 at 0.003
+vcomp_max_c: MAX(V(comp) )=2.9798579216 FROM 0.003 TO 0.0085
+vgs6_post: AVG(V(g6)-V(vout) )=-8.24697905907 FROM 0.0083 TO 0.0085
+vext_post: AVG(V(vext) )=11.9844079582 FROM 0.0083 TO 0.0085
+vpre_o: AVG(V(vout) )=11.9986646684 FROM 0.0083 TO 0.0085
+vppm_pre_o: PP(V(vmed) )=0.057713508606 FROM 0.0083 TO 0.0085
+vmax_o: MAX(V(vmed) )=12.227643013 FROM 0.0085 TO 0.017
+os_o: (vmax_o-vpre_o)/vpre_o*100=1.90836523014
+vmax_o_raw: MAX(V(vout) )=12.2276506424 FROM 0.0085 TO 0.017
+vfin_o: AVG(V(vout) )=11.9988062246 FROM 0.0168 TO 0.017
+ilavg_pre_o: AVG(I(L1) )=9.7581758491 FROM 0.0083 TO 0.0085
+ilpk_o: MAX(I(L1) )=10.3040647507 FROM 0.0085 TO 0.017
+ilmin_o: MIN(I(L1) )=0.458219885826 FROM 0.0085 TO 0.017
+t_q6off: I(Vid)=0.8  AT 0.0144970584175
+goff_o1: V(g6)-V(vout)=-2.5  AT 0.0143427327738
+vext_min_o: MIN(V(vext) )=0.231050685048 FROM 0.0085 TO 0.017
+Measurement "pgf_o1" FAIL'ed
+pgmin_o: MIN(V(pgood) )=7.49991941452 FROM 0.0085 TO 0.017
+ssmin_o: MIN(V(ss) )=1.27776277065 FROM 0.0085 TO 0.017
+vgs6_pre_o: AVG(V(g6)-V(vout) )=-8.24697905907 FROM 0.0083 TO 0.0085
+vext_pre_o: AVG(V(vext) )=11.9844079582 FROM 0.0083 TO 0.0085

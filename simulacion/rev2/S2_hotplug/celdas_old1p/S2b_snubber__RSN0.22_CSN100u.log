@@ -1,0 +1,29 @@
+LTspice 26.0.2 for Windows
+Circuit: C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\S2_hotplug\celdas\S2b_snubber__RSN0.22_CSN100u.cir
+Start Time: Mon Nov 16 07:44:16 2026
+Options:solver=alt method=modtrap
+solver = Alternate
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = modified trap
+Instance "xq5:m1": Length shorter than recommended for a level 3 MOSFET.
+Instance "xq5:m2": Length shorter than recommended for a level 3 MOSFET.
+Direct Newton iteration succeeded in finding operating point.
+Total elapsed time: 6.001 seconds.
+
+Files loaded:
+C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\S2_hotplug\celdas\S2b_snubber__RSN0.22_CSN100u.cir
+C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\modelos\SiRS4401DP_PS.TXT
+
+vbus_pk: MAX(v(vbus) )=33.5624427795 FROM 0.001 TO 0.006
+ipk: MAX(abs(i(Vid)) )=220.13508606 FROM 0.001 TO 0.006
+i2t: INTEG(i(Vid)*i(Vid) )=1.02136338245 FROM 0.001 TO 0.006
+vgs_min: MIN(v(g)-v(vbus) )=-11.8374900818 FROM 0.001 TO 0.006
+vgs_max: MAX(v(g)-v(vbus) )=0.269687175751 FROM 0.001 TO 0.006
+vds_fwd: MAX(v(dq)-v(vbus) )=0.926328659058 FROM 0.001 TO 0.006
+vds_rev: MAX(v(vbus)-v(dq) )=21.435090065 FROM 0.001 TO 0.006
+vbus_end: AVG(v(vbus) )=25.1999225616 FROM 0.005 TO 0.006
+isn_pk: MAX(abs(i(Csn)) )=80.045249939 FROM 0.001 TO 0.006
+isn_i2t: INTEG(i(Csn)*i(Csn) )=0.162707038137 FROM 0.001 TO 0.006
+vbus_pre: v(vbus) =1.19616544701e-07 at 0.00099

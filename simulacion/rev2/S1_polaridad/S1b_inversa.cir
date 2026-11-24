@@ -1,0 +1,35 @@
+S1b proteccion de polaridad Q5 - bateria invertida -25.2 V (peor caso: VBUS sin carga, solo LED1 + C_IN)
+.include ..\modelos\SiRS4401DP_PS.TXT
+* Modelos de standard.dio de LTspice. Zener BZX84C12L con Cjo=1p, igual que S2 (DESVIACION: la libreria trae 150p; en S2 con 150p no converge en la rampa de 25.2 V). QTLP690C literal. NO son el MM3Z12VT1G ni el LED real.
+.model BZX84C12L D(Is=.6n Rs=.5 Cjo=1p nbv=5 bv=12 Ibv=1m Vpk=12 mfg=OnSemi type=Zener)
+.model QTLP690C D(Is=1e-22 Rs=6 N=1.5 Cjo=50p Xti=100 Iave=160m Vpk=5 mfg=Fairchild type=LED)
+.options solver=alt method=modtrap
+.param VB=-25.2 RBAT=20m LCAB=0.5u
+.step temp list 25 100
+VBAT n0 0 PWL(0 0 100u {VB})
+Rbat n0 n1 {RBAT}
+Lcab n1 n2 {LCAB}
+Rf1 n2 n3 1.92m
+Vid n3 dq 0
+XQ5 dq g vbus SiRS4401DP
+Rg g 0 47k
+DZ g vbus BZX84C12L
+Cp vbus p1 100u
+Rp p1 0 31m
+Cc vbus c1 10u
+Rc c1 0 3m
+Cn vbus n1b 100n
+Rn n1b 0 10m
+DL vbus la QTLP690C
+Rl la 0 4.7k
+.save V(g) V(vbus) V(dq) I(Vid)
+.tran 0 5m 0 1u
+* --- mediciones (|V(VBUS)| < 0.5 V; fuga < 1 mA; V_DS < 32 V) ---
+.meas tran vbus_abs max abs(v(vbus)) from=1m to=5m
+.meas tran vbus_end avg v(vbus) from=4m to=5m
+.meas tran ileak avg i(Vid) from=4m to=5m
+.meas tran leak_mA param abs(ileak)*1000
+.meas tran ipk_inrush max abs(i(Vid))
+.meas tran vds_rev max v(vbus)-v(dq)
+.meas tran vgs_pk max abs(v(g)-v(vbus))
+.end

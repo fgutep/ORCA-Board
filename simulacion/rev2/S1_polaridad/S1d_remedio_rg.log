@@ -1,0 +1,143 @@
+LTspice 26.0.2 for Windows
+Circuit: C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\S1_polaridad\S1d_remedio_rg.cir
+Start Time: Mon Nov 16 14:21:33 2026
+Options:solver=alt method=modtrap
+
+.step rg=1000
+solver = Alternate
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = modified trap
+Instance "xq5:m1": Length shorter than recommended for a level 3 MOSFET.
+Instance "xq5:m2": Length shorter than recommended for a level 3 MOSFET.
+Direct Newton iteration succeeded in finding operating point.
+
+.step rg=2200
+Direct Newton iteration succeeded in finding operating point.
+
+.step rg=4700
+Direct Newton iteration succeeded in finding operating point.
+
+.step rg=10000
+Direct Newton iteration succeeded in finding operating point.
+
+.step rg=22000
+Direct Newton iteration succeeded in finding operating point.
+
+.step rg=47000
+Direct Newton iteration succeeded in finding operating point.
+Total elapsed time: 4.747 seconds.
+
+Files loaded:
+C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\S1_polaridad\S1d_remedio_rg.cir
+C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\modelos\SiRS4401DP_PS.TXT
+
+
+Measurement: vgs_min
+  step	MIN(v(g)-v(vbus) )	FROM	TO
+     1	-12.3377428055	0.006	0.014
+     2	-12.2334222794	0.006	0.014
+     3	-12.1348161697	0.006	0.014
+     4	-12.03764534	0.006	0.014
+     5	-11.9366960526	0.006	0.014
+     6	-11.8398151398	0.006	0.014
+
+Measurement: vgs_max
+  step	MAX(v(g)-v(vbus) )	FROM	TO
+     1	-0.614008155517	0.006	0.014
+     2	0.351382255554	0.006	0.014
+     3	0.369611740112	0.006	0.014
+     4	0.370644569397	0.006	0.014
+     5	0.366409301758	0.006	0.014
+     6	0.354330062866	0.006	0.014
+
+Measurement: vds_fwd
+  step	MAX(v(dq)-v(vbus) )	FROM	TO
+     1	3.0517578125e-05	0.006	0.014
+     2	1.90734863281e-05	0.006	0.014
+     3	1.33514404297e-05	0.006	0.014
+     4	1.14440917969e-05	0.006	0.014
+     5	9.53674316406e-06	0.006	0.014
+     6	0.00368118286133	0.006	0.014
+
+Measurement: vds_rev
+  step	MAX(v(vbus)-v(dq) )	FROM	TO
+     1	25.8149226308	0.006	0.014
+     2	23.8399806023	0.006	0.014
+     3	20.4435834885	0.006	0.014
+     4	15.0533151627	0.006	0.014
+     5	6.46773910522	0.006	0.014
+     6	0.0324668884277	0.006	0.014
+
+Measurement: vbus_max
+  step	MAX(v(vbus) )	FROM	TO
+     1	25.1995601654	0.006	0.014
+     2	25.1997318268	0.006	0.014
+     3	25.1998081207	0.006	0.014
+     4	25.1998443604	0.006	0.014
+     5	25.1998634338	0.006	0.014
+     6	25.1998710632	0.006	0.014
+
+Measurement: vbus_min
+  step	MIN(v(vbus) )	FROM	TO
+     1	0.585702419281	0.006	0.014
+     2	-1.41724586487	0.006	0.014
+     3	-4.83916139603	0.006	0.014
+     4	-10.2193002701	0.006	0.014
+     5	-18.7860088348	0.006	0.014
+     6	-25.3840255737	0.006	0.014
+
+Measurement: vbus_end
+  step	AVG(v(vbus) )	FROM	TO
+     1	0.61400965213	0.013	0.014
+     2	-1.36210656013	0.013	0.014
+     3	-4.76065908893	0.013	0.014
+     4	-10.1511267358	0.013	0.014
+     5	-18.7360532989	0.013	0.014
+     6	-25.1699323288	0.013	0.014
+
+Measurement: i_pk
+  step	MAX(i(Vid) )	FROM	TO
+     1	0.0178436469287	0.006	0.014
+     2	0.0108751505613	0.006	0.014
+     3	0.00776095036417	0.006	0.014
+     4	0.0062972814776	0.006	0.014
+     5	0.00558387534693	0.006	0.014
+     6	1.53103411198	0.006	0.014
+
+Measurement: i_min
+  step	MIN(i(Vid) )	FROM	TO
+     1	-7.09510469437	0.006	0.014
+     2	-7.0999379158	0.006	0.014
+     3	-7.10464143753	0.006	0.014
+     4	-7.1062707901	0.006	0.014
+     5	-7.1066865921	0.006	0.014
+     6	-7.1066827774	0.006	0.014
+
+Measurement: ig_dc
+  step	AVG(i(Rg) )	FROM	TO
+     1	0.012862790376	0.001	0.005
+     2	0.00589425722138	0.001	0.005
+     3	0.00278004026041	0.001	0.005
+     4	0.00131636392325	0.001	0.005
+     5	0.000602954009082	0.001	0.005
+     6	0.000284305977402	0.001	0.005
+
+Measurement: pz
+  step	abs(ig_dc)*12
+     1	0.154353484511
+     2	0.0707310866565
+     3	0.0333604831249
+     4	0.015796367079
+     5	0.00723544810899
+     6	0.00341167172883
+
+Measurement: p_pk
+  step	MAX(abs((v(dq)-v(vbus))*i(Vid)) )	FROM	TO
+     1	1.65645604873	0.006	0.014
+     2	1.61511544785	0.006	0.014
+     3	1.53756013537	0.006	0.014
+     4	1.43008774156	0.006	0.014
+     5	1.31539754972	0.006	0.014
+     6	0.0851655729111	0.006	0.014

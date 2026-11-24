@@ -1,0 +1,54 @@
+LTspice 26.0.2 for Windows
+Circuit: c:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\S4_convertidor\S4c_sin.cir
+Start Time: Mon Nov 16 18:20:59 2026
+Options:solver=alt method=modtrap
+solver = Alternate
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = modified trap
+WARNING: Node n010 is floating.
+
+Instance "xq5:m1": Length shorter than recommended for a level 3 MOSFET.
+Instance "xq5:m2": Length shorter than recommended for a level 3 MOSFET.
+Instance "xq7:M1": Length shorter than recommended for a level 3 MOSFET.
+Instance "xq6:m1": Length shorter than recommended for a level 3 MOSFET.
+Instance "xq6:m2": Length shorter than recommended for a level 3 MOSFET.
+d_d3: Emission coefficient, N=0.01, too small, this might lead to numerical problems.
+d_d111: Emission coefficient, N=0.01, too small, this might lead to numerical problems.
+d_d1: Emission coefficient, N=0.001, too small, this might lead to numerical problems.
+Direct Newton iteration succeeded in finding operating point.
+Total elapsed time: 6478.421 seconds.
+
+Files loaded:
+c:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\S4_convertidor\S4c_sin.cir
+C:\Users\Lenovo\AppData\Local\LTspice\lib\cmp\standard.dio
+c:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\LM5175_TRANS_xorfix.lib
+c:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\modelos\BUK9Y3R5-40E.lib
+c:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\modelos\SiRS4401DP_PS.TXT
+c:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\modelos\2n7002k_ps Rev B.lib
+
+vpre_c: AVG(V(vout) )=12.0477836079 FROM 0.0029 TO 0.003
+vppm_pre_c: PP(V(vmed) )=0.0833406448364 FROM 0.0029 TO 0.003
+vmin_c: MIN(V(vmed) )=9.75913524628 FROM 0.003 TO 0.006
+drop_c: (vpre_c-vmin_c)/vpre_c*100=18.9964265307
+vmin_c_raw: MIN(V(vout) )=9.75500774384 FROM 0.003 TO 0.006
+vpost_c: AVG(V(vout) )=11.9990462853 FROM 0.0058 TO 0.006
+ilpk_c: MAX(I(L1) )=33.7682952881 FROM 0.003 TO 0.006
+ilavg_pre_c: AVG(I(L1) )=1.41282277477 FROM 0.0029 TO 0.003
+vyl_pre_c: MAX(V(vyl) )=1.24212729931 FROM 0.0027 TO 0.003
+vyl_max_c: MAX(V(vyl) )=31.8786354065 FROM 0.003 TO 0.006
+vyl_max_c_post: MAX(V(vyl) )=31.8786354065 FROM 0.00301 TO 0.006
+ipk_q6: MAX(I(Vid) )=59.7137145996 FROM 0.003 TO 0.006
+t_q6on: V(vout)-V(vext)=0.5  AT 0.00344463633095
+pgf_c1: V(pgood)=3.5  AT 0.0030494459727
+pgf_c2: V(pgood)=3.5  AT 0.00346750145163
+pgmin_c: MIN(V(pgood) )=0.00743775442243 FROM 0.003 TO 0.006
+gon_c1: V(g6)-V(vout)=-2.5  AT 0.00303844544561
+Measurement "goff_c1" FAIL'ed
+Measurement "gon_c2" FAIL'ed
+ssmin_c: MIN(V(ss) )=1.24352705479 FROM 0.003 TO 0.006
+ss_pre_c: V(ss) =1.24352705479 at 0.003
+vcomp_max_c: MAX(V(comp) )=3.30064249039 FROM 0.003 TO 0.006
+vgs6_post: AVG(V(g6)-V(vout) )=-10.9067715704 FROM 0.0058 TO 0.006
+vext_post: AVG(V(vext) )=11.9854381215 FROM 0.0058 TO 0.006

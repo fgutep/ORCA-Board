@@ -1,0 +1,207 @@
+{
+  "C:\\Users\\Lenovo\\Documents\\Universidad\\2026-20\\ORCA-Board\\ORCA-Potencia\\ORCA-Board\\simulacion\\rev2\\S1_polaridad\\raw2csv.py": {
+    "mtime": 1794812369.4542208,
+    "ast_hash": "69ce17ec7be64fadb54be0348622185b",
+    "semantic_hash": "69ce17ec7be64fadb54be0348622185b"
+  },
+  "C:\\Users\\Lenovo\\Documents\\Universidad\\2026-20\\ORCA-Board\\ORCA-Potencia\\ORCA-Board\\simulacion\\rev2\\S2_hotplug\\raw2csv.py": {
+    "mtime": 1794834309.7796166,
+    "ast_hash": "edb61ddb57f01adfd0143ec71d8acb0d",
+    "semantic_hash": "edb61ddb57f01adfd0143ec71d8acb0d"
+  },
+  "C:\\Users\\Lenovo\\Documents\\Universidad\\2026-20\\ORCA-Board\\ORCA-Potencia\\ORCA-Board\\simulacion\\rev2\\S3_salida\\common_S3.inc": {
+    "mtime": 1794813178.8234012,
+    "ast_hash": "2ea00402b84706df4ddcc6dfe6c59d63",
+    "semantic_hash": "2ea00402b84706df4ddcc6dfe6c59d63"
+  },
+  "C:\\Users\\Lenovo\\Documents\\Universidad\\2026-20\\ORCA-Board\\ORCA-Potencia\\ORCA-Board\\simulacion\\rev2\\S3_salida\\run.sh": {
+    "mtime": 1794813693.1104312,
+    "ast_hash": "f257c3f9a1d69e95fbe0ce1dbafb54c4",
+    "semantic_hash": "f257c3f9a1d69e95fbe0ce1dbafb54c4"
+  },
+  "C:\\Users\\Lenovo\\Documents\\Universidad\\2026-20\\ORCA-Board\\ORCA-Potencia\\ORCA-Board\\simulacion\\rev2\\S3_salida\\s3_post.py": {
+    "mtime": 1794813543.1155355,
+    "ast_hash": "1d5b75067748178f7d2afd2b095ad590",
+    "semantic_hash": "1d5b75067748178f7d2afd2b095ad590"
+  },
+  "C:\\Users\\Lenovo\\Documents\\Universidad\\2026-20\\ORCA-Board\\ORCA-Potencia\\ORCA-Board\\simulacion\\rev2\\S3_salida\\soa_S3.inc": {
+    "mtime": 1794808813.1680312,
+    "ast_hash": "14d5b0453e5c170527a55c5d7f3c198b",
+    "semantic_hash": "14d5b0453e5c170527a55c5d7f3c198b"
+  },
+  "C:\\Users\\Lenovo\\Documents\\Universidad\\2026-20\\ORCA-Board\\ORCA-Potencia\\ORCA-Board\\simulacion\\rev2\\ESTADO_PAUSA.md": {
+    "mtime": 1794873415.823287,
+    "ast_hash": "2aae14dee640d4a9314a8af4a9d798a0",
+    "semantic_hash": "2aae14dee640d4a9314a8af4a9d798a0"
+  },
+  "C:\\Users\\Lenovo\\Documents\\Universidad\\2026-20\\ORCA-Board\\ORCA-Potencia\\ORCA-Board\\simulacion\\rev2\\HANDOFF_Proximo_Chat.md": {
+    "mtime": 1794889367.263996,
+    "ast_hash": "617a0d0bda6d6f18428dd8496762527a",
+    "semantic_hash": "617a0d0bda6d6f18428dd8496762527a"
+  },
+  "C:\\Users\\Lenovo\\Documents\\Universidad\\2026-20\\ORCA-Board\\ORCA-Potencia\\ORCA-Board\\simulacion\\rev2\\README_rev2.md": {
+    "mtime": 1794873416.7511802,
+    "ast_hash": "267fb732d78658997bec858aeb78a02e",
+    "semantic_hash": "267fb732d78658997bec858aeb78a02e"
+  },
+  "C:\\Users\\Lenovo\\Documents\\Universidad\\2026-20\\ORCA-Board\\ORCA-Potencia\\ORCA-Board\\simulacion\\rev2\\S1_polaridad\\resumen.md": {
+    "mtime": 1794857229.835967,
+    "ast_hash": "941e2eedf7a3af29423d80c0fb19c929",
+    "semantic_hash": "941e2eedf7a3af29423d80c0fb19c929"
+  },
+  "C:\\Users\\Lenovo\\Documents\\Universidad\\2026-20\\ORCA-Board\\ORCA-Potencia\\ORCA-Board\\simulacion\\rev2\\S2_hotplug\\resumen.md": {
+    "mtime": 1794857223.5476334,
+    "ast_hash": "ebbef1d8bf6ee20cacdee7bd6c8e75c4",
+    "semantic_hash": "ebbef1d8bf6ee20cacdee7bd6c8e75c4"
+  },
+  "C:\\Users\\Lenovo\\Documents\\Universidad\\2026-20\\ORCA-Board\\ORCA-Potencia\\ORCA-Board\\simulacion\\rev2\\S3_salida\\resumen.md": {
+    "mtime": 1794873388.4664648,
+    "ast_hash": "f9bf40a88aa8a8e3ecd520a4cbfd793e",
+    "semantic_hash": "f9bf40a88aa8a8e3ecd520a4cbfd793e"
+  },
+  "C:\\Users\\Lenovo\\Documents\\Universidad\\2026-20\\ORCA-Board\\ORCA-Potencia\\ORCA-Board\\simulacion\\rev2\\S4_convertidor\\resumen_S4a.md": {
+    "mtime": 1794812965.868807,
+    "ast_hash": "60824436632969755a1f417c9317c439",
+    "semantic_hash": "60824436632969755a1f417c9317c439"
+  },
+  "C:\\Users\\Lenovo\\Documents\\Universidad\\2026-20\\ORCA-Board\\ORCA-Potencia\\ORCA-Board\\simulacion\\rev2\\S2_hotplug\\celdas\\S2b_snubber_resultados.json": {
+    "mtime": 1794834147.0603397,
+    "ast_hash": "96e3db6042848392edf7ed2225deb6f3",
+    "semantic_hash": "96e3db6042848392edf7ed2225deb6f3"
+  },
+  "C:\\Users\\Lenovo\\Documents\\Universidad\\2026-20\\ORCA-Board\\ORCA-Potencia\\ORCA-Board\\simulacion\\rev2\\S2_hotplug\\celdas\\S2c_capextra_resultados.json": {
+    "mtime": 1794834135.0132968,
+    "ast_hash": "6d7ad8649cd994dbf7e2cfee6e5a2291",
+    "semantic_hash": "6d7ad8649cd994dbf7e2cfee6e5a2291"
+  },
+  "C:\\Users\\Lenovo\\Documents\\Universidad\\2026-20\\ORCA-Board\\ORCA-Potencia\\ORCA-Board\\simulacion\\rev2\\S2_hotplug\\celdas_Cjo150p\\S2c_capextra_resultados.json": {
+    "mtime": 1794833647.6964188,
+    "ast_hash": "d020c183c8e13f9cae966ecf872e745d",
+    "semantic_hash": "d020c183c8e13f9cae966ecf872e745d"
+  },
+  "C:\\Users\\Lenovo\\Documents\\Universidad\\2026-20\\ORCA-Board\\ORCA-Potencia\\ORCA-Board\\simulacion\\rev2\\S2_hotplug\\celdas_old1p\\S2b_snubber_resultados.json": {
+    "mtime": 1794833298.925503,
+    "ast_hash": "f421d838ae2ca97f776b641ccf09e96c",
+    "semantic_hash": "f421d838ae2ca97f776b641ccf09e96c"
+  },
+  "C:\\Users\\Lenovo\\Documents\\Universidad\\2026-20\\ORCA-Board\\ORCA-Potencia\\ORCA-Board\\simulacion\\rev2\\S2_hotplug\\celdas_old1p\\S2c_capextra_resultados.json": {
+    "mtime": 1794832910.9556177,
+    "ast_hash": "7842342847a366c5f38049069f1b748c",
+    "semantic_hash": "7842342847a366c5f38049069f1b748c"
+  },
+  "C:\\Users\\Lenovo\\Documents\\Universidad\\2026-20\\ORCA-Board\\ORCA-Potencia\\ORCA-Board\\simulacion\\rev2\\S2_hotplug\\leer_celdas.py": {
+    "mtime": 1794833132.2137966,
+    "ast_hash": "290aaae2ced5e8f82997d7a59af13e7f",
+    "semantic_hash": "290aaae2ced5e8f82997d7a59af13e7f"
+  },
+  "C:\\Users\\Lenovo\\Documents\\Universidad\\2026-20\\ORCA-Board\\ORCA-Potencia\\ORCA-Board\\simulacion\\rev2\\S2_hotplug\\run_celdas.py": {
+    "mtime": 1794833155.1302025,
+    "ast_hash": "7a2449f1fc710cc34cef28b95a1a0484",
+    "semantic_hash": "7a2449f1fc710cc34cef28b95a1a0484"
+  },
+  "C:\\Users\\Lenovo\\Documents\\Universidad\\2026-20\\ORCA-Board\\ORCA-Potencia\\ORCA-Board\\simulacion\\rev2\\S3_salida\\S3f_common.inc": {
+    "mtime": 1794829059.6824017,
+    "ast_hash": "8310ca1796acbf0db377eb1f8635f300",
+    "semantic_hash": "8310ca1796acbf0db377eb1f8635f300"
+  },
+  "C:\\Users\\Lenovo\\Documents\\Universidad\\2026-20\\ORCA-Board\\ORCA-Potencia\\ORCA-Board\\simulacion\\rev2\\S3_salida\\S3f_gen_ilim_soa.py": {
+    "mtime": 1794830287.4569752,
+    "ast_hash": "a74bcee42285f10cdafc1e51d481f96b",
+    "semantic_hash": "a74bcee42285f10cdafc1e51d481f96b"
+  },
+  "C:\\Users\\Lenovo\\Documents\\Universidad\\2026-20\\ORCA-Board\\ORCA-Potencia\\ORCA-Board\\simulacion\\rev2\\S3_salida\\S3f_gen_precarga.py": {
+    "mtime": 1794828669.308002,
+    "ast_hash": "71ae7ad633362b3d324429c01595af9b",
+    "semantic_hash": "71ae7ad633362b3d324429c01595af9b"
+  },
+  "C:\\Users\\Lenovo\\Documents\\Universidad\\2026-20\\ORCA-Board\\ORCA-Potencia\\ORCA-Board\\simulacion\\rev2\\S3_salida\\S3f_gen_recierre.py": {
+    "mtime": 1794827908.876274,
+    "ast_hash": "007a0d4b4416fb680e0983da18a94a0c",
+    "semantic_hash": "007a0d4b4416fb680e0983da18a94a0c"
+  },
+  "C:\\Users\\Lenovo\\Documents\\Universidad\\2026-20\\ORCA-Board\\ORCA-Potencia\\ORCA-Board\\simulacion\\rev2\\S3_salida\\S3f_post.py": {
+    "mtime": 1794829371.1997797,
+    "ast_hash": "c112f1097b02d8d844c73baf659417b4",
+    "semantic_hash": "c112f1097b02d8d844c73baf659417b4"
+  },
+  "C:\\Users\\Lenovo\\Documents\\Universidad\\2026-20\\ORCA-Board\\ORCA-Potencia\\ORCA-Board\\simulacion\\rev2\\S3_salida\\S3f_run2.sh": {
+    "mtime": 1794828022.076291,
+    "ast_hash": "a11d827ed0954d7e042184238fa6cf33",
+    "semantic_hash": "a11d827ed0954d7e042184238fa6cf33"
+  },
+  "C:\\Users\\Lenovo\\Documents\\Universidad\\2026-20\\ORCA-Board\\ORCA-Potencia\\ORCA-Board\\simulacion\\rev2\\S3_salida\\S3f_show_ilim.py": {
+    "mtime": 1794828886.9670308,
+    "ast_hash": "04cc5868c3d2db4dab390ca22d9ba734",
+    "semantic_hash": "04cc5868c3d2db4dab390ca22d9ba734"
+  },
+  "C:\\Users\\Lenovo\\Documents\\Universidad\\2026-20\\ORCA-Board\\ORCA-Potencia\\ORCA-Board\\simulacion\\rev2\\S3_salida\\S3f_show_precarga.py": {
+    "mtime": 1794829222.02681,
+    "ast_hash": "fed598bbe65ebef2b222b39c8f402673",
+    "semantic_hash": "fed598bbe65ebef2b222b39c8f402673"
+  },
+  "C:\\Users\\Lenovo\\Documents\\Universidad\\2026-20\\ORCA-Board\\ORCA-Potencia\\ORCA-Board\\simulacion\\rev2\\S3_salida\\S3f_tablas.py": {
+    "mtime": 1794829891.3232915,
+    "ast_hash": "6e3a2e05e98a33f4f15bddcd5fd15d53",
+    "semantic_hash": "6e3a2e05e98a33f4f15bddcd5fd15d53"
+  },
+  "C:\\Users\\Lenovo\\Documents\\Universidad\\2026-20\\ORCA-Board\\ORCA-Potencia\\ORCA-Board\\simulacion\\rev2\\S4_convertidor\\gen_S4.py": {
+    "mtime": 1794877787.244665,
+    "ast_hash": "45ae2dd93bb7a73e4f1def46dc7ab60c",
+    "semantic_hash": "45ae2dd93bb7a73e4f1def46dc7ab60c"
+  },
+  "C:\\Users\\Lenovo\\Documents\\Universidad\\2026-20\\ORCA-Board\\ORCA-Potencia\\ORCA-Board\\simulacion\\rev2\\S4_convertidor\\meas.py": {
+    "mtime": 1794863834.5419517,
+    "ast_hash": "ed38c51f61063cb175cdcbb75da15287",
+    "semantic_hash": "ed38c51f61063cb175cdcbb75da15287"
+  },
+  "C:\\Users\\Lenovo\\Documents\\Universidad\\2026-20\\ORCA-Board\\ORCA-Potencia\\ORCA-Board\\simulacion\\rev2\\S4_convertidor\\raw2csv_S4.py": {
+    "mtime": 1794889221.6043117,
+    "ast_hash": "a122f297742580aada1827fa1b022e4f",
+    "semantic_hash": "a122f297742580aada1827fa1b022e4f"
+  },
+  "C:\\Users\\Lenovo\\Documents\\Universidad\\2026-20\\ORCA-Board\\ORCA-Potencia\\ORCA-Board\\simulacion\\rev2\\S4_convertidor\\simt.py": {
+    "mtime": 1794860289.6017108,
+    "ast_hash": "cebd23637d2491e72f3422ab0d86db5f",
+    "semantic_hash": "cebd23637d2491e72f3422ab0d86db5f"
+  },
+  "C:\\Users\\Lenovo\\Documents\\Universidad\\2026-20\\ORCA-Board\\ORCA-Potencia\\ORCA-Board\\simulacion\\rev2\\S4_convertidor\\tabla_S4.py": {
+    "mtime": 1794889281.4856832,
+    "ast_hash": "7f033a4f6c183b7f3356a8e486a5fa1d",
+    "semantic_hash": "7f033a4f6c183b7f3356a8e486a5fa1d"
+  },
+  "C:\\Users\\Lenovo\\Documents\\Universidad\\2026-20\\ORCA-Board\\ORCA-Potencia\\ORCA-Board\\simulacion\\rev2\\S5_escalon\\postproceso.py": {
+    "mtime": 1794865682.0265567,
+    "ast_hash": "afe4ab35c23d2ec906550d6058746f63",
+    "semantic_hash": "afe4ab35c23d2ec906550d6058746f63"
+  },
+  "C:\\Users\\Lenovo\\Documents\\Universidad\\2026-20\\ORCA-Board\\ORCA-Potencia\\ORCA-Board\\simulacion\\rev2\\CAMBIOS_Mejoras_Rev2_borrador.md": {
+    "mtime": 1794873298.5886285,
+    "ast_hash": "173d70a508fe9fb0e1232ae949c64275",
+    "semantic_hash": "173d70a508fe9fb0e1232ae949c64275"
+  },
+  "C:\\Users\\Lenovo\\Documents\\Universidad\\2026-20\\ORCA-Board\\ORCA-Potencia\\ORCA-Board\\simulacion\\rev2\\RESULTADOS_Sim_Rev2.md": {
+    "mtime": 1794888863.7507176,
+    "ast_hash": "b153e1fdc03248a6d0cfc91e8af58ab3",
+    "semantic_hash": "b153e1fdc03248a6d0cfc91e8af58ab3"
+  },
+  "C:\\Users\\Lenovo\\Documents\\Universidad\\2026-20\\ORCA-Board\\ORCA-Potencia\\ORCA-Board\\simulacion\\rev2\\RESULTADOS_Sim_Rev2_borrador.md": {
+    "mtime": 1794873311.8069153,
+    "ast_hash": "c6041bcb6f751a6732e12ca220f447f8",
+    "semantic_hash": "c6041bcb6f751a6732e12ca220f447f8"
+  },
+  "C:\\Users\\Lenovo\\Documents\\Universidad\\2026-20\\ORCA-Board\\ORCA-Potencia\\ORCA-Board\\simulacion\\rev2\\S4_convertidor\\resumen_S4b_e.md": {
+    "mtime": 1794877803.957628,
+    "ast_hash": "cc277f821bdab0f76bbb57a805beeef9",
+    "semantic_hash": "cc277f821bdab0f76bbb57a805beeef9"
+  },
+  "C:\\Users\\Lenovo\\Documents\\Universidad\\2026-20\\ORCA-Board\\ORCA-Potencia\\ORCA-Board\\simulacion\\rev2\\S5_escalon\\postproceso_salida.txt": {
+    "mtime": 1794865706.5462363,
+    "ast_hash": "d932d8af21eed8e7c45eebaa38742dfc",
+    "semantic_hash": "d932d8af21eed8e7c45eebaa38742dfc"
+  },
+  "C:\\Users\\Lenovo\\Documents\\Universidad\\2026-20\\ORCA-Board\\ORCA-Potencia\\ORCA-Board\\simulacion\\rev2\\S5_escalon\\resumen.md": {
+    "mtime": 1794865749.3532944,
+    "ast_hash": "0469b69c4af0a73618fa0602050ab125",
+    "semantic_hash": "0469b69c4af0a73618fa0602050ab125"
+  }
+}

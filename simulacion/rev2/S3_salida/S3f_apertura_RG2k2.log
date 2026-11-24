@@ -1,0 +1,151 @@
+LTspice 26.0.2 for Windows
+Circuit: C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\S3_salida\S3f_apertura_RG2k2.cir
+Start Time: Mon Nov 16 06:45:20 2026
+Options:solver=alt method=modtrap
+
+.step vn=12 ll=5e-07
+solver = Alternate
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = modified trap
+Instance "xq7:M1": Length shorter than recommended for a level 3 MOSFET.
+Instance "xq6:m1": Length shorter than recommended for a level 3 MOSFET.
+Instance "xq6:m2": Length shorter than recommended for a level 3 MOSFET.
+Direct Newton iteration failed to find operating point.
+Starting Gmin stepping
+Gmin stepping succeeded in finding the operating point.
+
+
+.step vn=25 ll=5e-07
+Direct Newton iteration succeeded in finding operating point.
+
+.step vn=12 ll=0.001
+Direct Newton iteration failed to find operating point.
+Starting Gmin stepping
+Gmin stepping succeeded in finding the operating point.
+
+
+.step vn=25 ll=0.001
+Direct Newton iteration succeeded in finding operating point.
+Total elapsed time: 19.489 seconds.
+
+Files loaded:
+C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\S3_salida\S3f_apertura_RG2k2.cir
+C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\S3_salida\S3f_common.inc
+C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\modelos\SiRS4401DP_PS.TXT
+C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\modelos\2n7002k_ps Rev B.lib
+C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\S3_salida\soa_S3.inc
+
+
+Measurement: vdsmax
+  step	MAX(V(vint)-V(vdr) )	FROM	TO
+     1	11.9999790022	0.002	0.1
+     2	24.9999560537	0.002	0.1
+     3	21.8508138657	0.002	0.1
+     4	30.7217459679	0.002	0.1
+
+Measurement: vextmin
+  step	MIN(V(vext) )	FROM	TO
+     1	1.69531269023e-08	0.002	0.1
+     2	7.73086625827e-08	0.002	0.1
+     3	-9.8009967804	0.002	0.1
+     4	-5.68764066696	0.002	0.1
+
+Measurement: vintmax
+  step	MAX(V(vint) )	FROM	TO
+     1	12.0535163879	0.002	0.1
+     2	25.0339355469	0.002	0.1
+     3	12.0499830246	0.002	0.1
+     4	25.0350189209	0.002	0.1
+
+Measurement: ovs
+  step	(vintmax-VN)/VN*100
+     1	0.445969899495
+     2	0.1357421875
+     3	0.416525204976
+     4	0.140075683594
+
+Measurement: i0
+  step	AVG(I(Vid) )	FROM	TO
+     1	7.97705173492	0.0015	0.002
+     2	7.99296951295	0.0015	0.002
+     3	7.97705173492	0.0015	0.002
+     4	7.99296951295	0.0015	0.002
+
+Measurement: tgs
+  step	V(g6)-V(vint)=-2.5 
+     1	0.00534935808525
+     2	0.00588557192867
+     3	0.00567137586876
+     4	0.00609203055344
+
+Measurement: toff10
+  step	I(Vid)=0.8 
+     1	0.00557903707558
+     2	0.00628336370892
+     3	0.00597614959658
+     4	0.00652846332207
+
+Measurement: toff90
+  step	I(Vid)=7.2 
+     1	0.00432277420177
+     2	0.00516308504068
+     3	0.00483318099736
+     4	0.00542016925687
+
+Measurement: ppk
+  step	MAX((V(vint)-V(vdr))*I(Vid) )	FROM	TO
+     1	24.1740596142	0.002	0.1
+     2	50.1307598375	0.002	0.1
+     3	59.3000431303	0.002	0.1
+     4	79.3712752131	0.002	0.1
+
+Measurement: eq6
+  step	INTEG((V(vint)-V(vdr))*I(Vid) )	FROM	TO
+     1	0.0237586559533	0.002	0.1
+     2	0.0523879794501	0.002	0.1
+     3	0.0550414755931	0.002	0.1
+     4	0.0846572534988	0.002	0.1
+
+Measurement: mxu100u
+  step	MAX(V(u100u) )	FROM	TO
+     1	0.0625021308661	0.002	0.1
+     2	0.0638742670417	0.002	0.1
+     3	0.0646138638258	0.002	0.1
+     4	0.0647842511535	0.002	0.1
+
+Measurement: mxu1m
+  step	MAX(V(u1m) )	FROM	TO
+     1	0.0625021308661	0.002	0.1
+     2	0.193299427629	0.002	0.1
+     3	0.232457250357	0.002	0.1
+     4	0.663882374763	0.002	0.1
+
+Measurement: mxu10m
+  step	MAX(V(u10m) )	FROM	TO
+     1	0.158269435167	0.002	0.1
+     2	0.802559673786	0.002	0.1
+     3	0.971173644066	0.002	0.1
+     4	1.87555229664	0.002	0.1
+
+Measurement: mxu40m
+  step	MAX(V(u40m) )	FROM	TO
+     1	0.629434466362	0.002	0.1
+     2	1.66357898712	0.002	0.1
+     3	2.00128865242	0.002	0.1
+     4	3.07779622078	0.002	0.1
+
+Measurement: mxudc
+  step	MAX(V(udc) )	FROM	TO
+     1	0.795485675335	0.002	0.1
+     2	2.2228410244	0.002	0.1
+     3	2.67512178421	0.002	0.1
+     4	4.15511035919	0.002	0.1
+
+Measurement: vmtopen
+  step	MAX(V(m)-V(vint) )	FROM	TO
+     1	0	0.002	0.1
+     2	-1.90734863281e-06	0.002	0.1
+     3	0	0.002	0.1
+     4	-1.90734863281e-06	0.002	0.1

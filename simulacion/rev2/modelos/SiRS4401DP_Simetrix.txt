@@ -1,0 +1,45 @@
+
+
+********************************
+* Copyright:                   *
+* Vishay Intertechnology, Inc. *
+********************************
+*Feb. 25, 2023
+*ECN S15-0723, Rev. A
+*This document is intended as a SPICE modeling guideline and does not
+*constitute a commercial product datasheet. Designers should refer to the
+*appropriate datasheet of the same number for guaranteed specification
+*limits.
+.subckt SiRS4401DP d g s 
+.options SPICEMOSCHARGEMODEL = 1
+m1 3 gx s s pmos w=41.45 l=5e-7
+m2 s gx s d nmos w=41.45 l=4e-7
+r1 d 3 0.001404 tc=0.004614,3e-6
+cgs gx s 9e-9
+cgd gx d 5e-10
+rg g gy 2.5
+rtcv 100 s 1e6 tc=6.7e-4,5e-6
+etcv gy gx 100 200 1
+itcv s 100 1u
+vtcv 200 s 1
+dbd d s dbd 41.45
+****************************************************************
+.model PMOS pmos (
++ LEVEL = 3                      TOX = 5e-8                   RS = 0                         
++ KP = 8e-6                      NSUB = 3.940406e16             KAPPA = 0.05                   
++ NFS = 2e11                     LD = 0                         IS = 0                         
++ TPG = -1                       theta = 0.0814318         )     
+***************************************************************
+.model NMOS nmos (
++ LEVEL = 3                      TOX = 5e-8                     NSUB = 9e15                    
++ IS = 0                         TPG = -1                      )                     
+****************************************************************
+.model DBD d (
++ FC = 0.1                       TT = 27e-9                     T_MEASURED = 25                      
++ BV = 41                        RS = 0.0245401                 N = 1.1039384                  
++ IS = 3.2742464e-12             EG = 1.05                      XTI = 3                        
++ TRS1 = 0.0029771                CJO = 5e-14                    VJ = 5.8300418                 
++ M = 0.3950482          )        
+****************************************************************
+.ends
+

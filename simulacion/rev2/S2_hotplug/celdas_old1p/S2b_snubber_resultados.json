@@ -1,0 +1,202 @@
+[
+ {
+  "cell": {
+   "RSN": "0.05",
+   "CSN": "47u"
+  },
+  "done": true,
+  "secs": 6.0,
+  "relaxed": 0,
+  "meas": {}
+ },
+ {
+  "cell": {
+   "RSN": "0.05",
+   "CSN": "100u"
+  },
+  "done": true,
+  "secs": 6.2,
+  "relaxed": 0,
+  "meas": {}
+ },
+ {
+  "cell": {
+   "RSN": "0.05",
+   "CSN": "220u"
+  },
+  "done": true,
+  "secs": 7.9,
+  "relaxed": 0,
+  "meas": {}
+ },
+ {
+  "cell": {
+   "RSN": "0.05",
+   "CSN": "470u"
+  },
+  "done": false,
+  "secs": 60.2,
+  "relaxed": 978,
+  "meas": {}
+ },
+ {
+  "cell": {
+   "RSN": "0.05",
+   "CSN": "1000u"
+  },
+  "done": false,
+  "secs": 60.1,
+  "relaxed": 0,
+  "meas": {}
+ },
+ {
+  "cell": {
+   "RSN": "0.1",
+   "CSN": "47u"
+  },
+  "done": true,
+  "secs": 5.8,
+  "relaxed": 0,
+  "meas": {}
+ },
+ {
+  "cell": {
+   "RSN": "0.1",
+   "CSN": "100u"
+  },
+  "done": true,
+  "secs": 6.0,
+  "relaxed": 0,
+  "meas": {}
+ },
+ {
+  "cell": {
+   "RSN": "0.1",
+   "CSN": "220u"
+  },
+  "done": false,
+  "secs": 60.1,
+  "relaxed": 897,
+  "meas": {}
+ },
+ {
+  "cell": {
+   "RSN": "0.1",
+   "CSN": "470u"
+  },
+  "done": false,
+  "secs": 60.0,
+  "relaxed": 0,
+  "meas": {}
+ },
+ {
+  "cell": {
+   "RSN": "0.1",
+   "CSN": "1000u"
+  },
+  "done": false,
+  "secs": 60.1,
+  "relaxed": 457,
+  "meas": {}
+ },
+ {
+  "cell": {
+   "RSN": "0.22",
+   "CSN": "47u"
+  },
+  "done": true,
+  "secs": 7.0,
+  "relaxed": 0,
+  "meas": {}
+ },
+ {
+  "cell": {
+   "RSN": "0.22",
+   "CSN": "100u"
+  },
+  "done": true,
+  "secs": 7.1,
+  "relaxed": 0,
+  "meas": {}
+ },
+ {
+  "cell": {
+   "RSN": "0.22",
+   "CSN": "220u"
+  },
+  "done": false,
+  "secs": 60.1,
+  "relaxed": 32,
+  "meas": {}
+ },
+ {
+  "cell": {
+   "RSN": "0.22",
+   "CSN": "470u"
+  },
+  "done": false,
+  "secs": 60.1,
+  "relaxed": 0,
+  "meas": {}
+ },
+ {
+  "cell": {
+   "RSN": "0.22",
+   "CSN": "1000u"
+  },
+  "done": false,
+  "secs": 60.1,
+  "relaxed": 775,
+  "meas": {}
+ },
+ {
+  "cell": {
+   "RSN": "0.47",
+   "CSN": "47u"
+  },
+  "done": true,
+  "secs": 5.7,
+  "relaxed": 0,
+  "meas": {}
+ },
+ {
+  "cell": {
+   "RSN": "0.47",
+   "CSN": "100u"
+  },
+  "done": true,
+  "secs": 7.4,
+  "relaxed": 0,
+  "meas": {}
+ },
+ {
+  "cell": {
+   "RSN": "0.47",
+   "CSN": "220u"
+  },
+  "done": false,
+  "secs": 60.1,
+  "relaxed": 866,
+  "meas": {}
+ },
+ {
+  "cell": {
+   "RSN": "0.47",
+   "CSN": "470u"
+  },
+  "done": false,
+  "secs": 60.1,
+  "relaxed": 1092,
+  "meas": {}
+ },
+ {
+  "cell": {
+   "RSN": "0.47",
+   "CSN": "1000u"
+  },
+  "done": false,
+  "secs": 60.1,
+  "relaxed": 1283,
+  "meas": {}
+ }
+]

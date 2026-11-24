@@ -1,0 +1,18 @@
+* ORCA-Board / Carga Luis - LTspice caret (^) semantics test
+* Run directly in LTspice: File > Open > this .cir, then Run.
+* Put this file in the same folder as LM5175_TRANS.lib
+.include LM5175_TRANS_xorfix.lib
+VA A 0 PULSE(0 1 1m   1n 1n 1m   2m)
+VB B 0 PULSE(0 1 0.5m 1n 1n 0.5m 1m)
+X1 A B YXNOR XNOR2_BASIC_GEN PARAMS: VDD=1 VSS=0 VTHRESH=0.5
+X2 A B YXOR  XOR2_BASIC_GEN  PARAMS: VDD=1 VSS=0 VTHRESH=0.5
+.tran 10u 2m
+.meas TRAN xnor_A0B0 FIND V(YXNOR) AT=0.25m
+.meas TRAN xnor_A0B1 FIND V(YXNOR) AT=0.75m
+.meas TRAN xnor_A1B0 FIND V(YXNOR) AT=1.25m
+.meas TRAN xnor_A1B1 FIND V(YXNOR) AT=1.75m
+.meas TRAN xor_A0B0  FIND V(YXOR)  AT=0.25m
+.meas TRAN xor_A0B1  FIND V(YXOR)  AT=0.75m
+.meas TRAN xor_A1B0  FIND V(YXOR)  AT=1.25m
+.meas TRAN xor_A1B1  FIND V(YXOR)  AT=1.75m
+.end

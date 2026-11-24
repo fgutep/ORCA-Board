@@ -1,0 +1,52 @@
+LOG VALIDO: True | tolerance relaxed: False
+
+== Evento 1 (1->4 A) ==
+  vpre           11.99
+  drift_mV       -20.09
+  iload_pre      0.9995
+  iload_end      4
+  ilavg_pre      1.085
+  ilmin_pre      0.6867
+  ilavg_end      4.22
+  ilmin_end      3.869
+  ripple_pre_pp  0.02678
+  vmin           11.71
+  vmax           12.04
+  dnu            2.326
+  dov            0.3549
+  dnu_r          2.368
+  dov_r          0.3553
+  vend_shift     n/d
+  il_pk_ev       5.537
+  il_vy_ev       0.7139
+  banda 2.0%: sale=True tset=89.3 us  n_hi=0 n_lo=2 ciclos=0 termina_dentro=True truncado=False
+  banda 1.0%: sale=True tset=164.8 us  n_hi=0 n_lo=2 ciclos=0 termina_dentro=True truncado=False
+  banda 0.5%: sale=True tset=198.1 us  n_hi=0 n_lo=2 ciclos=0 termina_dentro=True truncado=False
+
+== Evento 2 (4->1 A) ==
+  vpre           12
+  drift_mV       -0.0958
+  iload_pre      4
+  iload_end      0.9999
+  ilavg_pre      4.22
+  ilmin_pre      3.869
+  ilavg_end      1.058
+  ilmin_end      0.6979
+  ripple_pre_pp  0.03793
+  vmin           11.96
+  vmax           12.27
+  dnu            0.2899
+  dov            2.259
+  dnu_r          0.3671
+  dov_r          2.259
+  vend_shift     n/d
+  il_pk_ev       4.553
+  il_vy_ev       -0.2425
+  banda 2.0%: sale=True tset=108.5 us  n_hi=2 n_lo=0 ciclos=0 termina_dentro=True truncado=False
+  banda 1.0%: sale=True tset=177.3 us  n_hi=2 n_lo=0 ciclos=0 termina_dentro=True truncado=False
+  banda 0.5%: sale=True tset=222.1 us  n_hi=2 n_lo=0 ciclos=0 termina_dentro=True truncado=False
+
+== Contraste (estimacion): mediana 50 ns sobre V(vout) ==
+  ev1: undershoot 2.340 %  overshoot 0.355 %  (vpre de .meas 11.9936 V)
+  ev2: undershoot 0.292 %  overshoot 2.259 %  (vpre de .meas 11.9987 V)
+csv/S5.csv 6000 puntos

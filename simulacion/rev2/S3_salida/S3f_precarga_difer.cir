@@ -1,0 +1,37 @@
+S3f precarga: R de precarga en paralelo con Q6 (vint-vext), 25 V, red nueva (RST=330k); carga de 8 A conectada 30 ms DESPUES del cierre (EXTRA rotulado)
+.include S3f_common.inc
+.include soa_S3.inc
+.options solver=alt method=modtrap
+.param VN=25 TLD={TCLOSE+30m} TMEAS={TCLOSE+25m} TEND={TCLOSE+60m} RLOAD={VN/8} TSRCOFF=1e3 CGD=100n RG=22k RQ7=1m CQ7=1p RST=330k RSTG=1G RDON=1
+.step param CL list 330u 1000u
+.step param RPRE list 1G 4.7k 1k 470 100
+.step param TCLOSE list 10m 100m 300m
+Cl vext cl1 {CL}
+Rcl cl1 0 {ESRL}
+Sld vext nld ldc 0 SWM
+Rload nld 0 {RLOAD}
+Vld ldc 0 PWL(0 0 {TLD} 0 {TLD+1n} 1)
+Vctl ctl 0 PULSE(0 1 {TCLOSE} 1n 1n 1 2)
+.ic V(vext)=0 V(cl1)=0
+.tran 0 {TEND} 0 1u
+.meas tran vdsc find V(vint)-V(vdr) at={TCLOSE}
+.meas tran vextc find V(vext) at={TCLOSE}
+.meas tran ppre max (V(vint)-V(vext))*I(Rpre) from=0 to={TCLOSE}
+.meas tran pstby find (V(vint)-V(vext))*I(Rpre) at={TCLOSE}
+.meas tran ipk max I(Vid) from={TCLOSE} to={TMEAS}
+.meas tran ilim max I(Vsns) from={TCLOSE}
+.meas tran vmin min V(vint) from={TCLOSE} to={TMEAS}
+.meas tran drop param (VN-vmin)/VN*100
+.meas tran pgf1 when V(pgood)=3.7 fall=1 td={TCLOSE}
+.meas tran tfull when V(vint)-V(vdr)=0.5 fall=1 td={TCLOSE}
+.meas tran t15 integ (V(vint)-V(vdr)>15) from={TCLOSE} to={TMEAS}
+.meas tran ppk max (V(vint)-V(vdr))*I(Vid) from={TCLOSE} to={TMEAS}
+.meas tran eq6 integ (V(vint)-V(vdr))*I(Vid) from={TCLOSE} to={TMEAS}
+.meas tran teq param eq6/ppk
+.meas tran mxu100u max V(u100u) from={TCLOSE} to={TMEAS}
+.meas tran mxu1m max V(u1m) from={TCLOSE} to={TMEAS}
+.meas tran mxu10m max V(u10m) from={TCLOSE} to={TMEAS}
+.meas tran mxu40m max V(u40m) from={TCLOSE} to={TMEAS}
+.meas tran mxudc max V(udc) from={TCLOSE} to={TMEAS}
+.meas tran vfin avg V(vint) from={TEND}-10m to={TEND}
+.end

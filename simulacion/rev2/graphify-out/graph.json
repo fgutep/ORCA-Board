@@ -1,0 +1,5621 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {
+    "hyperedges": [
+      {
+        "id": "hx_s3a_remedios_candidatos",
+        "label": "Remedios candidatos de S3a (C_gd, RG, RC Q7) que dan el remedio elegido",
+        "nodes": [
+          "s3a_remedio_cgd",
+          "s3a_remedio_rg",
+          "s3a_remedio_q7rc",
+          "s3a_remedio_final"
+        ],
+        "relation": "participate_in",
+        "confidence": "EXTRACTED",
+        "confidence_score": 0.9,
+        "source_file": "S3_salida/resumen.md"
+      },
+      {
+        "id": "hx_s3f_conflicto_rrst",
+        "label": "Conflicto Rrst: V_GS (S3c), recierre y apagado rapido en la red con diodo",
+        "nodes": [
+          "s3f_seguimiento",
+          "s3f_rrst_vgs_conflicto",
+          "s3f_recierre_gap200",
+          "s3c_niveles_regimen"
+        ],
+        "relation": "participate_in",
+        "confidence": "INFERRED",
+        "confidence_score": 0.8,
+        "source_file": "S3_salida/resumen.md"
+      },
+      {
+        "id": "hx_s1_subbancos",
+        "label": "Sub-bancos S1a-S1d que validan Q5",
+        "nodes": [
+          "s1a_directa",
+          "s1b_inversa",
+          "s1c_regeneracion",
+          "s1d_transitorio",
+          "s1_q5"
+        ],
+        "relation": "participate_in",
+        "confidence": "EXTRACTED",
+        "confidence_score": 0.9,
+        "source_file": "S1_polaridad/resumen.md"
+      },
+      {
+        "id": "hx_s5_escalones",
+        "label": "Escalones de carga de S5 que sustentan el veredicto PASA",
+        "nodes": [
+          "s5_evento1_1a4",
+          "s5_evento2_4a1",
+          "s5_sin_oscilaciones",
+          "s5_criterio_propuesto",
+          "s5_veredicto_pasa"
+        ],
+        "relation": "participate_in",
+        "confidence": "EXTRACTED",
+        "confidence_score": 0.9,
+        "source_file": "S5_escalon/resumen.md"
+      },
+      {
+        "id": "hx_s4b_cadena_q5_q6",
+        "label": "S4b-e: convertidor real con Q5 entrada y Q6 salida confirma hallazgos de S1/S3",
+        "nodes": [
+          "s4b_montaje",
+          "s4b_resultado_s4b",
+          "s4c_sin_remedio",
+          "s4b_remedio_q6",
+          "s4cde_pendiente"
+        ],
+        "relation": "participate_in",
+        "confidence": "INFERRED",
+        "confidence_score": 0.8,
+        "source_file": "S4_convertidor/resumen_S4b_e.md"
+      },
+      {
+        "id": "hx_q6_gate_network_c1b",
+        "label": "Red de gate de Q6 variante C1-B",
+        "nodes": [
+          "comp_cgd_100nf",
+          "comp_diode_serie_cgd",
+          "comp_rrst_330k",
+          "comp_rg_22k",
+          "comp_q6_sirs4401dp"
+        ],
+        "relation": "participate_in",
+        "confidence": "EXTRACTED",
+        "confidence_score": 0.95,
+        "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md"
+      },
+      {
+        "id": "hx_s2_hotplug_snubber_tradeoff",
+        "label": "Compromiso snubber: tension baja vs corriente pico en Q5",
+        "nodes": [
+          "comp_snubber_rc_vbus",
+          "res_s2_pico_37v59",
+          "res_s2_snubber_28v29",
+          "res_s2_snubber_422a",
+          "open_soa_q5_10_100us"
+        ],
+        "relation": "participate_in",
+        "confidence": "EXTRACTED",
+        "confidence_score": 0.9,
+        "source_file": "S2_hotplug/resumen.md"
+      },
+      {
+        "id": "hx_s4_closure_arbiter",
+        "label": "S4c como arbitro de C1 (Q6 gate) y C_carga",
+        "nodes": [
+          "s4c_cierre_q6",
+          "chg_c1_q6_gate",
+          "chg_c3_cload_limit",
+          "res_s4c_sin_remedio_falla",
+          "open_s4c_con_remedio"
+        ],
+        "relation": "participate_in",
+        "confidence": "INFERRED",
+        "confidence_score": 0.8,
+        "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md"
+      },
+      {
+        "id": "hx_rev2_doc_set",
+        "label": "Conjunto documental Rev2 (estado, handoff, readme, resultados, cambios)",
+        "nodes": [
+          "doc_estado_pausa",
+          "doc_handoff",
+          "doc_readme_rev2",
+          "doc_resultados",
+          "doc_cambios_borrador",
+          "doc_resultados_borrador"
+        ],
+        "relation": "participate_in",
+        "confidence": "INFERRED",
+        "confidence_score": 0.85,
+        "source_file": "HANDOFF_Proximo_Chat.md"
+      },
+      {
+        "id": "hx_s3_q6_closing_evidence",
+        "label": "Evidencia de S3 sobre cierre/apertura de Q6",
+        "nodes": [
+          "s3a_cierre_q6",
+          "s3b_apertura_q6",
+          "s3c_vgs_q6",
+          "res_s3a_original_falla",
+          "res_soa_apagado_u188",
+          "res_recierre_200ms"
+        ],
+        "relation": "participate_in",
+        "confidence": "INFERRED",
+        "confidence_score": 0.75,
+        "source_file": "RESULTADOS_Sim_Rev2.md"
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "label": "raw2csv.py",
+      "file_type": "code",
+      "source_file": "S1_polaridad/raw2csv.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "s1_polaridad_raw2csv",
+      "community": 14,
+      "norm_label": "raw2csv.py"
+    },
+    {
+      "label": "steps()",
+      "file_type": "code",
+      "source_file": "S1_polaridad/raw2csv.py",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "s1_polaridad_raw2csv_steps",
+      "community": 14,
+      "norm_label": "steps()"
+    },
+    {
+      "label": "export()",
+      "file_type": "code",
+      "source_file": "S1_polaridad/raw2csv.py",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "s1_polaridad_raw2csv_export",
+      "community": 14,
+      "norm_label": "export()"
+    },
+    {
+      "label": "Exporta a csv/ formas de onda diezmadas (5000 pts, remuestreo uniforme en la ven",
+      "file_type": "rationale",
+      "source_file": "S1_polaridad/raw2csv.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "s1_polaridad_raw2csv_rationale_1",
+      "community": 14,
+      "norm_label": "exporta a csv/ formas de onda diezmadas (5000 pts, remuestreo uniforme en la ven"
+    },
+    {
+      "label": "S2b_snubber_resultados.json",
+      "file_type": "code",
+      "source_file": "S2_hotplug/celdas/S2b_snubber_resultados.json",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "celdas_s2b_snubber_resultados",
+      "community": 28,
+      "norm_label": "s2b_snubber_resultados.json"
+    },
+    {
+      "label": "S2c_capextra_resultados.json",
+      "file_type": "code",
+      "source_file": "S2_hotplug/celdas/S2c_capextra_resultados.json",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "celdas_s2c_capextra_resultados",
+      "community": 29,
+      "norm_label": "s2c_capextra_resultados.json"
+    },
+    {
+      "label": "S2c_capextra_resultados.json",
+      "file_type": "code",
+      "source_file": "S2_hotplug/celdas_Cjo150p/S2c_capextra_resultados.json",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "celdas_cjo150p_s2c_capextra_resultados",
+      "community": 25,
+      "norm_label": "s2c_capextra_resultados.json"
+    },
+    {
+      "label": "S2b_snubber_resultados.json",
+      "file_type": "code",
+      "source_file": "S2_hotplug/celdas_old1p/S2b_snubber_resultados.json",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "celdas_old1p_s2b_snubber_resultados",
+      "community": 26,
+      "norm_label": "s2b_snubber_resultados.json"
+    },
+    {
+      "label": "S2c_capextra_resultados.json",
+      "file_type": "code",
+      "source_file": "S2_hotplug/celdas_old1p/S2c_capextra_resultados.json",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "celdas_old1p_s2c_capextra_resultados",
+      "community": 27,
+      "norm_label": "s2c_capextra_resultados.json"
+    },
+    {
+      "label": "leer_celdas.py",
+      "file_type": "code",
+      "source_file": "S2_hotplug/leer_celdas.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "s2_hotplug_leer_celdas",
+      "community": 30,
+      "norm_label": "leer_celdas.py"
+    },
+    {
+      "label": "raw2csv.py",
+      "file_type": "code",
+      "source_file": "S2_hotplug/raw2csv.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "s2_hotplug_raw2csv",
+      "community": 12,
+      "norm_label": "raw2csv.py"
+    },
+    {
+      "label": "steps()",
+      "file_type": "code",
+      "source_file": "S2_hotplug/raw2csv.py",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "s2_hotplug_raw2csv_steps",
+      "community": 12,
+      "norm_label": "steps()"
+    },
+    {
+      "label": "export()",
+      "file_type": "code",
+      "source_file": "S2_hotplug/raw2csv.py",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "s2_hotplug_raw2csv_export",
+      "community": 12,
+      "norm_label": "export()"
+    },
+    {
+      "label": "vpk()",
+      "file_type": "code",
+      "source_file": "S2_hotplug/raw2csv.py",
+      "source_location": "L26",
+      "_origin": "ast",
+      "id": "s2_hotplug_raw2csv_vpk",
+      "community": 12,
+      "norm_label": "vpk()"
+    },
+    {
+      "label": "Exporta a csv/ formas de onda diezmadas (5000 pts, remuestreo uniforme en la ven",
+      "file_type": "rationale",
+      "source_file": "S2_hotplug/raw2csv.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "s2_hotplug_raw2csv_rationale_1",
+      "community": 12,
+      "norm_label": "exporta a csv/ formas de onda diezmadas (5000 pts, remuestreo uniforme en la ven"
+    },
+    {
+      "label": "run_celdas.py",
+      "file_type": "code",
+      "source_file": "S2_hotplug/run_celdas.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "s2_hotplug_run_celdas",
+      "community": 19,
+      "norm_label": "run_celdas.py"
+    },
+    {
+      "label": "mk()",
+      "file_type": "code",
+      "source_file": "S2_hotplug/run_celdas.py",
+      "source_location": "L24",
+      "_origin": "ast",
+      "id": "s2_hotplug_run_celdas_mk",
+      "community": 19,
+      "norm_label": "mk()"
+    },
+    {
+      "label": "run()",
+      "file_type": "code",
+      "source_file": "S2_hotplug/run_celdas.py",
+      "source_location": "L31",
+      "_origin": "ast",
+      "id": "s2_hotplug_run_celdas_run",
+      "community": 19,
+      "norm_label": "run()"
+    },
+    {
+      "label": "S3f_common.inc",
+      "file_type": "code",
+      "source_file": "S3_salida/S3f_common.inc",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "s3_salida_s3f_common",
+      "community": 33,
+      "norm_label": "s3f_common.inc"
+    },
+    {
+      "label": "S3f_gen_ilim_soa.py",
+      "file_type": "code",
+      "source_file": "S3_salida/S3f_gen_ilim_soa.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "s3_salida_s3f_gen_ilim_soa",
+      "community": 34,
+      "norm_label": "s3f_gen_ilim_soa.py"
+    },
+    {
+      "label": "S3f_gen_precarga.py",
+      "file_type": "code",
+      "source_file": "S3_salida/S3f_gen_precarga.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "s3_salida_s3f_gen_precarga",
+      "community": 35,
+      "norm_label": "s3f_gen_precarga.py"
+    },
+    {
+      "label": "S3f_gen_recierre.py",
+      "file_type": "code",
+      "source_file": "S3_salida/S3f_gen_recierre.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "s3_salida_s3f_gen_recierre",
+      "community": 36,
+      "norm_label": "s3f_gen_recierre.py"
+    },
+    {
+      "label": "S3f_post.py",
+      "file_type": "code",
+      "source_file": "S3_salida/S3f_post.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "s3_salida_s3f_post",
+      "community": 11,
+      "norm_label": "s3f_post.py"
+    },
+    {
+      "label": "eng()",
+      "file_type": "code",
+      "source_file": "S3_salida/S3f_post.py",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "s3_salida_s3f_post_eng",
+      "community": 11,
+      "norm_label": "eng()"
+    },
+    {
+      "label": "b_table()",
+      "file_type": "code",
+      "source_file": "S3_salida/S3f_post.py",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "s3_salida_s3f_post_b_table",
+      "community": 11,
+      "norm_label": "b_table()"
+    },
+    {
+      "label": "rec_rows()",
+      "file_type": "code",
+      "source_file": "S3_salida/S3f_post.py",
+      "source_location": "L21",
+      "_origin": "ast",
+      "id": "s3_salida_s3f_post_rec_rows",
+      "community": 11,
+      "norm_label": "rec_rows()"
+    },
+    {
+      "label": "rec_table()",
+      "file_type": "code",
+      "source_file": "S3_salida/S3f_post.py",
+      "source_location": "L34",
+      "_origin": "ast",
+      "id": "s3_salida_s3f_post_rec_table",
+      "community": 11,
+      "norm_label": "rec_table()"
+    },
+    {
+      "label": "S3f post-proceso: tablas desde .meas de los .log (importa s3_post, sin modificar",
+      "file_type": "rationale",
+      "source_file": "S3_salida/S3f_post.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "s3_salida_s3f_post_rationale_1",
+      "community": 11,
+      "norm_label": "s3f post-proceso: tablas desde .meas de los .log (importa s3_post, sin modificar"
+    },
+    {
+      "label": "S3f_run2.sh",
+      "file_type": "code",
+      "source_file": "S3_salida/S3f_run2.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "_origin": "ast",
+      "id": "s3_salida_s3f_run2",
+      "community": 16,
+      "norm_label": "s3f_run2.sh"
+    },
+    {
+      "label": "S3f_run2.sh script",
+      "file_type": "code",
+      "source_file": "S3_salida/S3f_run2.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "_origin": "ast",
+      "id": "c_users_lenovo_documents_universidad_2026_20_orca_board_orca_potencia_orca_board_simulacion_rev2_s3_salida_s3f_run2_sh__entry",
+      "community": 16,
+      "norm_label": "s3f_run2.sh script"
+    },
+    {
+      "label": "chain()",
+      "file_type": "code",
+      "source_file": "S3_salida/S3f_run2.sh",
+      "source_location": "L4",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "s3_salida_s3f_run2_chain",
+      "community": 16,
+      "norm_label": "chain()"
+    },
+    {
+      "label": "S3f_show_ilim.py",
+      "file_type": "code",
+      "source_file": "S3_salida/S3f_show_ilim.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "s3_salida_s3f_show_ilim",
+      "community": 37,
+      "norm_label": "s3f_show_ilim.py"
+    },
+    {
+      "label": "S3f_show_precarga.py",
+      "file_type": "code",
+      "source_file": "S3_salida/S3f_show_precarga.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "s3_salida_s3f_show_precarga",
+      "community": 24,
+      "norm_label": "s3f_show_precarga.py"
+    },
+    {
+      "label": "show()",
+      "file_type": "code",
+      "source_file": "S3_salida/S3f_show_precarga.py",
+      "source_location": "L2",
+      "_origin": "ast",
+      "id": "s3_salida_s3f_show_precarga_show",
+      "community": 24,
+      "norm_label": "show()"
+    },
+    {
+      "label": "S3f_tablas.py",
+      "file_type": "code",
+      "source_file": "S3_salida/S3f_tablas.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "s3_salida_s3f_tablas",
+      "community": 9,
+      "norm_label": "s3f_tablas.py"
+    },
+    {
+      "label": "util()",
+      "file_type": "code",
+      "source_file": "S3_salida/S3f_tablas.py",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "s3_salida_s3f_tablas_util",
+      "community": 9,
+      "norm_label": "util()"
+    },
+    {
+      "label": "niveles()",
+      "file_type": "code",
+      "source_file": "S3_salida/S3f_tablas.py",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "s3_salida_s3f_tablas_niveles",
+      "community": 9,
+      "norm_label": "niveles()"
+    },
+    {
+      "label": "apertura_resumen()",
+      "file_type": "code",
+      "source_file": "S3_salida/S3f_tablas.py",
+      "source_location": "L36",
+      "_origin": "ast",
+      "id": "s3_salida_s3f_tablas_apertura_resumen",
+      "community": 9,
+      "norm_label": "apertura_resumen()"
+    },
+    {
+      "label": "rejilla()",
+      "file_type": "code",
+      "source_file": "S3_salida/S3f_tablas.py",
+      "source_location": "L57",
+      "_origin": "ast",
+      "id": "s3_salida_s3f_tablas_rejilla",
+      "community": 9,
+      "norm_label": "rejilla()"
+    },
+    {
+      "label": "recierre()",
+      "file_type": "code",
+      "source_file": "S3_salida/S3f_tablas.py",
+      "source_location": "L74",
+      "_origin": "ast",
+      "id": "s3_salida_s3f_tablas_recierre",
+      "community": 9,
+      "norm_label": "recierre()"
+    },
+    {
+      "label": "ilim()",
+      "file_type": "code",
+      "source_file": "S3_salida/S3f_tablas.py",
+      "source_location": "L88",
+      "_origin": "ast",
+      "id": "s3_salida_s3f_tablas_ilim",
+      "community": 9,
+      "norm_label": "ilim()"
+    },
+    {
+      "label": "soa25()",
+      "file_type": "code",
+      "source_file": "S3_salida/S3f_tablas.py",
+      "source_location": "L108",
+      "_origin": "ast",
+      "id": "s3_salida_s3f_tablas_soa25",
+      "community": 9,
+      "norm_label": "soa25()"
+    },
+    {
+      "label": "precarga()",
+      "file_type": "code",
+      "source_file": "S3_salida/S3f_tablas.py",
+      "source_location": "L118",
+      "_origin": "ast",
+      "id": "s3_salida_s3f_tablas_precarga",
+      "community": 9,
+      "norm_label": "precarga()"
+    },
+    {
+      "label": "recierre_largo()",
+      "file_type": "code",
+      "source_file": "S3_salida/S3f_tablas.py",
+      "source_location": "L129",
+      "_origin": "ast",
+      "id": "s3_salida_s3f_tablas_recierre_largo",
+      "community": 9,
+      "norm_label": "recierre_largo()"
+    },
+    {
+      "label": "S3f: genera los bloques markdown de resumen.md seccion 10 desde los .log (solo .",
+      "file_type": "rationale",
+      "source_file": "S3_salida/S3f_tablas.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "s3_salida_s3f_tablas_rationale_1",
+      "community": 9,
+      "norm_label": "s3f: genera los bloques markdown de resumen.md seccion 10 desde los .log (solo ."
+    },
+    {
+      "label": "common_S3.inc",
+      "file_type": "code",
+      "source_file": "S3_salida/common_S3.inc",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "s3_salida_common_s3",
+      "community": 32,
+      "norm_label": "common_s3.inc"
+    },
+    {
+      "label": "run.sh",
+      "file_type": "code",
+      "source_file": "S3_salida/run.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "_origin": "ast",
+      "id": "s3_salida_run",
+      "community": 15,
+      "norm_label": "run.sh"
+    },
+    {
+      "label": "run.sh script",
+      "file_type": "code",
+      "source_file": "S3_salida/run.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "_origin": "ast",
+      "id": "c_users_lenovo_documents_universidad_2026_20_orca_board_orca_potencia_orca_board_simulacion_rev2_s3_salida_run_sh__entry",
+      "community": 15,
+      "norm_label": "run.sh script"
+    },
+    {
+      "label": "w()",
+      "file_type": "code",
+      "source_file": "S3_salida/run.sh",
+      "source_location": "L5",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "s3_salida_run_w",
+      "community": 15,
+      "norm_label": "w()"
+    },
+    {
+      "label": "s3_post.py",
+      "file_type": "code",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "s3_salida_s3_post",
+      "community": 6,
+      "norm_label": "s3_post.py"
+    },
+    {
+      "label": "parse_log()",
+      "file_type": "code",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "s3_salida_s3_post_parse_log",
+      "community": 6,
+      "norm_label": "parse_log()"
+    },
+    {
+      "label": "read_raw()",
+      "file_type": "code",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L25",
+      "_origin": "ast",
+      "id": "s3_salida_s3_post_read_raw",
+      "community": 6,
+      "norm_label": "read_raw()"
+    },
+    {
+      "label": "decimate()",
+      "file_type": "code",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L43",
+      "_origin": "ast",
+      "id": "s3_salida_s3_post_decimate",
+      "community": 6,
+      "norm_label": "decimate()"
+    },
+    {
+      "label": "write_csv()",
+      "file_type": "code",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L59",
+      "_origin": "ast",
+      "id": "s3_salida_s3_post_write_csv",
+      "community": 6,
+      "norm_label": "write_csv()"
+    },
+    {
+      "label": "u_at()",
+      "file_type": "code",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L71",
+      "_origin": "ast",
+      "id": "s3_salida_s3_post_u_at",
+      "community": 6,
+      "norm_label": "u_at()"
+    },
+    {
+      "label": "_g()",
+      "file_type": "code",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L86",
+      "_origin": "ast",
+      "id": "s3_salida_s3_post_g",
+      "community": 6,
+      "norm_label": "_g()"
+    },
+    {
+      "label": "a_rows()",
+      "file_type": "code",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L90",
+      "_origin": "ast",
+      "id": "s3_salida_s3_post_a_rows",
+      "community": 6,
+      "norm_label": "a_rows()"
+    },
+    {
+      "label": "verdict_a()",
+      "file_type": "code",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L105",
+      "_origin": "ast",
+      "id": "s3_salida_s3_post_verdict_a",
+      "community": 6,
+      "norm_label": "verdict_a()"
+    },
+    {
+      "label": "soa_flag()",
+      "file_type": "code",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L111",
+      "_origin": "ast",
+      "id": "s3_salida_s3_post_soa_flag",
+      "community": 6,
+      "norm_label": "soa_flag()"
+    },
+    {
+      "label": "a_table()",
+      "file_type": "code",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L115",
+      "_origin": "ast",
+      "id": "s3_salida_s3_post_a_table",
+      "community": 6,
+      "norm_label": "a_table()"
+    },
+    {
+      "label": "b_table()",
+      "file_type": "code",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L131",
+      "_origin": "ast",
+      "id": "s3_salida_s3_post_b_table",
+      "community": 6,
+      "norm_label": "b_table()"
+    },
+    {
+      "label": "c_table()",
+      "file_type": "code",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L149",
+      "_origin": "ast",
+      "id": "s3_salida_s3_post_c_table",
+      "community": 6,
+      "norm_label": "c_table()"
+    },
+    {
+      "label": "d_table()",
+      "file_type": "code",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L158",
+      "_origin": "ast",
+      "id": "s3_salida_s3_post_d_table",
+      "community": 6,
+      "norm_label": "d_table()"
+    },
+    {
+      "label": "e_table()",
+      "file_type": "code",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L166",
+      "_origin": "ast",
+      "id": "s3_salida_s3_post_e_table",
+      "community": 6,
+      "norm_label": "e_table()"
+    },
+    {
+      "label": "screen_table()",
+      "file_type": "code",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L174",
+      "_origin": "ast",
+      "id": "s3_salida_s3_post_screen_table",
+      "community": 6,
+      "norm_label": "screen_table()"
+    },
+    {
+      "label": "Post-proceso S3 (solo lectura de .log/.raw; no inventa numeros: tablas desde .me",
+      "file_type": "rationale",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "s3_salida_s3_post_rationale_1",
+      "community": 6,
+      "norm_label": "post-proceso s3 (solo lectura de .log/.raw; no inventa numeros: tablas desde .me"
+    },
+    {
+      "label": "Resumen por valor de remedio: cuantas de las 9 combinaciones (V_OUT x C_carga) c",
+      "file_type": "rationale",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L175",
+      "_origin": "ast",
+      "id": "s3_salida_s3_post_rationale_175",
+      "community": 6,
+      "norm_label": "resumen por valor de remedio: cuantas de las 9 combinaciones (v_out x c_carga) c"
+    },
+    {
+      "label": "soa_S3.inc",
+      "file_type": "code",
+      "source_file": "S3_salida/soa_S3.inc",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "s3_salida_soa_s3",
+      "community": 38,
+      "norm_label": "soa_s3.inc"
+    },
+    {
+      "label": "gen_S4.py",
+      "file_type": "code",
+      "source_file": "S4_convertidor/gen_S4.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "s4_convertidor_gen_s4",
+      "community": 20,
+      "norm_label": "gen_s4.py"
+    },
+    {
+      "label": "case()",
+      "file_type": "code",
+      "source_file": "S4_convertidor/gen_S4.py",
+      "source_location": "L194",
+      "_origin": "ast",
+      "id": "s4_convertidor_gen_s4_case",
+      "community": 20,
+      "norm_label": "case()"
+    },
+    {
+      "label": "Genera los .cir de S4b-e a partir de UNA plantilla (todas las corridas comparten",
+      "file_type": "rationale",
+      "source_file": "S4_convertidor/gen_S4.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "s4_convertidor_gen_s4_rationale_1",
+      "community": 20,
+      "norm_label": "genera los .cir de s4b-e a partir de una plantilla (todas las corridas comparten"
+    },
+    {
+      "label": "meas.py",
+      "file_type": "code",
+      "source_file": "S4_convertidor/meas.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "s4_convertidor_meas",
+      "community": 10,
+      "norm_label": "meas.py"
+    },
+    {
+      "label": "read()",
+      "file_type": "code",
+      "source_file": "S4_convertidor/meas.py",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "s4_convertidor_meas_read",
+      "community": 10,
+      "norm_label": "read()"
+    },
+    {
+      "label": "Lee los .meas de un .log de LTspice y valida el log. Uso: python meas.py S4b.log",
+      "file_type": "rationale",
+      "source_file": "S4_convertidor/meas.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "s4_convertidor_meas_rationale_1",
+      "community": 10,
+      "norm_label": "lee los .meas de un .log de ltspice y valida el log. uso: python meas.py s4b.log"
+    },
+    {
+      "label": "raw2csv_S4.py",
+      "file_type": "code",
+      "source_file": "S4_convertidor/raw2csv_S4.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "s4_convertidor_raw2csv_s4",
+      "community": 21,
+      "norm_label": "raw2csv_s4.py"
+    },
+    {
+      "label": "export()",
+      "file_type": "code",
+      "source_file": "S4_convertidor/raw2csv_S4.py",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "s4_convertidor_raw2csv_s4_export",
+      "community": 21,
+      "norm_label": "export()"
+    },
+    {
+      "label": "Exporta a csv/ formas de onda de S4c/S4d (casos fallidos): 5000 pts en la ventan",
+      "file_type": "rationale",
+      "source_file": "S4_convertidor/raw2csv_S4.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "s4_convertidor_raw2csv_s4_rationale_1",
+      "community": 21,
+      "norm_label": "exporta a csv/ formas de onda de s4c/s4d (casos fallidos): 5000 pts en la ventan"
+    },
+    {
+      "label": "simt.py",
+      "file_type": "code",
+      "source_file": "S4_convertidor/simt.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "s4_convertidor_simt",
+      "community": 39,
+      "norm_label": "simt.py"
+    },
+    {
+      "label": "tabla_S4.py",
+      "file_type": "code",
+      "source_file": "S4_convertidor/tabla_S4.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "s4_convertidor_tabla_s4",
+      "community": 10,
+      "norm_label": "tabla_s4.py"
+    },
+    {
+      "label": "st()",
+      "file_type": "code",
+      "source_file": "S4_convertidor/tabla_S4.py",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "s4_convertidor_tabla_s4_st",
+      "community": 10,
+      "norm_label": "st()"
+    },
+    {
+      "label": "log()",
+      "file_type": "code",
+      "source_file": "S4_convertidor/tabla_S4.py",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "s4_convertidor_tabla_s4_log",
+      "community": 10,
+      "norm_label": "log()"
+    },
+    {
+      "label": "row()",
+      "file_type": "code",
+      "source_file": "S4_convertidor/tabla_S4.py",
+      "source_location": "L24",
+      "_origin": "ast",
+      "id": "s4_convertidor_tabla_s4_row",
+      "community": 10,
+      "norm_label": "row()"
+    },
+    {
+      "label": "Tabla pasa/falla de S4b-e a partir de los .log (via meas.py). Uso: python tabla_",
+      "file_type": "rationale",
+      "source_file": "S4_convertidor/tabla_S4.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "s4_convertidor_tabla_s4_rationale_1",
+      "community": 10,
+      "norm_label": "tabla pasa/falla de s4b-e a partir de los .log (via meas.py). uso: python tabla_"
+    },
+    {
+      "label": "v < crit PASA; margen < 20 % -> AL LIMITE; v >= crit FALLA (lo: umbral inferior",
+      "file_type": "rationale",
+      "source_file": "S4_convertidor/tabla_S4.py",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "s4_convertidor_tabla_s4_rationale_10",
+      "community": 10,
+      "norm_label": "v < crit pasa; margen < 20 % -> al limite; v >= crit falla (lo: umbral inferior"
+    },
+    {
+      "label": "postproceso.py",
+      "file_type": "code",
+      "source_file": "S5_escalon/postproceso.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "s5_escalon_postproceso",
+      "community": 22,
+      "norm_label": "postproceso.py"
+    },
+    {
+      "label": "fmt()",
+      "file_type": "code",
+      "source_file": "S5_escalon/postproceso.py",
+      "source_location": "L45",
+      "_origin": "ast",
+      "id": "s5_escalon_postproceso_fmt",
+      "community": 22,
+      "norm_label": "fmt()"
+    },
+    {
+      "label": "S5: lee S5.log (.meas), valida el log, calcula la tabla (aritmetica directa sobr",
+      "file_type": "rationale",
+      "source_file": "S5_escalon/postproceso.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "s5_escalon_postproceso_rationale_1",
+      "community": 22,
+      "norm_label": "s5: lee s5.log (.meas), valida el log, calcula la tabla (aritmetica directa sobr"
+    },
+    {
+      "label": "S4a resumen_S4a.md",
+      "file_type": "document",
+      "source_file": "C:/Users/Lenovo/Documents/Universidad/2026-20/ORCA-Board/ORCA-Potencia/ORCA-Board/simulacion/rev2/S4_convertidor/resumen_S4a.md",
+      "source_location": "L1",
+      "id": "doc_s4a_resumen",
+      "community": 3,
+      "norm_label": "s4a resumen_s4a.md"
+    },
+    {
+      "label": "S4 convertidor completo LM5175",
+      "file_type": "document",
+      "source_file": "C:/Users/Lenovo/Documents/Universidad/2026-20/ORCA-Board/ORCA-Potencia/ORCA-Board/simulacion/rev2/S4_convertidor/resumen_S4a.md",
+      "source_location": "L1",
+      "id": "s4_convertidor",
+      "community": 3,
+      "norm_label": "s4 convertidor completo lm5175"
+    },
+    {
+      "label": "S4a linea base 12->12 V 8 A",
+      "file_type": "document",
+      "source_file": "C:/Users/Lenovo/Documents/Universidad/2026-20/ORCA-Board/ORCA-Potencia/ORCA-Board/simulacion/rev2/S4_convertidor/resumen_S4a.md",
+      "source_location": "Resultados S4a",
+      "id": "s4a_linea_base",
+      "community": 3,
+      "norm_label": "s4a linea base 12->12 v 8 a"
+    },
+    {
+      "label": "C_OUT 440 uF / 12 mohm",
+      "file_type": "document",
+      "source_file": "C:/Users/Lenovo/Documents/Universidad/2026-20/ORCA-Board/ORCA-Potencia/ORCA-Board/simulacion/rev2/S4_convertidor/resumen_S4a.md",
+      "source_location": "Configuracion",
+      "id": "c_out",
+      "community": 3,
+      "norm_label": "c_out 440 uf / 12 mohm"
+    },
+    {
+      "label": "C_SS 12 nF (real 120 nF)",
+      "file_type": "document",
+      "source_file": "C:/Users/Lenovo/Documents/Universidad/2026-20/ORCA-Board/ORCA-Potencia/ORCA-Board/simulacion/rev2/S4_convertidor/resumen_S4a.md",
+      "source_location": "Configuracion",
+      "id": "c_ss",
+      "community": 3,
+      "norm_label": "c_ss 12 nf (real 120 nf)"
+    },
+    {
+      "label": "S4a: vout 11.992 V, I(L1) 9.06 A prom, il_max 12.88 A",
+      "file_type": "document",
+      "source_file": "C:/Users/Lenovo/Documents/Universidad/2026-20/ORCA-Board/ORCA-Potencia/ORCA-Board/simulacion/rev2/S4_convertidor/resumen_S4a.md",
+      "source_location": "Resultados",
+      "id": "f_s4a_baseline",
+      "community": 3,
+      "norm_label": "s4a: vout 11.992 v, i(l1) 9.06 a prom, il_max 12.88 a"
+    },
+    {
+      "label": "S4a: PGOOD sube a 1.845 ms (fin soft-start)",
+      "file_type": "document",
+      "source_file": "C:/Users/Lenovo/Documents/Universidad/2026-20/ORCA-Board/ORCA-Potencia/ORCA-Board/simulacion/rev2/S4_convertidor/resumen_S4a.md",
+      "source_location": "PGOOD",
+      "id": "f_s4a_pgood",
+      "community": 3,
+      "norm_label": "s4a: pgood sube a 1.845 ms (fin soft-start)"
+    },
+    {
+      "label": "S4a: logs truncados por LTspice.exe matado externamente",
+      "file_type": "document",
+      "source_file": "C:/Users/Lenovo/Documents/Universidad/2026-20/ORCA-Board/ORCA-Potencia/ORCA-Board/simulacion/rev2/S4_convertidor/resumen_S4a.md",
+      "source_location": "Computo e incidente",
+      "id": "f_s4a_ltspice_kill",
+      "community": 3,
+      "norm_label": "s4a: logs truncados por ltspice.exe matado externamente"
+    },
+    {
+      "label": "S3 resumen: interruptor de salida Q6, PGOOD/Q7, LEDs, bleeder",
+      "file_type": "document",
+      "source_file": "S3_salida/resumen.md",
+      "source_location": "L1",
+      "id": "doc_s3_resumen",
+      "community": 1,
+      "norm_label": "s3 resumen: interruptor de salida q6, pgood/q7, leds, bleeder"
+    },
+    {
+      "label": "Q6 SiRS4401DP (interruptor de salida)",
+      "file_type": "document",
+      "source_file": "S3_salida/resumen.md",
+      "source_location": "L9",
+      "id": "s3_q6",
+      "community": 4,
+      "norm_label": "q6 sirs4401dp (interruptor de salida)"
+    },
+    {
+      "label": "Q7 2N7002K (gate = PGOOD)",
+      "file_type": "document",
+      "source_file": "S3_salida/resumen.md",
+      "source_location": "L9",
+      "id": "s3_q7",
+      "community": 4,
+      "norm_label": "q7 2n7002k (gate = pgood)"
+    },
+    {
+      "label": "PGOOD comparador de ventana sin deglitch (peor caso)",
+      "file_type": "document",
+      "source_file": "S3_salida/resumen.md",
+      "source_location": "L15",
+      "id": "s3_pgood_window",
+      "community": 4,
+      "norm_label": "pgood comparador de ventana sin deglitch (peor caso)"
+    },
+    {
+      "label": "Regla de margen V_DS: limite 32 V, AL LIMITE > 25.6 V",
+      "file_type": "document",
+      "source_file": "S3_salida/resumen.md",
+      "source_location": "L5",
+      "id": "s3_regla_margen_vds",
+      "community": 1,
+      "norm_label": "regla de margen v_ds: limite 32 v, al limite > 25.6 v"
+    },
+    {
+      "label": "Convertidor idealizado (Ls||Rd, limitador 15 A, BWK)",
+      "file_type": "document",
+      "source_file": "S3_salida/resumen.md",
+      "source_location": "L14",
+      "id": "s3_conv_idealizado",
+      "community": 1,
+      "norm_label": "convertidor idealizado (ls||rd, limitador 15 a, bwk)"
+    },
+    {
+      "label": "SOA digitalizada (+-10 %) y pulso equivalente t_eq=E/P_pico",
+      "file_type": "document",
+      "source_file": "S3_salida/resumen.md",
+      "source_location": "L17",
+      "id": "s3_soa_metodo",
+      "community": 1,
+      "norm_label": "soa digitalizada (+-10 %) y pulso equivalente t_eq=e/p_pico"
+    },
+    {
+      "label": "Zener Cjo=1p decidido, pero .inc de S3 aun con 150p (pendiente)",
+      "file_type": "document",
+      "source_file": "S3_salida/resumen.md",
+      "source_location": "L11",
+      "id": "s3_zener_cjo_pendiente",
+      "community": 8,
+      "norm_label": "zener cjo=1p decidido, pero .inc de s3 aun con 150p (pendiente)"
+    },
+    {
+      "label": "S3a base sin remedio FALLA (caida 5.6-20.7 %, PGOOD cae, reconmuta)",
+      "file_type": "document",
+      "source_file": "S3_salida/resumen.md",
+      "source_location": "L23",
+      "id": "s3a_base_falla",
+      "community": 1,
+      "norm_label": "s3a base sin remedio falla (caida 5.6-20.7 %, pgood cae, reconmuta)"
+    },
+    {
+      "label": "Remedio (1) C gate-drain 10-100 nF: 8/9 con 100 nF",
+      "file_type": "document",
+      "source_file": "S3_salida/resumen.md",
+      "source_location": "L62",
+      "id": "s3a_remedio_cgd",
+      "community": 1,
+      "norm_label": "remedio (1) c gate-drain 10-100 nf: 8/9 con 100 nf"
+    },
+    {
+      "label": "Remedio (2) subir RG: no resuelve las 9 combinaciones",
+      "file_type": "document",
+      "source_file": "S3_salida/resumen.md",
+      "source_location": "L81",
+      "id": "s3a_remedio_rg",
+      "community": 1,
+      "norm_label": "remedio (2) subir rg: no resuelve las 9 combinaciones"
+    },
+    {
+      "label": "Remedio (3) RC en gate de Q7: descartado (caida hasta 65 %)",
+      "file_type": "document",
+      "source_file": "S3_salida/resumen.md",
+      "source_location": "L93",
+      "id": "s3a_remedio_q7rc",
+      "community": 1,
+      "norm_label": "remedio (3) rc en gate de q7: descartado (caida hasta 65 %)"
+    },
+    {
+      "label": "Remedio elegido: C gd 100 nF + RG 22 k",
+      "file_type": "document",
+      "source_file": "S3_salida/resumen.md",
+      "source_location": "L124",
+      "id": "s3a_remedio_final",
+      "community": 1,
+      "norm_label": "remedio elegido: c gd 100 nf + rg 22 k"
+    },
+    {
+      "label": "S3a final PASA 9/9 (caida max 2.19 %, I pico <= 15.4 A)",
+      "file_type": "document",
+      "source_file": "S3_salida/resumen.md",
+      "source_location": "L126",
+      "id": "s3a_final_resultados",
+      "community": 1,
+      "norm_label": "s3a final pasa 9/9 (caida max 2.19 %, i pico <= 15.4 a)"
+    },
+    {
+      "label": "SOA del encendido a 25 V FALLA con C >= 330 uF (limite 100-150 uF)",
+      "file_type": "document",
+      "source_file": "S3_salida/resumen.md",
+      "source_location": "L154",
+      "id": "s3a_soa_encendido_25v",
+      "community": 1,
+      "norm_label": "soa del encendido a 25 v falla con c >= 330 uf (limite 100-150 uf)"
+    },
+    {
+      "label": "Efectos del remedio: encendido 2.8-5 ms, apagado 65 ms/>100 ms, SOA apagado u=1.88",
+      "file_type": "document",
+      "source_file": "S3_salida/resumen.md",
+      "source_location": "L165",
+      "id": "s3_efectos_secundarios_remedio",
+      "community": 1,
+      "norm_label": "efectos del remedio: encendido 2.8-5 ms, apagado 65 ms/>100 ms, soa apagado u=1.88"
+    },
+    {
+      "label": "S3b apertura con 8 A y carga inductiva: V_DS 30.7 V a 25 V/1 mH (AL LIMITE)",
+      "file_type": "document",
+      "source_file": "S3_salida/resumen.md",
+      "source_location": "L172",
+      "id": "s3b_apertura_inductiva",
+      "community": 1,
+      "norm_label": "s3b apertura con 8 a y carga inductiva: v_ds 30.7 v a 25 v/1 mh (al limite)"
+    },
+    {
+      "label": "Diodo de rueda libre Schottky MBR745 en VOUT_EXT (recomendado, decision de Luis)",
+      "file_type": "document",
+      "source_file": "S3_salida/resumen.md",
+      "source_location": "L200",
+      "id": "s3b_diodo_rueda_libre",
+      "community": 1,
+      "norm_label": "diodo de rueda libre schottky mbr745 en vout_ext (recomendado, decision de luis)"
+    },
+    {
+      "label": "S3c niveles en regimen: |V_GS Q6| 5-15 V y P<=0.5 W PASA (margen 0.47 V a 6.8 V)",
+      "file_type": "document",
+      "source_file": "S3_salida/resumen.md",
+      "source_location": "L225",
+      "id": "s3c_niveles_regimen",
+      "community": 4,
+      "norm_label": "s3c niveles en regimen: |v_gs q6| 5-15 v y p<=0.5 w pasa (margen 0.47 v a 6.8 v)"
+    },
+    {
+      "label": "LED2/LED3 4.7 k disipa 114-120 mW a 25 V: usar 0805 o >= 6.8 k",
+      "file_type": "document",
+      "source_file": "S3_salida/resumen.md",
+      "source_location": "L249",
+      "id": "s3_led_resistor_0805",
+      "community": 4,
+      "norm_label": "led2/led3 4.7 k disipa 114-120 mw a 25 v: usar 0805 o >= 6.8 k"
+    },
+    {
+      "label": "S3d bleeder 1.5 k: 25->5 V en 1.07 s, 0.417 W PASA",
+      "file_type": "document",
+      "source_file": "S3_salida/resumen.md",
+      "source_location": "L251",
+      "id": "s3d_bleeder",
+      "community": 17,
+      "norm_label": "s3d bleeder 1.5 k: 25->5 v en 1.07 s, 0.417 w pasa"
+    },
+    {
+      "label": "S3e descarga de C_IN: 1 V tarda 14.8 s (informativo)",
+      "file_type": "document",
+      "source_file": "S3_salida/resumen.md",
+      "source_location": "L258",
+      "id": "s3e_descarga_cin",
+      "community": 17,
+      "norm_label": "s3e descarga de c_in: 1 v tarda 14.8 s (informativo)"
+    },
+    {
+      "label": "S3f seguimiento: diodo en serie con C_gd + Rrst a source",
+      "file_type": "document",
+      "source_file": "S3_salida/resumen.md",
+      "source_location": "L287",
+      "id": "s3f_seguimiento",
+      "community": 1,
+      "norm_label": "s3f seguimiento: diodo en serie con c_gd + rrst a source"
+    },
+    {
+      "label": "Rrst vs V_GS: 10k/47k/100k FALLAN a 6.8 V, >=220 k pasa (margen 0.19 V con 330 k)",
+      "file_type": "document",
+      "source_file": "S3_salida/resumen.md",
+      "source_location": "L299",
+      "id": "s3f_rrst_vgs_conflicto",
+      "community": 4,
+      "norm_label": "rrst vs v_gs: 10k/47k/100k fallan a 6.8 v, >=220 k pasa (margen 0.19 v con 330 k)"
+    },
+    {
+      "label": "Recierre seguro solo con retardo >= 200 ms (Rrst 330 k)",
+      "file_type": "document",
+      "source_file": "S3_salida/resumen.md",
+      "source_location": "L344",
+      "id": "s3f_recierre_gap200",
+      "community": 4,
+      "norm_label": "recierre seguro solo con retardo >= 200 ms (rrst 330 k)"
+    },
+    {
+      "label": "Limite de C_carga a 25 V: recomendado 100-150 uF, cota ~200 uF",
+      "file_type": "document",
+      "source_file": "S3_salida/resumen.md",
+      "source_location": "L420",
+      "id": "s3f_soa25_limite_c",
+      "community": 1,
+      "norm_label": "limite de c_carga a 25 v: recomendado 100-150 uf, cota ~200 uf"
+    },
+    {
+      "label": "R de precarga en paralelo con Q6: no sirve como esta",
+      "file_type": "document",
+      "source_file": "S3_salida/resumen.md",
+      "source_location": "L437",
+      "id": "s3f_precarga_rpre",
+      "community": 1,
+      "norm_label": "r de precarga en paralelo con q6: no sirve como esta"
+    },
+    {
+      "label": "ILIM = 10 A: solo 25 V/1000 uF falla",
+      "file_type": "document",
+      "source_file": "S3_salida/resumen.md",
+      "source_location": "L400",
+      "id": "s3f_ilim_10a",
+      "community": 1,
+      "norm_label": "ilim = 10 a: solo 25 v/1000 uf falla"
+    },
+    {
+      "label": "Variantes EXTRA descartadas (Rrst 10k + RG 2.2k; reposicion a gate)",
+      "file_type": "document",
+      "source_file": "S3_salida/resumen.md",
+      "source_location": "L391",
+      "id": "s3f_extras_descartados",
+      "community": 1,
+      "norm_label": "variantes extra descartadas (rrst 10k + rg 2.2k; reposicion a gate)"
+    },
+    {
+      "label": "Seguidor NPN de apagado en gate (no simulado, pendiente)",
+      "file_type": "document",
+      "source_file": "S3_salida/resumen.md",
+      "source_location": "L398",
+      "id": "s3_npn_seguidor",
+      "community": 1,
+      "norm_label": "seguidor npn de apagado en gate (no simulado, pendiente)"
+    },
+    {
+      "label": "Decisiones pendientes para Luis (recierre, diodo, limite C, ILIM)",
+      "file_type": "document",
+      "source_file": "S3_salida/resumen.md",
+      "source_location": "L513",
+      "id": "s3_decisiones_luis",
+      "community": 1,
+      "norm_label": "decisiones pendientes para luis (recierre, diodo, limite c, ilim)"
+    },
+    {
+      "label": "S3 supuestos y limitaciones (convertidor idealizado, sin Zth, sin deglitch)",
+      "file_type": "document",
+      "source_file": "S3_salida/resumen.md",
+      "source_location": "L277",
+      "id": "s3_supuestos_limitaciones",
+      "community": 1,
+      "norm_label": "s3 supuestos y limitaciones (convertidor idealizado, sin zth, sin deglitch)"
+    },
+    {
+      "label": "S1 resumen: proteccion de polaridad Q5",
+      "file_type": "document",
+      "source_file": "S1_polaridad/resumen.md",
+      "source_location": "L1",
+      "id": "doc_s1_resumen",
+      "community": 4,
+      "norm_label": "s1 resumen: proteccion de polaridad q5"
+    },
+    {
+      "label": "Q5 SiRS4401DP (proteccion de polaridad)",
+      "file_type": "document",
+      "source_file": "S1_polaridad/resumen.md",
+      "source_location": "L10",
+      "id": "s1_q5",
+      "community": 4,
+      "norm_label": "q5 sirs4401dp (proteccion de polaridad)"
+    },
+    {
+      "label": "F1 fusible 1.92 mohm",
+      "file_type": "document",
+      "source_file": "S1_polaridad/resumen.md",
+      "source_location": "L10",
+      "id": "s1_f1",
+      "community": 4,
+      "norm_label": "f1 fusible 1.92 mohm"
+    },
+    {
+      "label": "Criterio PASA/AL LIMITE/FALLA con limite V_DS 32 V (umbral 25.6 V)",
+      "file_type": "document",
+      "source_file": "S1_polaridad/resumen.md",
+      "source_location": "L7",
+      "id": "s1_regla_margen_32v",
+      "community": 1,
+      "norm_label": "criterio pasa/al limite/falla con limite v_ds 32 v (umbral 25.6 v)"
+    },
+    {
+      "label": "Zener BZX84C12L con Cjo=1p (desviacion de libreria 150p)",
+      "file_type": "document",
+      "source_file": "S1_polaridad/resumen.md",
+      "source_location": "L14",
+      "id": "s1_zener_cjo",
+      "community": 8,
+      "norm_label": "zener bzx84c12l con cjo=1p (desviacion de libreria 150p)"
+    },
+    {
+      "label": "S1a conduccion directa: V_GS max 11.84 V, P<=0.387 W PASA",
+      "file_type": "document",
+      "source_file": "S1_polaridad/resumen.md",
+      "source_location": "L27",
+      "id": "s1a_directa",
+      "community": 8,
+      "norm_label": "s1a conduccion directa: v_gs max 11.84 v, p<=0.387 w pasa"
+    },
+    {
+      "label": "S1b conexion inversa: bloquea (VBUS < 1 mV, fuga 2.9 nA) PASA",
+      "file_type": "document",
+      "source_file": "S1_polaridad/resumen.md",
+      "source_location": "L31",
+      "id": "s1b_inversa",
+      "community": 1,
+      "norm_label": "s1b conexion inversa: bloquea (vbus < 1 mv, fuga 2.9 na) pasa"
+    },
+    {
+      "label": "S1c regeneracion a 5 A: PASA; pico 0.24 V informativo (L_cable x di/dt)",
+      "file_type": "document",
+      "source_file": "S1_polaridad/resumen.md",
+      "source_location": "L34",
+      "id": "s1c_regeneracion",
+      "community": 4,
+      "norm_label": "s1c regeneracion a 5 a: pasa; pico 0.24 v informativo (l_cable x di/dt)"
+    },
+    {
+      "label": "S1d barrido rapido de polaridad: Q5 PASA literal, V(VBUS) -25.4 V FALLA informativo",
+      "file_type": "document",
+      "source_file": "S1_polaridad/resumen.md",
+      "source_location": "L39",
+      "id": "s1d_transitorio",
+      "community": 4,
+      "norm_label": "s1d barrido rapido de polaridad: q5 pasa literal, v(vbus) -25.4 v falla informativo"
+    },
+    {
+      "label": "S1d caso 3 (10 us): I(Q5) -431 A vs I_DM 350 A, FALLA informativo",
+      "file_type": "document",
+      "source_file": "S1_polaridad/resumen.md",
+      "source_location": "L42",
+      "id": "s1d_caso3_abrupto",
+      "community": 4,
+      "norm_label": "s1d caso 3 (10 us): i(q5) -431 a vs i_dm 350 a, falla informativo"
+    },
+    {
+      "label": "Hallazgo: Q5 no bloquea barrido rapido con C_IN cargado (47 k x C_gs)",
+      "file_type": "document",
+      "source_file": "S1_polaridad/resumen.md",
+      "source_location": "L60",
+      "id": "s1d_hallazgo_barrido_rapido",
+      "community": 4,
+      "norm_label": "hallazgo: q5 no bloquea barrido rapido con c_in cargado (47 k x c_gs)"
+    },
+    {
+      "label": "Remedio bajar R_gate: ningun valor practico cumple 0.5 V (1 k da +0.59 V)",
+      "file_type": "document",
+      "source_file": "S1_polaridad/resumen.md",
+      "source_location": "L61",
+      "id": "s1d_remedio_rg",
+      "community": 4,
+      "norm_label": "remedio bajar r_gate: ningun valor practico cumple 0.5 v (1 k da +0.59 v)"
+    },
+    {
+      "label": "Tabla P(Q5) vs V_IN a 12 A (punto critico 6 V)",
+      "file_type": "document",
+      "source_file": "S1_polaridad/resumen.md",
+      "source_location": "L46",
+      "id": "s1_p_vs_vin",
+      "community": 8,
+      "norm_label": "tabla p(q5) vs v_in a 12 a (punto critico 6 v)"
+    },
+    {
+      "label": "Margen |V_GS| a 25.2 V es 21 % (11.84 V vs 15 V), apenas sobre umbral 20 %",
+      "file_type": "document",
+      "source_file": "S1_polaridad/resumen.md",
+      "source_location": "L63",
+      "id": "s1_vgs_margen_21",
+      "community": 8,
+      "norm_label": "margen |v_gs| a 25.2 v es 21 % (11.84 v vs 15 v), apenas sobre umbral 20 %"
+    },
+    {
+      "label": "S1 supuestos: sin rampa de BAT, sin conexion lenta, F1 constante, modelos genericos",
+      "file_type": "document",
+      "source_file": "S1_polaridad/resumen.md",
+      "source_location": "L65",
+      "id": "s1_supuestos",
+      "community": 4,
+      "norm_label": "s1 supuestos: sin rampa de bat, sin conexion lenta, f1 constante, modelos genericos"
+    },
+    {
+      "label": "C_IN 100 uF polimero (ESR 31 mohm) + 10 uF + 100 nF",
+      "file_type": "document",
+      "source_file": "S1_polaridad/resumen.md",
+      "source_location": "L11",
+      "id": "s1_c_in",
+      "community": 4,
+      "norm_label": "c_in 100 uf polimero (esr 31 mohm) + 10 uf + 100 nf"
+    },
+    {
+      "label": "S5 resumen: escalon de carga 1<->4 A, 12 V a 12 V",
+      "file_type": "document",
+      "source_file": "S5_escalon/resumen.md",
+      "source_location": "L1",
+      "id": "doc_s5_resumen",
+      "community": 5,
+      "norm_label": "s5 resumen: escalon de carga 1<->4 a, 12 v a 12 v"
+    },
+    {
+      "label": "Configuracion S5 (base S4a, LM5175, C_SS 12 nF acelerado)",
+      "file_type": "document",
+      "source_file": "S5_escalon/resumen.md",
+      "source_location": "L8",
+      "id": "s5_config",
+      "community": 3,
+      "norm_label": "configuracion s5 (base s4a, lm5175, c_ss 12 nf acelerado)"
+    },
+    {
+      "label": "Carga: R7 12 ohm + fuente I1 +3 A, flancos 1 us (declarado)",
+      "file_type": "document",
+      "source_file": "S5_escalon/resumen.md",
+      "source_location": "L11",
+      "id": "s5_carga_escalon",
+      "community": 5,
+      "norm_label": "carga: r7 12 ohm + fuente i1 +3 a, flancos 1 us (declarado)"
+    },
+    {
+      "label": "Sonda V(vf50): buffer + RC 50 ns (no es mediana)",
+      "file_type": "document",
+      "source_file": "S5_escalon/resumen.md",
+      "source_location": "L17",
+      "id": "s5_sonda_vf50",
+      "community": 5,
+      "norm_label": "sonda v(vf50): buffer + rc 50 ns (no es mediana)"
+    },
+    {
+      "label": "Evento 1->4 A: undershoot 2.33 % (279 mV), asentamiento 89 us",
+      "file_type": "document",
+      "source_file": "S5_escalon/resumen.md",
+      "source_location": "L29",
+      "id": "s5_evento1_1a4",
+      "community": 5,
+      "norm_label": "evento 1->4 a: undershoot 2.33 % (279 mv), asentamiento 89 us"
+    },
+    {
+      "label": "Evento 4->1 A: overshoot 2.26 % (271 mV), asentamiento 108 us",
+      "file_type": "document",
+      "source_file": "S5_escalon/resumen.md",
+      "source_location": "L30",
+      "id": "s5_evento2_4a1",
+      "community": 5,
+      "norm_label": "evento 4->1 a: overshoot 2.26 % (271 mv), asentamiento 108 us"
+    },
+    {
+      "label": "0 oscilaciones fuera de +-0.5 % en ambos eventos",
+      "file_type": "document",
+      "source_file": "S5_escalon/resumen.md",
+      "source_location": "L35",
+      "id": "s5_sin_oscilaciones",
+      "community": 5,
+      "norm_label": "0 oscilaciones fuera de +-0.5 % en ambos eventos"
+    },
+    {
+      "label": "I(L1) baja a -0.24 A en el evento 4->1 A",
+      "file_type": "document",
+      "source_file": "S5_escalon/resumen.md",
+      "source_location": "L36",
+      "id": "s5_il_negativo",
+      "community": 5,
+      "norm_label": "i(l1) baja a -0.24 a en el evento 4->1 a"
+    },
+    {
+      "label": "Criterio propuesto (pendiente de aprobacion): desviacion < 5 %, asentamiento < 1 ms",
+      "file_type": "document",
+      "source_file": "S5_escalon/resumen.md",
+      "source_location": "L42",
+      "id": "s5_criterio_propuesto",
+      "community": 5,
+      "norm_label": "criterio propuesto (pendiente de aprobacion): desviacion < 5 %, asentamiento < 1 ms"
+    },
+    {
+      "label": "Veredicto S5: PASA ambos escalones (2.33 % / 2.26 %)",
+      "file_type": "document",
+      "source_file": "S5_escalon/resumen.md",
+      "source_location": "L46",
+      "id": "s5_veredicto_pasa",
+      "community": 5,
+      "norm_label": "veredicto s5: pasa ambos escalones (2.33 % / 2.26 %)"
+    },
+    {
+      "label": "Salvedad: vpre del evento 1 no plano (-20 mV, arranque aun asentando)",
+      "file_type": "document",
+      "source_file": "S5_escalon/resumen.md",
+      "source_location": "L50",
+      "id": "s5_vpre_no_plano",
+      "community": 5,
+      "norm_label": "salvedad: vpre del evento 1 no plano (-20 mv, arranque aun asentando)"
+    },
+    {
+      "label": "Salvedades: un solo punto 12->12 V, carga corriente constante, hiccup no simulable",
+      "file_type": "document",
+      "source_file": "S5_escalon/resumen.md",
+      "source_location": "L52",
+      "id": "s5_salvedades_op",
+      "community": 5,
+      "norm_label": "salvedades: un solo punto 12->12 v, carga corriente constante, hiccup no simulable"
+    },
+    {
+      "label": "C_IN 100 uF/30 mohm sin respaldo, pendiente de datasheet",
+      "file_type": "document",
+      "source_file": "S5_escalon/resumen.md",
+      "source_location": "L12",
+      "id": "s5_c_in_pendiente",
+      "community": 3,
+      "norm_label": "c_in 100 uf/30 mohm sin respaldo, pendiente de datasheet"
+    },
+    {
+      "label": "Aviso: standard.dio trae Cjo=150p, instruccion pide 1p (no aplica en S5)",
+      "file_type": "document",
+      "source_file": "S5_escalon/resumen.md",
+      "source_location": "L13",
+      "id": "s5_zener_cjo_aviso",
+      "community": 8,
+      "norm_label": "aviso: standard.dio trae cjo=150p, instruccion pide 1p (no aplica en s5)"
+    },
+    {
+      "label": "Modo CCM/DCM/FCCM por MODE R12 93.1 kohm: pendiente de verificar",
+      "file_type": "document",
+      "source_file": "S5_escalon/resumen.md",
+      "source_location": "L39",
+      "id": "s5_modo_pendiente",
+      "community": 5,
+      "norm_label": "modo ccm/dcm/fccm por mode r12 93.1 kohm: pendiente de verificar"
+    },
+    {
+      "label": "S5.log valido: 7249.9 s, sin tolerance relaxed",
+      "file_type": "document",
+      "source_file": "S5_escalon/resumen.md",
+      "source_location": "L6",
+      "id": "s5_log_valido",
+      "community": 5,
+      "norm_label": "s5.log valido: 7249.9 s, sin tolerance relaxed"
+    },
+    {
+      "label": "S5 postproceso_salida.txt (salida de postproceso.py)",
+      "file_type": "document",
+      "source_file": "S5_escalon/postproceso_salida.txt",
+      "source_location": "L1",
+      "id": "doc_s5_postproceso_salida",
+      "community": 5,
+      "norm_label": "s5 postproceso_salida.txt (salida de postproceso.py)"
+    },
+    {
+      "label": "Postproceso evento 1: dnu 2.326 %, tset(2 %) 89.3 us, il_vy 0.714 A",
+      "file_type": "document",
+      "source_file": "S5_escalon/postproceso_salida.txt",
+      "source_location": "L3",
+      "id": "s5pp_ev1",
+      "community": 5,
+      "norm_label": "postproceso evento 1: dnu 2.326 %, tset(2 %) 89.3 us, il_vy 0.714 a"
+    },
+    {
+      "label": "Postproceso evento 2: dov 2.259 %, tset(2 %) 108.5 us, il_vy -0.2425 A",
+      "file_type": "document",
+      "source_file": "S5_escalon/postproceso_salida.txt",
+      "source_location": "L26",
+      "id": "s5pp_ev2",
+      "community": 5,
+      "norm_label": "postproceso evento 2: dov 2.259 %, tset(2 %) 108.5 us, il_vy -0.2425 a"
+    },
+    {
+      "label": "Contraste mediana 50 ns: 2.340 % / 2.259 % (estimacion)",
+      "file_type": "document",
+      "source_file": "S5_escalon/postproceso_salida.txt",
+      "source_location": "L49",
+      "id": "s5pp_contraste_mediana",
+      "community": 5,
+      "norm_label": "contraste mediana 50 ns: 2.340 % / 2.259 % (estimacion)"
+    },
+    {
+      "label": "Validacion del log: valido, sin tolerance relaxed",
+      "file_type": "document",
+      "source_file": "S5_escalon/postproceso_salida.txt",
+      "source_location": "L1",
+      "id": "s5pp_log_valido",
+      "community": 5,
+      "norm_label": "validacion del log: valido, sin tolerance relaxed"
+    },
+    {
+      "label": "S4b-e resumen: convertidor completo con Q5 entrada y Q6 salida",
+      "file_type": "document",
+      "source_file": "S4_convertidor/resumen_S4b_e.md",
+      "source_location": "L1",
+      "id": "doc_s4b_resumen",
+      "community": 8,
+      "norm_label": "s4b-e resumen: convertidor completo con q5 entrada y q6 salida"
+    },
+    {
+      "label": "Montaje S4b-e: base S4a + Q5 + R_bat + L_cable + F1 + Q6 + 8 A + 470 uF",
+      "file_type": "document",
+      "source_file": "S4_convertidor/resumen_S4b_e.md",
+      "source_location": "L5",
+      "id": "s4b_montaje",
+      "community": 4,
+      "norm_label": "montaje s4b-e: base s4a + q5 + r_bat + l_cable + f1 + q6 + 8 a + 470 uf"
+    },
+    {
+      "label": "Remedio Q6: C_gd 100 nF + diodo 1N4148W + Rrst 330 k + RG 22 k",
+      "file_type": "document",
+      "source_file": "S4_convertidor/resumen_S4b_e.md",
+      "source_location": "L9",
+      "id": "s4b_remedio_q6",
+      "community": 1,
+      "norm_label": "remedio q6: c_gd 100 nf + diodo 1n4148w + rrst 330 k + rg 22 k"
+    },
+    {
+      "label": "Desviacion: rampa de bateria 20 us (README 200 us), gate de Q5 pegada con rampas lentas",
+      "file_type": "document",
+      "source_file": "S4_convertidor/resumen_S4b_e.md",
+      "source_location": "L15",
+      "id": "s4b_rampa_20us",
+      "community": 8,
+      "norm_label": "desviacion: rampa de bateria 20 us (readme 200 us), gate de q5 pegada con rampas lentas"
+    },
+    {
+      "label": "Zener con Cjo=1p (modelo BZ12L1P); con Cjo=0 el solver se atasca",
+      "file_type": "document",
+      "source_file": "S4_convertidor/resumen_S4b_e.md",
+      "source_location": "L14",
+      "id": "s4b_zener_cjo",
+      "community": 8,
+      "norm_label": "zener con cjo=1p (modelo bz12l1p); con cjo=0 el solver se atasca"
+    },
+    {
+      "label": "S4b FALLA criterio <2 %: il_avg +2.16 %, il_pk +3.14 %",
+      "file_type": "document",
+      "source_file": "S4_convertidor/resumen_S4b_e.md",
+      "source_location": "L39",
+      "id": "s4b_resultado_s4b",
+      "community": 8,
+      "norm_label": "s4b falla criterio <2 %: il_avg +2.16 %, il_pk +3.14 %"
+    },
+    {
+      "label": "Causa (estimacion): caida de VIN 0.22 V por R_bat+F1+Q5 sube corriente ~1.9 %",
+      "file_type": "document",
+      "source_file": "S4_convertidor/resumen_S4b_e.md",
+      "source_location": "L39",
+      "id": "s4b_causa_caida_vin",
+      "community": 8,
+      "norm_label": "causa (estimacion): caida de vin 0.22 v por r_bat+f1+q5 sube corriente ~1.9 %"
+    },
+    {
+      "label": "Q5 en regimen: V_GS -9.30 V, V_DS 15.5 mV, Rds equiv. 1.75 mohm",
+      "file_type": "document",
+      "source_file": "S4_convertidor/resumen_S4b_e.md",
+      "source_location": "L36",
+      "id": "s4b_q5_regimen",
+      "community": 8,
+      "norm_label": "q5 en regimen: v_gs -9.30 v, v_ds 15.5 mv, rds equiv. 1.75 mohm"
+    },
+    {
+      "label": "Desviacion S4c-e: precarga de 1 A en VOUT (rafaga inversa -8.5 A sin carga)",
+      "file_type": "document",
+      "source_file": "S4_convertidor/resumen_S4b_e.md",
+      "source_location": "L42",
+      "id": "s4b_precarga_1a",
+      "community": 8,
+      "norm_label": "desviacion s4c-e: precarga de 1 a en vout (rafaga inversa -8.5 a sin carga)"
+    },
+    {
+      "label": "S4c sin remedio: caida 19 %, PGOOD cae, I(L1) pico 33.8 A, I(Q6) 59.7 A FALLA",
+      "file_type": "document",
+      "source_file": "S4_convertidor/resumen_S4b_e.md",
+      "source_location": "L45",
+      "id": "s4c_sin_remedio",
+      "community": 8,
+      "norm_label": "s4c sin remedio: caida 19 %, pgood cae, i(l1) pico 33.8 a, i(q6) 59.7 a falla"
+    },
+    {
+      "label": "Valle de 31.9 A de I(L1): artefacto del modelo TI (limitacion por ciclo)",
+      "file_type": "document",
+      "source_file": "S4_convertidor/resumen_S4b_e.md",
+      "source_location": "L58",
+      "id": "s4b_valle_il_artefacto",
+      "community": 8,
+      "norm_label": "valle de 31.9 a de i(l1): artefacto del modelo ti (limitacion por ciclo)"
+    },
+    {
+      "label": "S4c/S4d/S4e con remedio: en curso (sin resultados aun)",
+      "file_type": "document",
+      "source_file": "S4_convertidor/resumen_S4b_e.md",
+      "source_location": "L60",
+      "id": "s4cde_pendiente",
+      "community": 1,
+      "norm_label": "s4c/s4d/s4e con remedio: en curso (sin resultados aun)"
+    },
+    {
+      "label": "Estado del resumen: en curso, se actualiza por corrida",
+      "file_type": "document",
+      "source_file": "S4_convertidor/resumen_S4b_e.md",
+      "source_location": "L3",
+      "id": "s4b_estado_en_curso",
+      "community": 1,
+      "norm_label": "estado del resumen: en curso, se actualiza por corrida"
+    },
+    {
+      "label": "CAMBIOS Mejoras Rev2 (borrador)",
+      "file_type": "document",
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "source_location": "L1",
+      "id": "doc_cambios_borrador",
+      "community": 2,
+      "norm_label": "cambios mejoras rev2 (borrador)"
+    },
+    {
+      "label": "ESTADO_PAUSA simulacion Rev2",
+      "file_type": "document",
+      "source_file": "ESTADO_PAUSA.md",
+      "source_location": "L1",
+      "id": "doc_estado_pausa",
+      "community": 2,
+      "norm_label": "estado_pausa simulacion rev2"
+    },
+    {
+      "label": "HANDOFF proximo chat",
+      "file_type": "document",
+      "source_file": "HANDOFF_Proximo_Chat.md",
+      "source_location": "L1",
+      "id": "doc_handoff",
+      "community": 2,
+      "norm_label": "handoff proximo chat"
+    },
+    {
+      "label": "README Simulacion Rev2",
+      "file_type": "document",
+      "source_file": "README_rev2.md",
+      "source_location": "L1",
+      "id": "doc_readme_rev2",
+      "community": 2,
+      "norm_label": "readme simulacion rev2"
+    },
+    {
+      "label": "RESULTADOS Sim Rev2 (parcial)",
+      "file_type": "document",
+      "source_file": "RESULTADOS_Sim_Rev2.md",
+      "source_location": "L1",
+      "id": "doc_resultados",
+      "community": 2,
+      "norm_label": "resultados sim rev2 (parcial)"
+    },
+    {
+      "label": "RESULTADOS Sim Rev2 (borrador)",
+      "file_type": "document",
+      "source_file": "RESULTADOS_Sim_Rev2_borrador.md",
+      "source_location": "L1",
+      "id": "doc_resultados_borrador",
+      "community": 2,
+      "norm_label": "resultados sim rev2 (borrador)"
+    },
+    {
+      "label": "S2 hot-plug resumen",
+      "file_type": "document",
+      "source_file": "S2_hotplug/resumen.md",
+      "source_location": "L1",
+      "id": "doc_s2_resumen",
+      "community": 2,
+      "norm_label": "s2 hot-plug resumen"
+    },
+    {
+      "label": "Q5 SiRS4401DP (proteccion de polaridad)",
+      "file_type": "document",
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "source_location": "L99",
+      "id": "comp_q5_sirs4401dp",
+      "community": 7,
+      "norm_label": "q5 sirs4401dp (proteccion de polaridad)"
+    },
+    {
+      "label": "Q6 SiRS4401DP (interruptor de salida)",
+      "file_type": "document",
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "source_location": "L30",
+      "id": "comp_q6_sirs4401dp",
+      "community": 0,
+      "norm_label": "q6 sirs4401dp (interruptor de salida)"
+    },
+    {
+      "label": "Q7 2N7002K (PGOOD)",
+      "file_type": "document",
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "source_location": "L133",
+      "id": "comp_q7_2n7002k",
+      "community": 2,
+      "norm_label": "q7 2n7002k (pgood)"
+    },
+    {
+      "label": "F1 Littelfuse 0456025.ER (fusible entrada)",
+      "file_type": "document",
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "source_location": "L106",
+      "id": "comp_f1_0456025",
+      "community": 2,
+      "norm_label": "f1 littelfuse 0456025.er (fusible entrada)"
+    },
+    {
+      "label": "Q1-Q4 BUK9Y3R5-40E (93E540)",
+      "file_type": "document",
+      "source_file": "ESTADO_PAUSA.md",
+      "source_location": "L13",
+      "id": "comp_q1_q4_buk9y3r5",
+      "community": 2,
+      "norm_label": "q1-q4 buk9y3r5-40e (93e540)"
+    },
+    {
+      "label": "Zener BZX84C12L Cjo=1p (modelo de MM3Z12VT1G)",
+      "file_type": "document",
+      "source_file": "README_rev2.md",
+      "source_location": "L39",
+      "id": "comp_zener_cjo1p",
+      "community": 2,
+      "norm_label": "zener bzx84c12l cjo=1p (modelo de mm3z12vt1g)"
+    },
+    {
+      "label": "D1-D3 Schottky 1N5819 / B5819W",
+      "file_type": "document",
+      "source_file": "README_rev2.md",
+      "source_location": "L40",
+      "id": "comp_d1_d3_schottky",
+      "community": 2,
+      "norm_label": "d1-d3 schottky 1n5819 / b5819w"
+    },
+    {
+      "label": "C_IN KEMET A759KS107M1V polimero 100uF (31 mohm)",
+      "file_type": "document",
+      "source_file": "S2_hotplug/resumen.md",
+      "source_location": "L7",
+      "id": "comp_cin_kemet_a759",
+      "community": 23,
+      "norm_label": "c_in kemet a759ks107m1v polimero 100uf (31 mohm)"
+    },
+    {
+      "label": "C_OUT 440 uF / 12 mohm",
+      "file_type": "document",
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "source_location": "L139",
+      "id": "comp_cout_440uf",
+      "community": 18,
+      "norm_label": "c_out 440 uf / 12 mohm"
+    },
+    {
+      "label": "Bleeder 1.5 k 2512 de 1 W",
+      "file_type": "document",
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "source_location": "L92",
+      "id": "comp_bleeder_1k5",
+      "community": 17,
+      "norm_label": "bleeder 1.5 k 2512 de 1 w"
+    },
+    {
+      "label": "Resistencias LED1-3 (4.7 k)",
+      "file_type": "document",
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "source_location": "L84",
+      "id": "comp_led_resistors",
+      "community": 13,
+      "norm_label": "resistencias led1-3 (4.7 k)"
+    },
+    {
+      "label": "Snubber RC VBUS 470 uF + 0.10 ohm",
+      "file_type": "document",
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "source_location": "L113",
+      "id": "comp_snubber_rc_vbus",
+      "community": 7,
+      "norm_label": "snubber rc vbus 470 uf + 0.10 ohm"
+    },
+    {
+      "label": "C_gd 100 nF drain-gate de Q6",
+      "file_type": "document",
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "source_location": "L38",
+      "id": "comp_cgd_100nf",
+      "community": 0,
+      "norm_label": "c_gd 100 nf drain-gate de q6"
+    },
+    {
+      "label": "R_G 22 k (gate de Q6)",
+      "file_type": "document",
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "source_location": "L39",
+      "id": "comp_rg_22k",
+      "community": 0,
+      "norm_label": "r_g 22 k (gate de q6)"
+    },
+    {
+      "label": "Diodo en serie con C_gd (1N4148 modelo)",
+      "file_type": "document",
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "source_location": "L53",
+      "id": "comp_diode_serie_cgd",
+      "community": 0,
+      "norm_label": "diodo en serie con c_gd (1n4148 modelo)"
+    },
+    {
+      "label": "Rrst 330 k (nodo intermedio a source)",
+      "file_type": "document",
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "source_location": "L54",
+      "id": "comp_rrst_330k",
+      "community": 0,
+      "norm_label": "rrst 330 k (nodo intermedio a source)"
+    },
+    {
+      "label": "Diodo de rueda libre en VOUT_EXT (Schottky >= 40 V)",
+      "file_type": "document",
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "source_location": "L65",
+      "id": "comp_freewheel_diode",
+      "community": 0,
+      "norm_label": "diodo de rueda libre en vout_ext (schottky >= 40 v)"
+    },
+    {
+      "label": "Modelo LM5175_TRANS_xorfix.lib",
+      "file_type": "document",
+      "source_file": "README_rev2.md",
+      "source_location": "L9",
+      "id": "comp_lm5175_xorfix",
+      "community": 3,
+      "norm_label": "modelo lm5175_trans_xorfix.lib"
+    },
+    {
+      "label": "C1 Q6 red de gate",
+      "file_type": "document",
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "source_location": "L30",
+      "id": "chg_c1_q6_gate",
+      "community": 0,
+      "norm_label": "c1 q6 red de gate"
+    },
+    {
+      "label": "C1-A C_gd directo + R_G 22 k (apagado lento)",
+      "file_type": "document",
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "source_location": "L36",
+      "id": "chg_c1a_cgd_directo",
+      "community": 0,
+      "norm_label": "c1-a c_gd directo + r_g 22 k (apagado lento)"
+    },
+    {
+      "label": "C1-B C_gd + diodo + Rrst 330 k + R_G 22 k (apagado ~8 ms)",
+      "file_type": "document",
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "source_location": "L48",
+      "id": "chg_c1b_diodo_rrst",
+      "community": 0,
+      "norm_label": "c1-b c_gd + diodo + rrst 330 k + r_g 22 k (apagado ~8 ms)"
+    },
+    {
+      "label": "C2 diodo de rueda libre",
+      "file_type": "document",
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "source_location": "L65",
+      "id": "chg_c2_freewheel",
+      "community": 0,
+      "norm_label": "c2 diodo de rueda libre"
+    },
+    {
+      "label": "C3 limite C_carga a 25 V (100-150 uF)",
+      "file_type": "document",
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "source_location": "L74",
+      "id": "chg_c3_cload_limit",
+      "community": 0,
+      "norm_label": "c3 limite c_carga a 25 v (100-150 uf)"
+    },
+    {
+      "label": "C4 LED R en 0805 o >= 6.8 k",
+      "file_type": "document",
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "source_location": "L84",
+      "id": "chg_c4_led_0805",
+      "community": 13,
+      "norm_label": "c4 led r en 0805 o >= 6.8 k"
+    },
+    {
+      "label": "C8 snubber RC en VBUS",
+      "file_type": "document",
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "source_location": "L113",
+      "id": "chg_c8_snubber_vbus",
+      "community": 7,
+      "norm_label": "c8 snubber rc en vbus"
+    },
+    {
+      "label": "C9 polaridad invertida con C_IN cargado",
+      "file_type": "document",
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "source_location": "L125",
+      "id": "chg_c9_polaridad_inversa_cin",
+      "community": 7,
+      "norm_label": "c9 polaridad invertida con c_in cargado"
+    },
+    {
+      "label": "C12 corregir simbolo/BOM KiCad de Q1-Q4",
+      "file_type": "document",
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "source_location": "L146",
+      "id": "chg_c12_doc_kicad_q1q4",
+      "community": 2,
+      "norm_label": "c12 corregir simbolo/bom kicad de q1-q4"
+    },
+    {
+      "label": "Decision provisional Q6: diodo + Rrst 330 k + R_G 22 k, recierre >= 200 ms",
+      "file_type": "document",
+      "source_file": "ESTADO_PAUSA.md",
+      "source_location": "L30",
+      "id": "dec_q6_gate_provisional",
+      "community": 0,
+      "norm_label": "decision provisional q6: diodo + rrst 330 k + r_g 22 k, recierre >= 200 ms"
+    },
+    {
+      "label": "Recomendacion orquestador: 150 uF a 25 V (AL LIMITE)",
+      "file_type": "document",
+      "source_file": "RESULTADOS_Sim_Rev2_borrador.md",
+      "source_location": "L131",
+      "id": "dec_cload_150uf",
+      "community": 0,
+      "norm_label": "recomendacion orquestador: 150 uf a 25 v (al limite)"
+    },
+    {
+      "label": "Decision LEDs: 0805 con 6.8 k",
+      "file_type": "document",
+      "source_file": "RESULTADOS_Sim_Rev2_borrador.md",
+      "source_location": "L133",
+      "id": "dec_led_6k8_0805",
+      "community": 13,
+      "norm_label": "decision leds: 0805 con 6.8 k"
+    },
+    {
+      "label": "S2a barrido 18 casos R_bat x L_cable x BAT",
+      "file_type": "document",
+      "source_file": "S2_hotplug/resumen.md",
+      "source_location": "L24",
+      "id": "s2a_barrido_hotplug",
+      "community": 7,
+      "norm_label": "s2a barrido 18 casos r_bat x l_cable x bat"
+    },
+    {
+      "label": "S2b rejilla snubber RC (20 celdas)",
+      "file_type": "document",
+      "source_file": "S2_hotplug/resumen.md",
+      "source_location": "L78",
+      "id": "s2b_snubber_grid",
+      "community": 31,
+      "norm_label": "s2b rejilla snubber rc (20 celdas)"
+    },
+    {
+      "label": "S2c N x 100 uF polimero extra",
+      "file_type": "document",
+      "source_file": "S2_hotplug/resumen.md",
+      "source_location": "L90",
+      "id": "s2c_cap_extra",
+      "community": 7,
+      "norm_label": "s2c n x 100 uf polimero extra"
+    },
+    {
+      "label": "S2d remedio snubber 470 uF + 0.10 ohm",
+      "file_type": "document",
+      "source_file": "S2_hotplug/resumen.md",
+      "source_location": "L93",
+      "id": "s2d_remedio_snubber",
+      "community": 7,
+      "norm_label": "s2d remedio snubber 470 uf + 0.10 ohm"
+    },
+    {
+      "label": "S2e sensibilidad ESR polimero 15/31/60 mohm",
+      "file_type": "document",
+      "source_file": "S2_hotplug/resumen.md",
+      "source_location": "L55",
+      "id": "s2e_esr_sensibilidad",
+      "community": 7,
+      "norm_label": "s2e sensibilidad esr polimero 15/31/60 mohm"
+    },
+    {
+      "label": "S3a cierre de Q6 contra C_carga",
+      "file_type": "document",
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "source_location": "L34",
+      "id": "s3a_cierre_q6",
+      "community": 0,
+      "norm_label": "s3a cierre de q6 contra c_carga"
+    },
+    {
+      "label": "S3b apertura de Q6 con 8 A carga inductiva",
+      "file_type": "document",
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "source_location": "L70",
+      "id": "s3b_apertura_q6",
+      "community": 0,
+      "norm_label": "s3b apertura de q6 con 8 a carga inductiva"
+    },
+    {
+      "label": "S3c V_GS y P de Q6 / LEDs",
+      "file_type": "document",
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "source_location": "L89",
+      "id": "s3c_vgs_q6",
+      "community": 2,
+      "norm_label": "s3c v_gs y p de q6 / leds"
+    },
+    {
+      "label": "S4b con Q5 + R_bat + L_cable, Q6 abierto",
+      "file_type": "document",
+      "source_file": "RESULTADOS_Sim_Rev2.md",
+      "source_location": "L76",
+      "id": "s4b_entrada_real",
+      "community": 3,
+      "norm_label": "s4b con q5 + r_bat + l_cable, q6 abierto"
+    },
+    {
+      "label": "S4c cierre de Q6 contra 8 A + 470 uF",
+      "file_type": "document",
+      "source_file": "RESULTADOS_Sim_Rev2.md",
+      "source_location": "L78",
+      "id": "s4c_cierre_q6",
+      "community": 0,
+      "norm_label": "s4c cierre de q6 contra 8 a + 470 uf"
+    },
+    {
+      "label": "S4d apertura de Q6 con 8 A",
+      "file_type": "document",
+      "source_file": "RESULTADOS_Sim_Rev2.md",
+      "source_location": "L82",
+      "id": "s4d_apertura_q6",
+      "community": 3,
+      "norm_label": "s4d apertura de q6 con 8 a"
+    },
+    {
+      "label": "S4e otros V_IN/V_OUT (7.4->10, 16.8->7.2, 22.2->24 V)",
+      "file_type": "document",
+      "source_file": "RESULTADOS_Sim_Rev2.md",
+      "source_location": "L83",
+      "id": "s4e_otros_vin_vout",
+      "community": 3,
+      "norm_label": "s4e otros v_in/v_out (7.4->10, 16.8->7.2, 22.2->24 v)"
+    },
+    {
+      "label": "S1a |V_GS| 11.84 V, P(Q5) 0.387 W: PASA",
+      "file_type": "document",
+      "source_file": "RESULTADOS_Sim_Rev2.md",
+      "source_location": "L29",
+      "id": "res_s1a_vgs_11v84",
+      "community": 7,
+      "norm_label": "s1a |v_gs| 11.84 v, p(q5) 0.387 w: pasa"
+    },
+    {
+      "label": "S1b polaridad inversa en frio: PASA",
+      "file_type": "document",
+      "source_file": "RESULTADOS_Sim_Rev2.md",
+      "source_location": "L31",
+      "id": "res_s1b_inversa_frio_pasa",
+      "community": 7,
+      "norm_label": "s1b polaridad inversa en frio: pasa"
+    },
+    {
+      "label": "S1d con C_IN cargado: -39.7 V, -431 A (FALLA informativo)",
+      "file_type": "document",
+      "source_file": "RESULTADOS_Sim_Rev2.md",
+      "source_location": "L35",
+      "id": "res_s1d_inversa_cin_cargado",
+      "community": 7,
+      "norm_label": "s1d con c_in cargado: -39.7 v, -431 a (falla informativo)"
+    },
+    {
+      "label": "Hot-plug 25.2 V sin snubber: pico 37.59 V (>32 V)",
+      "file_type": "document",
+      "source_file": "S2_hotplug/resumen.md",
+      "source_location": "L30",
+      "id": "res_s2_pico_37v59",
+      "community": 7,
+      "norm_label": "hot-plug 25.2 v sin snubber: pico 37.59 v (>32 v)"
+    },
+    {
+      "label": "Snubber 470 uF+0.10 ohm: pico <= 28.29 V",
+      "file_type": "document",
+      "source_file": "S2_hotplug/resumen.md",
+      "source_location": "L98",
+      "id": "res_s2_snubber_28v29",
+      "community": 7,
+      "norm_label": "snubber 470 uf+0.10 ohm: pico <= 28.29 v"
+    },
+    {
+      "label": "Snubber: pico de corriente 422.4 A > I_DM 350 A",
+      "file_type": "document",
+      "source_file": "S2_hotplug/resumen.md",
+      "source_location": "L103",
+      "id": "res_s2_snubber_422a",
+      "community": 7,
+      "norm_label": "snubber: pico de corriente 422.4 a > i_dm 350 a"
+    },
+    {
+      "label": "I2t de F1 0.81 A2s (2.49 con snubber) < 11.25",
+      "file_type": "document",
+      "source_file": "S2_hotplug/resumen.md",
+      "source_location": "L45",
+      "id": "res_s2_it_f1",
+      "community": 2,
+      "norm_label": "i2t de f1 0.81 a2s (2.49 con snubber) < 11.25"
+    },
+    {
+      "label": "S3a original (R_G 10 k) FALLA: caida hasta 20.5 %",
+      "file_type": "document",
+      "source_file": "RESULTADOS_Sim_Rev2.md",
+      "source_location": "L56",
+      "id": "res_s3a_original_falla",
+      "community": 0,
+      "norm_label": "s3a original (r_g 10 k) falla: caida hasta 20.5 %"
+    },
+    {
+      "label": "S3a C_gd directo + 22 k: 9/9, caida 2.19 %",
+      "file_type": "document",
+      "source_file": "RESULTADOS_Sim_Rev2.md",
+      "source_location": "L57",
+      "id": "res_s3a_cgd_directo_pasa",
+      "community": 0,
+      "norm_label": "s3a c_gd directo + 22 k: 9/9, caida 2.19 %"
+    },
+    {
+      "label": "S3a diodo + Rrst: 27/27, caida max 4.36 %",
+      "file_type": "document",
+      "source_file": "RESULTADOS_Sim_Rev2.md",
+      "source_location": "L58",
+      "id": "res_s3a_diodo_rrst_27_27",
+      "community": 0,
+      "norm_label": "s3a diodo + rrst: 27/27, caida max 4.36 %"
+    },
+    {
+      "label": "Recierre seguro de Q6 solo con GAP >= 200 ms",
+      "file_type": "document",
+      "source_file": "RESULTADOS_Sim_Rev2.md",
+      "source_location": "L59",
+      "id": "res_recierre_200ms",
+      "community": 0,
+      "norm_label": "recierre seguro de q6 solo con gap >= 200 ms"
+    },
+    {
+      "label": "SOA encendido 25 V: u 0.576 (100 uF) ... 1.79 (470 uF)",
+      "file_type": "document",
+      "source_file": "RESULTADOS_Sim_Rev2.md",
+      "source_location": "L61",
+      "id": "res_soa_encendido_25v",
+      "community": 0,
+      "norm_label": "soa encendido 25 v: u 0.576 (100 uf) ... 1.79 (470 uf)"
+    },
+    {
+      "label": "SOA apagado C1-A a 25 V/8 A: u = 1.88 FALLA",
+      "file_type": "document",
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "source_location": "L46",
+      "id": "res_soa_apagado_u188",
+      "community": 0,
+      "norm_label": "soa apagado c1-a a 25 v/8 a: u = 1.88 falla"
+    },
+    {
+      "label": "S3b V_DS 30.73 V sin diodo (1 mH/25 V) vs 25.5 V con Schottky",
+      "file_type": "document",
+      "source_file": "RESULTADOS_Sim_Rev2.md",
+      "source_location": "L62",
+      "id": "res_vds_30v7_sin_diodo",
+      "community": 0,
+      "norm_label": "s3b v_ds 30.73 v sin diodo (1 mh/25 v) vs 25.5 v con schottky"
+    },
+    {
+      "label": "S3c V_GS -5.19 V con Rrst 330 k (margen 0.19 V nominal)",
+      "file_type": "document",
+      "source_file": "RESULTADOS_Sim_Rev2.md",
+      "source_location": "L66",
+      "id": "res_vgs_margen_0v19",
+      "community": 0,
+      "norm_label": "s3c v_gs -5.19 v con rrst 330 k (margen 0.19 v nominal)"
+    },
+    {
+      "label": "LED 4.7 k a 25 V disipa 114-120 mW (>100 mW 0603)",
+      "file_type": "document",
+      "source_file": "RESULTADOS_Sim_Rev2.md",
+      "source_location": "L69",
+      "id": "res_led_114mw",
+      "community": 13,
+      "norm_label": "led 4.7 k a 25 v disipa 114-120 mw (>100 mw 0603)"
+    },
+    {
+      "label": "S4a vout 11.992 V, I(L1) 9.06/9.90/8.24 A, PGOOD 1.845 ms",
+      "file_type": "document",
+      "source_file": "ESTADO_PAUSA.md",
+      "source_location": "L42",
+      "id": "res_s4a_referencia",
+      "community": 3,
+      "norm_label": "s4a vout 11.992 v, i(l1) 9.06/9.90/8.24 a, pgood 1.845 ms"
+    },
+    {
+      "label": "S4b il_avg +2.16 % > 2 % FALLA",
+      "file_type": "document",
+      "source_file": "RESULTADOS_Sim_Rev2.md",
+      "source_location": "L76",
+      "id": "res_s4b_falla_2p16",
+      "community": 3,
+      "norm_label": "s4b il_avg +2.16 % > 2 % falla"
+    },
+    {
+      "label": "S4c sin remedio: caida 19.0 %, valle I(L1) 31.9 A FALLA",
+      "file_type": "document",
+      "source_file": "RESULTADOS_Sim_Rev2.md",
+      "source_location": "L78",
+      "id": "res_s4c_sin_remedio_falla",
+      "community": 0,
+      "norm_label": "s4c sin remedio: caida 19.0 %, valle i(l1) 31.9 a falla"
+    },
+    {
+      "label": "S5 1<->4 A: 2.33 %/2.26 %, ~0.1 ms, 0 oscilaciones",
+      "file_type": "document",
+      "source_file": "RESULTADOS_Sim_Rev2.md",
+      "source_location": "L92",
+      "id": "res_s5_escalon_pasa",
+      "community": 18,
+      "norm_label": "s5 1<->4 a: 2.33 %/2.26 %, ~0.1 ms, 0 oscilaciones"
+    },
+    {
+      "label": "Pendiente: S4c con remedio (arbitro de C1 y de Q6)",
+      "file_type": "document",
+      "source_file": "HANDOFF_Proximo_Chat.md",
+      "source_location": "L7",
+      "id": "open_s4c_con_remedio",
+      "community": 0,
+      "norm_label": "pendiente: s4c con remedio (arbitro de c1 y de q6)"
+    },
+    {
+      "label": "Abierto: S3 corrido con Cjo=150p, re-correr con 1p",
+      "file_type": "document",
+      "source_file": "RESULTADOS_Sim_Rev2.md",
+      "source_location": "L138",
+      "id": "open_s3_cjo150p",
+      "community": 2,
+      "norm_label": "abierto: s3 corrido con cjo=150p, re-correr con 1p"
+    },
+    {
+      "label": "Abierto: SOA de Q5 a 10-100 us sin leer",
+      "file_type": "document",
+      "source_file": "RESULTADOS_Sim_Rev2.md",
+      "source_location": "L142",
+      "id": "open_soa_q5_10_100us",
+      "community": 7,
+      "norm_label": "abierto: soa de q5 a 10-100 us sin leer"
+    },
+    {
+      "label": "Abierto: C_IN 30 mohm (S4a/S5) vs 31 mohm (KEMET)",
+      "file_type": "document",
+      "source_file": "ESTADO_PAUSA.md",
+      "source_location": "L33",
+      "id": "open_cin_esr_30_vs_31",
+      "community": 23,
+      "norm_label": "abierto: c_in 30 mohm (s4a/s5) vs 31 mohm (kemet)"
+    },
+    {
+      "label": "Abierto: criterio de S5 propuesto sin aprobar",
+      "file_type": "document",
+      "source_file": "ESTADO_PAUSA.md",
+      "source_location": "L34",
+      "id": "open_s5_criterio_sin_aprobar",
+      "community": 18,
+      "norm_label": "abierto: criterio de s5 propuesto sin aprobar"
+    },
+    {
+      "label": "Abierto: rampa de bateria 20 us vs 200 us (Q5 pegado)",
+      "file_type": "document",
+      "source_file": "RESULTADOS_Sim_Rev2.md",
+      "source_location": "L140",
+      "id": "open_rampa_bateria_20us",
+      "community": 3,
+      "norm_label": "abierto: rampa de bateria 20 us vs 200 us (q5 pegado)"
+    },
+    {
+      "label": "Desviacion: precarga 1 A en VOUT en S4c-e",
+      "file_type": "document",
+      "source_file": "RESULTADOS_Sim_Rev2.md",
+      "source_location": "L143",
+      "id": "open_precarga_1a_s4",
+      "community": 0,
+      "norm_label": "desviacion: precarga 1 a en vout en s4c-e"
+    },
+    {
+      "label": "S4e 7.4->10 y 16.8->7.2 V no convergen",
+      "file_type": "document",
+      "source_file": "RESULTADOS_Sim_Rev2.md",
+      "source_location": "L83",
+      "id": "open_s4e_no_converge",
+      "community": 3,
+      "norm_label": "s4e 7.4->10 y 16.8->7.2 v no convergen"
+    },
+    {
+      "label": "Hiccup del LM5175 no simulable",
+      "file_type": "document",
+      "source_file": "README_rev2.md",
+      "source_location": "L26",
+      "id": "open_hiccup_no_simulable",
+      "community": 0,
+      "norm_label": "hiccup del lm5175 no simulable"
+    },
+    {
+      "label": "PCB_Potencia_Mejoras_Rev2.md no esta en el repo",
+      "file_type": "document",
+      "source_file": "HANDOFF_Proximo_Chat.md",
+      "source_location": "L9",
+      "id": "open_pcb_mejoras_no_en_repo",
+      "community": 2,
+      "norm_label": "pcb_potencia_mejoras_rev2.md no esta en el repo"
+    },
+    {
+      "label": "Limitacion: convertidor idealizado en S3 (ILIM 15 A vs ~10 A)",
+      "file_type": "document",
+      "source_file": "RESULTADOS_Sim_Rev2.md",
+      "source_location": "L21",
+      "id": "open_idealizado_s3",
+      "community": 0,
+      "norm_label": "limitacion: convertidor idealizado en s3 (ilim 15 a vs ~10 a)"
+    },
+    {
+      "label": "Modo de trabajo: orquestador + Sonnet workers + Fable/Opus revisor",
+      "file_type": "document",
+      "source_file": "HANDOFF_Proximo_Chat.md",
+      "source_location": "L20",
+      "id": "proc_roles_orquestador",
+      "community": 2,
+      "norm_label": "modo de trabajo: orquestador + sonnet workers + fable/opus revisor"
+    },
+    {
+      "label": "Regla de margen: AL LIMITE si < 20 %; V_DS limite 32 V",
+      "file_type": "document",
+      "source_file": "RESULTADOS_Sim_Rev2.md",
+      "source_location": "L18",
+      "id": "proc_regla_margen",
+      "community": 2,
+      "norm_label": "regla de margen: al limite si < 20 %; v_ds limite 32 v"
+    },
+    {
+      "label": "Reglas LTspice batch (solver=alt modtrap, no matar por nombre)",
+      "file_type": "document",
+      "source_file": "README_rev2.md",
+      "source_location": "L24",
+      "id": "proc_ltspice_batch",
+      "community": 2,
+      "norm_label": "reglas ltspice batch (solver=alt modtrap, no matar por nombre)"
+    },
+    {
+      "label": "/graphify simulacion/rev2 pendiente",
+      "file_type": "document",
+      "source_file": "HANDOFF_Proximo_Chat.md",
+      "source_location": "L76",
+      "id": "proc_graphify_pendiente",
+      "community": 2,
+      "norm_label": "/graphify simulacion/rev2 pendiente"
+    },
+    {
+      "label": "Compuerta: mostrar S1-S3 a Luis antes de S4b-e",
+      "file_type": "document",
+      "source_file": "HANDOFF_Proximo_Chat.md",
+      "source_location": "L25",
+      "id": "proc_compuerta_luis_ok",
+      "community": 2,
+      "norm_label": "compuerta: mostrar s1-s3 a luis antes de s4b-e"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "S1_polaridad/raw2csv.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "s1_polaridad_raw2csv",
+      "target": "s1_polaridad_raw2csv_export",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "S1_polaridad/raw2csv.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "s1_polaridad_raw2csv",
+      "target": "s1_polaridad_raw2csv_steps",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "S1_polaridad/raw2csv.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "s1_polaridad_raw2csv_rationale_1",
+      "target": "s1_polaridad_raw2csv",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "S1_polaridad/raw2csv.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "s1_polaridad_raw2csv_export",
+      "target": "s1_polaridad_raw2csv_steps",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "S2_hotplug/raw2csv.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "s2_hotplug_raw2csv",
+      "target": "s2_hotplug_raw2csv_export",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "S2_hotplug/raw2csv.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "s2_hotplug_raw2csv",
+      "target": "s2_hotplug_raw2csv_steps",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "S2_hotplug/raw2csv.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "s2_hotplug_raw2csv",
+      "target": "s2_hotplug_raw2csv_vpk",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "S2_hotplug/raw2csv.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "s2_hotplug_raw2csv_rationale_1",
+      "target": "s2_hotplug_raw2csv",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "S2_hotplug/raw2csv.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "s2_hotplug_raw2csv_export",
+      "target": "s2_hotplug_raw2csv_steps",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "S2_hotplug/raw2csv.py",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "s2_hotplug_raw2csv_vpk",
+      "target": "s2_hotplug_raw2csv_steps",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "S2_hotplug/run_celdas.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "s2_hotplug_run_celdas",
+      "target": "s2_hotplug_run_celdas_mk",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "S2_hotplug/run_celdas.py",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "s2_hotplug_run_celdas",
+      "target": "s2_hotplug_run_celdas_run",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "S2_hotplug/run_celdas.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "s2_hotplug_run_celdas_run",
+      "target": "s2_hotplug_run_celdas_mk",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/S3f_post.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "s3_salida_s3f_post",
+      "target": "s3_salida_s3f_post_b_table",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/S3f_post.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "s3_salida_s3f_post",
+      "target": "s3_salida_s3f_post_eng",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/S3f_post.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "s3_salida_s3f_post",
+      "target": "s3_salida_s3f_post_rec_rows",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/S3f_post.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "s3_salida_s3f_post",
+      "target": "s3_salida_s3f_post_rec_table",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/S3f_post.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "s3_salida_s3f_post_rationale_1",
+      "target": "s3_salida_s3f_post",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/S3f_post.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "s3_salida_s3f_post_b_table",
+      "target": "s3_salida_s3f_post_eng",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/S3f_post.py",
+      "source_location": "L36",
+      "weight": 1.0,
+      "source": "s3_salida_s3f_post_rec_table",
+      "target": "s3_salida_s3f_post_rec_rows",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/S3f_run2.sh",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "s3_salida_s3f_run2",
+      "target": "c_users_lenovo_documents_universidad_2026_20_orca_board_orca_potencia_orca_board_simulacion_rev2_s3_salida_s3f_run2_sh__entry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/S3f_run2.sh",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "s3_salida_s3f_run2",
+      "target": "s3_salida_s3f_run2_chain",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/S3f_run2.sh",
+      "source_location": "L5",
+      "weight": 1.0,
+      "context": "call",
+      "source": "c_users_lenovo_documents_universidad_2026_20_orca_board_orca_potencia_orca_board_simulacion_rev2_s3_salida_s3f_run2_sh__entry",
+      "target": "s3_salida_s3f_run2_chain",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/S3f_show_precarga.py",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "s3_salida_s3f_show_precarga",
+      "target": "s3_salida_s3f_show_precarga_show",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/S3f_tablas.py",
+      "source_location": "L36",
+      "weight": 1.0,
+      "source": "s3_salida_s3f_tablas",
+      "target": "s3_salida_s3f_tablas_apertura_resumen",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/S3f_tablas.py",
+      "source_location": "L88",
+      "weight": 1.0,
+      "source": "s3_salida_s3f_tablas",
+      "target": "s3_salida_s3f_tablas_ilim",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/S3f_tablas.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "s3_salida_s3f_tablas",
+      "target": "s3_salida_s3f_tablas_niveles",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/S3f_tablas.py",
+      "source_location": "L118",
+      "weight": 1.0,
+      "source": "s3_salida_s3f_tablas",
+      "target": "s3_salida_s3f_tablas_precarga",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/S3f_tablas.py",
+      "source_location": "L74",
+      "weight": 1.0,
+      "source": "s3_salida_s3f_tablas",
+      "target": "s3_salida_s3f_tablas_recierre",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/S3f_tablas.py",
+      "source_location": "L129",
+      "weight": 1.0,
+      "source": "s3_salida_s3f_tablas",
+      "target": "s3_salida_s3f_tablas_recierre_largo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/S3f_tablas.py",
+      "source_location": "L57",
+      "weight": 1.0,
+      "source": "s3_salida_s3f_tablas",
+      "target": "s3_salida_s3f_tablas_rejilla",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/S3f_tablas.py",
+      "source_location": "L108",
+      "weight": 1.0,
+      "source": "s3_salida_s3f_tablas",
+      "target": "s3_salida_s3f_tablas_soa25",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/S3f_tablas.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "s3_salida_s3f_tablas",
+      "target": "s3_salida_s3f_tablas_util",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/S3f_tablas.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "s3_salida_s3f_tablas_rationale_1",
+      "target": "s3_salida_s3f_tablas",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/S3f_tablas.py",
+      "source_location": "L123",
+      "weight": 1.0,
+      "source": "s3_salida_s3f_tablas_precarga",
+      "target": "s3_salida_s3f_tablas_util",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/S3f_tablas.py",
+      "source_location": "L113",
+      "weight": 1.0,
+      "source": "s3_salida_s3f_tablas_soa25",
+      "target": "s3_salida_s3f_tablas_util",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/run.sh",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "s3_salida_run",
+      "target": "c_users_lenovo_documents_universidad_2026_20_orca_board_orca_potencia_orca_board_simulacion_rev2_s3_salida_run_sh__entry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/run.sh",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "s3_salida_run",
+      "target": "s3_salida_run_w",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/run.sh",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "call",
+      "source": "c_users_lenovo_documents_universidad_2026_20_orca_board_orca_potencia_orca_board_simulacion_rev2_s3_salida_run_sh__entry",
+      "target": "s3_salida_run_w",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L90",
+      "weight": 1.0,
+      "source": "s3_salida_s3_post",
+      "target": "s3_salida_s3_post_a_rows",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L115",
+      "weight": 1.0,
+      "source": "s3_salida_s3_post",
+      "target": "s3_salida_s3_post_a_table",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L131",
+      "weight": 1.0,
+      "source": "s3_salida_s3_post",
+      "target": "s3_salida_s3_post_b_table",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L149",
+      "weight": 1.0,
+      "source": "s3_salida_s3_post",
+      "target": "s3_salida_s3_post_c_table",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L158",
+      "weight": 1.0,
+      "source": "s3_salida_s3_post",
+      "target": "s3_salida_s3_post_d_table",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L43",
+      "weight": 1.0,
+      "source": "s3_salida_s3_post",
+      "target": "s3_salida_s3_post_decimate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L166",
+      "weight": 1.0,
+      "source": "s3_salida_s3_post",
+      "target": "s3_salida_s3_post_e_table",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L86",
+      "weight": 1.0,
+      "source": "s3_salida_s3_post",
+      "target": "s3_salida_s3_post_g",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "s3_salida_s3_post",
+      "target": "s3_salida_s3_post_parse_log",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "s3_salida_s3_post",
+      "target": "s3_salida_s3_post_read_raw",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L174",
+      "weight": 1.0,
+      "source": "s3_salida_s3_post",
+      "target": "s3_salida_s3_post_screen_table",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L111",
+      "weight": 1.0,
+      "source": "s3_salida_s3_post",
+      "target": "s3_salida_s3_post_soa_flag",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L71",
+      "weight": 1.0,
+      "source": "s3_salida_s3_post",
+      "target": "s3_salida_s3_post_u_at",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L105",
+      "weight": 1.0,
+      "source": "s3_salida_s3_post",
+      "target": "s3_salida_s3_post_verdict_a",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L59",
+      "weight": 1.0,
+      "source": "s3_salida_s3_post",
+      "target": "s3_salida_s3_post_write_csv",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "s3_salida_s3_post_rationale_1",
+      "target": "s3_salida_s3_post",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L91",
+      "weight": 1.0,
+      "source": "s3_salida_s3_post_a_rows",
+      "target": "s3_salida_s3_post_parse_log",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L132",
+      "weight": 1.0,
+      "source": "s3_salida_s3_post_b_table",
+      "target": "s3_salida_s3_post_parse_log",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L150",
+      "weight": 1.0,
+      "source": "s3_salida_s3_post_c_table",
+      "target": "s3_salida_s3_post_parse_log",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L159",
+      "weight": 1.0,
+      "source": "s3_salida_s3_post_d_table",
+      "target": "s3_salida_s3_post_parse_log",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L167",
+      "weight": 1.0,
+      "source": "s3_salida_s3_post_e_table",
+      "target": "s3_salida_s3_post_parse_log",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L62",
+      "weight": 1.0,
+      "source": "s3_salida_s3_post_write_csv",
+      "target": "s3_salida_s3_post_decimate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L99",
+      "weight": 1.0,
+      "source": "s3_salida_s3_post_a_rows",
+      "target": "s3_salida_s3_post_u_at",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L141",
+      "weight": 1.0,
+      "source": "s3_salida_s3_post_b_table",
+      "target": "s3_salida_s3_post_u_at",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L94",
+      "weight": 1.0,
+      "source": "s3_salida_s3_post_a_rows",
+      "target": "s3_salida_s3_post_g",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L138",
+      "weight": 1.0,
+      "source": "s3_salida_s3_post_b_table",
+      "target": "s3_salida_s3_post_g",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L153",
+      "weight": 1.0,
+      "source": "s3_salida_s3_post_c_table",
+      "target": "s3_salida_s3_post_g",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L162",
+      "weight": 1.0,
+      "source": "s3_salida_s3_post_d_table",
+      "target": "s3_salida_s3_post_g",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L170",
+      "weight": 1.0,
+      "source": "s3_salida_s3_post_e_table",
+      "target": "s3_salida_s3_post_g",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L118",
+      "weight": 1.0,
+      "source": "s3_salida_s3_post_a_table",
+      "target": "s3_salida_s3_post_a_rows",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L178",
+      "weight": 1.0,
+      "source": "s3_salida_s3_post_screen_table",
+      "target": "s3_salida_s3_post_a_rows",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L121",
+      "weight": 1.0,
+      "source": "s3_salida_s3_post_a_table",
+      "target": "s3_salida_s3_post_verdict_a",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L183",
+      "weight": 1.0,
+      "source": "s3_salida_s3_post_screen_table",
+      "target": "s3_salida_s3_post_verdict_a",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L128",
+      "weight": 1.0,
+      "source": "s3_salida_s3_post_a_table",
+      "target": "s3_salida_s3_post_soa_flag",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L146",
+      "weight": 1.0,
+      "source": "s3_salida_s3_post_b_table",
+      "target": "s3_salida_s3_post_soa_flag",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "S3_salida/s3_post.py",
+      "source_location": "L175",
+      "weight": 1.0,
+      "source": "s3_salida_s3_post_rationale_175",
+      "target": "s3_salida_s3_post_screen_table",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "S4_convertidor/gen_S4.py",
+      "source_location": "L194",
+      "weight": 1.0,
+      "source": "s4_convertidor_gen_s4",
+      "target": "s4_convertidor_gen_s4_case",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "S4_convertidor/gen_S4.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "s4_convertidor_gen_s4_rationale_1",
+      "target": "s4_convertidor_gen_s4",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "S4_convertidor/meas.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "s4_convertidor_meas",
+      "target": "s4_convertidor_meas_read",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "S4_convertidor/meas.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "s4_convertidor_meas_rationale_1",
+      "target": "s4_convertidor_meas",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "S4_convertidor/tabla_S4.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "s4_convertidor_tabla_s4_log",
+      "target": "s4_convertidor_meas_read"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "S4_convertidor/raw2csv_S4.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "s4_convertidor_raw2csv_s4",
+      "target": "s4_convertidor_raw2csv_s4_export",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "S4_convertidor/raw2csv_S4.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "s4_convertidor_raw2csv_s4_rationale_1",
+      "target": "s4_convertidor_raw2csv_s4",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "S4_convertidor/tabla_S4.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "s4_convertidor_tabla_s4",
+      "target": "s4_convertidor_tabla_s4_log",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "S4_convertidor/tabla_S4.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "s4_convertidor_tabla_s4",
+      "target": "s4_convertidor_tabla_s4_row",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "S4_convertidor/tabla_S4.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "s4_convertidor_tabla_s4",
+      "target": "s4_convertidor_tabla_s4_st",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "S4_convertidor/tabla_S4.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "s4_convertidor_tabla_s4_rationale_1",
+      "target": "s4_convertidor_tabla_s4",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "S4_convertidor/tabla_S4.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "s4_convertidor_tabla_s4_rationale_10",
+      "target": "s4_convertidor_tabla_s4_st",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "S5_escalon/postproceso.py",
+      "source_location": "L45",
+      "weight": 1.0,
+      "source": "s5_escalon_postproceso",
+      "target": "s5_escalon_postproceso_fmt",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "S5_escalon/postproceso.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "s5_escalon_postproceso_rationale_1",
+      "target": "s5_escalon_postproceso",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "follows_rules_of",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "C:/Users/Lenovo/Documents/Universidad/2026-20/ORCA-Board/ORCA-Potencia/ORCA-Board/simulacion/rev2/S4_convertidor/resumen_S4a.md",
+      "weight": 1.0,
+      "source": "doc_s4a_resumen",
+      "target": "doc_readme_rev2"
+    },
+    {
+      "relation": "concludes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:/Users/Lenovo/Documents/Universidad/2026-20/ORCA-Board/ORCA-Potencia/ORCA-Board/simulacion/rev2/S4_convertidor/resumen_S4a.md",
+      "weight": 1.0,
+      "source": "doc_s4a_resumen",
+      "target": "s4a_linea_base"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README_rev2.md",
+      "weight": 1.0,
+      "source": "comp_lm5175_xorfix",
+      "target": "s4_convertidor"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "README_rev2.md",
+      "weight": 1.0,
+      "source": "comp_q1_q4_buk9y3r5",
+      "target": "s4_convertidor"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README_rev2.md",
+      "weight": 1.0,
+      "source": "doc_readme_rev2",
+      "target": "s4_convertidor"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "S4_convertidor/resumen_S4b_e.md",
+      "weight": 1.0,
+      "source": "doc_s4b_resumen",
+      "target": "s4_convertidor"
+    },
+    {
+      "relation": "part_of",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:/Users/Lenovo/Documents/Universidad/2026-20/ORCA-Board/ORCA-Potencia/ORCA-Board/simulacion/rev2/S4_convertidor/resumen_S4a.md",
+      "weight": 1.0,
+      "source": "s4a_linea_base",
+      "target": "s4_convertidor"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "RESULTADOS_Sim_Rev2.md",
+      "weight": 1.0,
+      "source": "s4b_entrada_real",
+      "target": "s4_convertidor"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "S4_convertidor/resumen_S4b_e.md",
+      "weight": 1.0,
+      "source": "s4b_montaje",
+      "target": "s4_convertidor"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "RESULTADOS_Sim_Rev2.md",
+      "weight": 1.0,
+      "source": "s4c_cierre_q6",
+      "target": "s4_convertidor"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "RESULTADOS_Sim_Rev2.md",
+      "weight": 1.0,
+      "source": "s4d_apertura_q6",
+      "target": "s4_convertidor"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "RESULTADOS_Sim_Rev2.md",
+      "weight": 1.0,
+      "source": "s4e_otros_vin_vout",
+      "target": "s4_convertidor"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "S5_escalon/resumen.md",
+      "weight": 1.0,
+      "source": "s5_config",
+      "target": "s4_convertidor"
+    },
+    {
+      "relation": "validates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ESTADO_PAUSA.md",
+      "weight": 1.0,
+      "source": "res_s4a_referencia",
+      "target": "s4a_linea_base"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "RESULTADOS_Sim_Rev2.md",
+      "weight": 1.0,
+      "source": "res_s4b_falla_2p16",
+      "target": "s4a_linea_base"
+    },
+    {
+      "relation": "uses_model",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:/Users/Lenovo/Documents/Universidad/2026-20/ORCA-Board/ORCA-Potencia/ORCA-Board/simulacion/rev2/S4_convertidor/resumen_S4a.md",
+      "weight": 1.0,
+      "source": "s4a_linea_base",
+      "target": "c_out"
+    },
+    {
+      "relation": "uses_model",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:/Users/Lenovo/Documents/Universidad/2026-20/ORCA-Board/ORCA-Potencia/ORCA-Board/simulacion/rev2/S4_convertidor/resumen_S4a.md",
+      "weight": 1.0,
+      "source": "s4a_linea_base",
+      "target": "c_ss"
+    },
+    {
+      "relation": "concludes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:/Users/Lenovo/Documents/Universidad/2026-20/ORCA-Board/ORCA-Potencia/ORCA-Board/simulacion/rev2/S4_convertidor/resumen_S4a.md",
+      "weight": 1.0,
+      "source": "s4a_linea_base",
+      "target": "f_s4a_baseline"
+    },
+    {
+      "relation": "incident_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:/Users/Lenovo/Documents/Universidad/2026-20/ORCA-Board/ORCA-Potencia/ORCA-Board/simulacion/rev2/S4_convertidor/resumen_S4a.md",
+      "weight": 1.0,
+      "source": "s4a_linea_base",
+      "target": "f_s4a_ltspice_kill"
+    },
+    {
+      "relation": "concludes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:/Users/Lenovo/Documents/Universidad/2026-20/ORCA-Board/ORCA-Potencia/ORCA-Board/simulacion/rev2/S4_convertidor/resumen_S4a.md",
+      "weight": 1.0,
+      "source": "s4a_linea_base",
+      "target": "f_s4a_pgood"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ESTADO_PAUSA.md",
+      "weight": 1.0,
+      "source": "doc_estado_pausa",
+      "target": "doc_s3_resumen"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "S3_salida/resumen.md",
+      "weight": 1.0,
+      "source": "doc_s3_resumen",
+      "target": "s3_decisiones_luis"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "S3_salida/resumen.md",
+      "weight": 1.0,
+      "source": "doc_s3_resumen",
+      "target": "s3a_base_falla"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "S3_salida/resumen.md",
+      "weight": 1.0,
+      "source": "doc_s3_resumen",
+      "target": "s3f_seguimiento"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "S3_salida/resumen.md",
+      "weight": 1.0,
+      "source": "s3_pgood_window",
+      "target": "s3_q6"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "S3_salida/resumen.md",
+      "weight": 1.0,
+      "source": "s3a_remedio_final",
+      "target": "s3_q6"
+    },
+    {
+      "relation": "validates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "S3_salida/resumen.md",
+      "weight": 1.0,
+      "source": "s3c_niveles_regimen",
+      "target": "s3_q6"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "S4_convertidor/resumen_S4b_e.md",
+      "weight": 1.0,
+      "source": "s4b_montaje",
+      "target": "s3_q6"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "S3_salida/resumen.md",
+      "weight": 1.0,
+      "source": "s3_q7",
+      "target": "s3_pgood_window"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "S3_salida/resumen.md",
+      "weight": 1.0,
+      "source": "s3_regla_margen_vds",
+      "target": "s1_regla_margen_32v"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "S3_salida/resumen.md",
+      "weight": 1.0,
+      "source": "s3_regla_margen_vds",
+      "target": "s3b_apertura_inductiva"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "S3_salida/resumen.md",
+      "weight": 1.0,
+      "source": "s3_conv_idealizado",
+      "target": "s3a_base_falla"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "S3_salida/resumen.md",
+      "weight": 1.0,
+      "source": "s3_supuestos_limitaciones",
+      "target": "s3_conv_idealizado"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "S3_salida/resumen.md",
+      "weight": 1.0,
+      "source": "s3f_ilim_10a",
+      "target": "s3_conv_idealizado"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "S3_salida/resumen.md",
+      "weight": 1.0,
+      "source": "s3_soa_metodo",
+      "target": "s3a_soa_encendido_25v"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "S3_salida/resumen.md",
+      "weight": 1.0,
+      "source": "s3_zener_cjo_pendiente",
+      "target": "s1_zener_cjo"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "S3_salida/resumen.md",
+      "weight": 1.0,
+      "source": "s3a_base_falla",
+      "target": "s3a_remedio_cgd"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "S3_salida/resumen.md",
+      "weight": 1.0,
+      "source": "s3a_base_falla",
+      "target": "s3a_remedio_q7rc"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "S3_salida/resumen.md",
+      "weight": 1.0,
+      "source": "s3a_base_falla",
+      "target": "s3a_remedio_rg"
+    },
+    {
+      "relation": "validates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "S4_convertidor/resumen_S4b_e.md",
+      "weight": 1.0,
+      "source": "s4c_sin_remedio",
+      "target": "s3a_base_falla"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "S3_salida/resumen.md",
+      "weight": 1.0,
+      "source": "s3a_remedio_cgd",
+      "target": "s3a_remedio_final"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "S3_salida/resumen.md",
+      "weight": 1.0,
+      "source": "s3a_remedio_rg",
+      "target": "s3a_remedio_final"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "S3_salida/resumen.md",
+      "weight": 1.0,
+      "source": "s3a_remedio_final",
+      "target": "s3_efectos_secundarios_remedio"
+    },
+    {
+      "relation": "validates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "S3_salida/resumen.md",
+      "weight": 1.0,
+      "source": "s3a_remedio_final",
+      "target": "s3a_final_resultados"
+    },
+    {
+      "relation": "supersedes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "S3_salida/resumen.md",
+      "weight": 1.0,
+      "source": "s3f_seguimiento",
+      "target": "s3a_remedio_final"
+    },
+    {
+      "relation": "contradicts",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "S3_salida/resumen.md",
+      "weight": 1.0,
+      "source": "s3a_final_resultados",
+      "target": "s3a_soa_encendido_25v"
+    },
+    {
+      "relation": "validates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "S3_salida/resumen.md",
+      "weight": 1.0,
+      "source": "s3f_soa25_limite_c",
+      "target": "s3a_soa_encendido_25v"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "S3_salida/resumen.md",
+      "weight": 1.0,
+      "source": "s3_efectos_secundarios_remedio",
+      "target": "s3b_apertura_inductiva"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "S3_salida/resumen.md",
+      "weight": 1.0,
+      "source": "s3_npn_seguidor",
+      "target": "s3_efectos_secundarios_remedio"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "S3_salida/resumen.md",
+      "weight": 1.0,
+      "source": "s3f_seguimiento",
+      "target": "s3_efectos_secundarios_remedio"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "S3_salida/resumen.md",
+      "weight": 1.0,
+      "source": "s3b_apertura_inductiva",
+      "target": "s3b_diodo_rueda_libre"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "S3_salida/resumen.md",
+      "weight": 1.0,
+      "source": "s3b_diodo_rueda_libre",
+      "target": "s3_decisiones_luis"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.8,
+      "source_file": "S3_salida/resumen.md",
+      "weight": 1.0,
+      "source": "s3c_niveles_regimen",
+      "target": "s3_led_resistor_0805"
+    },
+    {
+      "relation": "contradicts",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "S3_salida/resumen.md",
+      "weight": 1.0,
+      "source": "s3f_rrst_vgs_conflicto",
+      "target": "s3c_niveles_regimen"
+    },
+    {
+      "relation": "validates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "weight": 1.0,
+      "source": "s3d_bleeder",
+      "target": "comp_bleeder_1k5"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.6,
+      "source_file": "S3_salida/resumen.md",
+      "weight": 1.0,
+      "source": "s3e_descarga_cin",
+      "target": "s3d_bleeder"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "S3_salida/resumen.md",
+      "weight": 1.0,
+      "source": "s3f_extras_descartados",
+      "target": "s3f_seguimiento"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "S4_convertidor/resumen_S4b_e.md",
+      "weight": 1.0,
+      "source": "s4b_remedio_q6",
+      "target": "s3f_seguimiento"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "S3_salida/resumen.md",
+      "weight": 1.0,
+      "source": "s3f_rrst_vgs_conflicto",
+      "target": "s3f_recierre_gap200"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "S3_salida/resumen.md",
+      "weight": 1.0,
+      "source": "s3f_recierre_gap200",
+      "target": "s3_decisiones_luis"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "S3_salida/resumen.md",
+      "weight": 1.0,
+      "source": "s3f_precarga_rpre",
+      "target": "s3f_soa25_limite_c"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "S3_salida/resumen.md",
+      "weight": 1.0,
+      "source": "s3f_soa25_limite_c",
+      "target": "s3_decisiones_luis"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "S3_salida/resumen.md",
+      "weight": 1.0,
+      "source": "s3f_ilim_10a",
+      "target": "s3_decisiones_luis"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ESTADO_PAUSA.md",
+      "weight": 1.0,
+      "source": "doc_estado_pausa",
+      "target": "doc_s1_resumen"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "S1_polaridad/resumen.md",
+      "weight": 1.0,
+      "source": "doc_s1_resumen",
+      "target": "s1_q5"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "S1_polaridad/resumen.md",
+      "weight": 1.0,
+      "source": "doc_s1_resumen",
+      "target": "s1d_hallazgo_barrido_rapido"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "S1_polaridad/resumen.md",
+      "weight": 1.0,
+      "source": "s1_f1",
+      "target": "s1_q5"
+    },
+    {
+      "relation": "validates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "S1_polaridad/resumen.md",
+      "weight": 1.0,
+      "source": "s1a_directa",
+      "target": "s1_q5"
+    },
+    {
+      "relation": "validates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "S1_polaridad/resumen.md",
+      "weight": 1.0,
+      "source": "s1b_inversa",
+      "target": "s1_q5"
+    },
+    {
+      "relation": "validates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "S1_polaridad/resumen.md",
+      "weight": 1.0,
+      "source": "s1c_regeneracion",
+      "target": "s1_q5"
+    },
+    {
+      "relation": "validates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.8,
+      "source_file": "S1_polaridad/resumen.md",
+      "weight": 1.0,
+      "source": "s1d_transitorio",
+      "target": "s1_q5"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "S4_convertidor/resumen_S4b_e.md",
+      "weight": 1.0,
+      "source": "s4b_montaje",
+      "target": "s1_q5"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "S1_polaridad/resumen.md",
+      "weight": 1.0,
+      "source": "s1_regla_margen_32v",
+      "target": "s1b_inversa"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.6,
+      "source_file": "S1_polaridad/resumen.md",
+      "weight": 1.0,
+      "source": "s1_vgs_margen_21",
+      "target": "s1_zener_cjo"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "S1_polaridad/resumen.md",
+      "weight": 1.0,
+      "source": "s1_zener_cjo",
+      "target": "s4b_zener_cjo"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.8,
+      "source_file": "S5_escalon/resumen.md",
+      "weight": 1.0,
+      "source": "s5_zener_cjo_aviso",
+      "target": "s1_zener_cjo"
+    },
+    {
+      "relation": "validates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "S1_polaridad/resumen.md",
+      "weight": 1.0,
+      "source": "s1_p_vs_vin",
+      "target": "s1a_directa"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "S1_polaridad/resumen.md",
+      "weight": 1.0,
+      "source": "s1_vgs_margen_21",
+      "target": "s1a_directa"
+    },
+    {
+      "relation": "validates",
+      "confidence": "INFERRED",
+      "confidence_score": 0.6,
+      "source_file": "S4_convertidor/resumen_S4b_e.md",
+      "weight": 1.0,
+      "source": "s4b_q5_regimen",
+      "target": "s1a_directa"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.6,
+      "source_file": "S1_polaridad/resumen.md",
+      "weight": 1.0,
+      "source": "s1_supuestos",
+      "target": "s1d_transitorio"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "S1_polaridad/resumen.md",
+      "weight": 1.0,
+      "source": "s1d_caso3_abrupto",
+      "target": "s1d_transitorio"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "S1_polaridad/resumen.md",
+      "weight": 1.0,
+      "source": "s1d_transitorio",
+      "target": "s1d_hallazgo_barrido_rapido"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "S1_polaridad/resumen.md",
+      "weight": 1.0,
+      "source": "s1_c_in",
+      "target": "s1d_hallazgo_barrido_rapido"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "S1_polaridad/resumen.md",
+      "weight": 1.0,
+      "source": "s1d_remedio_rg",
+      "target": "s1d_hallazgo_barrido_rapido"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "S5_escalon/postproceso_salida.txt",
+      "weight": 1.0,
+      "source": "doc_s5_postproceso_salida",
+      "target": "doc_s5_resumen"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "S5_escalon/resumen.md",
+      "weight": 1.0,
+      "source": "doc_s5_resumen",
+      "target": "s5_veredicto_pasa"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "S5_escalon/resumen.md",
+      "weight": 1.0,
+      "source": "s5_c_in_pendiente",
+      "target": "s5_config"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "S5_escalon/resumen.md",
+      "weight": 1.0,
+      "source": "s5_carga_escalon",
+      "target": "s5_evento1_1a4"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "S5_escalon/resumen.md",
+      "weight": 1.0,
+      "source": "s5_carga_escalon",
+      "target": "s5_evento2_4a1"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "S5_escalon/resumen.md",
+      "weight": 1.0,
+      "source": "s5_sonda_vf50",
+      "target": "s5_evento1_1a4"
+    },
+    {
+      "relation": "validates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "S5_escalon/postproceso_salida.txt",
+      "weight": 1.0,
+      "source": "s5pp_contraste_mediana",
+      "target": "s5_sonda_vf50"
+    },
+    {
+      "relation": "validates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "S5_escalon/resumen.md",
+      "weight": 1.0,
+      "source": "s5_evento1_1a4",
+      "target": "s5_veredicto_pasa"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "S5_escalon/resumen.md",
+      "weight": 1.0,
+      "source": "s5_vpre_no_plano",
+      "target": "s5_evento1_1a4"
+    },
+    {
+      "relation": "validates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "S5_escalon/postproceso_salida.txt",
+      "weight": 1.0,
+      "source": "s5pp_ev1",
+      "target": "s5_evento1_1a4"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "S5_escalon/resumen.md",
+      "weight": 1.0,
+      "source": "s5_evento2_4a1",
+      "target": "s5_il_negativo"
+    },
+    {
+      "relation": "validates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "S5_escalon/resumen.md",
+      "weight": 1.0,
+      "source": "s5_evento2_4a1",
+      "target": "s5_veredicto_pasa"
+    },
+    {
+      "relation": "validates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "S5_escalon/postproceso_salida.txt",
+      "weight": 1.0,
+      "source": "s5pp_ev2",
+      "target": "s5_evento2_4a1"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "S5_escalon/resumen.md",
+      "weight": 1.0,
+      "source": "s5_sin_oscilaciones",
+      "target": "s5_veredicto_pasa"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.6,
+      "source_file": "S5_escalon/resumen.md",
+      "weight": 1.0,
+      "source": "s5_modo_pendiente",
+      "target": "s5_il_negativo"
+    },
+    {
+      "relation": "validates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "S5_escalon/postproceso_salida.txt",
+      "weight": 1.0,
+      "source": "s5pp_ev2",
+      "target": "s5_il_negativo"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "S5_escalon/resumen.md",
+      "weight": 1.0,
+      "source": "s5_criterio_propuesto",
+      "target": "s5_veredicto_pasa"
+    },
+    {
+      "relation": "validates",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "S5_escalon/resumen.md",
+      "weight": 1.0,
+      "source": "s5_log_valido",
+      "target": "s5_veredicto_pasa"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "S5_escalon/resumen.md",
+      "weight": 1.0,
+      "source": "s5_salvedades_op",
+      "target": "s5_veredicto_pasa"
+    },
+    {
+      "relation": "validates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "S5_escalon/postproceso_salida.txt",
+      "weight": 1.0,
+      "source": "s5pp_log_valido",
+      "target": "s5_log_valido"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "S4_convertidor/resumen_S4b_e.md",
+      "weight": 1.0,
+      "source": "doc_s4b_resumen",
+      "target": "s4b_resultado_s4b"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "S4_convertidor/resumen_S4b_e.md",
+      "weight": 1.0,
+      "source": "doc_s4b_resumen",
+      "target": "s4c_sin_remedio"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "S4_convertidor/resumen_S4b_e.md",
+      "weight": 1.0,
+      "source": "s4cde_pendiente",
+      "target": "s4b_remedio_q6"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.6,
+      "source_file": "S4_convertidor/resumen_S4b_e.md",
+      "weight": 1.0,
+      "source": "s4b_rampa_20us",
+      "target": "s4b_resultado_s4b"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "S4_convertidor/resumen_S4b_e.md",
+      "weight": 1.0,
+      "source": "s4b_causa_caida_vin",
+      "target": "s4b_resultado_s4b"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "S4_convertidor/resumen_S4b_e.md",
+      "weight": 1.0,
+      "source": "s4b_q5_regimen",
+      "target": "s4b_causa_caida_vin"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "S4_convertidor/resumen_S4b_e.md",
+      "weight": 1.0,
+      "source": "s4b_precarga_1a",
+      "target": "s4c_sin_remedio"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "S4_convertidor/resumen_S4b_e.md",
+      "weight": 1.0,
+      "source": "s4c_sin_remedio",
+      "target": "s4b_valle_il_artefacto"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "S4_convertidor/resumen_S4b_e.md",
+      "weight": 1.0,
+      "source": "s4b_estado_en_curso",
+      "target": "s4cde_pendiente"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "weight": 1.0,
+      "source": "doc_cambios_borrador",
+      "target": "doc_estado_pausa"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "weight": 1.0,
+      "source": "doc_cambios_borrador",
+      "target": "doc_handoff"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "weight": 1.0,
+      "source": "doc_cambios_borrador",
+      "target": "doc_readme_rev2"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "weight": 1.0,
+      "source": "doc_cambios_borrador",
+      "target": "doc_s2_resumen"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "weight": 1.0,
+      "source": "doc_cambios_borrador",
+      "target": "open_pcb_mejoras_no_en_repo"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "RESULTADOS_Sim_Rev2.md",
+      "weight": 1.0,
+      "source": "doc_resultados",
+      "target": "doc_cambios_borrador"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ESTADO_PAUSA.md",
+      "weight": 1.0,
+      "source": "doc_estado_pausa",
+      "target": "doc_readme_rev2"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ESTADO_PAUSA.md",
+      "weight": 1.0,
+      "source": "doc_estado_pausa",
+      "target": "doc_resultados_borrador"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ESTADO_PAUSA.md",
+      "weight": 1.0,
+      "source": "doc_estado_pausa",
+      "target": "doc_s2_resumen"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ESTADO_PAUSA.md",
+      "weight": 1.0,
+      "source": "doc_estado_pausa",
+      "target": "proc_compuerta_luis_ok"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ESTADO_PAUSA.md",
+      "weight": 1.0,
+      "source": "doc_estado_pausa",
+      "target": "proc_roles_orquestador"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "HANDOFF_Proximo_Chat.md",
+      "weight": 1.0,
+      "source": "doc_handoff",
+      "target": "doc_estado_pausa"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "RESULTADOS_Sim_Rev2.md",
+      "weight": 1.0,
+      "source": "doc_resultados",
+      "target": "doc_estado_pausa"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "HANDOFF_Proximo_Chat.md",
+      "weight": 1.0,
+      "source": "doc_handoff",
+      "target": "chg_c12_doc_kicad_q1q4"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "HANDOFF_Proximo_Chat.md",
+      "weight": 1.0,
+      "source": "doc_handoff",
+      "target": "doc_readme_rev2"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "HANDOFF_Proximo_Chat.md",
+      "weight": 1.0,
+      "source": "doc_handoff",
+      "target": "doc_resultados"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "HANDOFF_Proximo_Chat.md",
+      "weight": 1.0,
+      "source": "doc_handoff",
+      "target": "open_pcb_mejoras_no_en_repo"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "HANDOFF_Proximo_Chat.md",
+      "weight": 1.0,
+      "source": "doc_handoff",
+      "target": "open_s4c_con_remedio"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "HANDOFF_Proximo_Chat.md",
+      "weight": 1.0,
+      "source": "doc_handoff",
+      "target": "proc_compuerta_luis_ok"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "HANDOFF_Proximo_Chat.md",
+      "weight": 1.0,
+      "source": "doc_handoff",
+      "target": "proc_graphify_pendiente"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "HANDOFF_Proximo_Chat.md",
+      "weight": 1.0,
+      "source": "doc_handoff",
+      "target": "proc_roles_orquestador"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README_rev2.md",
+      "weight": 1.0,
+      "source": "doc_readme_rev2",
+      "target": "comp_d1_d3_schottky"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README_rev2.md",
+      "weight": 1.0,
+      "source": "doc_readme_rev2",
+      "target": "comp_f1_0456025"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README_rev2.md",
+      "weight": 1.0,
+      "source": "doc_readme_rev2",
+      "target": "comp_lm5175_xorfix"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README_rev2.md",
+      "weight": 1.0,
+      "source": "doc_readme_rev2",
+      "target": "comp_q1_q4_buk9y3r5"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README_rev2.md",
+      "weight": 1.0,
+      "source": "doc_readme_rev2",
+      "target": "comp_q5_sirs4401dp"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README_rev2.md",
+      "weight": 1.0,
+      "source": "doc_readme_rev2",
+      "target": "comp_q6_sirs4401dp"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README_rev2.md",
+      "weight": 1.0,
+      "source": "doc_readme_rev2",
+      "target": "comp_q7_2n7002k"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README_rev2.md",
+      "weight": 1.0,
+      "source": "doc_readme_rev2",
+      "target": "comp_zener_cjo1p"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README_rev2.md",
+      "weight": 1.0,
+      "source": "doc_readme_rev2",
+      "target": "open_hiccup_no_simulable"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README_rev2.md",
+      "weight": 1.0,
+      "source": "doc_readme_rev2",
+      "target": "proc_ltspice_batch"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "RESULTADOS_Sim_Rev2.md",
+      "weight": 1.0,
+      "source": "doc_resultados",
+      "target": "doc_readme_rev2"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "RESULTADOS_Sim_Rev2_borrador.md",
+      "weight": 1.0,
+      "source": "doc_resultados_borrador",
+      "target": "doc_readme_rev2"
+    },
+    {
+      "relation": "supersedes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "RESULTADOS_Sim_Rev2.md",
+      "weight": 1.0,
+      "source": "doc_resultados",
+      "target": "doc_resultados_borrador"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "RESULTADOS_Sim_Rev2.md",
+      "weight": 1.0,
+      "source": "doc_resultados",
+      "target": "open_s3_cjo150p"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "RESULTADOS_Sim_Rev2.md",
+      "weight": 1.0,
+      "source": "doc_resultados",
+      "target": "open_s4e_no_converge"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "RESULTADOS_Sim_Rev2.md",
+      "weight": 1.0,
+      "source": "doc_resultados",
+      "target": "proc_regla_margen"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "RESULTADOS_Sim_Rev2_borrador.md",
+      "weight": 1.0,
+      "source": "doc_resultados_borrador",
+      "target": "doc_s2_resumen"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "weight": 1.0,
+      "source": "chg_c9_polaridad_inversa_cin",
+      "target": "comp_q5_sirs4401dp"
+    },
+    {
+      "relation": "validates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "weight": 1.0,
+      "source": "res_s1a_vgs_11v84",
+      "target": "comp_q5_sirs4401dp"
+    },
+    {
+      "relation": "validates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "weight": 1.0,
+      "source": "res_s1b_inversa_frio_pasa",
+      "target": "comp_q5_sirs4401dp"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "S2_hotplug/resumen.md",
+      "weight": 1.0,
+      "source": "res_s2_snubber_422a",
+      "target": "comp_q5_sirs4401dp"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "weight": 1.0,
+      "source": "chg_c1_q6_gate",
+      "target": "comp_q6_sirs4401dp"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "weight": 1.0,
+      "source": "res_soa_encendido_25v",
+      "target": "comp_q6_sirs4401dp"
+    },
+    {
+      "relation": "validates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "weight": 1.0,
+      "source": "comp_q7_2n7002k",
+      "target": "s3c_vgs_q6"
+    },
+    {
+      "relation": "validates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "weight": 1.0,
+      "source": "res_s2_it_f1",
+      "target": "comp_f1_0456025"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "weight": 1.0,
+      "source": "chg_c12_doc_kicad_q1q4",
+      "target": "comp_q1_q4_buk9y3r5"
+    },
+    {
+      "relation": "contradicts",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "RESULTADOS_Sim_Rev2.md",
+      "weight": 1.0,
+      "source": "open_s3_cjo150p",
+      "target": "comp_zener_cjo1p"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ESTADO_PAUSA.md",
+      "weight": 1.0,
+      "source": "open_cin_esr_30_vs_31",
+      "target": "comp_cin_kemet_a759"
+    },
+    {
+      "relation": "validates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "weight": 1.0,
+      "source": "res_s5_escalon_pasa",
+      "target": "comp_cout_440uf"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "weight": 1.0,
+      "source": "chg_c4_led_0805",
+      "target": "comp_led_resistors"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "weight": 1.0,
+      "source": "comp_snubber_rc_vbus",
+      "target": "chg_c8_snubber_vbus"
+    },
+    {
+      "relation": "contradicts",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "S2_hotplug/resumen.md",
+      "weight": 1.0,
+      "source": "res_s2_snubber_422a",
+      "target": "comp_snubber_rc_vbus"
+    },
+    {
+      "relation": "contradicts",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "S2_hotplug/resumen.md",
+      "weight": 1.0,
+      "source": "s2c_cap_extra",
+      "target": "comp_snubber_rc_vbus"
+    },
+    {
+      "relation": "validates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "S2_hotplug/resumen.md",
+      "weight": 1.0,
+      "source": "s2d_remedio_snubber",
+      "target": "comp_snubber_rc_vbus"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "weight": 1.0,
+      "source": "comp_cgd_100nf",
+      "target": "chg_c1a_cgd_directo"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "weight": 1.0,
+      "source": "comp_cgd_100nf",
+      "target": "chg_c1b_diodo_rrst"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "weight": 1.0,
+      "source": "comp_rg_22k",
+      "target": "chg_c1a_cgd_directo"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "weight": 1.0,
+      "source": "comp_rg_22k",
+      "target": "chg_c1b_diodo_rrst"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "weight": 1.0,
+      "source": "comp_diode_serie_cgd",
+      "target": "chg_c1b_diodo_rrst"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "weight": 1.0,
+      "source": "comp_rrst_330k",
+      "target": "chg_c1b_diodo_rrst"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "weight": 1.0,
+      "source": "res_vgs_margen_0v19",
+      "target": "comp_rrst_330k"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "weight": 1.0,
+      "source": "chg_c2_freewheel",
+      "target": "comp_freewheel_diode"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "weight": 1.0,
+      "source": "chg_c1_q6_gate",
+      "target": "s4c_cierre_q6"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "weight": 1.0,
+      "source": "chg_c1a_cgd_directo",
+      "target": "chg_c1_q6_gate"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "weight": 1.0,
+      "source": "chg_c1b_diodo_rrst",
+      "target": "chg_c1_q6_gate"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "weight": 1.0,
+      "source": "res_s3a_original_falla",
+      "target": "chg_c1_q6_gate"
+    },
+    {
+      "relation": "contradicts",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "weight": 1.0,
+      "source": "chg_c1a_cgd_directo",
+      "target": "chg_c1b_diodo_rrst"
+    },
+    {
+      "relation": "validates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "weight": 1.0,
+      "source": "res_s3a_cgd_directo_pasa",
+      "target": "chg_c1a_cgd_directo"
+    },
+    {
+      "relation": "contradicts",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "weight": 1.0,
+      "source": "res_soa_apagado_u188",
+      "target": "chg_c1a_cgd_directo"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "weight": 1.0,
+      "source": "chg_c2_freewheel",
+      "target": "chg_c1b_diodo_rrst"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ESTADO_PAUSA.md",
+      "weight": 1.0,
+      "source": "dec_q6_gate_provisional",
+      "target": "chg_c1b_diodo_rrst"
+    },
+    {
+      "relation": "contradicts",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "weight": 1.0,
+      "source": "res_recierre_200ms",
+      "target": "chg_c1b_diodo_rrst"
+    },
+    {
+      "relation": "validates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "RESULTADOS_Sim_Rev2.md",
+      "weight": 1.0,
+      "source": "res_s3a_diodo_rrst_27_27",
+      "target": "chg_c1b_diodo_rrst"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "weight": 1.0,
+      "source": "res_vds_30v7_sin_diodo",
+      "target": "chg_c2_freewheel"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "weight": 1.0,
+      "source": "chg_c3_cload_limit",
+      "target": "res_soa_encendido_25v"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "RESULTADOS_Sim_Rev2_borrador.md",
+      "weight": 1.0,
+      "source": "dec_cload_150uf",
+      "target": "chg_c3_cload_limit"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "RESULTADOS_Sim_Rev2_borrador.md",
+      "weight": 1.0,
+      "source": "dec_led_6k8_0805",
+      "target": "chg_c4_led_0805"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "weight": 1.0,
+      "source": "res_led_114mw",
+      "target": "chg_c4_led_0805"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "RESULTADOS_Sim_Rev2.md",
+      "weight": 1.0,
+      "source": "open_soa_q5_10_100us",
+      "target": "chg_c8_snubber_vbus"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "weight": 1.0,
+      "source": "res_s2_pico_37v59",
+      "target": "chg_c8_snubber_vbus"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md",
+      "weight": 1.0,
+      "source": "res_s1d_inversa_cin_cargado",
+      "target": "chg_c9_polaridad_inversa_cin"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "RESULTADOS_Sim_Rev2.md",
+      "weight": 1.0,
+      "source": "dec_q6_gate_provisional",
+      "target": "open_s4c_con_remedio"
+    },
+    {
+      "relation": "contradicts",
+      "confidence": "INFERRED",
+      "confidence_score": 0.6,
+      "source_file": "RESULTADOS_Sim_Rev2_borrador.md",
+      "weight": 1.0,
+      "source": "dec_cload_150uf",
+      "target": "res_soa_encendido_25v"
+    },
+    {
+      "relation": "validates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "S2_hotplug/resumen.md",
+      "weight": 1.0,
+      "source": "res_s2_pico_37v59",
+      "target": "s2a_barrido_hotplug"
+    },
+    {
+      "relation": "validates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "S2_hotplug/resumen.md",
+      "weight": 1.0,
+      "source": "res_s2_snubber_28v29",
+      "target": "s2d_remedio_snubber"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "S2_hotplug/resumen.md",
+      "weight": 1.0,
+      "source": "s2e_esr_sensibilidad",
+      "target": "res_s2_pico_37v59"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "RESULTADOS_Sim_Rev2.md",
+      "weight": 1.0,
+      "source": "open_idealizado_s3",
+      "target": "s3a_cierre_q6"
+    },
+    {
+      "relation": "validates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "RESULTADOS_Sim_Rev2.md",
+      "weight": 1.0,
+      "source": "res_s3a_original_falla",
+      "target": "s3a_cierre_q6"
+    },
+    {
+      "relation": "validates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "RESULTADOS_Sim_Rev2.md",
+      "weight": 1.0,
+      "source": "res_vds_30v7_sin_diodo",
+      "target": "s3b_apertura_q6"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "RESULTADOS_Sim_Rev2.md",
+      "weight": 1.0,
+      "source": "open_rampa_bateria_20us",
+      "target": "s4b_entrada_real"
+    },
+    {
+      "relation": "validates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "RESULTADOS_Sim_Rev2.md",
+      "weight": 1.0,
+      "source": "res_s4b_falla_2p16",
+      "target": "s4b_entrada_real"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "RESULTADOS_Sim_Rev2.md",
+      "weight": 1.0,
+      "source": "open_precarga_1a_s4",
+      "target": "s4c_cierre_q6"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "HANDOFF_Proximo_Chat.md",
+      "weight": 1.0,
+      "source": "open_s4c_con_remedio",
+      "target": "s4c_cierre_q6"
+    },
+    {
+      "relation": "validates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "RESULTADOS_Sim_Rev2.md",
+      "weight": 1.0,
+      "source": "res_s4c_sin_remedio_falla",
+      "target": "s4c_cierre_q6"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "RESULTADOS_Sim_Rev2.md",
+      "weight": 1.0,
+      "source": "open_s4e_no_converge",
+      "target": "s4e_otros_vin_vout"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "S2_hotplug/resumen.md",
+      "weight": 1.0,
+      "source": "open_soa_q5_10_100us",
+      "target": "res_s2_snubber_422a"
+    },
+    {
+      "relation": "validates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "RESULTADOS_Sim_Rev2.md",
+      "weight": 1.0,
+      "source": "res_s4c_sin_remedio_falla",
+      "target": "res_s3a_original_falla"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "RESULTADOS_Sim_Rev2.md",
+      "weight": 1.0,
+      "source": "res_recierre_200ms",
+      "target": "open_hiccup_no_simulable"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ESTADO_PAUSA.md",
+      "weight": 1.0,
+      "source": "open_s5_criterio_sin_aprobar",
+      "target": "res_s5_escalon_pasa"
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "hx_s3a_remedios_candidatos",
+      "label": "Remedios candidatos de S3a (C_gd, RG, RC Q7) que dan el remedio elegido",
+      "nodes": [
+        "s3a_remedio_cgd",
+        "s3a_remedio_rg",
+        "s3a_remedio_q7rc",
+        "s3a_remedio_final"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "S3_salida/resumen.md"
+    },
+    {
+      "id": "hx_s3f_conflicto_rrst",
+      "label": "Conflicto Rrst: V_GS (S3c), recierre y apagado rapido en la red con diodo",
+      "nodes": [
+        "s3f_seguimiento",
+        "s3f_rrst_vgs_conflicto",
+        "s3f_recierre_gap200",
+        "s3c_niveles_regimen"
+      ],
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "S3_salida/resumen.md"
+    },
+    {
+      "id": "hx_s1_subbancos",
+      "label": "Sub-bancos S1a-S1d que validan Q5",
+      "nodes": [
+        "s1a_directa",
+        "s1b_inversa",
+        "s1c_regeneracion",
+        "s1d_transitorio",
+        "s1_q5"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "S1_polaridad/resumen.md"
+    },
+    {
+      "id": "hx_s5_escalones",
+      "label": "Escalones de carga de S5 que sustentan el veredicto PASA",
+      "nodes": [
+        "s5_evento1_1a4",
+        "s5_evento2_4a1",
+        "s5_sin_oscilaciones",
+        "s5_criterio_propuesto",
+        "s5_veredicto_pasa"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "S5_escalon/resumen.md"
+    },
+    {
+      "id": "hx_s4b_cadena_q5_q6",
+      "label": "S4b-e: convertidor real con Q5 entrada y Q6 salida confirma hallazgos de S1/S3",
+      "nodes": [
+        "s4b_montaje",
+        "s4b_resultado_s4b",
+        "s4c_sin_remedio",
+        "s4b_remedio_q6",
+        "s4cde_pendiente"
+      ],
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "S4_convertidor/resumen_S4b_e.md"
+    },
+    {
+      "id": "hx_q6_gate_network_c1b",
+      "label": "Red de gate de Q6 variante C1-B",
+      "nodes": [
+        "comp_cgd_100nf",
+        "comp_diode_serie_cgd",
+        "comp_rrst_330k",
+        "comp_rg_22k",
+        "comp_q6_sirs4401dp"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md"
+    },
+    {
+      "id": "hx_s2_hotplug_snubber_tradeoff",
+      "label": "Compromiso snubber: tension baja vs corriente pico en Q5",
+      "nodes": [
+        "comp_snubber_rc_vbus",
+        "res_s2_pico_37v59",
+        "res_s2_snubber_28v29",
+        "res_s2_snubber_422a",
+        "open_soa_q5_10_100us"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "S2_hotplug/resumen.md"
+    },
+    {
+      "id": "hx_s4_closure_arbiter",
+      "label": "S4c como arbitro de C1 (Q6 gate) y C_carga",
+      "nodes": [
+        "s4c_cierre_q6",
+        "chg_c1_q6_gate",
+        "chg_c3_cload_limit",
+        "res_s4c_sin_remedio_falla",
+        "open_s4c_con_remedio"
+      ],
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "CAMBIOS_Mejoras_Rev2_borrador.md"
+    },
+    {
+      "id": "hx_rev2_doc_set",
+      "label": "Conjunto documental Rev2 (estado, handoff, readme, resultados, cambios)",
+      "nodes": [
+        "doc_estado_pausa",
+        "doc_handoff",
+        "doc_readme_rev2",
+        "doc_resultados",
+        "doc_cambios_borrador",
+        "doc_resultados_borrador"
+      ],
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "HANDOFF_Proximo_Chat.md"
+    },
+    {
+      "id": "hx_s3_q6_closing_evidence",
+      "label": "Evidencia de S3 sobre cierre/apertura de Q6",
+      "nodes": [
+        "s3a_cierre_q6",
+        "s3b_apertura_q6",
+        "s3c_vgs_q6",
+        "res_s3a_original_falla",
+        "res_soa_apagado_u188",
+        "res_recierre_200ms"
+      ],
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "RESULTADOS_Sim_Rev2.md"
+    }
+  ],
+  "built_at_commit": "11bf75d293113de0e942c3c2f7fb996bbd9c6ae0"
+}

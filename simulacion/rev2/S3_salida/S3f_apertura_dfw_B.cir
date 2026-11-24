@@ -1,0 +1,35 @@
+S3f apertura de SW1 con 8 A - CON Schottky MBR745 - C gd 100n + D1N4148 + Rrstg a gate (variante B), RG 22k
+.include S3f_common.inc
+.include soa_S3.inc
+.options solver=alt method=modtrap
+.param LL=0.5u TOPEN=2m TEND=100m RLOAD={VN/8} TSRCOFF=1e3 CGD=100n RG=22k RQ7=1m CQ7=1p RST=1G RDON=1 RPRE=1G
+.step param VN list 12 25
+.step param LL list 0.5u 1m
+.step param RSTG list 10k 47k 100k 220k
+* carga: L (cable 0.5/1 uH o motor 100 uH/1 mH) en serie con R = VN/8 -> 8 A en regimen, sin capacitor de carga (peor caso)
+Lload vext nl {LL}
+Rload nl 0 {RLOAD}
+* diodo de rueda libre en VOUT_EXT (anodo a GND, catodo a VOUT_EXT); sin diodo = sin esta linea (Dfw 0 = ninguno: R=1G)
+Dfw 0 vext MBR745
+* SW1 cerrado y 8 A en regimen; abre en TOPEN
+Vctl ctl 0 PULSE(1 0 {TOPEN} 1n 1n 1 2)
+.tran 0 {TEND} 0 1u
+* --- mediciones (t0 = TOPEN) ---
+.meas tran vdsmax max V(vint)-V(vdr) from={TOPEN}
+.meas tran vextmin min V(vext) from={TOPEN}
+.meas tran vintmax max V(vint) from={TOPEN}
+.meas tran ovs param (vintmax-VN)/VN*100
+.meas tran i0 avg I(Vid) from={TOPEN}-0.5m to={TOPEN}
+.meas tran tgs when V(g6)-V(vint)=-2.5 rise=1 td={TOPEN}
+.meas tran toff10 when I(Vid)=0.8 fall=1 td={TOPEN}
+.meas tran toff90 when I(Vid)=7.2 fall=1 td={TOPEN}
+.meas tran ppk max (V(vint)-V(vdr))*I(Vid) from={TOPEN}
+.meas tran eq6 integ (V(vint)-V(vdr))*I(Vid) from={TOPEN}
+.meas tran mxu100u max V(u100u) from={TOPEN}
+.meas tran mxu1m max V(u1m) from={TOPEN}
+.meas tran mxu10m max V(u10m) from={TOPEN}
+.meas tran mxu40m max V(u40m) from={TOPEN}
+.meas tran mxudc max V(udc) from={TOPEN}
+.meas tran vmtopen max V(m)-V(vint) from={TOPEN}
+.meas tran idpk max I(Dfw) from={TOPEN}
+.end

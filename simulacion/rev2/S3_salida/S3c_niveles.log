@@ -1,0 +1,155 @@
+LTspice 26.0.2 for Windows
+Circuit: C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\S3_salida\S3c_niveles.cir
+Start Time: Mon Nov 16 02:17:46 2026
+Options:solver=alt method=modtrap
+
+.step vn=6.8 temp=25°
+solver = Alternate
+Maximum thread count: 16
+tnom = 27
+temp = 25
+method = modified trap
+Instance "xq7:M1": Length shorter than recommended for a level 3 MOSFET.
+Instance "xq6:m1": Length shorter than recommended for a level 3 MOSFET.
+Instance "xq6:m2": Length shorter than recommended for a level 3 MOSFET.
+Direct Newton iteration succeeded in finding operating point.
+
+.step vn=12 temp=25°
+Direct Newton iteration succeeded in finding operating point.
+
+.step vn=25 temp=25°
+Direct Newton iteration succeeded in finding operating point.
+
+.step vn=6.8 temp=100°
+Direct Newton iteration succeeded in finding operating point.
+
+.step vn=12 temp=100°
+Direct Newton iteration succeeded in finding operating point.
+
+.step vn=25 temp=100°
+Direct Newton iteration succeeded in finding operating point.
+Total elapsed time: 7.933 seconds.
+
+Files loaded:
+C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\S3_salida\S3c_niveles.cir
+C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\S3_salida\common_S3.inc
+C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\modelos\SiRS4401DP_PS.TXT
+C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\modelos\2n7002k_ps Rev B.lib
+
+
+Measurement: vgs6
+  step	AVG(V(g6)-V(vint) )	FROM	TO
+     1	-6.1661054492	0.07	0.08
+     2	-10.8905222416	0.07	0.08
+     3	-12.0213384628	0.07	0.08
+     4	-6.1191074252	0.07	0.08
+     5	-10.8381090164	0.07	0.08
+     6	-12.0257549286	0.07	0.08
+
+Measurement: vgs7
+  step	AVG(V(gq7) )	FROM	TO
+     1	7.348528862	0.07	0.08
+     2	7.348528862	0.07	0.08
+     3	7.348528862	0.07	0.08
+     4	7.348528862	0.07	0.08
+     5	7.348528862	0.07	0.08
+     6	7.348528862	0.07	0.08
+
+Measurement: vds6
+  step	AVG(V(vint)-V(vdr) )	FROM	TO
+     1	0.0152750015259	0.07	0.08
+     2	0.0135107040405	0.07	0.08
+     3	0.013349533081	0.07	0.08
+     4	0.0207419395446	0.07	0.08
+     5	0.018479347229	0.07	0.08
+     6	0.0182552337646	0.07	0.08
+
+Measurement: id6
+  step	AVG(I(Vid) )	FROM	TO
+     1	8.00107383728	0.07	0.08
+     2	8.00217342376	0.07	0.08
+     3	8.00492954254	0.07	0.08
+     4	8.00119304657	0.07	0.08
+     5	8.00229167938	0.07	0.08
+     6	8.0050458908	0.07	0.08
+
+Measurement: p6
+  step	AVG((V(vint)-V(vdr))*I(Vid) )	FROM	TO
+     1	0.122216415073	0.07	0.08
+     2	0.108114996809	0.07	0.08
+     3	0.10686207174	0.07	0.08
+     4	0.165960262457	0.07	0.08
+     5	0.147877126571	0.07	0.08
+     6	0.146133984033	0.07	0.08
+
+Measurement: rds6
+  step	vds6/id6*1000
+     1	1.90911893035
+     2	1.6883793096
+     3	1.66766403253
+     4	2.59235584293
+     5	2.30925689407
+     6	2.28046584787
+
+Measurement: vint
+  step	AVG(V(vint) )	FROM	TO
+     1	6.78406572341	0.07	0.08
+     2	11.9840536117	0.07	0.08
+     3	24.9840221405	0.07	0.08
+     4	6.78406524657	0.07	0.08
+     5	11.9840536117	0.07	0.08
+     6	24.9840221405	0.07	0.08
+
+Measurement: pz
+  step	AVG((V(vint)-V(g6))*(-I(DZ6)) )	FROM	TO
+     1	2.75714074924e-09	0.07	0.08
+     2	1.93796883855e-06	0.07	0.08
+     3	0.0141289098313	0.07	0.08
+     4	3.12341150872e-05	0.07	0.08
+     5	6.3200066435e-05	0.07	0.08
+     6	0.0141250049043	0.07	0.08
+
+Measurement: pl2
+  step	AVG(I(Rl2)*I(Rl2)*4.7k )	FROM	TO
+     1	0.00545355151285	0.07	0.08
+     2	0.0222566311328	0.07	0.08
+     3	0.114272235333	0.07	0.08
+     4	0.00673449479113	0.07	0.08
+     5	0.0247536967863	0.07	0.08
+     6	0.119764830095	0.07	0.08
+
+Measurement: pl3
+  step	AVG(I(Rl3)*I(Rl3)*4.7k )	FROM	TO
+     1	0.00542384701029	0.07	0.08
+     2	0.0222098388912	0.07	0.08
+     3	0.114213298728	0.07	0.08
+     4	0.00669014636377	0.07	0.08
+     5	0.024686844357	0.07	0.08
+     6	0.119682382009	0.07	0.08
+
+Measurement: il2
+  step	AVG(I(Rl2) )	FROM	TO
+     1	0.00107718619984	0.07	0.08
+     2	0.00217610970139	0.07	0.08
+     3	0.00493084592744	0.07	0.08
+     4	0.00119702599477	0.07	0.08
+     5	0.0022949387785	0.07	0.08
+     6	0.00504795787855	0.07	0.08
+
+Measurement: ig6
+  step	AVG(I(Rg6) )	FROM	TO
+     1	6.16614997852e-05	0.07	0.08
+     2	0.000109083179268	0.07	0.08
+     3	0.00129553256556	0.07	0.08
+     4	6.62954334984e-05	0.07	0.08
+     5	0.000114212372864	0.07	0.08
+     6	0.00129482033662	0.07	0.08
+
+Measurement: pgood
+  step	AVG(V(pgood) )	FROM	TO
+     1	7.348528862	0.07	0.08
+     2	7.348528862	0.07	0.08
+     3	7.348528862	0.07	0.08
+     4	7.348528862	0.07	0.08
+     5	7.348528862	0.07	0.08
+     6	7.348528862	0.07	0.08

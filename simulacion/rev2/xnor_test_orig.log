@@ -1,0 +1,29 @@
+LTspice 26.0.2 for Windows
+Circuit: C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\xnor_test_orig.cir
+Start Time: Sun Nov 15 20:12:21 2026
+C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\LM5175_TRANS_or.lib(1208): Note: The caret character means exponentiation in this context. If you wish to silence this warning, use the "**" operator instead or add ".OPTIONS NO_CARET_WARNING" to your netlist.
+E_ABMGATE  YINT 0 VALUE {{IF(V(A) > {VTHRESH}  ^
+                                               ^
+C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\LM5175_TRANS_or.lib(1185): Note: The caret character means exponentiation in this context. If you wish to silence this warning, use the "**" operator instead or add ".OPTIONS NO_CARET_WARNING" to your netlist.
+E_ABMGATE  YINT 0 VALUE {{IF(V(A) > {VTHRESH}  ^
+                                               ^
+solver = Alternate
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = modified trap
+Direct Newton iteration succeeded in finding operating point.
+Total elapsed time: 0.109 seconds.
+
+Files loaded:
+C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\xnor_test_orig.cir
+C:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\LM5175_TRANS_or.lib
+
+xnor_a0b0: V(YXNOR) =1 at 0.00025
+xnor_a0b1: V(YXNOR) =1 at 0.00075
+xnor_a1b0: V(YXNOR) =1 at 0.00125
+xnor_a1b1: V(YXNOR) =-4.53769751412e-18 at 0.00175
+xor_a0b0: V(YXOR)  =0 at 0.00025
+xor_a0b1: V(YXOR)  =0 at 0.00075
+xor_a1b0: V(YXOR)  =4.08827849727e-19 at 0.00125
+xor_a1b1: V(YXOR)  =1 at 0.00175

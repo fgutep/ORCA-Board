@@ -1,0 +1,78 @@
+* S4a linea base 12V->12V 8A resistivo, valores as-built (Buckboost_fixed_netlist.net corregido). CSS=12n para iterar (real 120n)
+XU1 N002 N004 VIN N005 N006 N008 SLOPE SS COMP 0 FB VOUT N010 N010 CSG CS PGOOD SW2 HDRV2 N007 LDRV2 0 VCC VOUT LDRV1 N009 HDRV1 SW1 NC_02 LM5175_TRANS SS_1=0
+R1 N008 0 71.5k
+C1 SLOPE 0 270p
+C2 SS 0 {CSS}
+R2 COMP N011 2.43k
+C3 COMP 0 470p
+C4 N011 0 27n
+C5 N006 0 39n
+R3 0 FB {RFB_BOT}
+R4 FB VOUT {RFB_TOP}
+C6 0 VCC 1u
+V1 VIN 0 PWL(0 0 200u {VIN_dc})
+R5 VIN N002 200k
+R6 N002 0 66.5k
+* Q1-Q4 = BUK9Y3R5-40E (DRAIN GATE SOURCE)
+XU2 VIN HDRV1 SW1 BUK9Y3R5-40E
+XU3 SW2 LDRV2 N001 BUK9Y3R5-40E
+XU4 VOUT HDRV2 SW2 BUK9Y3R5-40E
+XU5 SW1 LDRV1 N001 BUK9Y3R5-40E
+L1 SW1 SW2 4.7u Ipk=35 Rser=4.8m
+* C7: polimero 100u Rser=30m, NO RESPALDADO (pendiente datasheet)
+C7 VIN 0 100u Rser=30m
+R7 VOUT 0 {R7_val}
+* C8: 2x220u polimero, ESR combinada 12m
+C8 VOUT 0 440u Rser=12m
+R8 N001 0 5m
+R9 N001 CS 100
+R10 0 CSG 100
+C9 CS CSG 100p
+* D1-D3 = B5819W (Schottky 40V 1A) -> 1N5819 de standard.dio
+D1 VIN N003 1N5819
+R11 N004 N003 10
+C10 N004 0 0.1u
+D2 VCC N009 1N5819
+C11 N009 SW1 0.1u
+D3 VCC N007 1N5819
+C12 N007 SW2 0.1u
+R12 N005 0 93.1k
+C13 VOUT 0 10u Rser=3m
+C14 VOUT 0 10u Rser=3m
+C15 VOUT 0 100n Rser=10m
+C16 VIN 0 10u Rser=3m
+C17 VIN 0 100n Rser=10m
+* PGOOD: pull-up 100k a VCC (solo observacion)
+RPG VCC PGOOD 100k
+.lib C:\Users\Lenovo\AppData\Local\LTspice\lib\cmp\standard.dio
+.include ..\LM5175_TRANS_xorfix.lib
+.include ..\modelos\BUK9Y3R5-40E.lib
+.ic V(ss)=0 V(comp)=0 V(vout)=0
+.param CSS=12n
+.param VIN_dc=12
+.param VOUT_target=12
+.param RFB_TOP=49.9k
+.param RFB_BOT={RFB_TOP/(VOUT_target/0.8-1)}
+.param R7_val=1.5
+.tran 0 3m 0 100n
+.options solver=alt method=modtrap
+.save V(vout) V(fb) V(ss) V(comp) V(pgood) V(vcc) I(L1) V(vin) I(V1)
+.meas TRAN il_max MAX I(L1)
+.meas TRAN il_avg AVG I(L1) FROM 2.4m TO 2.6m
+.meas TRAN il_pk MAX I(L1) FROM 2.4m TO 2.6m
+.meas TRAN il_vy MIN I(L1) FROM 2.4m TO 2.6m
+.meas TRAN vout_reg AVG V(vout) FROM 2.4m TO 2.6m
+.meas TRAN fb_reg AVG V(fb) FROM 2.4m TO 2.6m
+.meas TRAN vout_pp PP V(vout) FROM 2.4m TO 2.6m
+.meas TRAN vcc_reg AVG V(vcc) FROM 2.4m TO 2.6m
+.meas TRAN il_avg_b AVG I(L1) FROM 2.6m TO 2.8m
+.meas TRAN vout_reg_b AVG V(vout) FROM 2.6m TO 2.8m
+.meas TRAN fb_reg_b AVG V(fb) FROM 2.6m TO 2.8m
+.meas TRAN il_avg_c AVG I(L1) FROM 2.8m TO 3.0m
+.meas TRAN vout_reg_c AVG V(vout) FROM 2.8m TO 3.0m
+.meas TRAN fb_reg_c AVG V(fb) FROM 2.8m TO 3.0m
+.meas TRAN t_pgood WHEN V(pgood)=3.5 RISE=1
+.meas TRAN t_vout11 WHEN V(vout)=11 RISE=1
+.meas TRAN vss_end FIND V(ss) AT 3.0m
+.meas TRAN vcomp_end FIND V(comp) AT 3.0m
+.end

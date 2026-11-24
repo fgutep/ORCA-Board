@@ -1,0 +1,184 @@
+LTspice 26.0.2 for Windows
+Circuit: c:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\S5_escalon\S5.cir
+Start Time: Mon Nov 16 14:38:10 2026
+Options:solver=alt method=modtrap
+solver = Alternate
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = modified trap
+WARNING: Node n010 is floating.
+
+d_d111: Emission coefficient, N=0.01, too small, this might lead to numerical problems.
+d_d1: Emission coefficient, N=0.001, too small, this might lead to numerical problems.
+d_d3: Emission coefficient, N=0.01, too small, this might lead to numerical problems.
+Direct Newton iteration succeeded in finding operating point.
+Total elapsed time: 7249.868 seconds.
+
+Files loaded:
+c:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\S5_escalon\S5.cir
+C:\Users\Lenovo\AppData\Local\LTspice\lib\cmp\standard.dio
+c:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\LM5175_TRANS_xorfix.lib
+c:\Users\Lenovo\Documents\Universidad\2026-20\ORCA-Board\ORCA-Potencia\ORCA-Board\simulacion\rev2\modelos\BUK9Y3R5-40E.lib
+
+il_max: MAX(I(L1))=11.0189123154 FROM 0 TO 0.0065
+vpre1a: AVG(V(vout) )=12.0136363822 FROM 0.0031 TO 0.0033
+vpre1: AVG(V(vout) )=11.9935510029 FROM 0.0033 TO 0.0035
+vpre1_drift: (vpre1-vpre1a)*1000=-20.0853793206
+vmaxpre1_f: MAX(V(vf50) )=12.004907608 FROM 0.0033 TO 0.0035
+vminpre1_f: MIN(V(vf50) )=11.9781312943 FROM 0.0033 TO 0.0035
+vmaxpre1_r: MAX(V(vout) )=12.0049409866 FROM 0.0033 TO 0.0035
+vminpre1_r: MIN(V(vout) )=11.968837738 FROM 0.0033 TO 0.0035
+ilavg_pre1: AVG(I(L1) )=1.08513306312 FROM 0.0033 TO 0.0035
+ilmin_pre1: MIN(I(L1) )=0.686659812927 FROM 0.0033 TO 0.0035
+ilmax_pre1: MAX(I(L1) )=1.46656227112 FROM 0.0033 TO 0.0035
+iload_pre1: AVG(I(R7)+I(I1) )=0.999462583913 FROM 0.0033 TO 0.0035
+vmin1_f: MIN(V(vf50) )=11.7146291733 FROM 0.0035 TO 0.005
+vmax1_f: MAX(V(vf50) )=12.0361185074 FROM 0.0035 TO 0.005
+vmin1_r: MIN(V(vout) )=11.7095003128 FROM 0.0035 TO 0.005
+vmax1_r: MAX(V(vout) )=12.0361623764 FROM 0.0035 TO 0.005
+dnu1: (vpre1-vmin1_f)/vpre1*100=2.32559839493
+dov1: (vmax1_f-vpre1)/vpre1*100=0.354919943871
+dnu1_r: (vpre1-vmin1_r)/vpre1*100=2.36836188068
+dov1_r: (vmax1_r-vpre1)/vpre1*100=0.355285715597
+il_pk_ev1: MAX(I(L1) )=5.53655195236 FROM 0.0035 TO 0.005
+il_vy_ev1: MIN(I(L1) )=0.713930130005 FROM 0.0035 TO 0.005
+vend1: AVG(V(vout) )=11.998748051 FROM 0.0048 TO 0.005
+vend1_sl: AVG(V(vsl) )=11.9987509697 FROM 0.0048 TO 0.005
+vend1_shift: (vend1-vpre1)/vpre1*100=0.0433320217979
+iload_end1: AVG(I(R7)+I(I1) )=3.99989567204 FROM 0.0048 TO 0.005
+ilavg_end1: AVG(I(L1) )=4.22033009914 FROM 0.0048 TO 0.005
+ilmin_end1: MIN(I(L1) )=3.86914420128 FROM 0.0048 TO 0.005
+ilmax_end1: MAX(I(L1) )=4.58337688446 FROM 0.0048 TO 0.005
+x1_b20hi_1: V(vsl)=vpre1*1.0200  AT 0.00505697059052
+x1_b20hi_2: V(vsl)=vpre1*1.0200  AT 0.00511175540911
+Measurement "x1_b20hi_3" FAIL'ed
+Measurement "x1_b20hi_4" FAIL'ed
+Measurement "x1_b20hi_5" FAIL'ed
+Measurement "x1_b20hi_6" FAIL'ed
+Measurement "x1_b20hi_7" FAIL'ed
+Measurement "x1_b20hi_8" FAIL'ed
+x1_b20lo_1: V(vsl)=vpre1*0.9800  AT 0.00356753884537
+x1_b20lo_2: V(vsl)=vpre1*0.9800  AT 0.0035893303283
+Measurement "x1_b20lo_3" FAIL'ed
+Measurement "x1_b20lo_4" FAIL'ed
+Measurement "x1_b20lo_5" FAIL'ed
+Measurement "x1_b20lo_6" FAIL'ed
+Measurement "x1_b20lo_7" FAIL'ed
+Measurement "x1_b20lo_8" FAIL'ed
+x1_b10hi_1: V(vsl)=vpre1*1.0100  AT 0.00502392303111
+x1_b10hi_2: V(vsl)=vpre1*1.0100  AT 0.00518056553879
+Measurement "x1_b10hi_3" FAIL'ed
+Measurement "x1_b10hi_4" FAIL'ed
+Measurement "x1_b10hi_5" FAIL'ed
+Measurement "x1_b10hi_6" FAIL'ed
+Measurement "x1_b10hi_7" FAIL'ed
+Measurement "x1_b10hi_8" FAIL'ed
+x1_b10lo_1: V(vsl)=vpre1*0.9900  AT 0.00352707651503
+x1_b10lo_2: V(vsl)=vpre1*0.9900  AT 0.00366475355374
+Measurement "x1_b10lo_3" FAIL'ed
+Measurement "x1_b10lo_4" FAIL'ed
+Measurement "x1_b10lo_5" FAIL'ed
+Measurement "x1_b10lo_6" FAIL'ed
+Measurement "x1_b10lo_7" FAIL'ed
+Measurement "x1_b10lo_8" FAIL'ed
+x1_b05hi_1: V(vsl)=vpre1*1.0050  AT 0.00501252556225
+x1_b05hi_2: V(vsl)=vpre1*1.0050  AT 0.00522639819432
+Measurement "x1_b05hi_3" FAIL'ed
+Measurement "x1_b05hi_4" FAIL'ed
+Measurement "x1_b05hi_5" FAIL'ed
+Measurement "x1_b05hi_6" FAIL'ed
+Measurement "x1_b05hi_7" FAIL'ed
+Measurement "x1_b05hi_8" FAIL'ed
+x1_b05lo_1: V(vsl)=vpre1*0.9950  AT 0.0035151406948
+x1_b05lo_2: V(vsl)=vpre1*0.9950  AT 0.00369809832409
+Measurement "x1_b05lo_3" FAIL'ed
+Measurement "x1_b05lo_4" FAIL'ed
+Measurement "x1_b05lo_5" FAIL'ed
+Measurement "x1_b05lo_6" FAIL'ed
+Measurement "x1_b05lo_7" FAIL'ed
+Measurement "x1_b05lo_8" FAIL'ed
+vpre2a: AVG(V(vout) )=11.9988438467 FROM 0.0046 TO 0.0048
+vpre2: AVG(V(vout) )=11.998748051 FROM 0.0048 TO 0.005
+vpre2_drift: (vpre2-vpre2a)*1000=-0.0957956934968
+vmaxpre2_f: MAX(V(vf50) )=12.005616188 FROM 0.0048 TO 0.005
+vminpre2_f: MIN(V(vf50) )=11.9676847458 FROM 0.0048 TO 0.005
+vmaxpre2_r: MAX(V(vout) )=12.0056581497 FROM 0.0048 TO 0.005
+vminpre2_r: MIN(V(vout) )=11.9631032944 FROM 0.0048 TO 0.005
+ilavg_pre2: AVG(I(L1) )=4.22033009914 FROM 0.0048 TO 0.005
+ilmin_pre2: MIN(I(L1) )=3.86914420128 FROM 0.0048 TO 0.005
+ilmax_pre2: MAX(I(L1) )=4.58337688446 FROM 0.0048 TO 0.005
+iload_pre2: AVG(I(R7)+I(I1) )=3.99989567204 FROM 0.0048 TO 0.005
+vmin2_f: MIN(V(vf50) )=11.9639596939 FROM 0.005 TO 0.0065
+vmax2_f: MAX(V(vf50) )=12.2698030472 FROM 0.005 TO 0.0065
+vmin2_r: MIN(V(vout) )=11.95470047 FROM 0.005 TO 0.0065
+vmax2_r: MAX(V(vout) )=12.2698364258 FROM 0.005 TO 0.0065
+dnu2: (vpre2-vmin2_f)/vpre2*100=0.289933224499
+dov2: (vmax2_f-vpre2)/vpre2*100=2.25902731681
+dnu2_r: (vpre2-vmin2_r)/vpre2*100=0.367101474875
+dov2_r: (vmax2_r-vpre2)/vpre2*100=2.25930550084
+il_pk_ev2: MAX(I(L1) )=4.55347299576 FROM 0.005 TO 0.0065
+il_vy_ev2: MIN(I(L1) )=-0.242476314306 FROM 0.005 TO 0.0065
+vend2: AVG(V(vout) )=11.9988101073 FROM 0.0063 TO 0.0065
+vend2_sl: AVG(V(vsl) )=11.9988088443 FROM 0.0063 TO 0.0065
+vend2_shift: (vend2-vpre2)/vpre2*100=0.000517189758307
+iload_end2: AVG(I(R7)+I(I1) )=0.99990084195 FROM 0.0063 TO 0.0065
+ilavg_end2: AVG(I(L1) )=1.05789046155 FROM 0.0063 TO 0.0065
+ilmin_end2: MIN(I(L1) )=0.6979393363 FROM 0.0063 TO 0.0065
+ilmax_end2: MAX(I(L1) )=1.42865598202 FROM 0.0063 TO 0.0065
+x2_b20hi_1: V(vsl)=vpre2*1.0200  AT 0.00505934714496
+x2_b20hi_2: V(vsl)=vpre2*1.0200  AT 0.00510852055145
+Measurement "x2_b20hi_3" FAIL'ed
+Measurement "x2_b20hi_4" FAIL'ed
+Measurement "x2_b20hi_5" FAIL'ed
+Measurement "x2_b20hi_6" FAIL'ed
+Measurement "x2_b20hi_7" FAIL'ed
+Measurement "x2_b20hi_8" FAIL'ed
+x2_b20hi_last: V(vsl)=vpre2*1.0200  AT 0.00510852055145
+Measurement "x2_b20lo_1" FAIL'ed
+Measurement "x2_b20lo_2" FAIL'ed
+Measurement "x2_b20lo_3" FAIL'ed
+Measurement "x2_b20lo_4" FAIL'ed
+Measurement "x2_b20lo_5" FAIL'ed
+Measurement "x2_b20lo_6" FAIL'ed
+Measurement "x2_b20lo_7" FAIL'ed
+Measurement "x2_b20lo_8" FAIL'ed
+Measurement "x2_b20lo_last" FAIL'ed
+x2_b10hi_1: V(vsl)=vpre2*1.0100  AT 0.00502499576983
+x2_b10hi_2: V(vsl)=vpre2*1.0100  AT 0.00517725235227
+Measurement "x2_b10hi_3" FAIL'ed
+Measurement "x2_b10hi_4" FAIL'ed
+Measurement "x2_b10hi_5" FAIL'ed
+Measurement "x2_b10hi_6" FAIL'ed
+Measurement "x2_b10hi_7" FAIL'ed
+Measurement "x2_b10hi_8" FAIL'ed
+x2_b10hi_last: V(vsl)=vpre2*1.0100  AT 0.00517725235227
+Measurement "x2_b10lo_1" FAIL'ed
+Measurement "x2_b10lo_2" FAIL'ed
+Measurement "x2_b10lo_3" FAIL'ed
+Measurement "x2_b10lo_4" FAIL'ed
+Measurement "x2_b10lo_5" FAIL'ed
+Measurement "x2_b10lo_6" FAIL'ed
+Measurement "x2_b10lo_7" FAIL'ed
+Measurement "x2_b10lo_8" FAIL'ed
+Measurement "x2_b10lo_last" FAIL'ed
+x2_b05hi_1: V(vsl)=vpre2*1.0050  AT 0.00501352283667
+x2_b05hi_2: V(vsl)=vpre2*1.0050  AT 0.00522205804126
+Measurement "x2_b05hi_3" FAIL'ed
+Measurement "x2_b05hi_4" FAIL'ed
+Measurement "x2_b05hi_5" FAIL'ed
+Measurement "x2_b05hi_6" FAIL'ed
+Measurement "x2_b05hi_7" FAIL'ed
+Measurement "x2_b05hi_8" FAIL'ed
+x2_b05hi_last: V(vsl)=vpre2*1.0050  AT 0.00522205804126
+Measurement "x2_b05lo_1" FAIL'ed
+Measurement "x2_b05lo_2" FAIL'ed
+Measurement "x2_b05lo_3" FAIL'ed
+Measurement "x2_b05lo_4" FAIL'ed
+Measurement "x2_b05lo_5" FAIL'ed
+Measurement "x2_b05lo_6" FAIL'ed
+Measurement "x2_b05lo_7" FAIL'ed
+Measurement "x2_b05lo_8" FAIL'ed
+Measurement "x2_b05lo_last" FAIL'ed
+vss_end: V(ss) =1.27776277065 at 0.0064
+pgood_end: V(pgood) =7.49999189377 at 0.0034
