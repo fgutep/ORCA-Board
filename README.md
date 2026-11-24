@@ -168,12 +168,10 @@ ORCA-Board/
 
 ## Simulación de la etapa de potencia
 
-<table>
-  <tr>
-    <td align="center" width="50%"><img src="docs/img/layout-potencia-top.png" alt="Layout PCB de la placa de potencia, cara superior"><br><sub><b>Layout PCB</b> · placa de potencia, cara superior</sub></td>
-    <td align="center" width="50%"><img src="docs/img/layout-potencia-bottom.png" alt="Layout PCB de la placa de potencia, cara inferior"><br><sub><b>Layout PCB</b> · placa de potencia, cara inferior</sub></td>
-  </tr>
-</table>
+<p align="center">
+  <img src="docs/img/layout-potencia-top.png" alt="Layout PCB de la placa de potencia, cara superior, en KiCad" width="50%"><br>
+  <sub><b>Layout PCB</b> · placa de potencia, cara superior (KiCad)</sub>
+</p>
 
 La carpeta [`simulacion/`](simulacion/) contiene el modelo LTspice del LM5175 y el barrido de **4 esquinas** (corrida del 29-ago) con escalón de carga de 2 A a 8.4 A a los 24 ms, contrastado con los límites de diseño de 8 A continuos y 15 A de pico en el inductor.
 
