@@ -54,3 +54,6 @@ Registro del bring-up físico de la PCB de control (ESP32-S3-WROOM-1) Rev A fabr
 - [`wifi_telemetry/`](wifi_telemetry/): firmware que publica Vbus, Isens, reinicios y brownouts por Wi-Fi, y `orca_monitor.py` para registrarlo desde el PC. Ver [08_telemetria_wifi.md](08_telemetria_wifi.md).
 - [`orca_selftest/orca_selftest.ino`](orca_selftest/orca_selftest.ino): **imagen actual en la flash.** Une las dos anteriores: todas las pruebas de periféricos (con escritura/lectura verificada en INA226, PCA9685 y TCA9548A) por Wi-Fi y USB, más la telemetría. Ver [09_autoprueba.md](09_autoprueba.md).
 - [`orca_motor_bench/`](orca_motor_bench/): banco de motores. Firmware PlatformIO que maneja U5/U6 con rampa, límite de corriente y deadman. Desde el panel web: control manual, STOP enclavado (HALT hasta Liberar) y secuencias de prueba (barrido, escalón, inversión, marcha continua, ambos motores) con informe y CSV. `plot_runs.py` genera curvas, series de tiempo y tablas a partir de los CSV. Ver [10_banco_motores.md](10_banco_motores.md).
+
+
+Los ejemplos que usan la placa en un proyecto (brazo por gestos: BNO085 como IMU y PCA9685 con servos) están en [`examples/`](../../examples/).
