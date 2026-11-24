@@ -192,12 +192,6 @@ Las cuatro esquinas regulan dentro de ±0.01 % y mantienen el pico del inductor 
 
 > **Nota sobre el barrido de 16 esquinas (28-ago).** Fue una corrida preliminar y se descartó como referencia: los cuatro casos de VIN = 6 V no arrancan (VOUT final de −1.55 V) y en los demás el pico del inductor llega a 34–37 A, por encima del límite de 15 A. Ese export tampoco registra la corriente de entrada, así que no permite calcular Pin ni eficiencia. Sus resultados siguen en [`simulacion/resultados/c1_16esquinas_resumen.csv`](simulacion/resultados/c1_16esquinas_resumen.csv) y su gráfica en [`c1_16esquinas_resumen.png`](simulacion/resultados/c1_16esquinas_resumen.png) solo como registro. La referencia vigente es la de 4 esquinas.
 
-Para regenerar la gráfica y el resumen hay que tener el export de LTspice (`simulacion/exports/c2_4esquinas_2026-08-29.txt`, unos 9 GB):
-
-```bash
-pip install pandas matplotlib numpy
-python simulacion/scripts/plot_c2_4esquinas.py
-```
 
 ## Documentación
 
