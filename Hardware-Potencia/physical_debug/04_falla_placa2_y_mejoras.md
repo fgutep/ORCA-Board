@@ -37,6 +37,20 @@ Pruebas de carga con carga Rigol DL3021 y fuente EA PS 10060-170, controladas po
 
 El nodo EN solo tiene R3, R2 y el pin EN del chip, y en el esquemático no va a ningún conector. Los pasivos están sanos y, sin energía, no hay fuga. **Con energía, el pin EN hunde ≈ 90 µA** (equivale a ≈ 6.7 kΩ a GNDA) y queda por debajo del umbral de 1.23 V. **Conclusión: falla interna del LM5175.**
 
+> **Actualización 24-nov-2026:** la placa volvió a funcionar al día siguiente sin intervención conocida. La falla de EN fue **transitoria**, así que no está confirmado que el chip tenga un daño permanente. Queda como fuga intermitente del nodo EN, de causa por determinar: térmica, humedad o contaminación bajo el chip, o un estado del propio LM5175. Las mejoras de §5 siguen aplicando, y la verificación de §6 pasa a hacerse con este mismo chip. Además se observó un rizado de ≈ 300 mV pico a pico en Vout con cualquier Vin del rango (ver [registro](../pruebas_carga/registro.md)).
+
+> **Resultados de carga del 24-nov (R08–R22 en el [registro](../pruebas_carga/registro.md)):**
+> - **Cortes en la zona de transición.** La placa deja de conmutar (Iin cae a 0 de golpe y el hiccup no re-arranca con la carga CC) solo cuando Vout/Vin está entre ≈ 1.0 y 1.2:
+>   - 12 → 12 V: corta a ≈ 4.8 A (58 W).
+>   - 22.2 → 25 V: corta entre 2.75 y 3 A (≈ 70 W), igual con escalones de 1 A que de 0.25 A.
+>   - 6 → 7.2 V: aguanta 5 A durante 12 s y luego corta.
+> - **Sin cortes fuera de esa zona.** En buck (16, 20 y 25.2 V) y en boost claro (9 → 12 V, 10.5 → 12 V, 18 → 25 V) no corta. Con 18 → 25 V llegó a **198.7 W** (η ≈ 87.6 %), con 124.8 W a η 91.2 %.
+> - **Causa probable de los cortes:** el sensado de corriente o la compensación de pendiente en la transición (P6, P17). Se descartan el inductor, R8, R12 y los cables.
+> - **Límite térmico.** Los MOSFET del lado de Vout (pierna de boost, Q3/Q4) son el punto caliente:
+>   - 71 °C a 60 W en régimen (≈ 8.9 W de pérdidas).
+>   - 142 °C y luego **180 °C** en ≈ 1 min de rampa de 150 a 200 W (≈ 28 W de pérdidas). Se cortó a mano, por encima de la Tj máx. de 175 °C.
+>   - Sin disipador ni aire forzado, la potencia continua práctica ronda los **120 W** (P18).
+
 Es el **segundo LM5175 del mismo pedido que falla**, y por otro pin: en la Placa 1 falló la etapa BOOT2/SW2 ([01](01_diagnostico_placa1.md)).
 
 Hipótesis consistente con lo observado, no demostrada: una fuga en EN que crece con la temperatura hasta deshabilitar el chip. Explicaría los apagados a los ~30 s de carga y la progresión de intermitente a permanente.
@@ -102,6 +116,12 @@ Estado de todas: **PROPUESTA**, para integrar a la lista de cambios de la Rev 2.
 |---|---|
 | P15 | R1 de 10 Ω a 2.2–4.7 Ω, como advertía el [protocolo 02](02_protocolo_bringup.md) |
 | P16 | Evaluar MOSFET de menor Qg en Q1–Q4: menos corriente de gate drive y menos calor en el chip, a cambio de algo más de Rds(on) |
+
+### Zona de transición y térmica (pruebas del 24-nov)
+| # | Mejora |
+|---|---|
+| P17 | Revisar la compensación de pendiente: C6 = 270 pF frente a ≈ 376 pF del *dead-beat* (Ec. 25, 4.7 µH y 5 mΩ). Probar el cambio en la Placa 2 junto con P6 y repetir el barrido de la zona de transición |
+| P18 | Térmica de Q3/Q4 (lado de Vout): plano de cobre y vías térmicas bajo las pestañas en ambas caras, sitio para disipador o ventilador, y gates cortos (P1) para bajar las pérdidas de conmutación. Validar con un soak de 10 min a 120 W y foto térmica |
 
 ### Entrada y salida
 Ya están cubiertas en el borrador de la Rev 2 (C6 Q5, C7 F1, C8 snubber, Q6). Como complemento o alternativa al snubber C8, evaluar un **TVS en VBUS** con clamp por debajo de 60 V (por ejemplo SMBJ28A si Vin ≤ 28 V), verificando que los capacitores de entrada soporten el clamp.

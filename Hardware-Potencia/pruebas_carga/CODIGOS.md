@@ -9,6 +9,8 @@
 | `.md` | Tabla resumen por etapa (se genera al terminar, también si aborta) |
 | `.png` | Gráfica Vout, Vin, Iout/Iin y Pout contra el tiempo |
 
+Fotos térmicas (carpeta `fotos_termicas/`): `AAAAMMDD_HHMM_R##_<descripción>.png`, con la hora que muestra la cámara y el ID de la corrida.
+
 Cada corrida recibe además un **ID `R##`** en [registro.md](registro.md), con condiciones y veredicto. Un CSV sin entrada en el registro no cuenta como resultado.
 
 ## Columnas del CSV

@@ -6,7 +6,7 @@ Carga: **Rigol DL3021** (USB). Fuente: **EA PS 10060-170** (COM12, comandos toma
 1. Etapas 0–6 del [protocolo de bring-up](../physical_debug/02_protocolo_bringup.md) ya cumplidas; V_OUT fijado con RV1 (V_OUT ≤ 1.4 × V_IN en boost).
 2. El script **enciende la fuente solo** (`--vin`), con límite de corriente = 1.25 × 120 W / (0.85 × V_IN) y protecciones OVP/OCP/OPP (las que traía eran 20 V / 2 A / 30 W). Al terminar o abortar la apaga. Cables gruesos y cortos; Vin/Iin se leen en los terminales de la fuente, no de la placa.
 3. Si la placa no arranca (V_OUT < 3 V) o el consumo en vacío es > 1 A, aborta y apaga. Con V_OUT = 12 V, 120 W pide 10 A: usar `--imax 10` (por defecto el tope es 8 A, el continuo de diseño).
-4. Osciloscopio (ripple / transitorios) listo. La cámara térmica no está disponible por ahora: el soak se registra sin temperaturas.
+4. Osciloscopio (ripple / transitorios) listo. Fotos térmicas (Keysight U5855A, desde el 24-nov) en [fotos_termicas/](fotos_termicas/), nombradas `AAAAMMDD_HHMM_Rxx_<descripción>.png`.
 
 ## Comandos
 ```
@@ -16,7 +16,7 @@ python carga.py --vin 12 dyn 25% 75% --ton 0.5 --toff 0.5 --n 20 # escalón repe
 python carga.py --vin 12 --imax 10 plan --vins 9 12 16.8        # secuencia completa
 python carga.py report logs/<archivo>.csv      # regenerar tabla y gráfica
 ```
-`--slew` (A/µs, default 0.05) fija la pendiente de los escalones. **Ctrl-C** = entrada OFF inmediata.
+`--slew` (A/µs, default 0.05) fija la pendiente de los escalones. `--pmax` (W, default 120, tope 200 = máximo de la DL3021) sube el tope de potencia, el límite de corriente y el de potencia de la fuente. Por encima de ~120 W la placa no aguanta en continuo: Q3/Q4 llegaron a 180 °C en ~1 min a 200 W (R22). **Ctrl-C** = entrada OFF inmediata.
 Protecciones (software): P ≤ 120 W (+3 %), I ≤ `--imax`, aborta si V_OUT < 80 % del valor en vacío (límite de corriente/hiccup).
 Cada comando arranca con la fuente apagada y la enciende (la placa se reinicia en cada comando; `plan` lo hace una sola vez). Eficiencia = Pout / (Vin·Iin) medidos automáticamente.
 Protecciones extra de entrada: aborta si Vin < 90 % de lo fijado o Iin ≥ 98 % del límite (fuente en CC). Puntos de línea con V_OUT > 1.4 × V_IN se omiten.

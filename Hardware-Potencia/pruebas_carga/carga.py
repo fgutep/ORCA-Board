@@ -44,8 +44,8 @@ class Fuente:
             self.w(c)
             time.sleep(0.15)
         # protecciones primero (estaban en 20 V / 2 A / 30 W), luego consignas
-        for c in (f"VOLT:PROT {vmax*1.1+0.5:.2f}", f"CURR:PROT {ilim*1.15:.2f}", "POW:PROT 220",
-                  f"VOLT {v:.2f}", f"CURR {ilim:.2f}", "POW 200"):
+        for c in (f"VOLT:PROT {vmax*1.1+0.5:.2f}", f"CURR:PROT {ilim*1.15:.2f}", f"POW:PROT {max(220, 1.5 * PMAX):.0f}",
+                  f"VOLT {v:.2f}", f"CURR {ilim:.2f}", f"POW {max(200, 1.4 * PMAX):.0f}"):
             self.w(c)
             time.sleep(0.05)
         e = self.q("SYST:ERR?")
@@ -141,7 +141,7 @@ class Carga:
 
     def set(self, a):
         if a > self.icap:
-            print(f"  ! {a:.2f} A recortado a {self.icap:.2f} A (limite 120 W / --imax)")
+            print(f"  ! {a:.2f} A recortado a {self.icap:.2f} A (limite {PMAX:.0f} W / --imax)")
             a = self.icap
         self.iset, self.tset = a, time.perf_counter()
         self.d.write(f"SOUR:CURR:LEV:IMM {a:.4f}")
@@ -264,13 +264,14 @@ def report(path):
 
 
 def main():
-    global IMAX
+    global IMAX, PMAX
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--vin", type=float, help="Vin nominal [V] que fija la fuente (obligatorio salvo report)")
     p.add_argument("--ilim", type=float, help="limite de corriente de la fuente [A] (default: 1.25 x 120 W / (0.85 x Vin))")
     p.add_argument("--fuente", default="COM12", help="puerto serie de la EA-PS (default COM12)")
     p.add_argument("--slew", type=float, default=0.05, help="A/us (default 0.05)")
     p.add_argument("--imax", type=float, default=IMAX, help="tope de corriente [A] (default 8; 120 W a 12 V pide 10)")
+    p.add_argument("--pmax", type=float, default=PMAX, help="tope de potencia de salida [W] (default 120; la DL3021 llega a 200)")
     s = p.add_subparsers(dest="cmd", required=True)
     x = s.add_parser("cc"); x.add_argument("amps"); x.add_argument("--t", type=float, default=60)
     x = s.add_parser("steps"); x.add_argument("vals", nargs="+"); x.add_argument("--dwell", type=float, default=30)
@@ -286,7 +287,7 @@ def main():
         return report(a.csv)
     if not a.vin:
         p.error("falta --vin")
-    IMAX = a.imax
+    IMAX, PMAX = a.imax, min(a.pmax, 200.0)  # 200 W = maximo de la DL3021
     vmax = max([a.vin] + (a.vins if a.cmd == "plan" else []))
     ilim = a.ilim or min(170.0, 1.25 * PMAX / (EFF * a.vin))
     c = Carga(a.cmd, a.slew, a.fuente)
