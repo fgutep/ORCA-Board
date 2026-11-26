@@ -161,6 +161,7 @@ ORCA-Board/
 ├── simulacion/                Modelos y simulaciones LTspice del buck-boost
 │   ├── scripts/               Análisis y gráficas en Python
 │   └── resultados/            Figuras de las corridas
+├── examples/                  Firmware de ejemplo en proyectos (brazo por gestos: IMU y servos)
 ├── Datasheets/                Hojas de datos de los componentes
 ├── Prints/                    Esquemático y layout de la placa de potencia en PDF/PNG
 └── docs/img/                  Imágenes de este README
