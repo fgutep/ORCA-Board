@@ -1,0 +1,32 @@
+# Valores de fábrica de /orca_board (firmware orca_micro_ros 1.1.0).
+# Restaurar:  ros2 param load /orca_board config/defaults.yaml
+# Copiar este archivo como config/<robot>.yaml para la configuración de cada robot.
+# Ojo con los tipos: los double llevan punto decimal (0.20, no 0); los int no.
+/orca_board:
+  ros__parameters:
+    motor:
+      i_limit_a: 2.0          # A; HALT si la media de 100 ms de I(VM) lo supera (0.1–3.0)
+      ramp_rate: 200.0        # %/s; 0 = sin rampa (0–10000)
+      max_duty: 100.0         # % (0–100)
+      cmd_timeout_ms: 500     # deadman (50–5000)
+      idle_coast_ms: 1000     # tiempo en freno antes de dormir los drivers (0–60000)
+      pwm_hz: 20000           # Hz (1000–75000)
+      invert_m1: false
+      invert_m2: false
+    drive:
+      wheel_separation: 0.20  # m (0.01–5.0)
+      max_wheel_speed: 0.50   # m/s a 100 % de duty (0.01–20.0)
+      left_is_m1: true
+    servo:
+      us_min: 500             # us a 0° (200–3000)
+      us_max: 2400            # us a 180° (200–3000, >= us_min + 100)
+      pca_osc_hz: 25000000    # Hz (20e6–30e6)
+      limp_on_disconnect: true
+    imu:
+      rate_hz: 50             # Hz (1–200)
+    power:
+      vbus_low_v: 6.0         # V; WARN en /diagnostics por debajo (0–60)
+    can:
+      enabled: true
+      bitrate: 25000          # bit/s: 25000, 50000, 100000, 125000, 250000, 500000, 800000 o 1000000
+      self_test: false        # true = sin ACK y con autorrecepción (prueba sin otro nodo en el bus)
