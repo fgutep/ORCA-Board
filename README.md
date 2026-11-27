@@ -220,6 +220,23 @@ Las cuatro esquinas regulan dentro de ±0.01 % y mantienen el pico del inductor 
 
 > **Nota sobre el barrido de 16 esquinas (28-ago).** Fue una corrida preliminar y se descartó como referencia: los cuatro casos de VIN = 6 V no arrancan (VOUT final de −1.55 V) y en los demás el pico del inductor llega a 34–37 A, por encima del límite de 15 A. Ese export tampoco registra la corriente de entrada, así que no permite calcular Pin ni eficiencia. Sus resultados siguen en [`simulacion/resultados/c1_16esquinas_resumen.csv`](simulacion/resultados/c1_16esquinas_resumen.csv) y su gráfica en [`c1_16esquinas_resumen.png`](simulacion/resultados/c1_16esquinas_resumen.png) solo como registro. La referencia vigente es la de 4 esquinas.
 
+### Simulación frente a pruebas físicas
+
+Las pruebas de carga de la Placa 2 (24-nov, carga Rigol DL3021, fuente EA PS 10060-170) repiten las cuatro esquinas de la simulación. La simulación evalúa cada esquina a 8.4 A de salida; en el banco se subió la carga por escalones, así que la tabla compara la simulación con el punto de mayor potencia medido en cada esquina. Detalle de cada corrida en el [registro](Hardware-Potencia/pruebas_carga/registro.md).
+
+| Esquina | Simulación: Pout / η / VOUT | Medido: Pout / η / VOUT | Corrida |
+|---|---|---|---|
+| 6 → 7.2 V (boost) | 60.5 W / 87.2 % / 7.199 V | 28.4 W / 85.9 % (88.2 % a 14.3 W); 35.3 W / 82.9 % / 7.063 V | R18 |
+| 12 → 12 V (transición) | 100.8 W / 92.4 % / 11.999 V | 54 W / 90.5–91.6 % / 11.908 V; pico de 92.3 % a 30 W | R08 |
+| 22.2 → 25 V (boost) | 210.0 W / 95.7 % / 24.997 V | 68.7 W / 91.1 % / 24.998 V | R20 |
+| 25.2 → 7.2 V (buck) | 60.5 W / 87.4 % / 7.199 V | 35.3 W / 82.4 % / 7.062 V | R17 |
+| 18 → 25 V (boost, fuera de las esquinas) | — | 124.8 W / 91.2 %; **198.7 W / 87.6 % / 24.897 V** | R21, R22 |
+
+- **Regulación.** La simulación regula dentro de ±0.01 %. En el banco, VOUT cae entre 0.1 % y 2 % a plena carga (de −0.1 % en 22.2 → 25 V a −2.0 % en 25.2 → 7.2 V), porque la medición incluye conectores y cableado de salida que el modelo no tiene.
+- **Eficiencia.** La medida queda entre 1 y 5 puntos por debajo de la simulada. La diferencia es mayor en las esquinas de 7.2 V, donde la pérdida fija de conmutación pesa más a baja potencia, y en ella entran las pérdidas de los cables de entrada (a 7.6 A de Iin) y la resolución de 0.1 A de la fuente en Iin (±1–3 % de η).
+- **Potencia.** La simulación supone 8.4 A de salida en todas las esquinas. En el banco, la placa entregó 198.7 W en boost (18 → 25 V), del orden de los 210 W simulados en 22.2 → 25 V, y sostuvo 59.5 W durante 10 min (9 → 12 V) con el MOSFET más caliente a 71 °C.
+- **Térmico.** El modelo LTspice no incluye temperatura. En el banco, el punto caliente está en los MOSFET del lado de VOUT (Q3/Q4), como se ve en las [fotos térmicas](Hardware-Potencia/pruebas_carga/fotos_termicas/).
+
 
 ## Documentación
 
