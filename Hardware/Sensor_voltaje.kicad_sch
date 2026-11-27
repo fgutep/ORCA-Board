@@ -890,6 +890,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C1591"
+			(at 123.19 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Description" "Unpolarized capacitor"
 			(at 123.19 95.25 0)
 			(hide yes)
@@ -1037,6 +1048,17 @@
 			)
 		)
 		(property "Datasheet" ""
+			(at 142.24 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C1591"
 			(at 142.24 78.74 0)
 			(hide yes)
 			(show_name no)
@@ -1430,6 +1452,17 @@
 			)
 		)
 		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/ina226.pdf"
+			(at 147.32 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C2653835"
 			(at 147.32 101.6 0)
 			(hide yes)
 			(show_name no)

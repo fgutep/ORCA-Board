@@ -7815,7 +7815,7 @@
 				)
 			)
 		)
-		(property "Value" ""
+		(property "Value" "BUK9Y3R5-40E"
 			(at 289.56 54.61 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7858,7 +7858,18 @@
 				)
 			)
 		)
-		(property "MANUFACTURER" ""
+		(property "MANUFACTURER" "Nexperia"
+			(at 289.56 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "BUK9Y3R5-40E"
 			(at 289.56 54.61 0)
 			(hide yes)
 			(show_name no)
@@ -9067,7 +9078,7 @@
 				)
 			)
 		)
-		(property "Value" ""
+		(property "Value" "BUK9Y3R5-40E"
 			(at 241.3 46.99 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9110,7 +9121,18 @@
 				)
 			)
 		)
-		(property "MANUFACTURER" ""
+		(property "MANUFACTURER" "Nexperia"
+			(at 241.3 46.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "BUK9Y3R5-40E"
 			(at 241.3 46.99 0)
 			(hide yes)
 			(show_name no)
@@ -10671,7 +10693,7 @@
 				)
 			)
 		)
-		(property "Value" ""
+		(property "Value" "BUK9Y3R5-40E"
 			(at 242.57 64.77 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10714,7 +10736,18 @@
 				)
 			)
 		)
-		(property "MANUFACTURER" ""
+		(property "MANUFACTURER" "Nexperia"
+			(at 242.57 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "BUK9Y3R5-40E"
 			(at 242.57 64.77 0)
 			(hide yes)
 			(show_name no)
@@ -14622,7 +14655,7 @@
 				)
 			)
 		)
-		(property "Value" ""
+		(property "Value" "BUK9Y3R5-40E"
 			(at 289.56 73.66 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14665,7 +14698,18 @@
 				)
 			)
 		)
-		(property "MANUFACTURER" ""
+		(property "MANUFACTURER" "Nexperia"
+			(at 289.56 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "BUK9Y3R5-40E"
 			(at 289.56 73.66 0)
 			(hide yes)
 			(show_name no)

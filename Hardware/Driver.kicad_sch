@@ -1735,6 +1735,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C1855818"
+			(at 134.62 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Description" "40-V, 6-A H-bridge motor driver with integrated current sensing feedback"
 			(at 134.62 90.17 0)
 			(hide yes)
@@ -2287,6 +2298,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C25804"
+			(at 86.36 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Description" "Resistor"
 			(at 86.36 96.52 0)
 			(hide yes)
@@ -2452,6 +2474,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C1606"
+			(at 161.29 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Description" "Unpolarized capacitor"
 			(at 161.29 74.93 0)
 			(hide yes)
@@ -2526,6 +2559,17 @@
 			)
 		)
 		(property "Datasheet" ""
+			(at 154.94 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C21122"
 			(at 154.94 63.5 0)
 			(hide yes)
 			(show_name no)
@@ -2622,6 +2666,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C1591"
+			(at 193.04 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Description" "Unpolarized capacitor"
 			(at 193.04 81.28 0)
 			(hide yes)
@@ -2695,6 +2750,17 @@
 			)
 		)
 		(property "Datasheet" ""
+			(at 101.6 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C25804"
 			(at 101.6 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -3035,6 +3101,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C22940"
+			(at 171.45 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Description" "Resistor"
 			(at 171.45 82.55 0)
 			(hide yes)
@@ -3193,6 +3270,17 @@
 			)
 		)
 		(property "Datasheet" ""
+			(at 209.55 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C88801"
 			(at 209.55 81.28 0)
 			(hide yes)
 			(show_name no)

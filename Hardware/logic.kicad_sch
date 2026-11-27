@@ -1964,6 +1964,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C22885"
+			(at 166.37 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Description" "Resistor"
 			(at 166.37 105.41 0)
 			(hide yes)
@@ -2046,6 +2057,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C23167"
+			(at 95.25 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Description" "Resistor"
 			(at 95.25 106.68 0)
 			(hide yes)
@@ -2116,6 +2138,17 @@
 			)
 		)
 		(property "Datasheet" ""
+			(at 163.83 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C7461222"
 			(at 163.83 71.12 0)
 			(hide yes)
 			(show_name no)
@@ -2442,6 +2475,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C15570"
+			(at 151.13 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Description" "40V 3A Schottky Barrier Rectifier Diode, SMC"
 			(at 151.13 77.47 0)
 			(hide yes)
@@ -2680,6 +2724,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C12891"
+			(at 172.72 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Description" "Unpolarized capacitor"
 			(at 172.72 76.2 0)
 			(hide yes)
@@ -2752,6 +2807,17 @@
 			)
 		)
 		(property "Datasheet" ""
+			(at 184.15 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C12891"
 			(at 184.15 76.2 0)
 			(hide yes)
 			(show_name no)
@@ -2909,6 +2975,17 @@
 			)
 		)
 		(property "Datasheet" "https://www.alldatasheet.com/datasheet-pdf/view/239871/TI/TPS54331.html"
+			(at 139.7 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C9865"
 			(at 139.7 104.14 0)
 			(hide yes)
 			(show_name no)
@@ -3116,6 +3193,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C22772"
+			(at 204.47 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Description" "Resistor"
 			(at 204.47 82.55 0)
 			(hide yes)
@@ -3276,6 +3364,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C1599"
+			(at 166.37 97.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Description" "Unpolarized capacitor"
 			(at 166.37 97.79 0)
 			(hide yes)
@@ -3346,6 +3445,17 @@
 			)
 		)
 		(property "Datasheet" ""
+			(at 208.28 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C22452"
 			(at 208.28 71.12 0)
 			(hide yes)
 			(show_name no)
@@ -3428,6 +3538,17 @@
 			)
 		)
 		(property "Datasheet" ""
+			(at 81.28 97.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C1589"
 			(at 81.28 97.79 0)
 			(hide yes)
 			(show_name no)
@@ -3598,6 +3719,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C1591"
+			(at 118.11 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Description" "Unpolarized capacitor"
 			(at 118.11 86.36 0)
 			(hide yes)
@@ -3670,6 +3802,17 @@
 			)
 		)
 		(property "Datasheet" ""
+			(at 181.61 100.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C1643"
 			(at 181.61 100.33 0)
 			(hide yes)
 			(show_name no)
@@ -3762,6 +3905,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C9807"
+			(at 68.58 97.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Description" "Unpolarized capacitor"
 			(at 68.58 97.79 0)
 			(hide yes)
@@ -3834,6 +3988,17 @@
 			)
 		)
 		(property "Datasheet" ""
+			(at 110.49 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C1589"
 			(at 110.49 109.22 0)
 			(hide yes)
 			(show_name no)
@@ -3926,6 +4091,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C22853"
+			(at 204.47 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Description" "Resistor"
 			(at 204.47 93.98 0)
 			(hide yes)
@@ -3998,6 +4174,17 @@
 			)
 		)
 		(property "Datasheet" ""
+			(at 95.25 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C25811"
 			(at 95.25 96.52 0)
 			(hide yes)
 			(show_name no)

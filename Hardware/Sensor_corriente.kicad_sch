@@ -751,6 +751,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C459333"
+			(at 139.7 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Description" "10A Unidirectional Hall-Effect Current Sensor, +3.3V supply, 264mV/A, SOIC-8"
 			(at 139.7 82.55 0)
 			(hide yes)
@@ -839,6 +850,17 @@
 			)
 		)
 		(property "Datasheet" ""
+			(at 143.51 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C1591"
 			(at 143.51 63.5 0)
 			(hide yes)
 			(show_name no)
@@ -1234,6 +1256,17 @@
 			)
 		)
 		(property "Datasheet" ""
+			(at 153.67 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C1636"
 			(at 153.67 88.9 0)
 			(hide yes)
 			(show_name no)

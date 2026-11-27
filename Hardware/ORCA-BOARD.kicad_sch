@@ -8371,6 +8371,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C3703"
+			(at 248.92 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Description" "Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
 			(at 248.92 35.56 0)
 			(hide yes)
@@ -8443,6 +8454,17 @@
 			)
 		)
 		(property "Datasheet" ""
+			(at 116.84 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C25804"
 			(at 116.84 80.01 0)
 			(hide yes)
 			(show_name no)
@@ -8604,6 +8626,17 @@
 			)
 		)
 		(property "Datasheet" ""
+			(at 158.75 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C2286"
 			(at 158.75 180.34 0)
 			(hide yes)
 			(show_name no)
@@ -8863,6 +8896,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C1591"
+			(at 95.25 38.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Description" "Unpolarized capacitor"
 			(at 95.25 38.1 0)
 			(hide yes)
@@ -9011,6 +9055,17 @@
 			)
 		)
 		(property "Datasheet" ""
+			(at 120.65 175.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C22452"
 			(at 120.65 175.26 0)
 			(hide yes)
 			(show_name no)
@@ -9261,6 +9316,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C499855"
+			(at 86.36 139.7 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Description" "20V 2A Schottky Barrier Rectifier Diode, SMB"
 			(at 86.36 139.7 0)
 			(hide yes)
@@ -9330,6 +9396,17 @@
 			)
 		)
 		(property "Datasheet" ""
+			(at 156.21 72.39 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C160258"
 			(at 156.21 72.39 0)
 			(hide yes)
 			(show_name no)
@@ -9418,6 +9495,17 @@
 			)
 		)
 		(property "Datasheet" ""
+			(at 123.19 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C98734"
 			(at 123.19 154.94 0)
 			(hide yes)
 			(show_name no)
@@ -9822,6 +9910,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C1591"
+			(at 49.53 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Description" "Unpolarized capacitor"
 			(at 49.53 77.47 0)
 			(hide yes)
@@ -10140,6 +10239,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C25804"
+			(at 35.56 46.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Description" "Resistor"
 			(at 35.56 46.99 0)
 			(hide yes)
@@ -10209,6 +10319,17 @@
 			)
 		)
 		(property "Datasheet" ""
+			(at 151.13 175.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C23228"
 			(at 151.13 175.26 0)
 			(hide yes)
 			(show_name no)
@@ -10379,6 +10500,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C25804"
+			(at 116.84 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Description" "Resistor"
 			(at 116.84 59.69 0)
 			(hide yes)
@@ -10449,6 +10581,17 @@
 			)
 		)
 		(property "Datasheet" ""
+			(at 152.4 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C160258"
 			(at 152.4 91.44 0)
 			(hide yes)
 			(show_name no)
@@ -10624,6 +10767,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C265281"
+			(at 113.03 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Description" "Generic connector, single row, 01x02, script generated"
 			(at 113.03 110.49 0)
 			(hide yes)
@@ -10696,6 +10850,17 @@
 			)
 		)
 		(property "Datasheet" ""
+			(at 198.12 203.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C98734"
 			(at 198.12 203.2 0)
 			(hide yes)
 			(show_name no)
@@ -10864,6 +11029,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C160258"
+			(at 181.61 107.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Description" "Generic connector, single row, 01x04, script generated"
 			(at 181.61 107.95 0)
 			(hide yes)
@@ -11020,6 +11196,18 @@
 			)
 		)
 		(property "Datasheet" "https://www.ti.com/lit/gpn/tpd4e001"
+			(at 30.48 184.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "LCSC" "C465736"
 			(at 30.48 184.15 0)
 			(hide yes)
 			(show_name no)
@@ -11516,6 +11704,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C130026"
+			(at 176.53 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Description" "Low voltage 8-channel I2C switch with reset, TSSOP-24"
 			(at 175.26 54.61 0)
 			(hide yes)
@@ -11819,6 +12018,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C23186"
+			(at 64.77 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Description" "Resistor"
 			(at 64.77 143.51 0)
 			(hide yes)
@@ -12056,6 +12266,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C21190"
+			(at 210.82 146.05 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Description" "Resistor"
 			(at 210.82 146.05 0)
 			(hide yes)
@@ -12126,6 +12347,17 @@
 			)
 		)
 		(property "Datasheet" ""
+			(at 195.58 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C160258"
 			(at 195.58 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -12221,6 +12453,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C23186"
+			(at 64.77 140.97 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Description" "Resistor"
 			(at 64.77 140.97 0)
 			(hide yes)
@@ -12292,6 +12535,17 @@
 			)
 		)
 		(property "Datasheet" ""
+			(at 257.81 140.97 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C158011"
 			(at 257.81 140.97 0)
 			(hide yes)
 			(show_name no)
@@ -12618,6 +12872,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C25804"
+			(at 127 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Description" "Resistor"
 			(at 127 82.55 0)
 			(hide yes)
@@ -12777,6 +13042,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C3703"
+			(at 248.92 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Description" "Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
 			(at 248.92 76.2 0)
 			(hide yes)
@@ -12849,6 +13125,17 @@
 			)
 		)
 		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/sn65hvd230.pdf"
+			(at 224.79 130.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C12084"
 			(at 224.79 130.81 0)
 			(hide yes)
 			(show_name no)
@@ -12959,6 +13246,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C1591"
+			(at 35.56 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Description" "Unpolarized capacitor"
 			(at 35.56 60.96 0)
 			(hide yes)
@@ -13029,6 +13327,17 @@
 			)
 		)
 		(property "Datasheet" "https://www.apem.com/medias/download/MEC_switches_serie_MULTIMEC5E.pdf"
+			(at 25.4 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C2733654"
 			(at 25.4 49.53 0)
 			(hide yes)
 			(show_name no)
@@ -13362,6 +13671,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C2733654"
+			(at 49.53 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Description" "MEC 5E single pole normally-open tactile switch"
 			(at 49.53 71.12 0)
 			(hide yes)
@@ -13438,6 +13758,17 @@
 			)
 		)
 		(property "Datasheet" "https://www.usb.org/sites/default/files/documents/usb_type-c.zip"
+			(at 40.64 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C3025063"
 			(at 40.64 151.13 0)
 			(hide yes)
 			(show_name no)
@@ -13565,6 +13896,17 @@
 			)
 		)
 		(property "Datasheet" "https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf"
+			(at 82.55 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C2913197"
 			(at 82.55 81.28 0)
 			(hide yes)
 			(show_name no)
@@ -13772,6 +14114,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C6186"
+			(at 137.16 181.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Description" "1A Low Dropout regulator, positive, 3.3V fixed output, SOT-223"
 			(at 134.62 175.26 0)
 			(hide yes)
@@ -13933,6 +14286,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C22787"
+			(at 245.11 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Description" "Resistor"
 			(at 245.11 142.24 0)
 			(hide yes)
@@ -14015,6 +14379,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C9807"
+			(at 109.22 38.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Description" "Unpolarized capacitor"
 			(at 109.22 38.1 0)
 			(hide yes)
@@ -14086,6 +14461,17 @@
 			)
 		)
 		(property "Datasheet" ""
+			(at 125.73 179.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C9807"
 			(at 125.73 179.07 0)
 			(hide yes)
 			(show_name no)
@@ -14336,6 +14722,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C25804"
+			(at 127 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Description" "Resistor"
 			(at 127 62.23 0)
 			(hide yes)
@@ -14527,6 +14924,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C12891"
+			(at 144.78 179.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Description" "Unpolarized capacitor"
 			(at 144.78 179.07 0)
 			(hide yes)
@@ -14599,6 +15007,17 @@
 			)
 		)
 		(property "Datasheet" ""
+			(at 90.17 190.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C1591"
 			(at 90.17 190.5 0)
 			(hide yes)
 			(show_name no)

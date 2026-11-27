@@ -4751,7 +4751,7 @@
 				)
 			)
 		)
-		(property "Value" "~"
+		(property "Value" "BUK9Y3R5-40E"
 			(at -0.245 3.52 90)
 			(layer "F.Fab")
 			(uuid "28afcaab-8709-44cd-aaa3-f846f070b7c3")
@@ -11303,7 +11303,7 @@
 				)
 			)
 		)
-		(property "Value" "~"
+		(property "Value" "BUK9Y3R5-40E"
 			(at -0.245 3.52 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -12639,7 +12639,7 @@
 				)
 			)
 		)
-		(property "Value" "~"
+		(property "Value" "BUK9Y3R5-40E"
 			(at -0.245 3.52 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -15283,7 +15283,7 @@
 				)
 			)
 		)
-		(property "Value" "~"
+		(property "Value" "BUK9Y3R5-40E"
 			(at -0.245 3.52 90)
 			(layer "F.Fab")
 			(uuid "6a1c66d9-74b8-48a4-9505-33aa00d9e8e5")

@@ -40,6 +40,9 @@ fp-info-cache
 !simulacion/resultados/c1_16esquinas_resumen.csv
 !simulacion/resultados/c2_4esquinas_resumen.csv
 !Hardware/physical_debug/ensayos_motores/**/*.csv
+# ...y las BOM/CPL de fabricacion de ambas placas
+!Hardware/BOM-ORCA-BOARD-control.csv
+!Hardware-Potencia/jlcpcb/production_files/*.csv
 
 # Archived Backups (KiCad 6.0)
 **/*-backups/*.zip
