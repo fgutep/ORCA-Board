@@ -84,7 +84,7 @@ Convertidor **buck-boost LM5175** para el riel de motores: entrada de 6 a 25.2 V
 | BNO085 | ✅ Montado (U1) y usado por el firmware micro-ROS (`/imu`) |
 | Placa de potencia (LM5175), Placa 2 | ✅ Caracterizada con carga hasta 198.7 W en boost ([registro](Hardware-Potencia/pruebas_carga/registro.md)). Corta solo en la zona de transición (Vin ≈ Vout). Alimentó los motores a 12 V con la entrada barrida de 8 a 24 V |
 | Placa de potencia (LM5175), Placa 1 | 🔴 LM5175 defectuoso de fábrica ([registro](Hardware-Potencia/physical_debug/README.md)) |
-| Drivers de motor (DRV8874) | ✅ Probados con N20 y Faulhaber a 12 V en el banco de motores ([ensayo](Hardware/physical_debug/11_ensayo_motores_N20_Faulhaber.md)). Temperatura de pistas pendiente |
+| Drivers de motor (DRV8874) | ✅ Probados con N20 y Faulhaber a 12 V en el banco de motores ([ensayo](Hardware/physical_debug/11_ensayo_motores_N20_Faulhaber.md)) |
 | micro-ROS sobre la placa | ✅ Firmware de uso general ([`firmware/orca_micro_ros`](firmware/orca_micro_ros/README.md)): nodo `/orca_board` en ROS 2 Jazzy con batería, IMU, diagnóstico, motores, servos, puente CAN a 25 kbit/s (`can_msgs/Frame`) y parámetros persistentes, con transportes USB y Wi-Fi. Probado por USB y por Wi-Fi en la integración con SWARM; falta probar CAN contra otro nodo |
 | Integración en robots | ✅ Robot del enjambre SWARM y robot diferencial con ROS 2 ([ver sección](#integración-en-robots)) |
 
@@ -251,13 +251,6 @@ Las pruebas de carga de la Placa 2 (24-nov, carga Rigol DL3021, fuente EA PS 100
 | Ejemplos de uso | [`examples/README.md`](examples/README.md) |
 | Hojas de datos | [`Datasheets/`](Datasheets/) |
 | Esquemático y layout de potencia | [`Prints/`](Prints/) |
-
-## Próximos pasos
-
-- [ ] Medir la temperatura de las pistas de los motores con `soak` y cámara térmica.
-- [ ] Probar el bus CAN contra otro nodo real.
-- [ ] Probar los encoders por I²C en J14–J17.
-- [ ] Resolver los cortes de la placa de potencia en la zona de transición (Vin ≈ Vout).
 
 ## Equipo
 
