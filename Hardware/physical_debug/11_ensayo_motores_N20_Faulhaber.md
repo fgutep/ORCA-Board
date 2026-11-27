@@ -14,7 +14,7 @@
 | R3 | 🟠 **Faulhaber libre:** la curva no es monótona. Sube hasta **0.257 A a 60 %** y baja a **0.110 A a 100 %**. A duty parcial el motor consume más que a plena tensión. Hipótesis: rotor sin hierro de baja inductancia + PWM de 20 kHz con freno (decay lento) forzado por PMODE = GND. Se confirma repitiendo a 50 kHz |
 | R4 | 🟡 **Faulhaber bloqueado:** hasta **1.37 A** sostenidos a 100 % y picos de 10 ms de **2.28 A**, pero con mucha dispersión y diferencias entre ensayos y sentidos. El bloqueo no parece haber sido rígido. El ensayo (a) se cortó a mitad de −100 % |
 | R5 | ✅ **Dos canales al 100 % (manual):** pico de **4.246 A** en VM (media de 10 ms) sin HALT por `ilim`, detenido con STOP |
-| R6 | ✅ La **placa de potencia** alimentó VM a 12 V durante el ensayo, con su entrada barrida en vivo de 8 a 24 V |
+| R6 | ✅ La **placa de potencia (Placa 2, la del LM5175 funcional)** alimentó VM a 12 V durante el ensayo, con su entrada barrida en vivo de 8 a 24 V |
 | — | 🟡 P3/P4 de [07](07_revision_potencia.md) siguen abiertos: sin falla eléctrica a esas corrientes, pero **no se midió temperatura** y los escalones duraron ≤ 2 s |
 
 ## Montaje
@@ -23,12 +23,12 @@
 |---|---|
 | Placa de control | Rev A con `orca_motor_bench` (arranque #687 en la captura del N20) |
 | Lógica | Por USB. J19 sin alimentar: Vbus (INA226) = 0.00 V en todos los registros |
-| VM (J20) | **12 V desde la placa de potencia LM5175**. Su entrada se barrió en vivo de 8 a 24 V durante el ensayo. VM no se mide en la placa de control: 12 V es la consigna |
+| VM (J20) | **12 V desde la placa de potencia LM5175 (Placa 2)**. Su entrada se barrió en vivo de 8 a 24 V durante el ensayo. VM no se mide en la placa de control: 12 V es la consigna |
 | Canal | **M2 (U6 → J4)** en los cuatro barridos. M1 solo en la prueba manual de dos canales |
 | Ajustes | Rampa 200 %/s, `ilim` 2.0 A (media de 100 ms), PWM 20 kHz, cero del ACS725 320 mV |
 | Secuencia | `sweep` M2, 20 → 100 % en pasos de 20 %, adelante y atrás, asentar 1 s + medir 1 s (~23 s por ensayo) |
-| Motor 1 | **N20** con reductora. *Pendiente: modelo, tensión nominal y relación* |
-| Motor 2 | **Faulhaber**, referencia indicada por el equipo como «M124». *Pendiente: referencia exacta, tensión nominal, resistencia e inductancia en bornes, corriente en vacío* |
+| Motor 1 | N20 con reductora (referencia exacta no disponible) |
+| Motor 2 | Faulhaber, indicado por el equipo como M124 (referencia exacta no disponible) |
 | Bloqueo | *Pendiente: cómo se bloqueó el eje (a mano, con mordaza…)* |
 
 ## Archivos
@@ -135,7 +135,7 @@ Dos observaciones de la captura para revisar:
 
 ### R6 — Placa de potencia como fuente de VM
 
-La placa de potencia LM5175 entregó los 12 V de VM mientras su entrada se barría en vivo de 8 a 24 V, según el equipo. La carga en este ensayo fue de hasta ~1.4 A sostenidos (2 s), con picos de 10 ms de 4.25 A. Su registro está en [Hardware-Potencia/physical_debug](../../Hardware-Potencia/physical_debug/README.md). *Pendiente: qué placa (1 o 2) y el registro del barrido de entrada.*
+La placa de potencia LM5175 usada fue la Placa 2 (la del LM5175 funcional). Entregó los 12 V de VM mientras su entrada se barría en vivo de 8 a 24 V, según el equipo. La carga en este ensayo fue de hasta ~1.4 A sostenidos (2 s), con picos de 10 ms de 4.25 A. Su registro está en [Hardware-Potencia/physical_debug](../../Hardware-Potencia/physical_debug/README.md). *Pendiente: el registro del barrido de entrada.*
 
 ### Pistas de potencia (P3/P4 de 07)
 
@@ -143,7 +143,7 @@ Corrientes de este ensayo por M2 (U6, OUT2 de 0.35 mm, ~1.5 A para ΔT = 20 °C 
 
 ## Pendientes y próximos ensayos
 
-1. **Completar los datos de los motores** (tabla de montaje): referencia exacta del Faulhaber con su R, L e I en vacío; modelo y relación del N20; cómo se bloqueó el eje.
+1. **Completar los datos de los motores** (tabla de montaje): R, L e I en vacío del Faulhaber, relación del N20, y anotar cómo se bloqueó el eje. La referencia exacta de ambos motores no está disponible.
 2. **Confirmar R3:** barrido libre del Faulhaber a 50 kHz (y a 10 kHz) con los mismos ajustes; comparar con `plot_runs.py`.
 3. **Bloqueo rígido** (mordaza) a duty bajo primero: `step` o `soak` corto, `ilim` ajustado.
 4. **En cada ensayo, descargar también el informe** (`/seq.txt`): ahí queda la causa de un aborto.

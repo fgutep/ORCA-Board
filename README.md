@@ -14,7 +14,7 @@
 ![Rev A](https://img.shields.io/badge/Control_Rev_A-8%2F8_autoprueba-5CB77C?style=for-the-badge)
 [![Licencia MIT](https://img.shields.io/badge/Licencia-MIT-10231A?style=for-the-badge)](LICENSE)
 
-[Resumen](#resumen) · [Características](#características) · [Estado](#estado-del-proyecto) · [Inicio rápido](#inicio-rápido) · [Estructura](#estructura-del-repositorio) · [Simulación](#simulación-de-la-etapa-de-potencia) · [Equipo](#equipo) · [Licencia](#licencia)
+[Resumen](#resumen) · [Características](#características) · [Estado](#estado-del-proyecto) · [Integración en robots](#integración-en-robots) · [Inicio rápido](#inicio-rápido) · [Estructura](#estructura-del-repositorio) · [Simulación](#simulación-de-la-etapa-de-potencia) · [Equipo](#equipo) · [Licencia](#licencia)
 
 </div>
 
@@ -59,7 +59,7 @@ Convertidor **buck-boost LM5175** para el riel de motores: entrada de 6 a 25.2 V
 | Función | Componente |
 |---|---|
 | Controlador | U1: LM5175PWPR, controlador buck-boost de 4 interruptores |
-| Interruptores de potencia | Q1–Q4: MOSFET de canal N de 40 V en LFPAK56 (PSMN3R2-40YLD) |
+| Interruptores de potencia | Q1–Q4: MOSFET de canal N de 40 V en LFPAK56 (Nexperia BUK9Y3R5-40E, marcado 93E540) |
 | Inductor | L1: Pulse PA4344, 4.7 µH |
 | Sensado de corriente | R12: shunt Kelvin de 5 mΩ (2512) |
 | Condensadores de potencia | Entrada: C2, 100 µF · Salida: C19 y C20, 220 µF · Cerámicos de 10 µF: C4, C14 y C15 |
@@ -81,10 +81,12 @@ Convertidor **buck-boost LM5175** para el riel de motores: entrada de 6 a 25.2 V
 | Parte | Estado |
 |---|---|
 | **Placa de control, Rev A** | ✅ Fabricada y operativa. Autoprueba: **8 pruebas aprobadas, 0 fallas** |
-| Placa de potencia (LM5175) | 🔧 Fabricada, en bring-up ([registro](Hardware-Potencia/physical_debug/README.md)). Ya alimentó los motores a 12 V con la entrada barrida de 8 a 24 V |
+| BNO085 | ✅ Montado (U1) y usado por el firmware micro-ROS (`/imu`) |
+| Placa de potencia (LM5175), Placa 2 | ✅ Caracterizada con carga hasta 198.7 W en boost ([registro](Hardware-Potencia/pruebas_carga/registro.md)). Corta solo en la zona de transición (Vin ≈ Vout). Alimentó los motores a 12 V con la entrada barrida de 8 a 24 V |
+| Placa de potencia (LM5175), Placa 1 | 🔴 LM5175 defectuoso de fábrica ([registro](Hardware-Potencia/physical_debug/README.md)) |
 | Drivers de motor (DRV8874) | ✅ Probados con N20 y Faulhaber a 12 V en el banco de motores ([ensayo](Hardware/physical_debug/11_ensayo_motores_N20_Faulhaber.md)). Temperatura de pistas pendiente |
-| BNO085 | ⏸️ Aún no montado en la placa fabricada |
-| micro-ROS sobre la placa | ✅ Firmware de uso general ([`firmware/orca_micro_ros`](firmware/orca_micro_ros/README.md)): nodo `/orca_board` en ROS 2 Jazzy con batería, IMU, diagnóstico, motores, servos, puente CAN a 25 kbit/s (`can_msgs/Frame`) y parámetros persistentes. Probado por USB sin VBUS y con CAN en autoprueba; falta probar con motores y servos alimentados y CAN contra otro nodo |
+| micro-ROS sobre la placa | ✅ Firmware de uso general ([`firmware/orca_micro_ros`](firmware/orca_micro_ros/README.md)): nodo `/orca_board` en ROS 2 Jazzy con batería, IMU, diagnóstico, motores, servos, puente CAN a 25 kbit/s (`can_msgs/Frame`) y parámetros persistentes, con transportes USB y Wi-Fi. Probado por USB y por Wi-Fi en la integración con SWARM; falta probar CAN contra otro nodo |
+| Integración en robots | ✅ Robot del enjambre SWARM y robot diferencial con ROS 2 ([ver sección](#integración-en-robots)) |
 
 ### Resultados de la placa de control
 
@@ -108,6 +110,30 @@ Convertidor **buck-boost LM5175** para el riel de motores: entrada de 6 a 25.2 V
 </table>
 
 La termografía con VBUS dio un máximo de 39.6 °C. El detalle del bring-up, con errata y retrabajos incluidos, está en [`Hardware/physical_debug`](Hardware/physical_debug/README.md).
+
+## Integración en robots
+
+### Enjambre SWARM
+
+La placa de control ORCA, integrada a un robot SWARM, respondió correctamente a señales de movimiento enviadas por Wi-Fi desde ROS 2 corriendo en una Raspberry Pi 5 que tenía esclavizada a la placa de lógica. Video de la validación: [youtu.be/ohQkxq8agtg](https://youtu.be/ohQkxq8agtg).
+
+<table>
+  <tr>
+    <td align="center" width="50%"><img src="docs/img/swarm_antes_orca.jpg" alt="Robot SWARM antes de integrar ORCA"><br><sub>Robot SWARM antes de integrar ORCA</sub></td>
+    <td align="center" width="50%"><img src="docs/img/swarm_con_orca.jpg" alt="Robot SWARM con la placa ORCA integrada"><br><sub>Robot SWARM con ORCA integrada</sub></td>
+  </tr>
+</table>
+
+### Robot diferencial
+
+ORCA en un robot diferencial con micro-ROS, ROS 2 y reconocimiento visual tipo TurtleBot.
+
+<table>
+  <tr>
+    <td align="center" width="50%"><img src="docs/img/robot_diferencial_orca_1.jpg" alt="Robot diferencial con ORCA, vista 1"></td>
+    <td align="center" width="50%"><img src="docs/img/robot_diferencial_orca_2.jpg" alt="Robot diferencial con ORCA, vista 2"></td>
+  </tr>
+</table>
 
 ## Inicio rápido
 
@@ -156,13 +182,15 @@ ORCA-Board/
 ├── Hardware/                  PCB de control (KiCad): esquemáticos, PCB, footprints y gerbers
 │   └── physical_debug/        Bring-up de la placa fabricada: documentos 01–09 y firmware de prueba
 ├── Hardware-Potencia/         PCB de potencia LM5175 (KiCad) y su bring-up
-│   ├── Gerbers-Pot/           Archivos de fabricación
+│   ├── jlcpcb/                Archivos de fabricación y BOM de potencia (production_files/)
+│   ├── pruebas_carga/         Script, registro y datos de las pruebas de carga
 │   └── physical_debug/        Protocolo de arranque por etapas y diagnóstico
 ├── simulacion/                Modelos y simulaciones LTspice del buck-boost
 │   ├── scripts/               Análisis y gráficas en Python
 │   └── resultados/            Figuras de las corridas
 ├── firmware/
 │   └── orca_micro_ros/        Firmware micro-ROS (ROS 2 Jazzy) de uso general
+├── examples/                  Ejemplos de uso de la placa (brazo por gestos con IMU y servos)
 ├── Datasheets/                Hojas de datos de los componentes
 ├── Prints/                    Esquemático y layout de la placa de potencia en PDF/PNG
 └── docs/img/                  Imágenes de este README
@@ -200,16 +228,19 @@ Las cuatro esquinas regulan dentro de ±0.01 % y mantienen el pico del inductor 
 | Bring-up de la placa de control | [`Hardware/physical_debug/README.md`](Hardware/physical_debug/README.md) |
 | Firmware micro-ROS (tópicos, parámetros, seguridad) | [`firmware/orca_micro_ros/README.md`](firmware/orca_micro_ros/README.md) |
 | Bring-up de la placa de potencia | [`Hardware-Potencia/physical_debug/README.md`](Hardware-Potencia/physical_debug/README.md) |
+| BOM de la placa de control (JLCPCB, carrito del 23-sep-2026) | [`Hardware/BOM-ORCA-BOARD-control.csv`](Hardware/BOM-ORCA-BOARD-control.csv) |
+| BOM de la placa de potencia | [`Hardware-Potencia/jlcpcb/production_files/BOM-ORCA-BOARD.csv`](Hardware-Potencia/jlcpcb/production_files/BOM-ORCA-BOARD.csv) |
+| Pruebas de carga de la placa de potencia | [`Hardware-Potencia/pruebas_carga/registro.md`](Hardware-Potencia/pruebas_carga/registro.md) |
+| Ejemplos de uso | [`examples/README.md`](examples/README.md) |
 | Hojas de datos | [`Datasheets/`](Datasheets/) |
 | Esquemático y layout de potencia | [`Prints/`](Prints/) |
 
 ## Próximos pasos
 
-- [ ] Montar el BNO085 y poner `BNO085_MOUNTED = true` en la autoprueba.
-- [ ] Terminar el bring-up de la placa de potencia.
-- [x] Correr micro-ROS sobre la placa ([`firmware/orca_micro_ros`](firmware/orca_micro_ros/README.md)).
-- [ ] Probar micro-ROS con VBUS (motores y servos) y por Wi-Fi.
-- [ ] Montarla en un robot del laboratorio para mover motores y servos con carga real.
+- [ ] Medir la temperatura de las pistas de los motores con `soak` y cámara térmica.
+- [ ] Probar el bus CAN contra otro nodo real.
+- [ ] Probar los encoders por I²C en J14–J17.
+- [ ] Resolver los cortes de la placa de potencia en la zona de transición (Vin ≈ Vout).
 
 ## Equipo
 

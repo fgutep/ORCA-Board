@@ -21,10 +21,12 @@ Registro del bring-up físico de la PCB de control (ESP32-S3-WROOM-1) Rev A fabr
 | Vsens (U11 INA226) | ✅ **Resuelto:** colisión en 0x40 con el PCA9685 confirmada en la placa y corregida moviendo el PCA9685 a 0x41 ([06](06_retrabajo_I2C_INA226_PCA9685.md)). INA226 ID `0x5449` |
 | PCA9685 (U9) | ✅ En **0x41** tras el retrabajo, MODE1 `0x11` |
 | Potencia VBUS | ✅ Estable de 8 a 22 V; a 8 V hace falta ≥ 300 mA de límite en la fuente ([07](07_revision_potencia.md)) |
-| BNO085 (U1) | ⏸️ No montado todavía (por eso no responde en 0x4A/0x4B) |
+| BNO085 (U1) | ✅ Montado; lo usa el firmware micro-ROS (`/imu`) |
+| micro-ROS | ✅ Nodo `/orca_board` en ROS 2 Jazzy, probado por USB ([firmware](../../firmware/orca_micro_ros/README.md)) |
+| Integración SWARM | ✅ La placa, integrada a un robot SWARM, respondió a señales de movimiento enviadas por Wi-Fi desde ROS 2 en una Raspberry Pi 5 esclavizada a la placa de lógica ([video](https://youtu.be/ohQkxq8agtg)) |
 | Telemetría Wi-Fi | ✅ Probada durante la prueba de potencia |
 | Autoprueba completa | ✅ `orca_selftest` en la flash: 8 PASS, 0 FAIL por Wi-Fi y por USB ([09](09_autoprueba.md)) |
-| Motores (U5/U6 DRV8874) | ✅ Probados a 12 V con N20 y Faulhaber, libres y bloqueados, hasta 1.37 A sostenidos y 4.25 A de pico con los dos canales ([11](11_ensayo_motores_N20_Faulhaber.md)). 🟠 Faulhaber consume más a duty parcial (probable rizado de PWM). Temperatura de pistas sin medir. ⚠️ nFAULT e IPROPI no llegan al ESP32 |
+| Motores (U5/U6 DRV8874) | ✅ Probados a 12 V con N20 y Faulhaber, libres y bloqueados, hasta 1.37 A sostenidos y 4.25 A de pico con los dos canales, con VM desde la Placa 2 de potencia ([11](11_ensayo_motores_N20_Faulhaber.md)). 🟠 Faulhaber consume más a duty parcial (probable rizado de PWM). Temperatura de pistas sin medir. ⚠️ nFAULT e IPROPI no llegan al ESP32 |
 | Vsens con batería/fuente | ✅ INA226 midió 8.002 V con la fuente a 8 V (VBUS + USB a la vez) |
 | 5VUSB con alimentación por VBUS | ✅ ~2 V sin carga = solo fuga de D2; 0 mV con 10 kΩ. VBUS + USB a la vez es seguro ([07](07_revision_potencia.md), P9) |
 

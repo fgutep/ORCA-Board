@@ -134,9 +134,9 @@ Flasheo: `pio run -t upload` en `orca_motor_bench/` (reemplaza a `orca_selftest`
 
 | Fecha | VM | Motor / carga | Prueba | Resultado |
 |---|---|---|---|---|
-| 2026-11-20 | 12 V (placa de potencia) | N20 libre, M2 | `sweep` 20–100 % | ✅ I_motor ≈ 0.17 A constante, asimetría ≤ 4 % ([11](11_ensayo_motores_N20_Faulhaber.md)) |
-| 2026-11-20 | 12 V (placa de potencia) | Faulhaber libre, M2 | `sweep` 20–100 % | 🟠 Máx. 0.257 A a 60 %, 0.110 A a 100 %: curva no monótona, probable rizado de PWM ([11](11_ensayo_motores_N20_Faulhaber.md), R3) |
-| 2026-11-20 | 12 V (placa de potencia) | Faulhaber bloqueado, M2 (2 ensayos) | `sweep` 20–100 % | 🟡 Hasta 1.37 A sostenidos y 2.28 A de pico; bloqueo no rígido; 1.er ensayo cortado ([11](11_ensayo_motores_N20_Faulhaber.md), R4) |
-| 2026-11-20 | 12 V (placa de potencia) | Faulhaber en M1 y M2 | Manual, ambos al 100 % | ✅ Pico de 4.246 A (10 ms) sin HALT por `ilim` ([11](11_ensayo_motores_N20_Faulhaber.md), R5) |
+| 2026-11-20 | 12 V (placa de potencia, Placa 2) | N20 libre, M2 | `sweep` 20–100 % | ✅ I_motor ≈ 0.17 A constante, asimetría ≤ 4 % ([11](11_ensayo_motores_N20_Faulhaber.md)) |
+| 2026-11-20 | 12 V (placa de potencia, Placa 2) | Faulhaber libre, M2 | `sweep` 20–100 % | 🟠 Máx. 0.257 A a 60 %, 0.110 A a 100 %: curva no monótona, probable rizado de PWM ([11](11_ensayo_motores_N20_Faulhaber.md), R3) |
+| 2026-11-20 | 12 V (placa de potencia, Placa 2) | Faulhaber bloqueado, M2 (2 ensayos) | `sweep` 20–100 % | 🟡 Hasta 1.37 A sostenidos y 2.28 A de pico; bloqueo no rígido; 1.er ensayo cortado ([11](11_ensayo_motores_N20_Faulhaber.md), R4) |
+| 2026-11-20 | 12 V (placa de potencia, Placa 2) | Faulhaber en M1 y M2 | Manual, ambos al 100 % | ✅ Pico de 4.246 A (10 ms) sin HALT por `ilim` ([11](11_ensayo_motores_N20_Faulhaber.md), R5) |
 
 Gráficas y tablas desde los CSV del panel: `orca_motor_bench/plot_runs.py` (ver [11](11_ensayo_motores_N20_Faulhaber.md#regenerar-las-gráficas)).
