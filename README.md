@@ -222,20 +222,45 @@ Las cuatro esquinas regulan dentro de ±0.01 % y mantienen el pico del inductor 
 
 ### Simulación frente a pruebas físicas
 
-Las pruebas de carga de la Placa 2 (24-nov, carga Rigol DL3021, fuente EA PS 10060-170) repiten las cuatro esquinas de la simulación. La simulación evalúa cada esquina a 8.4 A de salida; en el banco se subió la carga por escalones, así que la tabla compara la simulación con el punto de mayor potencia medido en cada esquina. Detalle de cada corrida en el [registro](Hardware-Potencia/pruebas_carga/registro.md).
+Las pruebas de carga se hicieron sobre la Placa 2 el 23 y 24 de noviembre, con la carga electrónica Rigol DL3021, la fuente EA PS 10060-170 y la cámara térmica Keysight U5855A. El detalle de cada corrida está en el [registro](Hardware-Potencia/pruebas_carga/registro.md).
 
-| Esquina | Simulación: Pout / η / VOUT | Medido: Pout / η / VOUT | Corrida |
+**Pruebas realizadas**
+
+| Corrida | VIN → VOUT | Tipo de prueba | Carga aplicada | Eficiencia medida |
+|---|---|---|---|---|
+| R08 | 12 → 12 V | Escalones de 0.5 A cada 30 s | 0.5 a 4.5 A (6 a 54 W) | 71.5 a 92.3 % |
+| R09 | 16 → 12 V | Escalones de 0.25 A cada 20 s | 3 a 5 A (36 a 59.5 W) | 89.6 a 90.7 % |
+| R10 | 9 → 12 V | Escalones de 0.25 A cada 20 s | 3 a 5 A (36 a 59.5 W) | 87.0 a 90.4 % |
+| R11 | 20 → 12 V | Escalones de 0.25 A cada 20 s | 3 a 5 A (36 a 59.5 W) | 88 a 92 % |
+| R12 a R15 | 10.5, 11, 13 y 14 → 12 V | Mapeo de la zona de transición | 4 a 5 A (48 a 60 W) | 89.5 a 92.0 % |
+| R16 | 9 → 12 V | Carga sostenida durante 10 min | 5 A (59.5 W) | 87.0 %, máximo de 71 °C |
+| R17 | 25.2 → 7.2 V | Escalones de 1 A cada 20 s | 1 a 5 A (7.2 a 35.3 W) | 56.9 a 82.4 % |
+| R18 | 6 → 7.2 V | Escalones de 1 A cada 20 s | 1 a 5 A (7.2 a 35.3 W) | 82.9 a 88.2 % |
+| R19, R20 | 22.2 → 25 V | Escalones de 1 A y de 0.25 A | 1 a 2.75 A (25 a 68.7 W) | 86.7 a 91.1 % |
+| R21 | 18 → 25 V | Escalones hasta 7 A cada 10 s | 1 a 7 A (25 a 174.4 W) | 86.9 a 92.5 % |
+| R22 | 18 → 25 V | Escalones hasta 7.98 A cada 10 s | 2 a 7.98 A (50 a 198.7 W) | 87.6 a 91.0 % |
+
+**Comparación por esquina de diseño**
+
+La simulación evalúa cada esquina con 8.4 A de salida. En el banco la carga se subió por escalones, así que cada fila compara la simulación con el punto de mayor potencia medido en esa esquina.
+
+| Esquina | Modo | Pout simulada | Pout medida | η simulada | η medida | η máxima medida | VOUT simulado | VOUT medido | Corrida |
+|---|---|---|---|---|---|---|---|---|---|
+| 6 → 7.2 V | Boost | 60.5 W | 35.3 W | 87.2 % | 82.9 % | 88.2 % (14.3 W) | 7.199 V | 7.063 V | R18 |
+| 12 → 12 V | Transición | 100.8 W | 54 W | 92.4 % | 90.5 a 91.6 % | 92.3 % (30 W) | 11.999 V | 11.908 V | R08 |
+| 22.2 → 25 V | Boost | 210.0 W | 68.7 W | 95.7 % | 91.1 % | 91.1 % (68.7 W) | 24.997 V | 24.998 V | R20 |
+| 25.2 → 7.2 V | Buck | 60.5 W | 35.3 W | 87.4 % | 82.4 % | 82.4 % (35.3 W) | 7.199 V | 7.062 V | R17 |
+
+Fuera de las cuatro esquinas, con 18 → 25 V, la placa entregó 124.8 W con η = 91.2 % y llegó a **198.7 W** con η = 87.6 % y VOUT = 24.897 V (R21 y R22).
+
+**Diferencias entre el modelo y el banco**
+
+| Aspecto | Simulación (LTspice) | Banco (Placa 2) | Origen de la diferencia |
 |---|---|---|---|
-| 6 → 7.2 V (boost) | 60.5 W / 87.2 % / 7.199 V | 28.4 W / 85.9 % (88.2 % a 14.3 W); 35.3 W / 82.9 % / 7.063 V | R18 |
-| 12 → 12 V (transición) | 100.8 W / 92.4 % / 11.999 V | 54 W / 90.5–91.6 % / 11.908 V; pico de 92.3 % a 30 W | R08 |
-| 22.2 → 25 V (boost) | 210.0 W / 95.7 % / 24.997 V | 68.7 W / 91.1 % / 24.998 V | R20 |
-| 25.2 → 7.2 V (buck) | 60.5 W / 87.4 % / 7.199 V | 35.3 W / 82.4 % / 7.062 V | R17 |
-| 18 → 25 V (boost, fuera de las esquinas) | — | 124.8 W / 91.2 %; **198.7 W / 87.6 % / 24.897 V** | R21, R22 |
-
-- **Regulación.** La simulación regula dentro de ±0.01 %. En el banco, VOUT cae entre 0.1 % y 2 % a plena carga (de −0.1 % en 22.2 → 25 V a −2.0 % en 25.2 → 7.2 V), porque la medición incluye conectores y cableado de salida que el modelo no tiene.
-- **Eficiencia.** La medida queda entre 1 y 5 puntos por debajo de la simulada. La diferencia es mayor en las esquinas de 7.2 V, donde la pérdida fija de conmutación pesa más a baja potencia, y en ella entran las pérdidas de los cables de entrada (a 7.6 A de Iin) y la resolución de 0.1 A de la fuente en Iin (±1–3 % de η).
-- **Potencia.** La simulación supone 8.4 A de salida en todas las esquinas. En el banco, la placa entregó 198.7 W en boost (18 → 25 V), del orden de los 210 W simulados en 22.2 → 25 V, y sostuvo 59.5 W durante 10 min (9 → 12 V) con el MOSFET más caliente a 71 °C.
-- **Térmico.** El modelo LTspice no incluye temperatura. En el banco, el punto caliente está en los MOSFET del lado de VOUT (Q3/Q4), como se ve en las [fotos térmicas](Hardware-Potencia/pruebas_carga/fotos_termicas/).
+| Regulación de VOUT | ±0.01 % | Cae entre 0.1 % y 2 % a plena carga | La medición incluye los conectores y el cableado de salida, que el modelo no tiene |
+| Eficiencia | 87.2 a 95.7 % | 82.4 a 92.3 % | Pérdidas en los cables de entrada (hasta 7.6 A de Iin) y resolución de 0.1 A de la fuente en Iin (±1 a 3 % de η). En las esquinas de 7.2 V pesa más la pérdida fija de conmutación |
+| Potencia | 60.5 a 210 W, con 8.4 A de salida | Hasta 198.7 W en 18 → 25 V | En el banco la carga se subió por escalones hasta el punto de mayor potencia de cada prueba |
+| Temperatura | No se modela | 71 °C tras 10 min a 59.5 W; punto caliente en los MOSFET Q3/Q4 del lado de VOUT | El modelo LTspice no incluye comportamiento térmico ([fotos térmicas](Hardware-Potencia/pruebas_carga/fotos_termicas/)) |
 
 
 ## Documentación
@@ -248,6 +273,7 @@ Las pruebas de carga de la Placa 2 (24-nov, carga Rigol DL3021, fuente EA PS 100
 | BOM de la placa de control (JLCPCB, carrito del 23-sep-2026) | [`Hardware/BOM-ORCA-BOARD-control.csv`](Hardware/BOM-ORCA-BOARD-control.csv) |
 | BOM de la placa de potencia | [`Hardware-Potencia/jlcpcb/production_files/BOM-ORCA-BOARD.csv`](Hardware-Potencia/jlcpcb/production_files/BOM-ORCA-BOARD.csv) |
 | Pruebas de carga de la placa de potencia | [`Hardware-Potencia/pruebas_carga/registro.md`](Hardware-Potencia/pruebas_carga/registro.md) |
+| Manual de usuario (guía de inicio rápido y de seguridad) | [`docs/manual/ORCA-Board_Manual_de_usuario.pdf`](docs/manual/ORCA-Board_Manual_de_usuario.pdf) |
 | Ejemplos de uso | [`examples/README.md`](examples/README.md) |
 | Hojas de datos | [`Datasheets/`](Datasheets/) |
 | Esquemático y layout de potencia | [`Prints/`](Prints/) |

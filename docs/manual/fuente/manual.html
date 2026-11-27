@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>ORCA-Board Rev A · Guía de inicio rápido y de seguridad</title>
+<style>
+@font-face { font-family: Rubik; src: url(fonts/Rubik-VF.ttf); font-weight: 300 900; }
+@font-face { font-family: Rubik; src: url(fonts/Rubik-Italic-VF.ttf); font-weight: 300 900; font-style: italic; }
+@font-face { font-family: Plex; src: url(fonts/IBMPlexMono-Regular.ttf); font-weight: 400; }
+@font-face { font-family: Plex; src: url(fonts/IBMPlexMono-Medium.ttf); font-weight: 500; }
+@page { size: 280mm 180mm; margin: 0; }
+:root { --acc: #1FB57A; --acc-d: #128a5b; --ink: #121212; --mute: #5c615f; --soft: #f3f6f4; --warn: #E8641B; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { font-family: Rubik, "Segoe UI", sans-serif; color: var(--ink); font-weight: 400; font-size: 8.6pt; line-height: 1.38; }
+.page { width: 280mm; height: 180mm; position: relative; overflow: hidden; page-break-after: always; background: #fff; padding: 13mm 16mm 14mm 19mm; }
+.page:last-child { page-break-after: auto; }
+h1 { font-weight: 700; color: var(--acc); font-size: 33pt; line-height: 1; margin: 0; letter-spacing: -0.4pt; }
+.model { font-weight: 500; font-size: 13pt; margin: 2mm 0 0; }
+h2 { font-weight: 500; font-size: 13.5pt; margin: 0 0 2.2mm; line-height: 1.15; }
+h3 { font-weight: 700; font-size: 8.8pt; margin: 3mm 0 0.6mm; }
+p { margin: 0 0 1.8mm; }
+b, strong { font-weight: 600; }
+.tab { position: absolute; left: -9mm; top: 26mm; width: 19mm; height: 19mm; border: 0.5mm solid var(--acc); border-radius: 50%; background: #fff; }
+.tab span { position: absolute; right: 3.2mm; top: 5.2mm; font-weight: 600; font-size: 12.5pt; }
+.tabr { position: absolute; right: -10mm; top: 26mm; width: 19mm; height: 19mm; border: 0.5mm solid var(--acc); border-radius: 50%; }
+.foot { position: absolute; left: 19mm; bottom: 7mm; font-family: Plex; font-size: 7.6pt; color: #333; letter-spacing: .2pt; }
+.foot i { font-style: normal; display: inline-block; width: 13mm; }
+.cols { display: grid; grid-template-columns: 1fr 1fr; column-gap: 14mm; margin-top: 4mm; height: 132mm; }
+.col { position: relative; }
+.mono { font-family: Plex; }
+code, .code { font-family: Plex; font-size: 7.4pt; }
+.code { background: #0f1512; color: #d8f5e7; border-radius: 2.2mm; padding: 2.6mm 3.2mm; white-space: pre; line-height: 1.5; margin: 1.5mm 0 2.4mm; }
+.code .c { color: #6fbf98; }
+.code .p { color: var(--acc); }
+code { background: var(--soft); padding: 0 1mm; border-radius: 0.8mm; }
+.hl-g { background: linear-gradient(transparent 62%, #b6efd5 62%); }
+.hl-y { background: linear-gradient(transparent 62%, #fff27a 62%); }
+.hl-p { background: linear-gradient(transparent 62%, #f2b8f0 62%); }
+table { border-collapse: collapse; width: 100%; font-size: 7.9pt; }
+td, th { text-align: left; padding: 1.05mm 1.6mm; vertical-align: top; border-bottom: 0.25mm solid #e3e7e5; }
+th { font-weight: 600; font-size: 7.4pt; color: var(--mute); text-transform: uppercase; letter-spacing: .4pt; border-bottom: 0.4mm solid var(--ink); }
+.num { display: inline-flex; width: 4.6mm; height: 4.6mm; border-radius: 50%; background: var(--acc); color: #fff; font-weight: 700; font-size: 7pt; align-items: center; justify-content: center; margin-right: 1.2mm; }
+.warn { display: flex; gap: 3mm; align-items: center; color: var(--warn); font-weight: 600; font-size: 11.5pt; line-height: 1.2; margin: 1mm 0 3mm; }
+.note { background: var(--soft); border-radius: 2mm; padding: 3mm 3.5mm; display: flex; gap: 3mm; align-items: center; font-size: 7.6pt; }
+.toast { display: inline-flex; align-items: center; gap: 3mm; background: #117c3d; color: #fff; border-radius: 7mm; padding: 1.8mm 6mm 1.8mm 2mm; font-size: 8pt; line-height: 1.25; }
+.toast .ic { width: 9mm; height: 9mm; border-radius: 50%; background: #0b5a2b; display: flex; align-items: center; justify-content: center; }
+.dot { display: inline-block; width: 2.6mm; height: 2.6mm; border-radius: 50%; margin-right: 1.4mm; vertical-align: -0.3mm; }
+.cap { font-size: 6.8pt; color: var(--mute); margin-top: 1mm; }
+.fig { position: absolute; font-weight: 600; font-size: 7.4pt; white-space: nowrap; }
+.big { font-size: 14pt; font-weight: 600; color: var(--acc); }
+.pill { display: inline-block; border: 0.3mm solid var(--ink); border-radius: 3mm; padding: 0.2mm 2mm; font-size: 7pt; font-weight: 500; margin: 0 1mm 1mm 0; }
+.kpi { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2.5mm; margin: 2mm 0 3mm; }
+.kpi div { border-top: 0.6mm solid var(--acc); padding-top: 1.4mm; }
+.kpi b { display: block; font-size: 13pt; font-weight: 600; line-height: 1.05; }
+.kpi span { font-size: 6.8pt; color: var(--mute); }
+.req p { margin: 0 0 1.1mm; }
+.req h3 { margin-top: 2.2mm; }
+</style>
+</head>
+<body>
+
+<!-- ============================== PORTADA ============================== -->
+<section class="page" style="padding: 22mm 16mm 14mm 22mm;">
+  <div class="tabr" style="top: 30mm;"></div>
+  <div style="font-weight:700; font-size: 47pt; line-height: .95; letter-spacing: -1pt;">ORCA-Board</div>
+  <div style="display:flex; align-items:center; gap: 4mm; margin-top: 2.5mm;">
+    <span style="background:#111; color:#fff; font-weight:600; font-size: 25pt; padding: 0 3.5mm; line-height: 1.25;">REV A</span>
+    <span style="font-weight:500; font-size: 15pt;">Control robótico</span>
+  </div>
+  <div style="display:flex; align-items:stretch; gap: 4mm; margin-top: 5mm; font-size: 12.5pt;">
+    <span style="font-weight:500;">+ micro-ROS</span>
+    <span style="border-left: 0.4mm solid #111;"></span>
+    <span style="font-size: 10.5pt; line-height: 1.25;">ESP32-S3 &nbsp;ROS 2 Jazzy<br>LiPo 2S–6S</span>
+  </div>
+  <div style="margin-top: 14mm; font-size: 12.5pt; line-height: 1.45;">
+    Guía de inicio rápido y de seguridad<br>Quick Start &amp; Safety Guide
+  </div>
+  <div style="position:absolute; left: 22mm; bottom: 15mm; display:flex; align-items:flex-end; gap: 7mm;">
+    <img src="img/qr_repo.svg" style="width: 27mm; height: 27mm;">
+    <div style="font-size: 7.4pt; line-height: 1.35;">Para más información, escanee el código QR.<br>For more information scan the QR code.<br><span class="mono">github.com/fgutep/ORCA-Board</span></div>
+  </div>
+  <img src="img/pot_line_iso.svg" style="position:absolute; right: 16mm; top: 15mm; width: 103mm;">
+  <img src="img/ctrl_line_iso.svg" style="position:absolute; right: 40mm; top: 60mm; width: 138mm;">
+</section>
+
+<!-- ============================== 01 INFORMACION BASICA ============================== -->
+<section class="page">
+  <div class="tab"><span>ES</span></div><div class="tabr"></div>
+  <h1>Información básica</h1>
+  <div class="model">ORCA-Board Rev A</div>
+  <div class="cols">
+    <div class="col">
+      <img src="img/ctrl_color_iso.svg" style="width: 84%; margin: -2mm 0 0 6mm;">
+      <div style="display:flex; gap: 4mm; align-items:center; margin-top: -6mm;">
+        <img src="img/pot_color_iso.svg" style="width: 42%;">
+        <div class="cap" style="font-size:7.4pt;">Arriba: <b>placa de control</b> (85 × 72 mm, 4 capas).<br>Izquierda: <b>placa de potencia</b> (77.5 × 52 mm, 4 capas).<br>Ambas vistas se generaron directamente de los gerbers de fabricación.</div>
+      </div>
+      <h2 style="margin-top: 1mm;">Tecnología</h2>
+      <p>El corazón de la placa de control es un <b>ESP32-S3</b> de doble núcleo que corre el nodo <code>/orca_board</code> de micro-ROS. Un solo nodo publica la IMU, el estado de la batería y el diagnóstico, y recibe los comandos de motores, servos y CAN.</p>
+      <p>La placa de potencia usa un controlador buck-boost de cuatro interruptores <b>LM5175</b>: entrega un riel de motores estable aunque la batería esté por encima o por debajo del voltaje pedido.</p>
+    </div>
+    <div class="col">
+      <h2>Información básica del sistema ORCA</h2>
+      <p>ORCA-Board (<i>Open Robotics Control Architecture</i>) es una plataforma de control abierta para robots móviles: integra potencia, actuación y sensado en un nodo nativo de ROS 2. Está hecha para laboratorios y equipos que quieren pasar de la idea al robot que se mueve sin rediseñar la electrónica cada vez.</p>
+      <h3>Capacidades especiales</h3>
+      <p><b>Entrada versátil:</b> baterías LiPo de 2S a 6S. La placa de control se verificó con VBUS de 8 a 22 V y la de potencia regula con entradas de 6 a 25.2 V.</p>
+      <p><b>Riel de motores ajustable:</b> de 6.8 a 25 V con el trimmer RV1, hasta <b>198.7 W</b> medidos en banco y eficiencia de hasta <b>92.3 %</b>.</p>
+      <p><b>Seguridad por diseño:</b> la placa arranca con los motores libres y los servos sin torque, y se detiene sola si deja de recibir comandos.</p>
+      <h2 style="margin-top: 4mm;">Funciones principales</h2>
+      <table>
+        <tr><td style="width: 31mm;"><b>Actuación</b></td><td>2 motores DC (DRV8874, ≈ 3 A por canal) y 16 canales PWM de servo (PCA9685), 5 de ellos en conectores</td></tr>
+        <tr><td><b>Sensado</b></td><td>IMU BNO085 con fusión en el chip, voltaje de batería (INA226) y corriente de motores (ACS725)</td></tr>
+        <tr><td><b>Comunicación</b></td><td>micro-ROS por USB-C o Wi-Fi, bus CAN (J2) y UART auxiliar (J5)</td></tr>
+        <tr><td><b>Expansión</b></td><td>4 puertos I²C a través de un multiplexor TCA9548A, para encoders y sensores externos</td></tr>
+        <tr><td><b>Configuración</b></td><td>20 parámetros ROS 2 que se guardan en la flash y sobreviven a los reinicios</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="foot"><i>01</i>Para más información consulta el repositorio de GitHub</div>
+</section>
+
+<!-- ============================== 02 SEGURIDAD ============================== -->
+<section class="page">
+  <div class="tab"><span>ES</span></div><div class="tabr"></div>
+  <h1>Instrucciones de seguridad</h1>
+  <div class="model">ORCA-Board Rev A</div>
+  <div class="cols">
+    <div class="col">
+      <div style="position: relative;">
+        <img src="img/pot_hot.svg" style="width: 88%; display:block; margin: 0 auto;">
+        <div class="cap" style="text-align:center;">Placa de potencia vista desde los gerbers. En rojo, la zona de mayor temperatura: los MOSFET Q3/Q4 del lado de VOUT.</div>
+      </div>
+      <h2 style="margin-top: 4mm;">Precauciones con la batería LiPo</h2>
+      <p>ORCA funciona con baterías de polímero de litio de 2S a 6S, que requieren un manejo cuidadoso. Las baterías LiPo pueden incendiarse o causar quemaduras si se perforan, se sobrecargan o se descargan en exceso. Cárguelas siempre con un cargador balanceador, sobre una superficie a prueba de fuego y bajo supervisión.</p>
+      <p>Configure el umbral de aviso <code>power.vbus_low_v</code> según el número de celdas de su batería. Cuando <code>/diagnostics</code> marque <b>WARN</b> en <code>power</code>, detenga el robot y recargue.</p>
+    </div>
+    <div class="col">
+      <h2>Advertencias importantes</h2>
+      <div class="warn">
+        <svg width="12mm" height="11mm" viewBox="0 0 24 22"><path d="M12 1.5 L23 20.5 H1 Z" fill="none" stroke="#E8641B" stroke-width="2" stroke-linejoin="round"/><rect x="11" y="7.5" width="2" height="7" rx="1" fill="#E8641B"/><circle cx="12" cy="17.4" r="1.2" fill="#E8641B"/></svg>
+        <span>Desconecte la batería antes de conectar o retirar motores, servos o cables de alimentación.</span>
+      </div>
+      <p><b>Conectores polarizados.</b> Las entradas de batería y de motores usan <b>XT60</b>, que solo entran en una posición. Use cables XT60 con la polaridad correcta (rojo = +) y nunca fuerce un conector.</p>
+      <p><b>Temperatura de la placa de potencia.</b> La placa sostuvo <b>59.5 W durante 10 minutos</b> con el punto más caliente a 71 °C, sin disipador. Para potencias mayores, use flujo de aire, limite la operación a periodos cortos y no toque Q3/Q4 durante ni justo después de la operación.</p>
+      <p><b>Relación de voltajes.</b> Ajuste VOUT con la placa sin carga. Para cargas de más de 50 W, prefiera un VIN claramente distinto de VOUT, por encima o por debajo.</p>
+      <p><b>Corriente de los motores.</b> Cada DRV8874 limita a ≈ 3 A por su cuenta y el firmware corta todo con un HALT si la corriente promedio de VM supera <code>motor.i_limit_a</code> (2 A de fábrica). Para operación continua, mantenga cada motor por debajo de 1.5 A.</p>
+      <p><b>Uso supervisado.</b> No deje el robot energizado sin supervisión. Tenga a mano la parada de emergencia: <code>/orca/estop true</code> deja los motores libres y los servos sin torque.</p>
+      <div class="note" style="margin-top: 3mm;">
+        <svg width="12mm" height="12mm" viewBox="0 0 24 24" style="flex:none"><g fill="none" stroke="#121212" stroke-width="1.7" stroke-linejoin="round"><path d="M9 3.5 L12 2 L15 3.5 L17.5 8"/><path d="M19.5 11 L22 15.5 L20.5 18.5 L15.5 19"/><path d="M11 21 L6 21 L3.5 18 L6 13"/><path d="M15.5 6.5 L17.5 8 L18.4 5.6"/><path d="M17.6 20.6 L15.5 19 L17.5 17.4"/><path d="M4.3 13.9 L6 13 L6.9 15.3"/></g></svg>
+        <span>ORCA es hardware abierto: esquemáticos, gerbers y firmware están en el repositorio con licencia MIT. Al final de su vida útil, deseche las placas y las baterías LiPo en puntos de reciclaje autorizados de residuos electrónicos.</span>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><i>02</i>Para más información consulta el repositorio de GitHub</div>
+</section>
+
+<!-- ============================== 03 CONEXIONES PLACA DE CONTROL ============================== -->
+<section class="page">
+  <div class="tab"><span>ES</span></div><div class="tabr"></div>
+  <h1>Conexiones de la placa de control</h1>
+  <div class="model">ORCA-Board Rev A</div>
+  <div class="cols" style="grid-template-columns: 0.92fr 1.08fr;">
+    <div class="col">
+      <img src="img/ctrl_line_top.svg" style="height: 128mm; display:block; margin: -1mm auto 0;">
+    </div>
+    <div class="col">
+      <h2>Mapa de conectores</h2>
+      <p>El dibujo de la izquierda sale de las capas de cobre, máscara, serigrafía y taladros de los gerbers de fabricación, en la misma orientación de la placa ensamblada.</p>
+      <table>
+        <tr><th style="width: 33mm;">Conector</th><th>Función</th></tr>
+        <tr><td><span class="num">1</span>J19 · XT60</td><td><b>VBUS</b>: batería LiPo 2S–6S. Alimenta la lógica, los servos (5 V) y el monitor INA226</td></tr>
+        <tr><td><span class="num">2</span>J20 · XT60</td><td><b>VM</b>: riel de motores, normalmente desde VOUT de la placa de potencia</td></tr>
+        <tr><td><span class="num">3</span>J1 · USB-C</td><td>Programación y transporte micro-ROS. Se puede usar junto con VBUS sin riesgo</td></tr>
+        <tr><td><span class="num">4</span>J3 · bornera</td><td>Motor <b>M1</b> (rueda izquierda por defecto)</td></tr>
+        <tr><td><span class="num">5</span>J4 · bornera</td><td>Motor <b>M2</b></td></tr>
+        <tr><td><span class="num">6</span>J6–J10</td><td>Servos: canales 0 a 4 del PCA9685 (GND, 5 V, PWM)</td></tr>
+        <tr><td><span class="num">7</span>J14–J17 · JST EH</td><td>I²C externo por el mux TCA9548A: J14/J15 a 5 V, J16/J17 a 3.3 V. Encoders y sensores</td></tr>
+        <tr><td><span class="num">8</span>J5 · JST EH</td><td>UART 1 hacia un computador auxiliar (IO47/IO48)</td></tr>
+        <tr><td><span class="num">9</span>J2 · JST ZH</td><td>Bus CAN (CANH, CANL), terminación de 120 Ω en la placa</td></tr>
+        <tr><td><span class="num">10</span>U2</td><td>ESP32-S3. <b>No cubra la antena</b> del borde con metal ni cables</td></tr>
+        <tr><td><span class="num">11</span>U1</td><td>IMU BNO085. Monte la placa rígida y plana: los ejes de la IMU son los de la placa</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="foot"><i>03</i>Para más información consulta el repositorio de GitHub</div>
+</section>
+
+<!-- ============================== 04 PLACA DE POTENCIA ============================== -->
+<section class="page">
+  <div class="tab"><span>ES</span></div><div class="tabr"></div>
+  <h1>Placa de potencia</h1>
+  <div class="model">ORCA-Board Rev A · LM5175</div>
+  <div class="cols">
+    <div class="col">
+      <img src="img/pot_line_top.svg" style="width: 100%; margin-top: -2mm;">
+      <table style="margin-top: 1mm;">
+        <tr><td style="width:36mm;"><span class="num">1</span>J1 · XT60</td><td><b>VIN</b>: batería, 6 a 25.2 V</td></tr>
+        <tr><td><span class="num">2</span>J2 · XT60</td><td><b>VOUT</b>: hacia J20 (VM) de la placa de control</td></tr>
+        <tr><td><span class="num">3</span>RV1</td><td>Trimmer multivuelta (25 vueltas) para ajustar VOUT</td></tr>
+        <tr><td><span class="num">4</span>U1 · LM5175</td><td>Controlador buck-boost de cuatro interruptores</td></tr>
+        <tr><td><span class="num">5</span>Q1–Q4</td><td>MOSFET BUK9Y3R5-40E (Q3/Q4: lado de VOUT)</td></tr>
+        <tr><td><span class="num">6</span>L1</td><td>Inductor de potencia</td></tr>
+      </table>
+    </div>
+    <div class="col">
+      <h2>Ajuste del voltaje de salida</h2>
+      <p>VOUT lo fija el divisor de realimentación con el trimmer RV1. <b>Girar RV1 hacia más resistencia baja el voltaje</b>; hacia menos resistencia, lo sube.</p>
+      <div class="code"><span class="c">VOUT = 0.8 V × (1 + 49.9 kΩ / (1.65 kΩ + RV1))</span>
+RV1 = 5 kΩ  →  VOUT ≈  6.8 V   <span class="c">(mínimo)</span>
+RV1 = 0 Ω   →  VOUT ≈ 25.0 V   <span class="c">(máximo)</span></div>
+      <h3>Procedimiento</h3>
+      <p><span class="num">1</span>Sin carga conectada en J2, deje RV1 en máxima resistencia (≈ 6.8 V).</p>
+      <p><span class="num">2</span>Energice J1 y mida VOUT en J2 con un multímetro.</p>
+      <p><span class="num">3</span>Gire RV1 por pasos hasta el voltaje nominal de sus motores (por ejemplo, 12 V).</p>
+      <p><span class="num">4</span>Desenergice, conecte J2 a J20 de la placa de control y vuelva a energizar.</p>
+      <h3 style="margin-top: 3mm;">Desempeño medido en banco</h3>
+      <div class="kpi">
+        <div><b>198.7 W</b><span>potencia máxima (18 → 25 V)</span></div>
+        <div><b>92.3 %</b><span>eficiencia máxima (12 → 12 V, 30 W)</span></div>
+        <div><b>91.2 %</b><span>eficiencia a 124.8 W</span></div>
+        <div><b>10 min</b><span>a 59.5 W, máx. 71 °C</span></div>
+      </div>
+      <table>
+        <tr><th>Esquina de diseño</th><th>Modo</th><th>Medido</th></tr>
+        <tr><td>6 → 7.2 V</td><td>boost</td><td>28.4 W · η 85.9 %</td></tr>
+        <tr><td>12 → 12 V</td><td>transición</td><td>54 W · η 90.5–91.6 %</td></tr>
+        <tr><td>22.2 → 25 V</td><td>boost</td><td>68.7 W · η 91.1 %</td></tr>
+        <tr><td>25.2 → 7.2 V</td><td>buck</td><td>35.3 W · η 82.4 %</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="foot"><i>04</i>Para más información consulta el repositorio de GitHub</div>
+</section>
+
+<!-- ============================== 05 INICIO DE OPERACION ============================== -->
+<section class="page">
+  <div class="tab"><span>ES</span></div><div class="tabr"></div>
+  <h1>Inicio de operación</h1>
+  <div class="model">ORCA-Board Rev A</div>
+  <div class="cols" style="grid-template-columns: 1.05fr 0.95fr;">
+    <div class="col">
+      <svg viewBox="0 0 200 118" style="width: 100%; font-family: Rubik;">
+        <defs><marker id="ar" viewBox="0 0 6 6" refX="5" refY="3" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#121212"/></marker></defs>
+        <!-- bateria -->
+        <rect x="4" y="44" width="34" height="30" rx="3" fill="#fff" stroke="#121212" stroke-width="0.8"/>
+        <rect x="38" y="53" width="3" height="12" rx="1" fill="#121212"/>
+        <text x="21" y="57" text-anchor="middle" font-size="6" font-weight="700">LiPo</text>
+        <text x="21" y="65" text-anchor="middle" font-size="4.6">2S – 6S</text>
+        <!-- potencia -->
+        <image href="img/pot_line_plain.svg" x="62" y="2" width="56" height="40"/>
+        <text x="90" y="46" text-anchor="middle" font-size="4.6" font-weight="600">Placa de potencia</text>
+        <!-- control -->
+        <image href="img/ctrl_line_plain.svg" x="132" y="34" width="62" height="72"/>
+        <text x="163" y="112" text-anchor="middle" font-size="4.6" font-weight="600">Placa de control</text>
+        <!-- PC -->
+        <rect x="64" y="84" width="40" height="24" rx="2" fill="#fff" stroke="#121212" stroke-width="0.8"/>
+        <rect x="58" y="108" width="52" height="3" rx="1" fill="#121212"/>
+        <text x="84" y="94" text-anchor="middle" font-size="4.6" font-weight="700">PC · ROS 2</text>
+        <text x="84" y="101" text-anchor="middle" font-size="3.8">micro_ros_agent</text>
+        <!-- cables -->
+        <path d="M41 56 C 50 56, 52 26, 64 24" fill="none" stroke="#121212" stroke-width="0.9" marker-end="url(#ar)"/>
+        <text x="40" y="30" font-size="3.8" fill="#5c615f">J1 VIN</text>
+        <path d="M117 22 C 140 22, 150 30, 160 44" fill="none" stroke="#1FB57A" stroke-width="1.4" marker-end="url(#ar)"/>
+        <text x="132" y="18" font-size="3.8" fill="#128a5b" font-weight="600">J2 VOUT → J20 VM</text>
+        <path d="M41 62 C 70 62, 100 66, 140 50" fill="none" stroke="#121212" stroke-width="0.9" marker-end="url(#ar)"/>
+        <text x="88" y="60" font-size="3.8" fill="#5c615f">J19 VBUS</text>
+        <path d="M104 96 C 125 96, 150 100, 160 100" fill="none" stroke="#121212" stroke-width="0.9" stroke-dasharray="2 1.4" marker-end="url(#ar)"/>
+        <text x="113" y="92" font-size="3.8" fill="#5c615f">USB-C o Wi-Fi</text>
+      </svg>
+      <div class="cap">Conexión típica: la batería alimenta la lógica por J19 y, a través de la placa de potencia, el riel de motores por J20.</div>
+    </div>
+    <div class="col">
+      <h2>Encendido</h2>
+      <p><span class="num">1</span>Ajuste VOUT de la placa de potencia al voltaje de sus motores (página 04).</p>
+      <p><span class="num">2</span>Conecte los motores a J3/J4 y los servos a J6–J10 con la batería <b>desconectada</b>.</p>
+      <p><span class="num">3</span>Una J2 (VOUT) de la placa de potencia con J20 (VM) de la placa de control.</p>
+      <p><span class="num">4</span>Conecte la batería a J19 de la placa de control y a J1 de la placa de potencia.</p>
+      <p><span class="num">5</span>Inicie el agente micro-ROS en el PC (página 06). La placa lo encuentra sola en menos de un segundo.</p>
+      <p>Al arrancar, la placa entra en <b>modo seguro</b>: drivers dormidos, motores libres y servos sin torque. Nada se mueve hasta recibir el primer comando.</p>
+      <h2 style="margin-top: 3.5mm;">Apagado</h2>
+      <p>Publique <code>/orca/estop true</code> o deje de enviar comandos (los motores paran en 0.5 s) y luego desconecte la batería.</p>
+      <h2 style="margin-top: 3.5mm;">Indicadores de estado</h2>
+      <p>El estado de la placa se lee en <code>/diagnostics</code>, una vez por segundo, en seis grupos: <i>power, motors, servos, imu, system</i> y <i>can</i>.</p>
+      <table>
+        <tr><td style="width: 22mm;"><span class="dot" style="background:#1FB57A"></span><b>OK</b></td><td>Funcionamiento normal</td></tr>
+        <tr><td><span class="dot" style="background:#F2B705"></span><b>WARN</b></td><td>Atención: VBUS bajo, CAN sin respuesta de otro nodo, autoprueba activa</td></tr>
+        <tr><td><span class="dot" style="background:#E5392F"></span><b>ERROR</b></td><td>HALT por sobrecorriente o parada, o un periférico (INA226, PCA9685, BNO085) que no responde</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="foot"><i>05</i>Para más información consulta el repositorio de GitHub</div>
+</section>
+
+<!-- ============================== 06 CONEXION CON ROS 2 ============================== -->
+<section class="page">
+  <div class="tab"><span>ES</span></div><div class="tabr"></div>
+  <h1>Conexión con ROS 2</h1>
+  <div class="model">ORCA-Board Rev A · micro-ROS</div>
+  <div class="cols">
+    <div class="col">
+      <svg viewBox="0 0 200 74" style="width:100%; font-family: Rubik; margin-top: 1mm;">
+        <defs><marker id="a2" viewBox="0 0 6 6" refX="3" refY="3" markerWidth="4.5" markerHeight="4.5" orient="auto-start-reverse"><path d="M0,0 L6,3 L0,6 z" fill="#121212"/></marker></defs>
+        <rect x="2" y="8" width="56" height="58" rx="4" fill="#f3f6f4"/>
+        <text x="30" y="19" text-anchor="middle" font-size="5.4" font-weight="700">PC · ROS 2 Jazzy</text>
+        <text x="30" y="29" text-anchor="middle" font-size="4.2">ros2 CLI · rqt</text>
+        <text x="30" y="36" text-anchor="middle" font-size="4.2">teleop · nav2</text>
+        <rect x="8" y="44" width="44" height="15" rx="2" fill="#121212"/>
+        <text x="30" y="53.5" text-anchor="middle" font-size="4.2" fill="#fff" font-family="Plex">micro_ros_agent</text>
+        <line x1="62" y1="51" x2="128" y2="51" stroke="#121212" stroke-width="0.9" marker-start="url(#a2)" marker-end="url(#a2)"/>
+        <text x="95" y="46" text-anchor="middle" font-size="4.2" font-weight="600">XRCE-DDS</text>
+        <text x="95" y="58" text-anchor="middle" font-size="3.8" fill="#5c615f">USB-CDC  o  UDP por Wi-Fi</text>
+        <image href="img/ctrl_line_plain.svg" x="132" y="2" width="64" height="70"/>
+        <rect x="138" y="30" width="52" height="11" rx="5.5" fill="#1FB57A"/>
+        <text x="164" y="37.3" text-anchor="middle" font-size="4.6" fill="#fff" font-weight="700" font-family="Plex">/orca_board</text>
+      </svg>
+      <p style="margin-top: 2mm;">El ESP32 no habla DDS directamente: habla <b>XRCE-DDS</b> con el agente, que crea en su nombre las entidades que ven los demás nodos. Si el agente se reinicia, la placa vuelve a conectarse sola, sin reiniciarse.</p>
+      <h2 style="margin-top: 3mm;">Modo USB</h2>
+      <div class="code"><span class="p">$</span> ./agent.sh                     <span class="c"># agente en Docker</span>
+<span class="p">$</span> source /opt/ros/jazzy/setup.bash
+<span class="p">$</span> ros2 node list                 <span class="c"># → /orca_board</span></div>
+    </div>
+    <div class="col">
+      <h2>Modo Wi-Fi</h2>
+      <p>La red y la IP del PC se graban en el firmware al compilar el entorno <code>orca_wifi</code>. El PC y la placa deben estar en la misma red y sin aislamiento de clientes (un router propio o el hotspot del PC funcionan bien).</p>
+      <div class="code"><span class="p">$</span> ORCA_WIFI_SSID="MiRed" ORCA_WIFI_PASS="clave" \
+  ORCA_AGENT_IP=192.168.1.50 pio run -e orca_wifi -t upload
+<span class="p">$</span> ./agent.sh udp                 <span class="c"># puerto UDP 8888</span></div>
+      <h2 style="margin-top: 3mm;">Control del robot</h2>
+      <p>Si ya manejaste una tortuga en <code>turtlesim</code>, mover tu robot será igual de fácil. El primer recorrido se hace desde el teclado:</p>
+      <p><span class="hl-y"><b>/cmd_vel</b></span>: tracción diferencial. Con <code>teleop_twist_keyboard</code> el robot avanza y gira con las teclas.</p>
+      <p><span class="hl-p"><b>/motor_cmd</b></span>: duty directo de M1 y M2, en %, para su propio controlador.</p>
+      <p><span class="hl-g"><b>/servo_cmd</b></span>: ángulo en grados de cada canal de servo; <code>NaN</code> = sin torque.</p>
+      <div class="code"><span class="p">$</span> ros2 run teleop_twist_keyboard teleop_twist_keyboard</div>
+      <div class="toast" style="margin-top: 2mm;">
+        <span class="ic"><svg width="5.5mm" height="5.5mm" viewBox="0 0 24 24"><path d="M7 3h10v4a5 5 0 0 1-10 0z M5 4H3v2a4 4 0 0 0 4 4 M19 4h2v2a4 4 0 0 1-4 4 M12 12v5 M8 21h8 M9 17h6v4H9z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+        <span><b>100 · Logro desbloqueado</b><br>/orca_board apareció en ros2 node list</span>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><i>06</i>Para más información consulta el repositorio de GitHub</div>
+</section>
+
+<!-- ============================== 07 TOPICOS Y MONITOREO ============================== -->
+<section class="page">
+  <div class="tab"><span>ES</span></div><div class="tabr"></div>
+  <h1>Tópicos y monitoreo</h1>
+  <div class="model">ORCA-Board Rev A · nodo /orca_board</div>
+  <div class="cols" style="grid-template-columns: 1fr 1fr;">
+    <div class="col">
+      <h2>Interfaz ROS 2</h2>
+      <p>Con <code>ros2 topic</code>, <code>rqt</code> o sus propios nodos puede monitorear y analizar en tiempo real el estado del robot. Todos los nombres aceptan un <i>namespace</i> (por ejemplo <code>/robot1/imu</code>) para manejar varias placas.</p>
+      <table>
+        <tr><th>Tópico</th><th>Dir.</th><th>Frecuencia</th><th>Contenido</th></tr>
+        <tr><td class="mono">/imu</td><td>pub</td><td>50 Hz*</td><td>Orientación, velocidad angular y aceleración (BNO085)</td></tr>
+        <tr><td class="mono">/battery_state</td><td>pub</td><td>2 Hz</td><td>VBUS y corriente de motores</td></tr>
+        <tr><td class="mono">/diagnostics</td><td>pub</td><td>1 Hz</td><td>Seis estados de la placa</td></tr>
+        <tr><td class="mono">/can_rx</td><td>pub</td><td>según el bus</td><td>Tramas recibidas por J2</td></tr>
+        <tr><td class="mono">/cmd_vel</td><td>sub</td><td>≥ 5 Hz</td><td>Tracción diferencial en lazo abierto</td></tr>
+        <tr><td class="mono">/motor_cmd</td><td>sub</td><td>≥ 5 Hz</td><td>Duty de M1 y M2 (−100 a 100 %)</td></tr>
+        <tr><td class="mono">/servo_cmd</td><td>sub</td><td>libre</td><td>Ángulo de los 16 canales del PCA9685</td></tr>
+        <tr><td class="mono">/orca/estop</td><td>sub</td><td>libre</td><td>Parada enclavada</td></tr>
+        <tr><td class="mono">/can_tx</td><td>sub</td><td>libre</td><td>Tramas a transmitir por J2</td></tr>
+      </table>
+      <div class="cap">* Ajustable con <code>imu.rate_hz</code> (1 a 200 Hz). <code>/imu</code> es <i>best effort</i>: suscríbase con el perfil <i>sensor data</i>.</div>
+    </div>
+    <div class="col">
+      <div style="border: 0.3mm solid #d9dfdc; border-radius: 2mm; padding: 2mm; background:#fff;">
+        <img src="img/rqt_graph_sistema.png" style="width: 100%; display:block;">
+      </div>
+      <div class="cap">rqt_graph del nodo <code>/orca_board</code> junto con nodos de ejemplo del PC, sobre el firmware real.</div>
+      <h3 style="margin-top: 3mm;">Herramientas útiles</h3>
+      <div class="code"><span class="p">$</span> ros2 topic echo /diagnostics   <span class="c"># estado legible</span>
+<span class="p">$</span> ros2 topic hz /imu
+<span class="p">$</span> ros2 run rqt_graph rqt_graph    <span class="c"># grafo en vivo</span></div>
+      <p><b>Fusión de sensores:</b> <code>robot_localization</code> acepta <code>/imu</code> directamente. La orientación usa el <i>Game Rotation Vector</i> (sin magnetómetro): el yaw es relativo al arranque y no se altera con los motores cercanos.</p>
+    </div>
+  </div>
+  <div class="foot"><i>07</i>Para más información consulta el repositorio de GitHub</div>
+</section>
+
+<!-- ============================== 08 PARAMETROS Y SEGURIDAD DEL FIRMWARE ============================== -->
+<section class="page">
+  <div class="tab"><span>ES</span></div><div class="tabr"></div>
+  <h1>Configuración y protecciones</h1>
+  <div class="model">ORCA-Board Rev A · firmware 1.1.0</div>
+  <div class="cols">
+    <div class="col">
+      <h2>Parámetros de la placa</h2>
+      <p>Los 20 parámetros se cambian con <code>ros2 param</code> o <code>rqt_reconfigure</code>. Cada cambio se valida, se aplica al instante y <b>se guarda en la flash</b>.</p>
+      <table>
+        <tr><th>Parámetro</th><th>Fábrica</th><th>Para qué sirve</th></tr>
+        <tr><td class="mono">drive.wheel_separation</td><td>0.20 m</td><td>Distancia entre ruedas para <code>/cmd_vel</code></td></tr>
+        <tr><td class="mono">drive.max_wheel_speed</td><td>0.50 m/s</td><td>Velocidad de rueda a 100 % de duty</td></tr>
+        <tr><td class="mono">motor.max_duty</td><td>100 %</td><td>Recorte del duty; empiece bajo en un robot nuevo</td></tr>
+        <tr><td class="mono">motor.i_limit_a</td><td>2.0 A</td><td>Umbral de sobrecorriente de VM</td></tr>
+        <tr><td class="mono">motor.cmd_timeout_ms</td><td>500 ms</td><td>Tiempo del <i>deadman</i></td></tr>
+        <tr><td class="mono">servo.us_min / us_max</td><td>500 / 2400 µs</td><td>Pulso a 0° y a 180°</td></tr>
+        <tr><td class="mono">imu.rate_hz</td><td>50 Hz</td><td>Frecuencia de <code>/imu</code></td></tr>
+        <tr><td class="mono">can.bitrate</td><td>25 kbit/s</td><td>Velocidad del bus CAN</td></tr>
+        <tr><td class="mono">power.vbus_low_v</td><td>6.0 V</td><td>Umbral de aviso de batería baja</td></tr>
+      </table>
+      <div class="code" style="margin-top: 2.5mm;"><span class="p">$</span> ros2 param set /orca_board drive.wheel_separation 0.235
+<span class="p">$</span> ros2 param dump /orca_board > config/mi_robot.yaml
+<span class="p">$</span> ros2 param load /orca_board config/defaults.yaml  <span class="c"># fábrica</span></div>
+    </div>
+    <div class="col">
+      <h2>Protecciones integradas</h2>
+      <table>
+        <tr><th style="width: 46mm;">Situación</th><th>Reacción de la placa</th></tr>
+        <tr><td>Arranque</td><td>Motores libres y servos sin torque hasta el primer comando</td></tr>
+        <tr><td>Sin comandos por 500 ms</td><td>Consigna a 0 con rampa; luego los drivers se duermen</td></tr>
+        <tr><td>Se pierde el agente</td><td>Motores libres de inmediato; servos sueltos si <code>servo.limp_on_disconnect</code></td></tr>
+        <tr><td><code>/orca/estop true</code></td><td><b>HALT enclavado</b>: se ignoran los comandos de movimiento</td></tr>
+        <tr><td>Sobrecorriente en VM</td><td>HALT enclavado; la tarea de corriente corta los drivers sin esperar al lazo principal</td></tr>
+        <tr><td>Firmware bloqueado &gt; 5 s</td><td>El watchdog reinicia la placa, que arranca en modo seguro</td></tr>
+      </table>
+      <h3 style="margin-top: 3.5mm;">Protecciones de hardware</h3>
+      <p><span class="pill">XT60 polarizados</span><span class="pill">TVS SMBJ5.0A en USB</span><span class="pill">ESD TPD4E001</span><span class="pill">OR de diodos SS54</span><span class="pill">ITRIP ≈ 3 A por driver</span><span class="pill">Límite ciclo a ciclo del LM5175</span><span class="pill">UVLO por EN</span></p>
+      <p>El OR de diodos permite tener la batería y el USB conectados a la vez: el USB no alimenta los servos y la batería no alimenta al PC.</p>
+    </div>
+  </div>
+  <div class="foot"><i>08</i>Para más información consulta el repositorio de GitHub</div>
+</section>
+
+<!-- ============================== 09 COMPONENTES Y REQUERIMIENTOS ============================== -->
+<section class="page">
+  <div class="tab"><span>ES</span></div><div class="tabr"></div>
+  <h1>Componentes e información de diseño</h1>
+  <div class="model">ORCA-Board Rev A</div>
+  <div class="cols" style="grid-template-columns: 0.9fr 1.1fr;">
+    <div class="col">
+      <div style="position:relative; width:87.7mm; height:116mm; margin-top:-1mm;"><img src="img/ctrl_stack.svg" style="width:100%; height:100%;"><div class="fig" style="left:85.6mm; top:22.7mm; "><span style="display:inline-block;width:5mm;border-top:0.3mm solid #121212;vertical-align:middle;margin-right:1mm"></span>Serigrafía</div><div class="fig" style="left:85.6mm; top:38.1mm; color: var(--acc-d);"><span style="display:inline-block;width:5mm;border-top:0.3mm solid #121212;vertical-align:middle;margin-right:1mm"></span>F.Cu · señales</div><div class="fig" style="left:85.6mm; top:53.5mm; "><span style="display:inline-block;width:5mm;border-top:0.3mm solid #121212;vertical-align:middle;margin-right:1mm"></span>In1.Cu · plano GND</div><div class="fig" style="left:85.6mm; top:68.9mm; color:#5d7286;"><span style="display:inline-block;width:5mm;border-top:0.3mm solid #121212;vertical-align:middle;margin-right:1mm"></span>In2.Cu · rieles</div><div class="fig" style="left:85.6mm; top:84.3mm; "><span style="display:inline-block;width:5mm;border-top:0.3mm solid #121212;vertical-align:middle;margin-right:1mm"></span>B.Cu · señales</div></div>
+      </div>
+    <div class="col req">
+      <h2>Cumplimiento de requerimientos</h2>
+      <p>La Rev A cumple el alcance definido por el equipo para una plataforma de control abierta. Resumen de los requerimientos y de su implementación:</p>
+      <h3>Potencia y actuación</h3>
+      <p><b>P1:</b> Entrada de batería 2S–6S por XT60, con VBUS verificado de 8 a 22 V.</p>
+      <p><b>P2:</b> Riel de motores regulado de 6.8 a 25 V por buck-boost LM5175, hasta 198.7 W.</p>
+      <p><b>P3:</b> Dos drivers DRV8874 con limitación de corriente, probados con motores N20 y Faulhaber.</p>
+      <p><b>P4:</b> Driver de servos PCA9685 de 16 canales, validado con un brazo de cuatro servos.</p>
+      <h3>Procesamiento y comunicaciones</h3>
+      <p><b>C1:</b> ESP32-S3 de doble núcleo con nodo nativo de ROS 2 (micro-ROS, Jazzy).</p>
+      <p><b>C2:</b> Transporte por USB-C o por Wi-Fi, validado en el robot SWARM.</p>
+      <p><b>C3:</b> Bus CAN (TWAI + SN65HVD230) y UART auxiliar para cómputo externo.</p>
+      <h3>Sensado</h3>
+      <p><b>S1:</b> Orientación con BNO085 y fusión en el chip, a 50–100 Hz.</p>
+      <p><b>S2:</b> Monitoreo de batería (INA226) y de corriente de motores (ACS725).</p>
+      <p><b>S3:</b> Expansión I²C de 4 canales (5 V y 3.3 V) para encoders y sensores.</p>
+      <h3>Fabricación y documentación</h3>
+      <p><b>F1:</b> PCB de 4 capas, ensamblada por JLCPCB; autoprueba de la placa de control con 8 de 8 pruebas aprobadas.</p>
+      <p><b>F2:</b> Diseño abierto en KiCad, con gerbers, BOM, firmware y guías en el repositorio (licencia MIT).</p>
+    </div>
+  </div>
+  <div class="foot"><i>09</i>Para más información consulta el repositorio de GitHub</div>
+</section>
+
+<!-- ============================== 10 TESTIMONIO AL DISENO ============================== -->
+<section class="page">
+  <div class="tab"><span>ES</span></div>
+  <h1>Un testimonio al diseño</h1>
+  <div class="model">ORCA-Board Rev A</div>
+  <div style="position:relative; height: 132mm; margin-top: 2mm;">
+    <img src="img/ctrl_color_iso.svg" style="position:absolute; left: -4mm; top: 0; width: 132mm;">
+    <img src="img/pot_color_iso.svg" style="position:absolute; left: 70mm; top: 70mm; width: 82mm;">
+    <div style="position:absolute; left: 150mm; top: 0; width: 95mm; display:grid; grid-template-columns: 1fr 1fr 1fr; grid-auto-rows: 31mm; gap: 2.5mm; align-items:center; justify-items:center;">
+      <img src="img/ctrl_line_plain.svg" style="max-width:100%; max-height:100%;">
+      <img src="img/ctrl_color_top.svg" style="max-width:100%; max-height:100%;">
+      <img src="img/ctrl_line_iso.svg" style="max-width:100%; max-height:100%;">
+      <img src="img/pot_line_plain.svg" style="max-width:100%; max-height:100%;">
+      <img src="img/pot_color_top.svg" style="max-width:100%; max-height:100%;">
+      <img src="img/pot_line_iso.svg" style="max-width:100%; max-height:100%;">
+    </div>
+    <div style="position:absolute; left: 150mm; top: 72mm; width: 95mm;">
+      <p>La ORCA-Board es la plataforma de control que queríamos tener cuando empezamos a construir robots. <b>Dos placas, una interfaz:</b> la potencia y la lógica van separadas para que cada robot use solo lo que necesita, y todo se ve desde ROS 2 como un nodo más.</p>
+      <p><b>Hecha para abrirse.</b> Cada capa, cada pista y cada parámetro están documentados en el repositorio. Si su robot necesita otra cosa, la base ya está hecha.</p>
+      <p class="cap">Todas las vistas de esta página se generaron desde los gerbers de fabricación (cobre, máscara, serigrafía, contorno y taladros), sin retoque manual.</p>
+    </div>
+  </div>
+  <div class="foot"><i>10</i>Para más información consulta el repositorio de GitHub</div>
+</section>
+
+<!-- ============================== 11 INTEGRACION EN ROBOTS ============================== -->
+<section class="page">
+  <div class="tab"><span>ES</span></div><div class="tabr"></div>
+  <h1>Integración en robots</h1>
+  <div class="model">ORCA-Board Rev A</div>
+  <div class="cols" style="grid-template-columns: 1.25fr 0.75fr;">
+    <div class="col">
+      <div style="display:grid; grid-template-columns: 1fr 1fr 1fr 1.33fr; gap: 3mm; height: 74mm;">
+        <img src="img/swarm_antes_orca.jpg" style="width:100%; height:100%; object-fit:cover; border-radius: 2mm;">
+        <img src="img/swarm_con_orca.jpg" style="width:100%; height:100%; object-fit:cover; border-radius: 2mm;">
+        <img src="img/robot_diferencial_orca_2.jpg" style="width:100%; height:100%; object-fit:cover; border-radius: 2mm;">
+        <img src="img/robot_diferencial_orca_1.jpg" style="width:100%; height:100%; object-fit:cover; border-radius: 2mm;">
+      </div>
+      <div style="display:grid; grid-template-columns: 1fr 1fr 1fr 1.33fr; gap: 3mm;" class="cap">
+        <div>SWARM antes de ORCA</div><div>SWARM con ORCA</div><div>Robot diferencial</div><div>Robot diferencial, vista general</div>
+      </div>
+      <h2 style="margin-top: 4mm;">Validación en plataformas activas</h2>
+      <p><b>SWARM.</b> La placa de control se integró en el robot y respondió correctamente a las señales de movimiento enviadas por Wi-Fi desde ROS 2, en una Raspberry Pi 5 que dirige la placa.</p>
+      <p><b>Robot diferencial.</b> ORCA con micro-ROS y ROS 2 movió un robot diferencial con reconocimiento visual, al estilo de un TurtleBot.</p>
+    </div>
+    <div class="col">
+      <h2>Véalo en movimiento</h2>
+      <div style="display:flex; gap: 4mm; align-items:center; margin: 3mm 0 5mm;">
+        <div style="background: var(--soft); padding: 2.5mm; border-radius: 2mm;"><img src="img/qr_swarm.svg" style="width: 25mm; height: 25mm; display:block;"></div>
+        <div><b>SWARM con ORCA</b><br><span class="mono" style="font-size:7pt;">youtu.be/ohQkxq8agtg</span></div>
+      </div>
+      <div style="display:flex; gap: 4mm; align-items:center; margin-bottom: 5mm;">
+        <div style="background: var(--soft); padding: 2.5mm; border-radius: 2mm;"><img src="img/qr_turtle.svg" style="width: 25mm; height: 25mm; display:block;"></div>
+        <div><b>Robot diferencial tipo TurtleBot</b><br><span class="mono" style="font-size:7pt;">youtube.com/shorts/Cfd5DdbkZio</span></div>
+      </div>
+      <div style="display:flex; gap: 4mm; align-items:center;">
+        <div style="background: var(--soft); padding: 2.5mm; border-radius: 2mm;"><img src="img/qr_fw.svg" style="width: 25mm; height: 25mm; display:block;"></div>
+        <div><b>Firmware y guía de micro-ROS</b><br><span class="mono" style="font-size:7pt;">firmware/orca_micro_ros</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><i>11</i>Para más información consulta el repositorio de GitHub</div>
+</section>
+
+<!-- ============================== CONTRAPORTADA ============================== -->
+<section class="page">
+  <div style="position:absolute; left: 22mm; top: 50mm; width: 120mm;">
+    <img src="img/ctrl_line_iso.svg" style="width: 112mm; opacity: .9;">
+  </div>
+  <div style="position:absolute; left: 182mm; top: 62mm; font-size: 10.5pt; line-height: 1.4;">
+    <p style="margin-bottom: 5mm;">Placa de control<br>Juan Felipe Angulo<br>Felipe Gutiérrez Apráez</p>
+    <p style="margin-bottom: 5mm;">Placa de potencia<br>Luis Ángel Aristizábal</p>
+    <p style="margin-bottom: 9mm;">Universidad de los Andes<br>Facultad de Ingeniería</p>
+    <p style="font-weight: 700;">(C) 2026 · Licencia MIT</p>
+  </div>
+</section>
+
+</body>
+</html>
