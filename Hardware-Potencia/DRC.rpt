@@ -1,12 +1,173 @@
 ** Drc report for ORCA-BOARD.kicad_pcb **
-** Created on 2026-10-04T22:43:59 **
-** Report includes: Errors, Warnings **
+** Created on 2026-11-26T19:41:17 **
+** Report includes: Errors, Warnings, Exclusions **
 
 ** Found 0 DRC violations **
 
 ** Found 0 unconnected pads **
 
-** Found 0 Footprint errors **
+** Found 53 Footprint errors **
+[duplicate_footprints]: Duplicate footprints
+    Local override; warning
+    @(16.7400 mm, 60.5600 mm): Footprint <no reference designator>
+    @(85.9900 mm, 60.3100 mm): Footprint <no reference designator>
+[duplicate_footprints]: Duplicate footprints
+    Local override; warning
+    @(16.7400 mm, 17.5600 mm): Footprint <no reference designator>
+    @(85.9900 mm, 60.3100 mm): Footprint <no reference designator>
+[footprint_symbol_field_mismatch]: Missing symbol field 'MANUFACTURER' in footprint
+    Local override; warning
+    @(26.2200 mm, 54.0600 mm): Footprint C1
+[footprint_symbol_field_mismatch]: Missing symbol field 'MANUFACTURER' in footprint
+    Local override; warning
+    @(26.8673 mm, 30.7100 mm): Footprint C2
+[footprint_symbol_field_mismatch]: Missing symbol field 'MANUFACTURER' in footprint
+    Local override; warning
+    @(47.2800 mm, 36.7600 mm): Footprint C3
+[footprint_symbol_field_mismatch]: Missing symbol field 'MANUFACTURER' in footprint
+    Local override; warning
+    @(26.7200 mm, 41.6600 mm): Footprint C4
+[footprint_symbol_field_mismatch]: Missing symbol field 'MANUFACTURER' in footprint
+    Local override; warning
+    @(55.7200 mm, 36.7600 mm): Footprint C5
+[footprint_symbol_field_mismatch]: Missing symbol field 'MANUFACTURER' in footprint
+    Local override; warning
+    @(29.7200 mm, 58.4100 mm): Footprint C6
+[footprint_symbol_field_mismatch]: Missing symbol field 'MANUFACTURER' in footprint
+    Local override; warning
+    @(33.4700 mm, 61.4100 mm): Footprint C7
+[footprint_symbol_field_mismatch]: Missing symbol field 'MANUFACTURER' in footprint
+    Local override; warning
+    @(21.9700 mm, 54.0100 mm): Footprint C8
+[footprint_symbol_field_mismatch]: Missing symbol field 'MANUFACTURER' in footprint
+    Local override; warning
+    @(21.9700 mm, 41.6600 mm): Footprint C9
+[footprint_symbol_field_mismatch]: Missing symbol field 'MANUFACTURER' in footprint
+    Local override; warning
+    @(74.2200 mm, 40.8100 mm): Footprint C10
+[footprint_symbol_field_mismatch]: Missing symbol field 'MANUFACTURER' in footprint
+    Local override; warning
+    @(35.2200 mm, 51.4100 mm): Footprint C11
+[footprint_symbol_field_mismatch]: Missing symbol field 'MANUFACTURER' in footprint
+    Local override; warning
+    @(54.3200 mm, 62.0600 mm): Footprint C12
+[footprint_symbol_field_mismatch]: Missing symbol field 'MANUFACTURER' in footprint
+    Local override; warning
+    @(43.8700 mm, 62.0600 mm): Footprint C13
+[footprint_symbol_field_mismatch]: Missing symbol field 'MANUFACTURER' in footprint
+    Local override; warning
+    @(74.2200 mm, 48.3950 mm): Footprint C14
+[footprint_symbol_field_mismatch]: Missing symbol field 'MANUFACTURER' in footprint
+    Local override; warning
+    @(80.7200 mm, 48.3950 mm): Footprint C15
+[footprint_symbol_field_mismatch]: Missing symbol field 'MANUFACTURER' in footprint
+    Local override; warning
+    @(67.2200 mm, 48.3950 mm): Footprint C16
+[footprint_symbol_field_mismatch]: Missing symbol field 'MANUFACTURER' in footprint
+    Local override; warning
+    @(61.9200 mm, 50.9100 mm): Footprint C17
+[footprint_symbol_field_mismatch]: Missing symbol field 'MANUFACTURER' in footprint
+    Local override; warning
+    @(63.4700 mm, 60.8500 mm): Footprint C18
+[footprint_symbol_field_mismatch]: Missing symbol field 'MANUFACTURER' in footprint
+    Local override; warning
+    @(69.2327 mm, 31.3900 mm): Footprint C19
+[footprint_symbol_field_mismatch]: Missing symbol field 'MANUFACTURER' in footprint
+    Local override; warning
+    @(79.0700 mm, 31.3900 mm): Footprint C20
+[footprint_symbol_field_mismatch]: Missing symbol field 'MANUFACTURER' in footprint
+    Local override; warning
+    @(30.4700 mm, 49.2100 mm): Footprint D1
+[footprint_symbol_field_mismatch]: Missing symbol field 'MANUFACTURER' in footprint
+    Local override; warning
+    @(39.1700 mm, 55.1600 mm): Footprint D2
+[footprint_symbol_field_mismatch]: Missing symbol field 'MANUFACTURER' in footprint
+    Local override; warning
+    @(38.9200 mm, 47.9100 mm): Footprint D3
+[footprint_symbol_field_mismatch]: Missing symbol field 'MANUFACTURER' in footprint
+    Local override; warning
+    @(32.2200 mm, 21.5100 mm): Footprint J1
+[footprint_symbol_field_mismatch]: Missing symbol field 'MANUFACTURER' in footprint
+    Local override; warning
+    @(78.2200 mm, 21.4100 mm): Footprint J2
+[footprint_symbol_field_mismatch]: Missing symbol field 'MANUFACTURER' in footprint
+    Local override; warning
+    @(51.3800 mm, 24.4600 mm): Footprint L1
+[footprint_symbol_field_mismatch]: Missing symbol field 'MANUFACTURER' in footprint
+    Local override; warning
+    @(34.3200 mm, 40.4100 mm): Footprint Q1
+[footprint_symbol_field_mismatch]: Missing symbol field 'MANUFACTURER' in footprint
+    Local override; warning
+    @(42.3800 mm, 38.9600 mm): Footprint Q2
+[footprint_symbol_field_mismatch]: Missing symbol field 'MANUFACTURER' in footprint
+    Local override; warning
+    @(68.3700 mm, 41.0600 mm): Footprint Q3
+[footprint_symbol_field_mismatch]: Missing symbol field 'MANUFACTURER' in footprint
+    Local override; warning
+    @(60.8800 mm, 38.9600 mm): Footprint Q4
+[footprint_symbol_field_mismatch]: Missing symbol field 'MANUFACTURER' in footprint
+    Local override; warning
+    @(26.6200 mm, 61.4100 mm): Footprint R1
+[footprint_symbol_field_mismatch]: Missing symbol field 'MANUFACTURER' in footprint
+    Local override; warning
+    @(30.7200 mm, 54.0100 mm): Footprint R2
+[footprint_symbol_field_mismatch]: Missing symbol field 'MANUFACTURER' in footprint
+    Local override; warning
+    @(26.2200 mm, 49.0100 mm): Footprint R3
+[footprint_symbol_field_mismatch]: Missing symbol field 'MANUFACTURER' in footprint
+    Local override; warning
+    @(21.9700 mm, 48.7600 mm): Footprint R4
+[footprint_symbol_field_mismatch]: Missing symbol field 'MANUFACTURER' in footprint
+    Local override; warning
+    @(21.9700 mm, 60.5600 mm): Footprint R5
+[footprint_symbol_field_mismatch]: Missing symbol field 'MANUFACTURER' in footprint
+    Local override; warning
+    @(49.2200 mm, 62.0600 mm): Footprint R6
+[footprint_symbol_field_mismatch]: Missing symbol field 'MANUFACTURER' in footprint
+    Local override; warning
+    @(70.3200 mm, 61.9100 mm): Footprint R7
+[footprint_symbol_field_mismatch]: Missing symbol field 'MANUFACTURER' in footprint
+    Local override; warning
+    @(80.7200 mm, 40.9100 mm): Footprint R8
+[footprint_symbol_field_mismatch]: Missing symbol field 'MANUFACTURER' in footprint
+    Local override; warning
+    @(60.7200 mm, 47.6600 mm): Footprint R9
+[footprint_symbol_field_mismatch]: Missing symbol field 'MANUFACTURER' in footprint
+    Local override; warning
+    @(63.2200 mm, 47.6600 mm): Footprint R10
+[footprint_symbol_field_mismatch]: Missing symbol field 'MANUFACTURER' in footprint
+    Local override; warning
+    @(70.3200 mm, 60.1600 mm): Footprint R11
+[footprint_symbol_field_mismatch]: Missing symbol field 'MANUFACTURER' in footprint
+    Local override; warning
+    @(51.3800 mm, 38.7600 mm): Footprint R12
+[footprint_symbol_field_mismatch]: Missing symbol field 'MANUFACTURER' in footprint
+    Local override; warning
+    @(70.2200 mm, 56.2600 mm): Footprint R13
+[footprint_symbol_field_mismatch]: Missing symbol field 'MANUFACTURER' in footprint
+    Local override; warning
+    @(63.4700 mm, 55.9100 mm): Footprint R14
+[footprint_symbol_field_mismatch]: Missing symbol field 'MANUFACTURER' in footprint
+    Local override; warning
+    @(58.7300 mm, 54.1400 mm): Footprint R15
+[footprint_symbol_field_mismatch]: Missing symbol field 'MANUFACTURER' in footprint
+    Local override; warning
+    @(76.7200 mm, 54.8700 mm): Footprint RV1
+[footprint_symbol_field_mismatch]: Missing symbol field 'MANUFACTURER' in footprint
+    Local override; warning
+    @(51.2650 mm, 54.0600 mm): Footprint U1
+[extra_footprint]: Extra footprint
+    Local override; warning
+    @(85.9900 mm, 60.3100 mm): Footprint <no reference designator>
+[extra_footprint]: Extra footprint
+    Local override; warning
+    @(16.7400 mm, 60.5600 mm): Footprint <no reference designator>
+[extra_footprint]: Extra footprint
+    Local override; warning
+    @(85.9900 mm, 17.5600 mm): Footprint REF**
+[extra_footprint]: Extra footprint
+    Local override; warning
+    @(16.7400 mm, 17.5600 mm): Footprint <no reference designator>
 
 ** Ignored checks **
     - Footprint has no courtyard defined

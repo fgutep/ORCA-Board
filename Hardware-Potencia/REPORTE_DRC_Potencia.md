@@ -1,5 +1,7 @@
 # Reporte DRC y reglas de diseño: PCB de potencia ORCA-BOARD
 
+> **Actualización 26-nov-2026.** [`DRC.rpt`](DRC.rpt) se regeneró con KiCad 10.0.1 (`kicad-cli pcb drc --schematic-parity`) sobre el diseño fabricado (gerbers de `jlcpcb/` del 13-oct, 77.50 × 52.02 mm, 169 vías): **0 violaciones, 0 pads sin conectar**. La paridad con el esquemático da 53 advertencias, ninguna eléctrica: 47 `footprint_symbol_field_mismatch` (campo `MANUFACTURER` ausente en las huellas) y 4 `extra_footprint` + 2 `duplicate_footprints` de los 4 agujeros de montaje de las esquinas, que no tienen símbolo. Las secciones siguientes describen la versión del 4-oct (67 × 51.4 mm, 134 vías); las reglas de la §2 son las mismas del `.kicad_pro` actual.
+
 DRC de KiCad del 2026-10-04 22:43, sobre el .kicad_pcb guardado a las 22:30: **0 violaciones, 0 pads sin conectar, 0 errores de huellas.**
 
 ## 1. Historial de DRC
