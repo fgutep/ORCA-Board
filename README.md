@@ -84,7 +84,7 @@ Convertidor **buck-boost LM5175** para el riel de motores: entrada de 6 a 25.2 V
 | Placa de potencia (LM5175) | 🔧 Fabricada, en bring-up ([registro](Hardware-Potencia/physical_debug/README.md)). Ya alimentó los motores a 12 V con la entrada barrida de 8 a 24 V |
 | Drivers de motor (DRV8874) | ✅ Probados con N20 y Faulhaber a 12 V en el banco de motores ([ensayo](Hardware/physical_debug/11_ensayo_motores_N20_Faulhaber.md)). Temperatura de pistas pendiente |
 | BNO085 | ⏸️ Aún no montado en la placa fabricada |
-| micro-ROS sobre la placa | ⏳ Siguiente paso |
+| micro-ROS sobre la placa | ✅ Firmware de uso general ([`firmware/orca_micro_ros`](firmware/orca_micro_ros/README.md)): nodo `/orca_board` en ROS 2 Jazzy con batería, IMU, diagnóstico, motores, servos, puente CAN a 25 kbit/s (`can_msgs/Frame`) y parámetros persistentes. Probado por USB sin VBUS y con CAN en autoprueba; falta probar con motores y servos alimentados y CAN contra otro nodo |
 
 ### Resultados de la placa de control
 
@@ -161,7 +161,8 @@ ORCA-Board/
 ├── simulacion/                Modelos y simulaciones LTspice del buck-boost
 │   ├── scripts/               Análisis y gráficas en Python
 │   └── resultados/            Figuras de las corridas
-├── examples/                  Firmware de ejemplo en proyectos (brazo por gestos: IMU y servos)
+├── firmware/
+│   └── orca_micro_ros/        Firmware micro-ROS (ROS 2 Jazzy) de uso general
 ├── Datasheets/                Hojas de datos de los componentes
 ├── Prints/                    Esquemático y layout de la placa de potencia en PDF/PNG
 └── docs/img/                  Imágenes de este README
@@ -197,6 +198,7 @@ Las cuatro esquinas regulan dentro de ±0.01 % y mantienen el pico del inductor 
 | Qué | Dónde |
 |---|---|
 | Bring-up de la placa de control | [`Hardware/physical_debug/README.md`](Hardware/physical_debug/README.md) |
+| Firmware micro-ROS (tópicos, parámetros, seguridad) | [`firmware/orca_micro_ros/README.md`](firmware/orca_micro_ros/README.md) |
 | Bring-up de la placa de potencia | [`Hardware-Potencia/physical_debug/README.md`](Hardware-Potencia/physical_debug/README.md) |
 | Hojas de datos | [`Datasheets/`](Datasheets/) |
 | Esquemático y layout de potencia | [`Prints/`](Prints/) |
@@ -205,7 +207,8 @@ Las cuatro esquinas regulan dentro de ±0.01 % y mantienen el pico del inductor 
 
 - [ ] Montar el BNO085 y poner `BNO085_MOUNTED = true` en la autoprueba.
 - [ ] Terminar el bring-up de la placa de potencia.
-- [ ] Correr micro-ROS sobre la placa.
+- [x] Correr micro-ROS sobre la placa ([`firmware/orca_micro_ros`](firmware/orca_micro_ros/README.md)).
+- [ ] Probar micro-ROS con VBUS (motores y servos) y por Wi-Fi.
 - [ ] Montarla en un robot del laboratorio para mover motores y servos con carga real.
 
 ## Equipo
