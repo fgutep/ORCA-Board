@@ -126,7 +126,7 @@ La placa de control ORCA, integrada a un robot SWARM, respondió correctamente a
 
 ### Robot diferencial
 
-ORCA en un robot diferencial con micro-ROS, ROS 2 y reconocimiento visual tipo TurtleBot.
+ORCA en un robot diferencial con micro-ROS, ROS 2 y reconocimiento visual tipo TurtleBot. Video: [youtube.com/shorts/Cfd5DdbkZio](https://youtube.com/shorts/Cfd5DdbkZio).
 
 <table>
   <tr>
